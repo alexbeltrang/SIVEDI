@@ -217,4 +217,34 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Regionales" nillable="true" type="tns:Regionales" />
+  <xs:complexType name="Zonas">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODIGO_REGIONAL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODIGO_RESPONSABLE" type="xs:int" />
+      <xs:element minOccurs="0" name="ESTADO" type="xs:boolean" />
+      <xs:element minOccurs="0" name="GRUPO_FACTURACION" type="xs:int" />
+      <xs:element minOccurs="0" name="NOMBRE" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Zonas" nillable="true" type="tns:Zonas" />
+  <xs:complexType name="Secciones">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODIGO_RESPONSABLE" type="xs:int" />
+      <xs:element minOccurs="0" name="CODIGO_ZONA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ESTADO" type="xs:boolean" />
+      <xs:element minOccurs="0" name="NOMBRE" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Secciones" nillable="true" type="tns:Secciones" />
+  <xs:complexType name="Territorios">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODIGO_SECCION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ESTADO" type="xs:boolean" />
+      <xs:element minOccurs="0" name="NOMBRE" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Territorios" nillable="true" type="tns:Territorios" />
 </xs:schema>

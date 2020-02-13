@@ -362,37 +362,37 @@ namespace SIVEDI
                         break;
                     }
 
-                    //case "SECCIONES":
-                    //    {
-                    //        if (clsConnection.blnVentanasEnbebidas)
-                    //        {
-                    //            frmSecciones objFormulario = new frmSecciones();
-                    //            cargaFormulario(objFormulario);
-                    //        }
-                    //        else
-                    //        {
-                    //            frmSecciones objFormulario = new frmSecciones();
-                    //            objFormulario.Show();
-                    //        }
+                case "SECCIONES":
+                    {
+                        if (clsConnection.blnVentanasEnbebidas)
+                        {
+                            frmSecciones objFormulario = new frmSecciones();
+                            cargaFormulario(objFormulario);
+                        }
+                        else
+                        {
+                            frmSecciones objFormulario = new frmSecciones();
+                            objFormulario.Show();
+                        }
 
-                    //        break;
-                    //    }
+                        break;
+                    }
 
-                    //case "TERRITORIOS":
-                    //    {
-                    //        if (clsConnection.blnVentanasEnbebidas)
-                    //        {
-                    //            frmTerritorios objFormulario = new frmTerritorios();
-                    //            cargaFormulario(objFormulario);
-                    //        }
-                    //        else
-                    //        {
-                    //            frmTerritorios objFormulario = new frmTerritorios();
-                    //            objFormulario.Show();
-                    //        }
+                case "TERRITORIOS":
+                    {
+                        if (clsConnection.blnVentanasEnbebidas)
+                        {
+                            frmTerritorios objFormulario = new frmTerritorios();
+                            cargaFormulario(objFormulario);
+                        }
+                        else
+                        {
+                            frmTerritorios objFormulario = new frmTerritorios();
+                            objFormulario.Show();
+                        }
 
-                    //        break;
-                    //    }
+                        break;
+                    }
 
                     //case "CONSULTA CLIENTES":
                     //    {
@@ -920,6 +920,34 @@ namespace SIVEDI
             else
             {
                 frmZonas objFormulario = new frmZonas();
+                objFormulario.Show();
+            }
+        }
+
+        private void SeccionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (clsConnection.blnVentanasEnbebidas)
+            {
+                frmSecciones objFormulario = new frmSecciones();
+                cargaFormulario(objFormulario);
+            }
+            else
+            {
+                frmSecciones objFormulario = new frmSecciones();
+                objFormulario.Show();
+            }
+        }
+
+        private void TerritoriosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (clsConnection.blnVentanasEnbebidas)
+            {
+                frmTerritorios objFormulario = new frmTerritorios();
+                cargaFormulario(objFormulario);
+            }
+            else
+            {
+                frmTerritorios objFormulario = new frmTerritorios();
                 objFormulario.Show();
             }
         }

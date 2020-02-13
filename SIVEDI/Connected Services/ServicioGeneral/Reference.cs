@@ -248,6 +248,54 @@ namespace SIVEDI.ServicioGeneral {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/insRegionales", ReplyAction="http://tempuri.org/IService/insRegionalesResponse")]
         System.Threading.Tasks.Task<int> insRegionalesAsync(SIVEDI.Clases.Regionales regionales);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getZonas", ReplyAction="http://tempuri.org/IService/getZonasResponse")]
+        SIVEDI.Clases.TABLAS.ZonasTabla[] getZonas(int intOpcion, string strCodigoRegional, string strCodigoZona);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getZonas", ReplyAction="http://tempuri.org/IService/getZonasResponse")]
+        System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.ZonasTabla[]> getZonasAsync(int intOpcion, string strCodigoRegional, string strCodigoZona);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/insZonas", ReplyAction="http://tempuri.org/IService/insZonasResponse")]
+        int insZonas(SIVEDI.Clases.Zonas zonas);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/insZonas", ReplyAction="http://tempuri.org/IService/insZonasResponse")]
+        System.Threading.Tasks.Task<int> insZonasAsync(SIVEDI.Clases.Zonas zonas);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getSecciones", ReplyAction="http://tempuri.org/IService/getSeccionesResponse")]
+        SIVEDI.Clases.TABLAS.SeccionesTabla[] getSecciones(int intOpcion, string strCodigoZona, string strCodigoSeccion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getSecciones", ReplyAction="http://tempuri.org/IService/getSeccionesResponse")]
+        System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.SeccionesTabla[]> getSeccionesAsync(int intOpcion, string strCodigoZona, string strCodigoSeccion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getSeccionFiltro", ReplyAction="http://tempuri.org/IService/getSeccionFiltroResponse")]
+        SIVEDI.Clases.TABLAS.SeccionFiltro getSeccionFiltro(int intOpcion, string strCodigoSeccion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getSeccionFiltro", ReplyAction="http://tempuri.org/IService/getSeccionFiltroResponse")]
+        System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.SeccionFiltro> getSeccionFiltroAsync(int intOpcion, string strCodigoSeccion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/insSecciones", ReplyAction="http://tempuri.org/IService/insSeccionesResponse")]
+        int insSecciones(SIVEDI.Clases.Secciones secciones);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/insSecciones", ReplyAction="http://tempuri.org/IService/insSeccionesResponse")]
+        System.Threading.Tasks.Task<int> insSeccionesAsync(SIVEDI.Clases.Secciones secciones);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getTerritorio", ReplyAction="http://tempuri.org/IService/getTerritorioResponse")]
+        SIVEDI.Clases.TABLAS.TerritorioTabla[] getTerritorio(int intOpcion, string strCodigoSeccion, string strCodigoTerritorio);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getTerritorio", ReplyAction="http://tempuri.org/IService/getTerritorioResponse")]
+        System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.TerritorioTabla[]> getTerritorioAsync(int intOpcion, string strCodigoSeccion, string strCodigoTerritorio);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getTerritorioFiltro", ReplyAction="http://tempuri.org/IService/getTerritorioFiltroResponse")]
+        SIVEDI.Clases.TABLAS.TerritorioFiltro getTerritorioFiltro(int intOpcion, string strCodigoTerrirorio);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getTerritorioFiltro", ReplyAction="http://tempuri.org/IService/getTerritorioFiltroResponse")]
+        System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.TerritorioFiltro> getTerritorioFiltroAsync(int intOpcion, string strCodigoTerrirorio);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/insTerritorio", ReplyAction="http://tempuri.org/IService/insTerritorioResponse")]
+        int insTerritorio(SIVEDI.Clases.Territorios territorios);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/insTerritorio", ReplyAction="http://tempuri.org/IService/insTerritorioResponse")]
+        System.Threading.Tasks.Task<int> insTerritorioAsync(SIVEDI.Clases.Territorios territorios);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -587,6 +635,70 @@ namespace SIVEDI.ServicioGeneral {
         
         public System.Threading.Tasks.Task<int> insRegionalesAsync(SIVEDI.Clases.Regionales regionales) {
             return base.Channel.insRegionalesAsync(regionales);
+        }
+        
+        public SIVEDI.Clases.TABLAS.ZonasTabla[] getZonas(int intOpcion, string strCodigoRegional, string strCodigoZona) {
+            return base.Channel.getZonas(intOpcion, strCodigoRegional, strCodigoZona);
+        }
+        
+        public System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.ZonasTabla[]> getZonasAsync(int intOpcion, string strCodigoRegional, string strCodigoZona) {
+            return base.Channel.getZonasAsync(intOpcion, strCodigoRegional, strCodigoZona);
+        }
+        
+        public int insZonas(SIVEDI.Clases.Zonas zonas) {
+            return base.Channel.insZonas(zonas);
+        }
+        
+        public System.Threading.Tasks.Task<int> insZonasAsync(SIVEDI.Clases.Zonas zonas) {
+            return base.Channel.insZonasAsync(zonas);
+        }
+        
+        public SIVEDI.Clases.TABLAS.SeccionesTabla[] getSecciones(int intOpcion, string strCodigoZona, string strCodigoSeccion) {
+            return base.Channel.getSecciones(intOpcion, strCodigoZona, strCodigoSeccion);
+        }
+        
+        public System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.SeccionesTabla[]> getSeccionesAsync(int intOpcion, string strCodigoZona, string strCodigoSeccion) {
+            return base.Channel.getSeccionesAsync(intOpcion, strCodigoZona, strCodigoSeccion);
+        }
+        
+        public SIVEDI.Clases.TABLAS.SeccionFiltro getSeccionFiltro(int intOpcion, string strCodigoSeccion) {
+            return base.Channel.getSeccionFiltro(intOpcion, strCodigoSeccion);
+        }
+        
+        public System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.SeccionFiltro> getSeccionFiltroAsync(int intOpcion, string strCodigoSeccion) {
+            return base.Channel.getSeccionFiltroAsync(intOpcion, strCodigoSeccion);
+        }
+        
+        public int insSecciones(SIVEDI.Clases.Secciones secciones) {
+            return base.Channel.insSecciones(secciones);
+        }
+        
+        public System.Threading.Tasks.Task<int> insSeccionesAsync(SIVEDI.Clases.Secciones secciones) {
+            return base.Channel.insSeccionesAsync(secciones);
+        }
+        
+        public SIVEDI.Clases.TABLAS.TerritorioTabla[] getTerritorio(int intOpcion, string strCodigoSeccion, string strCodigoTerritorio) {
+            return base.Channel.getTerritorio(intOpcion, strCodigoSeccion, strCodigoTerritorio);
+        }
+        
+        public System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.TerritorioTabla[]> getTerritorioAsync(int intOpcion, string strCodigoSeccion, string strCodigoTerritorio) {
+            return base.Channel.getTerritorioAsync(intOpcion, strCodigoSeccion, strCodigoTerritorio);
+        }
+        
+        public SIVEDI.Clases.TABLAS.TerritorioFiltro getTerritorioFiltro(int intOpcion, string strCodigoTerrirorio) {
+            return base.Channel.getTerritorioFiltro(intOpcion, strCodigoTerrirorio);
+        }
+        
+        public System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.TerritorioFiltro> getTerritorioFiltroAsync(int intOpcion, string strCodigoTerrirorio) {
+            return base.Channel.getTerritorioFiltroAsync(intOpcion, strCodigoTerrirorio);
+        }
+        
+        public int insTerritorio(SIVEDI.Clases.Territorios territorios) {
+            return base.Channel.insTerritorio(territorios);
+        }
+        
+        public System.Threading.Tasks.Task<int> insTerritorioAsync(SIVEDI.Clases.Territorios territorios) {
+            return base.Channel.insTerritorioAsync(territorios);
         }
     }
 }

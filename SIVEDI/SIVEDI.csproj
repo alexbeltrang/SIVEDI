@@ -175,6 +175,12 @@
     <Compile Include="Mantenimiento\frmSecciones.Designer.cs">
       <DependentUpon>frmSecciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mantenimiento\frmTerritorios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\frmTerritorios.Designer.cs">
+      <DependentUpon>frmTerritorios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mantenimiento\frmZonas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -240,6 +246,12 @@
     <EmbeddedResource Include="Mantenimiento\frmRespTerritorio.resx">
       <DependentUpon>frmRespTerritorio.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\frmSecciones.resx">
+      <DependentUpon>frmSecciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\frmTerritorios.resx">
+      <DependentUpon>frmTerritorios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mantenimiento\frmZonas.resx">
       <DependentUpon>frmZonas.cs</DependentUpon>
     </EmbeddedResource>
@@ -279,11 +291,16 @@
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.RegionalesTabla.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.ResponsableTerritorioFiltro.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.ResponsableTerritorioTabla.datasource" />
+    <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.SeccionesTabla.datasource" />
+    <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.SeccionFiltro.datasource" />
+    <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.TerritorioFiltro.datasource" />
+    <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.TerritorioTabla.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.TipoClienteTabla.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.tipoDocumentoTabla.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.UnidadesMedidaTabla.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.UnidasMedidaTabla.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.usuariosTabla.datasource" />
+    <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.ZonasTabla.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.usuarios.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.usuariosTabla.datasource" />
     <None Include="Properties\Settings.settings">

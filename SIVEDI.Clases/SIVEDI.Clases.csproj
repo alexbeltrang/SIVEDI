@@ -59,6 +59,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Regionales.cs" />
     <Compile Include="ResponsableTerritorio.cs" />
+    <Compile Include="Secciones.cs" />
     <Compile Include="TABLAS\campanasTabla.cs" />
     <Compile Include="TABLAS\CiudadesTabla.cs" />
     <Compile Include="TABLAS\ClaseResponsableTabla.cs" />
@@ -71,14 +72,21 @@
     <Compile Include="TABLAS\RegionalesTabla.cs" />
     <Compile Include="TABLAS\ResponsableTerritorioFiltro.cs" />
     <Compile Include="TABLAS\ResponsableTerritorioTabla.cs" />
+    <Compile Include="TABLAS\SeccionesTabla.cs" />
+    <Compile Include="TABLAS\SeccionFiltro.cs" />
+    <Compile Include="TABLAS\TerritorioFiltro.cs" />
+    <Compile Include="TABLAS\TerritorioTabla.cs" />
     <Compile Include="TABLAS\TipoClienteTabla.cs" />
     <Compile Include="TABLAS\tipoDocumentoTabla.cs" />
     <Compile Include="TABLAS\UnidadesMedidaTabla.cs" />
+    <Compile Include="TABLAS\ZonasTabla.cs" />
+    <Compile Include="Territorios.cs" />
     <Compile Include="TipoCliente.cs" />
     <Compile Include="TipoDocumento.cs" />
     <Compile Include="UnidadMedida.cs" />
     <Compile Include="usuarios.cs" />
     <Compile Include="TABLAS\usuariosTabla.cs" />
+    <Compile Include="Zonas.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

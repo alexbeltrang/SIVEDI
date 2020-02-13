@@ -334,7 +334,7 @@
   <xs:element name="getCampanasResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" minOccurs="0" name="getCampanasResult" nillable="true" type="q23:ArrayOfcampanasTabla" />
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" minOccurs="0" name="getCampanasResult" nillable="true" type="q23:ArrayOfCampanasTabla" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -572,6 +572,126 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="insRegionalesResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getZonas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="intOpcion" type="xs:int" />
+        <xs:element minOccurs="0" name="strCodigoRegional" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strCodigoZona" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getZonasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" minOccurs="0" name="getZonasResult" nillable="true" type="q40:ArrayOfZonasTabla" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="insZonas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" minOccurs="0" name="zonas" nillable="true" type="q41:Zonas" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="insZonasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="insZonasResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getSecciones">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="intOpcion" type="xs:int" />
+        <xs:element minOccurs="0" name="strCodigoZona" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strCodigoSeccion" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getSeccionesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" minOccurs="0" name="getSeccionesResult" nillable="true" type="q42:ArrayOfSeccionesTabla" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getSeccionFiltro">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="intOpcion" type="xs:int" />
+        <xs:element minOccurs="0" name="strCodigoSeccion" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getSeccionFiltroResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" minOccurs="0" name="getSeccionFiltroResult" nillable="true" type="q43:SeccionFiltro" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="insSecciones">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" minOccurs="0" name="secciones" nillable="true" type="q44:Secciones" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="insSeccionesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="insSeccionesResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getTerritorio">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="intOpcion" type="xs:int" />
+        <xs:element minOccurs="0" name="strCodigoSeccion" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strCodigoTerritorio" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getTerritorioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" minOccurs="0" name="getTerritorioResult" nillable="true" type="q45:ArrayOfTerritorioTabla" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getTerritorioFiltro">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="intOpcion" type="xs:int" />
+        <xs:element minOccurs="0" name="strCodigoTerrirorio" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getTerritorioFiltroResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" minOccurs="0" name="getTerritorioFiltroResult" nillable="true" type="q46:TerritorioFiltro" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="insTerritorio">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" minOccurs="0" name="territorios" nillable="true" type="q47:Territorios" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="insTerritorioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="insTerritorioResult" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

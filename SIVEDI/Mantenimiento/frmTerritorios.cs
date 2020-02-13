@@ -13,30 +13,21 @@ using System.Windows.Forms;
 
 namespace SIVEDI.Mantenimiento
 {
-    public partial class frmSecciones : Form
+    public partial class frmTerritorios : Form
     {
-        public static int? intCodigoResponsableSeccion;
-        public static string strNombreResponsableSeccion;
-        public frmSecciones()
+        public frmTerritorios()
         {
             InitializeComponent();
         }
 
-        private void frmSecciones_Load(object sender, EventArgs e)
+        private void frmTerritorios_Load(object sender, EventArgs e)
         {
             this.BackColor = System.Drawing.ColorTranslator.FromHtml(System.Configuration.ConfigurationManager.AppSettings["color"]);
             totCampos.Active = clsConnection.blnAyudaEnlinea;
-            dtgSecciones.ReadOnly = true;
+            dtgTerritorio.ReadOnly = true;
             cargaCombos();
         }
 
-        private void txtResponsableSeccion_MouseClick(object sender, MouseEventArgs e)
-        {
-            tmrUpdResponsable.Start();
-            clsConnection.blnbuscaRespDesdeSec = true;
-            frmBusquedaResponsable frmBusquedaResponsable = new frmBusquedaResponsable();
-            frmBusquedaResponsable.Show();
-        }
         private void cargaCombos()
         {
             ServiceClient servicioGeneral = new ServiceClient();
@@ -45,11 +36,6 @@ namespace SIVEDI.Mantenimiento
             withBlock.ValueMember = "CODIGO";
             withBlock.DisplayMember = "NOMBRE";
             withBlock.SelectedValue = 0;
-        }
-
-        private void cboPais_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            CargaRegional();
         }
 
         private void CargaRegional()
@@ -68,10 +54,6 @@ namespace SIVEDI.Mantenimiento
                 var withBlock = cboRegional;
                 withBlock.DataSource = null;
             }
-        }
-        private void cboRegional_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            cargaZona();
         }
 
         private void cargaZona()
@@ -92,25 +74,59 @@ namespace SIVEDI.Mantenimiento
             }
         }
 
-        private void cboZona_SelectedIndexChanged(object sender, EventArgs e)
+        private void cargaSecciones()
         {
             if (cboZona.SelectedIndex > 0)
             {
-                llenaGrilla(Convert.ToString(cboZona.SelectedValue));
+                ServiceClient servicioGeneral = new ServiceClient();
+                var withBlock = cboSeccion;
+                withBlock.DataSource = servicioGeneral.getSecciones(1, Convert.ToString(cboZona.SelectedValue), String.Empty);
+                withBlock.ValueMember = "CODIGO";
+                withBlock.DisplayMember = "NOMBRE";
+                withBlock.SelectedIndex = 0;
             }
             else
             {
-                var withBlock = dtgSecciones;
+                var withBlock = cboSeccion;
                 withBlock.DataSource = null;
             }
         }
 
-        private void llenaGrilla(string strCodigoZona)
+        private void cboPais_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CargaRegional();
+        }
+
+        private void cboRegional_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cargaZona();
+        }
+
+        private void cboZona_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cargaSecciones();
+        }
+
+        private void llenaGrilla(string strCodigoSeccion)
         {
             ServiceClient servicioGeneral = new ServiceClient();
-            var withBlock = dtgSecciones;
-            withBlock.DataSource = servicioGeneral.getSecciones(3, strCodigoZona, string.Empty);
+            var withBlock = dtgTerritorio;
+            withBlock.DataSource = servicioGeneral.getTerritorio(3, strCodigoSeccion, string.Empty);
         }
+
+        private void cboSeccion_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboZona.SelectedIndex > 0)
+            {
+                llenaGrilla(Convert.ToString(cboSeccion.SelectedValue));
+            }
+            else
+            {
+                var withBlock = dtgTerritorio;
+                withBlock.DataSource = null;
+            }
+        }
+
         private bool validaCampos()
         {
             if (cboPais.SelectedIndex == 0)
@@ -131,27 +147,27 @@ namespace SIVEDI.Mantenimiento
                 cboZona.Focus();
                 return false;
             }
-            else if (txtCodigoSeccion.Text == "" | txtCodigoSeccion.Text == null)
+            else if (cboSeccion.SelectedIndex == 0)
             {
-                MessageBox.Show("Digite el código de la Sección", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                txtCodigoSeccion.Focus();
+                MessageBox.Show("Seleccione la Sección", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                cboZona.Focus();
                 return false;
             }
-            else if (txtNombreSeccion.Text == "" | txtNombreSeccion.Text == null)
+            else if (txtCodigoTerritorio.Text == "" | txtCodigoTerritorio.Text == null/* TODO Change to default(_) if this is not a reference type */ )
             {
-                MessageBox.Show("Digite el nombre de la Sección", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                txtNombreSeccion.Focus();
+                MessageBox.Show("Digite el código del Territorio", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                txtCodigoTerritorio.Focus();
+                return false;
+            }
+            else if (txtNombreTerritorio.Text == "" | txtNombreTerritorio.Text == null/* TODO Change to default(_) if this is not a reference type */ )
+            {
+                MessageBox.Show("Digite el nombre del Territorio", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                txtNombreTerritorio.Focus();
                 return false;
             }
             else if (!rbnActivo.Checked & !rbnInactivo.Checked)
             {
-                MessageBox.Show("Seleccione el estado de la Sección", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                return false;
-            }
-            else if (intCodigoResponsableSeccion == null)
-            {
-                MessageBox.Show("Seleccione el responsable de la Sección", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                txtResponsableSeccion.Focus();
+                MessageBox.Show("Seleccione el estado del Territorio", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 return false;
             }
             else
@@ -160,35 +176,30 @@ namespace SIVEDI.Mantenimiento
 
         private void limpiaCampos()
         {
-            intCodigoResponsableSeccion = null;
-            txtCodigoSeccion.Text = null;
-            txtNombreSeccion.Text = null;
-            txtResponsableSeccion.Text = null;
+            txtCodigoTerritorio.Text = null;
+            txtNombreTerritorio.Text = null;
             rbnActivo.Checked = false;
             rbnInactivo.Checked = false;
         }
 
-        private void dtgSecciones_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            limpiaCampos();
+            cboRegional.SelectedIndex = 0;
+        }
+
+        private void dtgTerritorio_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
-                ServiceClient servicioGeneral = new ServiceClient();
-                txtCodigoSeccion.Text = Convert.ToString(dtgSecciones.Rows[e.RowIndex].Cells["CODIGO"].Value);
-                txtNombreSeccion.Text = Convert.ToString(dtgSecciones.Rows[e.RowIndex].Cells["NOMBRE"].Value);
-                txtResponsableSeccion.Text = Convert.ToString(dtgSecciones.Rows[e.RowIndex].Cells["RESPONSABLE"].Value);
-                intCodigoResponsableSeccion = Convert.ToInt32(dtgSecciones.Rows[e.RowIndex].Cells["CODIGO_RESPONSABLE"].Value);
-                //var seccion = servicioGeneral.getSeccionFiltro(4, Convert.ToString(dtgSecciones.Rows[e.RowIndex].Cells["CODIGO"].Value));
-                //cboPais.SelectedValue = seccion.CODIGO_PAIS;
-                //CargaRegional();
-                //cboRegional.SelectedValue = seccion.CODIGO_REGIONAL;
-                //cargaZona();
-                //cboZona.SelectedValue = seccion.CODIGO;
-                if (Convert.ToString(dtgSecciones.Rows[e.RowIndex].Cells["ESTADO"].Value) == "ACTIVO")
+                txtCodigoTerritorio.Text = Convert.ToString(dtgTerritorio.Rows[e.RowIndex].Cells["CODIGO"].Value);
+                txtNombreTerritorio.Text = Convert.ToString(dtgTerritorio.Rows[e.RowIndex].Cells["NOMBRE"].Value);
+                if (Convert.ToString(dtgTerritorio.Rows[e.RowIndex].Cells["ESTADO"].Value) == "ACTIVO")
                 {
                     rbnActivo.Checked = true;
                     rbnInactivo.Checked = false;
                 }
-                else if (Convert.ToString(dtgSecciones.Rows[e.RowIndex].Cells["ESTADO"].Value) == "INACTIVO")
+                else if (Convert.ToString(dtgTerritorio.Rows[e.RowIndex].Cells["ESTADO"].Value) == "INACTIVO")
                 {
                     rbnInactivo.Checked = true;
                     rbnActivo.Checked = false;
@@ -198,24 +209,18 @@ namespace SIVEDI.Mantenimiento
                     rbnActivo.Checked = true;
                     rbnInactivo.Checked = true;
                 }
-            }
-        }
 
-        private void btnNuevo_Click(object sender, EventArgs e)
-        {
-            limpiaCampos();
-            cboRegional.SelectedIndex = 0;
-            cboZona.DataSource = null;
+                ServiceClient servicioGeneral = new ServiceClient();
+                var territorio = servicioGeneral.getTerritorioFiltro(4, Convert.ToString(dtgTerritorio.Rows[e.RowIndex].Cells["CODIGO"].Value));
 
-        }
+                //cboPais.SelectedValue = territorio.CODIGO_PAIS;
+                //CargaRegional();
+                //cboRegional.SelectedValue = territorio.CODIGO_REGIONAL;
+                //cargaZona();
+                //cboZona.SelectedValue = territorio.CODIGO_ZONA;
+                //cargaSecciones();
 
-        private void tmrUpdResponsable_Tick(object sender, EventArgs e)
-        {
-            if (strNombreResponsableSeccion != null && strNombreResponsableSeccion != string.Empty)
-            {
-                txtResponsableSeccion.Text = strNombreResponsableSeccion;
-                strNombreResponsableSeccion = string.Empty;
-                tmrUpdResponsable.Stop();
+                //cboSeccion.SelectedValue = territorio.CODIGO;
             }
         }
 
@@ -224,25 +229,24 @@ namespace SIVEDI.Mantenimiento
             if (validaCampos())
             {
                 string strResultado;
-                Secciones secciones = new Secciones();
+                Territorios territorios = new Territorios();
                 ServiceClient servicioGeneral = new ServiceClient();
                 if (rbnActivo.Checked)
                 {
-                    secciones.ESTADO = true;
+                    territorios.ESTADO = true;
                 }
                 else if (rbnInactivo.Checked)
                 {
-                    secciones.ESTADO = false;
+                    territorios.ESTADO = false;
                 }
-                secciones.CODIGO = txtCodigoSeccion.Text;
-                secciones.NOMBRE = txtNombreSeccion.Text.ToUpper();
-                secciones.CODIGO_ZONA= Convert.ToString(cboZona.SelectedValue);
-                secciones.CODIGO_RESPONSABLE = Convert.ToInt32(intCodigoResponsableSeccion);
+                territorios.CODIGO = txtCodigoTerritorio.Text;
+                territorios.NOMBRE = txtNombreTerritorio.Text.ToUpper();
+                territorios.CODIGO_SECCION= Convert.ToString(cboSeccion.SelectedValue);
 
-                strResultado = Convert.ToString(servicioGeneral.insSecciones(secciones));
+                strResultado = Convert.ToString(servicioGeneral.insTerritorio(territorios));
                 if (Information.IsNumeric(strResultado))
                 {
-                    llenaGrilla(Convert.ToString(cboZona.SelectedValue));
+                    llenaGrilla(Convert.ToString(cboSeccion.SelectedValue));
                     limpiaCampos();
                     if (Convert.ToInt32(strResultado) == 1)
                     {

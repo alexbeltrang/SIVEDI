@@ -1249,5 +1249,231 @@ namespace SIVEDI.Datos
             };
             return storeProcedure;
         }
+
+        public StoreProcedure getZonas(string spName, int intOpcion, string strCodigoRegional, string strCodigoZona)
+        {
+            StoreProcedure storeProcedure = new StoreProcedure();
+            storeProcedure.Nombre = spName;
+            storeProcedure.Parametros = new List<SqlParameter>()
+            {
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_CCODIGO_REGIONAL",
+                    SqlDbType = System.Data.SqlDbType.VarChar,
+                    Value = strCodigoRegional
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_CZONA",
+                    SqlDbType = System.Data.SqlDbType.VarChar,
+                    Value = strCodigoZona
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NOPCION",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = intOpcion
+                }
+            };
+
+            return storeProcedure;
+        }
+        public StoreProcedure insZonas(string spName, Zonas zonas)
+        {
+            StoreProcedure storeProcedure = new StoreProcedure();
+            storeProcedure.Nombre = spName;
+            storeProcedure.Parametros = new List<SqlParameter>()
+            {
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_CCODIGO_ZONA",
+                    SqlDbType = System.Data.SqlDbType.VarChar,
+                    Value = zonas.CODIGO
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_CNOMBRE_ZONA",
+                    SqlDbType = System.Data.SqlDbType.VarChar,
+                    Value = zonas.NOMBRE
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_OESTADO",
+                    SqlDbType = System.Data.SqlDbType.Bit,
+                    Value = zonas.ESTADO
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_CCODIGO_REGIONAL",
+                    SqlDbType = System.Data.SqlDbType.VarChar,
+                    Value = zonas.CODIGO_REGIONAL
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NCODIGO_RESPONSABLE",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = zonas.CODIGO_RESPONSABLE
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NNUMERO_GRUPO",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = zonas.GRUPO_FACTURACION
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PO_NRESULT",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Direction = System.Data.ParameterDirection.Output,
+                    Value = zonas.CODIGO
+                }
+            };
+            return storeProcedure;
+        }
+
+        public StoreProcedure getSecciones(string spName, int intOpcion, string strCodigoZona, string strCodigoSeccion)
+        {
+            StoreProcedure storeProcedure = new StoreProcedure();
+            storeProcedure.Nombre = spName;
+            storeProcedure.Parametros = new List<SqlParameter>()
+            {
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_CCODIGO_ZONA",
+                    SqlDbType = System.Data.SqlDbType.VarChar,
+                    Value = strCodigoZona
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_CSECCION",
+                    SqlDbType = System.Data.SqlDbType.VarChar,
+                    Value = strCodigoSeccion
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NOPCION",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = intOpcion
+                }
+            };
+
+            return storeProcedure;
+        }
+        public StoreProcedure insSecciones(string spName, Secciones secciones)
+        {
+            StoreProcedure storeProcedure = new StoreProcedure();
+            storeProcedure.Nombre = spName;
+            storeProcedure.Parametros = new List<SqlParameter>()
+            {
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_CCODIGO_SECCION",
+                    SqlDbType = System.Data.SqlDbType.VarChar,
+                    Value = secciones.CODIGO
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_CNOMBRE_SECCION",
+                    SqlDbType = System.Data.SqlDbType.VarChar,
+                    Value = secciones.NOMBRE
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_OESTADO",
+                    SqlDbType = System.Data.SqlDbType.Bit,
+                    Value = secciones.ESTADO
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_CCODIGO_ZONA",
+                    SqlDbType = System.Data.SqlDbType.VarChar,
+                    Value = secciones.CODIGO_ZONA
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NCODIGO_RESPONSABLE",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = secciones.CODIGO_RESPONSABLE
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PO_NRESULT",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Direction = System.Data.ParameterDirection.Output,
+                    Value = secciones.CODIGO
+                }
+            };
+            return storeProcedure;
+        }
+
+        public StoreProcedure getTerritorios(string spName, int intOpcion,  string strCodigoSeccion, string strCodigoTerritorio)
+        {
+            StoreProcedure storeProcedure = new StoreProcedure();
+            storeProcedure.Nombre = spName;
+            storeProcedure.Parametros = new List<SqlParameter>()
+            {
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_CCODIGO_SECCION",
+                    SqlDbType = System.Data.SqlDbType.VarChar,
+                    Value = strCodigoSeccion
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_CTERRITORIO",
+                    SqlDbType = System.Data.SqlDbType.VarChar,
+                    Value = strCodigoTerritorio
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NOPCION",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = intOpcion
+                }
+            };
+
+            return storeProcedure;
+        }
+
+        public StoreProcedure insTerritorio(string spName, Territorios territorios)
+        {
+            StoreProcedure storeProcedure = new StoreProcedure();
+            storeProcedure.Nombre = spName;
+            storeProcedure.Parametros = new List<SqlParameter>()
+            {
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_CCODIGO_TERRITORIO",
+                    SqlDbType = System.Data.SqlDbType.VarChar,
+                    Value = territorios.CODIGO
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_CNOMBRE_TERRIROTIO",
+                    SqlDbType = System.Data.SqlDbType.VarChar,
+                    Value = territorios.NOMBRE
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_OESTADO",
+                    SqlDbType = System.Data.SqlDbType.Bit,
+                    Value = territorios.ESTADO
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_CCODIGO_SECCION",
+                    SqlDbType = System.Data.SqlDbType.VarChar,
+                    Value = territorios.CODIGO_SECCION
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PO_NRESULT",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Direction = System.Data.ParameterDirection.Output,
+                    Value = territorios.CODIGO
+                }
+            };
+            return storeProcedure;
+        }
     }
 }

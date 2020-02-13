@@ -127,13 +127,13 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="EstadoActividadTabla" nillable="true" type="tns:EstadoActividadTabla" />
-  <xs:complexType name="ArrayOfcampanasTabla">
+  <xs:complexType name="ArrayOfCampanasTabla">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="campanasTabla" nillable="true" type="tns:campanasTabla" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CampanasTabla" nillable="true" type="tns:CampanasTabla" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfcampanasTabla" nillable="true" type="tns:ArrayOfcampanasTabla" />
-  <xs:complexType name="campanasTabla">
+  <xs:element name="ArrayOfCampanasTabla" nillable="true" type="tns:ArrayOfCampanasTabla" />
+  <xs:complexType name="CampanasTabla">
     <xs:sequence>
       <xs:element minOccurs="0" name="CODIGO" type="xs:int" />
       <xs:element minOccurs="0" name="CONSECUTIVO" type="xs:int" />
@@ -144,7 +144,7 @@
       <xs:element minOccurs="0" name="NOMBRE" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="campanasTabla" nillable="true" type="tns:campanasTabla" />
+  <xs:element name="CampanasTabla" nillable="true" type="tns:CampanasTabla" />
   <xs:complexType name="ArrayOfPaisTabla">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="PaisTabla" nillable="true" type="tns:PaisTabla" />
@@ -265,4 +265,73 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="RegionalesTabla" nillable="true" type="tns:RegionalesTabla" />
+  <xs:complexType name="ArrayOfZonasTabla">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ZonasTabla" nillable="true" type="tns:ZonasTabla" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfZonasTabla" nillable="true" type="tns:ArrayOfZonasTabla" />
+  <xs:complexType name="ZonasTabla">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODIGO_REGIONAL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODIGO_RESPONSABLE" type="xs:int" />
+      <xs:element minOccurs="0" name="ESTADO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GRUPO_FACTURACION" type="xs:int" />
+      <xs:element minOccurs="0" name="NOMBRE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REGIONAL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RESPONSABLE" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ZonasTabla" nillable="true" type="tns:ZonasTabla" />
+  <xs:complexType name="ArrayOfSeccionesTabla">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SeccionesTabla" nillable="true" type="tns:SeccionesTabla" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSeccionesTabla" nillable="true" type="tns:ArrayOfSeccionesTabla" />
+  <xs:complexType name="SeccionesTabla">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODIGO_RESPONSABLE" type="xs:int" />
+      <xs:element minOccurs="0" name="CODIGO_ZONA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ESTADO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOMBRE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RESPONSABLE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ZONA" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SeccionesTabla" nillable="true" type="tns:SeccionesTabla" />
+  <xs:complexType name="SeccionFiltro">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODIGO_PAIS" type="xs:int" />
+      <xs:element minOccurs="0" name="CODIGO_REGIONAL" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SeccionFiltro" nillable="true" type="tns:SeccionFiltro" />
+  <xs:complexType name="ArrayOfTerritorioTabla">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TerritorioTabla" nillable="true" type="tns:TerritorioTabla" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTerritorioTabla" nillable="true" type="tns:ArrayOfTerritorioTabla" />
+  <xs:complexType name="TerritorioTabla">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODIGO_SECCION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ESTADO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOMBRE" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TerritorioTabla" nillable="true" type="tns:TerritorioTabla" />
+  <xs:complexType name="TerritorioFiltro">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODIGO_PAIS" type="xs:int" />
+      <xs:element minOccurs="0" name="CODIGO_REGIONAL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODIGO_ZONA" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TerritorioFiltro" nillable="true" type="tns:TerritorioFiltro" />
 </xs:schema>

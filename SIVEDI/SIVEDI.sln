@@ -1,14 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.902
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29609.76
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIVEDI", "SIVEDI.csproj", "{AE95F33C-A894-427B-BF01-7CD0FFA1C40C}"
 	ProjectSection(ProjectDependencies) = postProject
 		{20493EE2-1918-414E-80C5-7A5BA29F1554} = {20493EE2-1918-414E-80C5-7A5BA29F1554}
 	EndProjectSection
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "SIVEDI.WCFGeneral", "..\SIVEDI.WCFGeneral", "{20493EE2-1918-414E-80C5-7A5BA29F1554}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "SIVEDI.WCFGeneral", "..\SIVEDI.WCFGeneral\", "{20493EE2-1918-414E-80C5-7A5BA29F1554}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.7.2"
 		ProjectReferences = "{4c4ea4f5-024a-4b1a-85ae-756b16648891}|SIVEDI.Clases.dll;{17fd7f3c-d78a-462c-9dd4-bd79a70196fc}|SIVEDI.Datos.dll;{37aa628d-b5dd-4715-b256-c2281983d54f}|SIVEDI.Cifrado.dll;"

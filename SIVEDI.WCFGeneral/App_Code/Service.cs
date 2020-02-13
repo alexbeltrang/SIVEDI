@@ -458,6 +458,87 @@ public class Service : IService
         return codigoRegional;
     }
     #endregion
+
+    #region Zonas
+    public List<ZonasTabla> getZonas(int intOpcion, string strCodigoRegional, string strCodigoZona)
+    {
+        List<ZonasTabla> ListZonasTabla = new List<ZonasTabla>();
+        SpRequest spRequestUsuario = new SpRequest();
+        DataDB data = new DataDB("SIVEDIBDEntities");
+        StoreProcedure SP = spRequestUsuario.getZonas("SPR_GET_ZONA", intOpcion, strCodigoRegional, strCodigoZona);
+        ListZonasTabla = data.ExecuteQueryList<ZonasTabla>(SP);
+        return ListZonasTabla;
+    }
+    public int insZonas(Zonas zonas)
+    {
+        SpRequest spRequestUsuario = new SpRequest();
+        DataDB data = new DataDB("SIVEDIBDEntities");
+
+        StoreProcedure SP = spRequestUsuario.insZonas("SPR_IU_ZONA", zonas);
+        int codigoZona = data.ExecuteInsert(SP, "PO_NRESULT");
+        return codigoZona;
+    }
+    #endregion
+
+    #region Secciones
+    public List<SeccionesTabla> getSecciones(int intOpcion, string strCodigoZona, string strCodigoSeccion)
+    {
+        List<SeccionesTabla> ListSeccionesTabla = new List<SeccionesTabla>();
+        SpRequest spRequestUsuario = new SpRequest();
+        DataDB data = new DataDB("SIVEDIBDEntities");
+        StoreProcedure SP = spRequestUsuario.getSecciones("SPR_GET_SECCION", intOpcion, strCodigoZona, strCodigoSeccion);
+        ListSeccionesTabla = data.ExecuteQueryList<SeccionesTabla>(SP);
+        return ListSeccionesTabla;
+    }
+    public SeccionFiltro getSeccionFiltro(int intOpcion, string strCodigoSeccion)
+    {
+        SeccionFiltro ListSeccionFiltro = new SeccionFiltro();
+        SpRequest spRequestUsuario = new SpRequest();
+        DataDB data = new DataDB("SIVEDIBDEntities");
+        StoreProcedure SP = spRequestUsuario.getSecciones("SPR_GET_SECCION", intOpcion, string.Empty, strCodigoSeccion);
+        ListSeccionFiltro = data.ExecuteQuery<SeccionFiltro>(SP);
+        return ListSeccionFiltro;
+    }
+    public int insSecciones(Secciones secciones)
+    {
+        SpRequest spRequestUsuario = new SpRequest();
+        DataDB data = new DataDB("SIVEDIBDEntities");
+
+        StoreProcedure SP = spRequestUsuario.insSecciones("SPR_IU_SECCION", secciones);
+        int codigoSeccion = data.ExecuteInsert(SP, "PO_NRESULT");
+        return codigoSeccion;
+    }
+    #endregion
+
+    #region Territorios
+    public List<TerritorioTabla> getTerritorio(int intOpcion, string strCodigoSeccion, string strCodigoTerritorio)
+    {
+        List<TerritorioTabla> ListTerritorioTabla = new List<TerritorioTabla>();
+        SpRequest spRequestUsuario = new SpRequest();
+        DataDB data = new DataDB("SIVEDIBDEntities");
+        StoreProcedure SP = spRequestUsuario.getTerritorios("SPR_GET_TERRITORIO", intOpcion, strCodigoSeccion, strCodigoTerritorio);
+        ListTerritorioTabla = data.ExecuteQueryList<TerritorioTabla>(SP);
+        return ListTerritorioTabla;
+    }
+    public TerritorioFiltro getTerritorioFiltro(int intOpcion, string strCodigoTerrirorio)
+    {
+        TerritorioFiltro ListTerritorioFiltro = new TerritorioFiltro();
+        SpRequest spRequestUsuario = new SpRequest();
+        DataDB data = new DataDB("SIVEDIBDEntities");
+        StoreProcedure SP = spRequestUsuario.getTerritorios("SPR_GET_TERRITORIO", intOpcion, string.Empty, strCodigoTerrirorio);
+        ListTerritorioFiltro = data.ExecuteQuery<TerritorioFiltro>(SP);
+        return ListTerritorioFiltro;
+    }
+    public int insTerritorio(Territorios territorios)
+    {
+        SpRequest spRequestUsuario = new SpRequest();
+        DataDB data = new DataDB("SIVEDIBDEntities");
+
+        StoreProcedure SP = spRequestUsuario.insTerritorio("SPR_IU_TERRIRORIO", territorios);
+        int codigoTerritorio = data.ExecuteInsert(SP, "PO_NRESULT");
+        return codigoTerritorio;
+    }
+    #endregion
 }
 
 

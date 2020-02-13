@@ -242,6 +242,54 @@
   <wsdl:message name="IService_insRegionales_OutputMessage">
     <wsdl:part name="parameters" element="tns:insRegionalesResponse" />
   </wsdl:message>
+  <wsdl:message name="IService_getZonas_InputMessage">
+    <wsdl:part name="parameters" element="tns:getZonas" />
+  </wsdl:message>
+  <wsdl:message name="IService_getZonas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getZonasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_insZonas_InputMessage">
+    <wsdl:part name="parameters" element="tns:insZonas" />
+  </wsdl:message>
+  <wsdl:message name="IService_insZonas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insZonasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getSecciones_InputMessage">
+    <wsdl:part name="parameters" element="tns:getSecciones" />
+  </wsdl:message>
+  <wsdl:message name="IService_getSecciones_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getSeccionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getSeccionFiltro_InputMessage">
+    <wsdl:part name="parameters" element="tns:getSeccionFiltro" />
+  </wsdl:message>
+  <wsdl:message name="IService_getSeccionFiltro_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getSeccionFiltroResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_insSecciones_InputMessage">
+    <wsdl:part name="parameters" element="tns:insSecciones" />
+  </wsdl:message>
+  <wsdl:message name="IService_insSecciones_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insSeccionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getTerritorio_InputMessage">
+    <wsdl:part name="parameters" element="tns:getTerritorio" />
+  </wsdl:message>
+  <wsdl:message name="IService_getTerritorio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getTerritorioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getTerritorioFiltro_InputMessage">
+    <wsdl:part name="parameters" element="tns:getTerritorioFiltro" />
+  </wsdl:message>
+  <wsdl:message name="IService_getTerritorioFiltro_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getTerritorioFiltroResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_insTerritorio_InputMessage">
+    <wsdl:part name="parameters" element="tns:insTerritorio" />
+  </wsdl:message>
+  <wsdl:message name="IService_insTerritorio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insTerritorioResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService">
     <wsdl:operation name="ingresaAplicativo">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/ingresaAplicativo" message="tns:IService_ingresaAplicativo_InputMessage" />
@@ -398,6 +446,38 @@
     <wsdl:operation name="insRegionales">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/insRegionales" message="tns:IService_insRegionales_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/insRegionalesResponse" message="tns:IService_insRegionales_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getZonas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getZonas" message="tns:IService_getZonas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getZonasResponse" message="tns:IService_getZonas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insZonas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/insZonas" message="tns:IService_insZonas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/insZonasResponse" message="tns:IService_insZonas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getSecciones">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getSecciones" message="tns:IService_getSecciones_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getSeccionesResponse" message="tns:IService_getSecciones_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getSeccionFiltro">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getSeccionFiltro" message="tns:IService_getSeccionFiltro_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getSeccionFiltroResponse" message="tns:IService_getSeccionFiltro_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insSecciones">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/insSecciones" message="tns:IService_insSecciones_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/insSeccionesResponse" message="tns:IService_insSecciones_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getTerritorio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getTerritorio" message="tns:IService_getTerritorio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getTerritorioResponse" message="tns:IService_getTerritorio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getTerritorioFiltro">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getTerritorioFiltro" message="tns:IService_getTerritorioFiltro_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getTerritorioFiltroResponse" message="tns:IService_getTerritorioFiltro_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insTerritorio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/insTerritorio" message="tns:IService_insTerritorio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/insTerritorioResponse" message="tns:IService_insTerritorio_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService" type="tns:IService">
@@ -746,6 +826,78 @@
     </wsdl:operation>
     <wsdl:operation name="insRegionales">
       <soap:operation soapAction="http://tempuri.org/IService/insRegionales" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getZonas">
+      <soap:operation soapAction="http://tempuri.org/IService/getZonas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insZonas">
+      <soap:operation soapAction="http://tempuri.org/IService/insZonas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSecciones">
+      <soap:operation soapAction="http://tempuri.org/IService/getSecciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSeccionFiltro">
+      <soap:operation soapAction="http://tempuri.org/IService/getSeccionFiltro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insSecciones">
+      <soap:operation soapAction="http://tempuri.org/IService/insSecciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTerritorio">
+      <soap:operation soapAction="http://tempuri.org/IService/getTerritorio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTerritorioFiltro">
+      <soap:operation soapAction="http://tempuri.org/IService/getTerritorioFiltro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insTerritorio">
+      <soap:operation soapAction="http://tempuri.org/IService/insTerritorio" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -87,6 +87,22 @@ public interface IService
     List<RegionalesTabla> getRegionales(int intOpcion, int intCodigoRegional, int intCodigoPais);
     [OperationContract]
     int insRegionales(Regionales regionales);
+    [OperationContract]
+    List<ZonasTabla> getZonas(int intOpcion, string strCodigoRegional, string strCodigoZona);
+    [OperationContract]
+    int insZonas(Zonas zonas);
+    [OperationContract]
+    List<SeccionesTabla> getSecciones(int intOpcion, string strCodigoZona, string strCodigoSeccion);
+    [OperationContract]
+    SeccionFiltro getSeccionFiltro(int intOpcion, string strCodigoSeccion);
+    [OperationContract]
+    int insSecciones(Secciones secciones);
+    [OperationContract]
+    List<TerritorioTabla> getTerritorio(int intOpcion, string strCodigoSeccion, string strCodigoTerritorio);
+    [OperationContract]
+    TerritorioFiltro getTerritorioFiltro(int intOpcion, string strCodigoTerrirorio);
+    [OperationContract]
+    int insTerritorio(Territorios territorios);
 }
 
 

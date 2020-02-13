@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4C4EA4F5-024A-4B1A-85AE-756B16648891}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SIVEDI.Clases</RootNamespace>
+    <AssemblyName>SIVEDI.Clases</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="campanas.cs" />
+    <Compile Include="Ciudades.cs" />
+    <Compile Include="ClaseResponsable.cs" />
+    <Compile Include="clsConnection.cs" />
+    <Compile Include="clsValidar.cs" />
+    <Compile Include="Departamentos.cs" />
+    <Compile Include="EstadoActividad.cs" />
+    <Compile Include="EstadoCivil.cs" />
+    <Compile Include="formasIngreso.cs" />
+    <Compile Include="Generos.cs" />
+    <Compile Include="LoginUsuario.cs" />
+    <Compile Include="moduloHijo.cs" />
+    <Compile Include="moduloPadre.cs" />
+    <Compile Include="Pais.cs" />
+    <Compile Include="perfiles.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Regionales.cs" />
+    <Compile Include="ResponsableTerritorio.cs" />
+    <Compile Include="TABLAS\campanasTabla.cs" />
+    <Compile Include="TABLAS\CiudadesTabla.cs" />
+    <Compile Include="TABLAS\ClaseResponsableTabla.cs" />
+    <Compile Include="TABLAS\DepartamentoTabla.cs" />
+    <Compile Include="TABLAS\EstadoActividadTabla.cs" />
+    <Compile Include="TABLAS\EstadoCivilTabla.cs" />
+    <Compile Include="TABLAS\FormasIngresoTabla.cs" />
+    <Compile Include="TABLAS\GenerosTabla.cs" />
+    <Compile Include="TABLAS\PaisTabla.cs" />
+    <Compile Include="TABLAS\RegionalesTabla.cs" />
+    <Compile Include="TABLAS\ResponsableTerritorioFiltro.cs" />
+    <Compile Include="TABLAS\ResponsableTerritorioTabla.cs" />
+    <Compile Include="TABLAS\TipoClienteTabla.cs" />
+    <Compile Include="TABLAS\tipoDocumentoTabla.cs" />
+    <Compile Include="TABLAS\UnidadesMedidaTabla.cs" />
+    <Compile Include="TipoCliente.cs" />
+    <Compile Include="TipoDocumento.cs" />
+    <Compile Include="UnidadMedida.cs" />
+    <Compile Include="usuarios.cs" />
+    <Compile Include="TABLAS\usuariosTabla.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

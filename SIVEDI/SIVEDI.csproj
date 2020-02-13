@@ -1,0 +1,353 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AE95F33C-A894-427B-BF01-7CD0FFA1C40C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SIVEDI</RootNamespace>
+    <AssemblyName>SIVEDI</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Administracion\frmPerfiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administracion\frmPerfiles.Designer.cs">
+      <DependentUpon>frmPerfiles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\frmUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administracion\frmUsuarios.Designer.cs">
+      <DependentUpon>frmUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ServicioGeneral\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrincipal.Designer.cs">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Indicadores\frmMaestraEsatdosActividad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Indicadores\frmMaestraEsatdosActividad.Designer.cs">
+      <DependentUpon>frmMaestraEsatdosActividad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maestras\frmCiudades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maestras\frmCiudades.Designer.cs">
+      <DependentUpon>frmCiudades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maestras\frmDepartamentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maestras\frmDepartamentos.Designer.cs">
+      <DependentUpon>frmDepartamentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maestras\frmEstadoCivil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maestras\frmEstadoCivil.Designer.cs">
+      <DependentUpon>frmEstadoCivil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maestras\frmFormasIngreso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maestras\frmFormasIngreso.Designer.cs">
+      <DependentUpon>frmFormasIngreso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maestras\frmGeneros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maestras\frmGeneros.Designer.cs">
+      <DependentUpon>frmGeneros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maestras\frmPaises.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maestras\frmPaises.Designer.cs">
+      <DependentUpon>frmPaises.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maestras\frmTipoCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maestras\frmTipoCliente.Designer.cs">
+      <DependentUpon>frmTipoCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maestras\frmTipoDocumento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maestras\frmTipoDocumento.Designer.cs">
+      <DependentUpon>frmTipoDocumento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maestras\frmUnidadMedida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maestras\frmUnidadMedida.Designer.cs">
+      <DependentUpon>frmUnidadMedida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\frmBusquedaResponsable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\frmBusquedaResponsable.Designer.cs">
+      <DependentUpon>frmBusquedaResponsable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\frmCampanas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\frmCampanas.Designer.cs">
+      <DependentUpon>frmCampanas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\frmClaseResponsable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\frmClaseResponsable.Designer.cs">
+      <DependentUpon>frmClaseResponsable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\frmRegiones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\frmRegiones.Designer.cs">
+      <DependentUpon>frmRegiones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\frmRespTerritorio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\frmRespTerritorio.Designer.cs">
+      <DependentUpon>frmRespTerritorio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\frmSecciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\frmSecciones.Designer.cs">
+      <DependentUpon>frmSecciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\frmZonas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\frmZonas.Designer.cs">
+      <DependentUpon>frmZonas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Administracion\frmPerfiles.resx">
+      <DependentUpon>frmPerfiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administracion\frmUsuarios.resx">
+      <DependentUpon>frmUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrincipal.resx">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Indicadores\frmMaestraEsatdosActividad.resx">
+      <DependentUpon>frmMaestraEsatdosActividad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maestras\frmCiudades.resx">
+      <DependentUpon>frmCiudades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maestras\frmDepartamentos.resx">
+      <DependentUpon>frmDepartamentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maestras\frmEstadoCivil.resx">
+      <DependentUpon>frmEstadoCivil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maestras\frmFormasIngreso.resx">
+      <DependentUpon>frmFormasIngreso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maestras\frmGeneros.resx">
+      <DependentUpon>frmGeneros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maestras\frmPaises.resx">
+      <DependentUpon>frmPaises.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maestras\frmTipoCliente.resx">
+      <DependentUpon>frmTipoCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maestras\frmTipoDocumento.resx">
+      <DependentUpon>frmTipoDocumento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maestras\frmUnidadMedida.resx">
+      <DependentUpon>frmUnidadMedida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\frmBusquedaResponsable.resx">
+      <DependentUpon>frmBusquedaResponsable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\frmCampanas.resx">
+      <DependentUpon>frmCampanas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\frmClaseResponsable.resx">
+      <DependentUpon>frmClaseResponsable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\frmRegiones.resx">
+      <DependentUpon>frmRegiones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\frmRespTerritorio.resx">
+      <DependentUpon>frmRespTerritorio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\frmZonas.resx">
+      <DependentUpon>frmZonas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Connected Services\ServicioGeneral\Service.wsdl" />
+    <None Include="Connected Services\ServicioGeneral\Service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServicioGeneral\Service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServicioGeneral\Service2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServicioGeneral\Service3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\DataSources\SIVEDI.Clases.Ciudades.datasource" />
+    <None Include="Properties\DataSources\SIVEDI.Clases.Departamentos.datasource" />
+    <None Include="Properties\DataSources\SIVEDI.Clases.EstadoActividad.datasource" />
+    <None Include="Properties\DataSources\SIVEDI.Clases.LoginUsuario.datasource" />
+    <None Include="Properties\DataSources\SIVEDI.Clases.moduloHijo.datasource" />
+    <None Include="Properties\DataSources\SIVEDI.Clases.moduloPadre.datasource" />
+    <None Include="Properties\DataSources\SIVEDI.Clases.perfiles.datasource" />
+    <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.campanasTabla.datasource" />
+    <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.CiudadesTabla.datasource" />
+    <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.ClaseResponsableTabla.datasource" />
+    <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.DepartamentoTabla.datasource" />
+    <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.EstadoActividadTabla.datasource" />
+    <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.EstadoCivilTabla.datasource" />
+    <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.FormasIngresoTabla.datasource" />
+    <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.GenerosTabla.datasource" />
+    <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.PaisTabla.datasource" />
+    <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.RegionalesTabla.datasource" />
+    <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.ResponsableTerritorioFiltro.datasource" />
+    <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.ResponsableTerritorioTabla.datasource" />
+    <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.TipoClienteTabla.datasource" />
+    <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.tipoDocumentoTabla.datasource" />
+    <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.UnidadesMedidaTabla.datasource" />
+    <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.UnidasMedidaTabla.datasource" />
+    <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.usuariosTabla.datasource" />
+    <None Include="Properties\DataSources\SIVEDI.Clases.usuarios.datasource" />
+    <None Include="Properties\DataSources\SIVEDI.Clases.usuariosTabla.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SIVEDI.Clases\SIVEDI.Clases.csproj">
+      <Project>{4C4EA4F5-024A-4B1A-85AE-756B16648891}</Project>
+      <Name>SIVEDI.Clases</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ServicioGeneral\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServicioGeneral\Service.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServicioGeneral\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServicioGeneral\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServicioGeneral\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\basedatos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\basedatos1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\page_find.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\resultset_next.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

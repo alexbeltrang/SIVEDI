@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="LoginUsuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="blnCambiaPassword" type="xs:boolean" />
+      <xs:element minOccurs="0" name="blnEstado" type="xs:boolean" />
+      <xs:element minOccurs="0" name="blnResultado" type="xs:boolean" />
+      <xs:element minOccurs="0" name="intCodigoPerfil" type="xs:int" />
+      <xs:element minOccurs="0" name="intIdUsuario" type="xs:int" />
+      <xs:element minOccurs="0" name="strEmailUsuario" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strNombreUsuario" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LoginUsuario" nillable="true" type="tns:LoginUsuario" />
+  <xs:complexType name="ArrayOfmoduloPadre">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="moduloPadre" nillable="true" type="tns:moduloPadre" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfmoduloPadre" nillable="true" type="tns:ArrayOfmoduloPadre" />
+  <xs:complexType name="moduloPadre">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MOD_CDESCRIPCION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MOD_CIMAGEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MOD_CPAGINA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MOD_NID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="MOD_NPADRE" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="moduloPadre" nillable="true" type="tns:moduloPadre" />
+  <xs:complexType name="ArrayOfmoduloHijo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="moduloHijo" nillable="true" type="tns:moduloHijo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfmoduloHijo" nillable="true" type="tns:ArrayOfmoduloHijo" />
+  <xs:complexType name="moduloHijo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MOD_CDESCRIPCION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MOD_CIMAGEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MOD_CPAGINA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MOD_NID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="MOD_NPADRE" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="moduloHijo" nillable="true" type="tns:moduloHijo" />
+  <xs:complexType name="ArrayOfperfiles">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="perfiles" nillable="true" type="tns:perfiles" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfperfiles" nillable="true" type="tns:ArrayOfperfiles" />
+  <xs:complexType name="perfiles">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGO" type="xs:int" />
+      <xs:element minOccurs="0" name="ESTADO" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ESTADODESC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOMBRE" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="perfiles" nillable="true" type="tns:perfiles" />
+  <xs:complexType name="usuarios">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="APELLIDOS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODIGO" type="xs:int" />
+      <xs:element minOccurs="0" name="COD_PERFIL" type="xs:int" />
+      <xs:element minOccurs="0" name="EMAIL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ESTADO" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LOGIN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOMBRES" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PASSWORD" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="usuarios" nillable="true" type="tns:usuarios" />
+  <xs:complexType name="TipoDocumento">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGO" type="xs:int" />
+      <xs:element minOccurs="0" name="ESTADO" type="xs:boolean" />
+      <xs:element minOccurs="0" name="NOMBRE" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TipoDocumento" nillable="true" type="tns:TipoDocumento" />
+  <xs:complexType name="TipoCliente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="COBRA_FLETE" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CODIGO" type="xs:int" />
+      <xs:element minOccurs="0" name="ESTADO" type="xs:boolean" />
+      <xs:element minOccurs="0" name="NOMBRE" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TipoCliente" nillable="true" type="tns:TipoCliente" />
+  <xs:complexType name="UnidadMedida">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ABREVIATURA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODIGO" type="xs:int" />
+      <xs:element minOccurs="0" name="ESTADO" type="xs:boolean" />
+      <xs:element minOccurs="0" name="NOMBRE" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UnidadMedida" nillable="true" type="tns:UnidadMedida" />
+  <xs:complexType name="Generos">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGO" type="xs:int" />
+      <xs:element minOccurs="0" name="ESTADO" type="xs:boolean" />
+      <xs:element minOccurs="0" name="NOMBRE" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Generos" nillable="true" type="tns:Generos" />
+  <xs:complexType name="formasIngreso">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGO" type="xs:int" />
+      <xs:element minOccurs="0" name="ESTADO" type="xs:boolean" />
+      <xs:element minOccurs="0" name="NOMBRE" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="formasIngreso" nillable="true" type="tns:formasIngreso" />
+  <xs:complexType name="EstadoCivil">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGO" type="xs:int" />
+      <xs:element minOccurs="0" name="ESTADO" type="xs:boolean" />
+      <xs:element minOccurs="0" name="NOMBRE" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EstadoCivil" nillable="true" type="tns:EstadoCivil" />
+  <xs:complexType name="EstadoActividad">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ESA_CDESCRIPCION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ESA_NCAMPANA_CONTROLA" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ESA_NESTADO_PASA_CONTROL_CAMPANA" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ESA_NESTADO_PASA_CONTROL_PEDIDO" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ESA_NESTADO_SIGUIENTE_CON_PED" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ESA_NESTADO_SIGUIENTE_SIN_PED" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ESA_NID" type="xs:int" />
+      <xs:element minOccurs="0" name="ESA_NNUMERO_PEDIDO_CONTROLA" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ESA_OESTADO" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ESA_OES_ESTADO_INACTIVIDAD" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ESA_OES_ESTADO_VINCULACION" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ESA_OINGRESA_VINCULACION" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EstadoActividad" nillable="true" type="tns:EstadoActividad" />
+  <xs:complexType name="campanas">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGO" type="xs:int" />
+      <xs:element minOccurs="0" name="CONSECUTIVO" type="xs:int" />
+      <xs:element minOccurs="0" name="ESTADO" type="xs:boolean" />
+      <xs:element minOccurs="0" name="FECHA_FINAL" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FECHA_INICIAL" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NIVEL" type="xs:int" />
+      <xs:element minOccurs="0" name="NOMBRE" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="campanas" nillable="true" type="tns:campanas" />
+  <xs:complexType name="Pais">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGO" type="xs:int" />
+      <xs:element minOccurs="0" name="CODIGO_UNIVERSAL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ESTADO" type="xs:boolean" />
+      <xs:element minOccurs="0" name="NOMBRE" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Pais" nillable="true" type="tns:Pais" />
+  <xs:complexType name="Departamentos">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGO" type="xs:int" />
+      <xs:element minOccurs="0" name="CODIGO_DANE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODIGO_PAIS" type="xs:int" />
+      <xs:element minOccurs="0" name="ESTADO" type="xs:boolean" />
+      <xs:element minOccurs="0" name="NOMBRE" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Departamentos" nillable="true" type="tns:Departamentos" />
+  <xs:complexType name="Ciudades">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGO" type="xs:int" />
+      <xs:element minOccurs="0" name="CODIGO_DANE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODIGO_DEPARTAMENTO" type="xs:int" />
+      <xs:element minOccurs="0" name="CODIGO_PAIS" type="xs:int" />
+      <xs:element minOccurs="0" name="ESTADO" type="xs:boolean" />
+      <xs:element minOccurs="0" name="NOMBRE" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Ciudades" nillable="true" type="tns:Ciudades" />
+  <xs:complexType name="ClaseResponsable">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGO" type="xs:int" />
+      <xs:element minOccurs="0" name="ESTADO" type="xs:boolean" />
+      <xs:element minOccurs="0" name="NOMBRE" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ClaseResponsable" nillable="true" type="tns:ClaseResponsable" />
+  <xs:complexType name="ResponsableTerritorio">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BARRIO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODIGO" type="xs:int" />
+      <xs:element minOccurs="0" name="COD_CIU" type="xs:int" />
+      <xs:element minOccurs="0" name="COD_CLR" type="xs:int" />
+      <xs:element minOccurs="0" name="DIRECCION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EMAIL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ESTADO" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IDENTIFICACION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOMBRE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOMBRE_PILA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TELEFONO_CELULAR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TELEFONO_FIJO" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResponsableTerritorio" nillable="true" type="tns:ResponsableTerritorio" />
+  <xs:complexType name="Regionales">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODIGO_PAIS" type="xs:int" />
+      <xs:element minOccurs="0" name="CODIGO_RESPONSABLE" type="xs:int" />
+      <xs:element minOccurs="0" name="ESTADO" type="xs:boolean" />
+      <xs:element minOccurs="0" name="GRUPO_FACTURACION" type="xs:int" />
+      <xs:element minOccurs="0" name="NOMBRE" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Regionales" nillable="true" type="tns:Regionales" />
+</xs:schema>

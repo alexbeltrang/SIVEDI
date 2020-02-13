@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfusuariosTabla">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="usuariosTabla" nillable="true" type="tns:usuariosTabla" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfusuariosTabla" nillable="true" type="tns:ArrayOfusuariosTabla" />
+  <xs:complexType name="usuariosTabla">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="APELLIDOS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODIGO" type="xs:int" />
+      <xs:element minOccurs="0" name="COD_PERFIL" type="xs:int" />
+      <xs:element minOccurs="0" name="EMAIL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ESTADODESC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LOGIN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOMBRES" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PASSWORD" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="usuariosTabla" nillable="true" type="tns:usuariosTabla" />
+  <xs:complexType name="ArrayOftipoDocumentoTabla">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tipoDocumentoTabla" nillable="true" type="tns:tipoDocumentoTabla" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftipoDocumentoTabla" nillable="true" type="tns:ArrayOftipoDocumentoTabla" />
+  <xs:complexType name="tipoDocumentoTabla">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGO" type="xs:int" />
+      <xs:element minOccurs="0" name="ESTADODESC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOMBRE" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tipoDocumentoTabla" nillable="true" type="tns:tipoDocumentoTabla" />
+  <xs:complexType name="ArrayOfTipoClienteTabla">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TipoClienteTabla" nillable="true" type="tns:TipoClienteTabla" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTipoClienteTabla" nillable="true" type="tns:ArrayOfTipoClienteTabla" />
+  <xs:complexType name="TipoClienteTabla">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="COBRA_FLETE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODIGO" type="xs:int" />
+      <xs:element minOccurs="0" name="ESTADO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOMBRE" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TipoClienteTabla" nillable="true" type="tns:TipoClienteTabla" />
+  <xs:complexType name="ArrayOfUnidadesMedidaTabla">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UnidadesMedidaTabla" nillable="true" type="tns:UnidadesMedidaTabla" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUnidadesMedidaTabla" nillable="true" type="tns:ArrayOfUnidadesMedidaTabla" />
+  <xs:complexType name="UnidadesMedidaTabla">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ABREVIATURA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODIGO" type="xs:int" />
+      <xs:element minOccurs="0" name="ESTADO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOMBRE" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UnidadesMedidaTabla" nillable="true" type="tns:UnidadesMedidaTabla" />
+  <xs:complexType name="ArrayOfGenerosTabla">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GenerosTabla" nillable="true" type="tns:GenerosTabla" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGenerosTabla" nillable="true" type="tns:ArrayOfGenerosTabla" />
+  <xs:complexType name="GenerosTabla">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGO" type="xs:int" />
+      <xs:element minOccurs="0" name="ESTADO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOMBRE" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GenerosTabla" nillable="true" type="tns:GenerosTabla" />
+  <xs:complexType name="ArrayOfFormasIngresoTabla">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FormasIngresoTabla" nillable="true" type="tns:FormasIngresoTabla" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFormasIngresoTabla" nillable="true" type="tns:ArrayOfFormasIngresoTabla" />
+  <xs:complexType name="FormasIngresoTabla">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGO" type="xs:int" />
+      <xs:element minOccurs="0" name="ESTADO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOMBRE" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FormasIngresoTabla" nillable="true" type="tns:FormasIngresoTabla" />
+  <xs:complexType name="ArrayOfEstadoCivilTabla">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EstadoCivilTabla" nillable="true" type="tns:EstadoCivilTabla" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEstadoCivilTabla" nillable="true" type="tns:ArrayOfEstadoCivilTabla" />
+  <xs:complexType name="EstadoCivilTabla">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGO" type="xs:int" />
+      <xs:element minOccurs="0" name="ESTADO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOMBRE" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EstadoCivilTabla" nillable="true" type="tns:EstadoCivilTabla" />
+  <xs:complexType name="ArrayOfEstadoActividadTabla">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EstadoActividadTabla" nillable="true" type="tns:EstadoActividadTabla" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEstadoActividadTabla" nillable="true" type="tns:ArrayOfEstadoActividadTabla" />
+  <xs:complexType name="EstadoActividadTabla">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGO" type="xs:int" />
+      <xs:element minOccurs="0" name="CTRL_CAMP" type="xs:int" />
+      <xs:element minOccurs="0" name="CTRL_PEDIDO" type="xs:int" />
+      <xs:element minOccurs="0" name="CTRL_SUPERA_CAMPAÑA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ESTADO_CON_PEDIDO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ESTADO_NUMERO_PEDIDO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ESTADO_SIN_PEDIDO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ES_INAC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ES_VINC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ING_VINC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOMBRE" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EstadoActividadTabla" nillable="true" type="tns:EstadoActividadTabla" />
+  <xs:complexType name="ArrayOfcampanasTabla">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="campanasTabla" nillable="true" type="tns:campanasTabla" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfcampanasTabla" nillable="true" type="tns:ArrayOfcampanasTabla" />
+  <xs:complexType name="campanasTabla">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGO" type="xs:int" />
+      <xs:element minOccurs="0" name="CONSECUTIVO" type="xs:int" />
+      <xs:element minOccurs="0" name="ESTADO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FECHA_FINAL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FECHA_INICIAL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NIVEL" type="xs:int" />
+      <xs:element minOccurs="0" name="NOMBRE" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="campanasTabla" nillable="true" type="tns:campanasTabla" />
+  <xs:complexType name="ArrayOfPaisTabla">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PaisTabla" nillable="true" type="tns:PaisTabla" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPaisTabla" nillable="true" type="tns:ArrayOfPaisTabla" />
+  <xs:complexType name="PaisTabla">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGO" type="xs:int" />
+      <xs:element minOccurs="0" name="CODIGO_UNIVERSAL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ESTADO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOMBRE" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PaisTabla" nillable="true" type="tns:PaisTabla" />
+  <xs:complexType name="ArrayOfDepartamentoTabla">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DepartamentoTabla" nillable="true" type="tns:DepartamentoTabla" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDepartamentoTabla" nillable="true" type="tns:ArrayOfDepartamentoTabla" />
+  <xs:complexType name="DepartamentoTabla">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGO" type="xs:int" />
+      <xs:element minOccurs="0" name="CODIGO_DANE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ESTADO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOMBRE" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DepartamentoTabla" nillable="true" type="tns:DepartamentoTabla" />
+  <xs:complexType name="ArrayOfCiudadesTabla">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CiudadesTabla" nillable="true" type="tns:CiudadesTabla" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCiudadesTabla" nillable="true" type="tns:ArrayOfCiudadesTabla" />
+  <xs:complexType name="CiudadesTabla">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGO" type="xs:int" />
+      <xs:element minOccurs="0" name="CODIGO_DANE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ESTADO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOMBRE" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CiudadesTabla" nillable="true" type="tns:CiudadesTabla" />
+  <xs:complexType name="ArrayOfClaseResponsableTabla">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ClaseResponsableTabla" nillable="true" type="tns:ClaseResponsableTabla" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfClaseResponsableTabla" nillable="true" type="tns:ArrayOfClaseResponsableTabla" />
+  <xs:complexType name="ClaseResponsableTabla">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGO" type="xs:int" />
+      <xs:element minOccurs="0" name="ESTADO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOMBRE" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ClaseResponsableTabla" nillable="true" type="tns:ClaseResponsableTabla" />
+  <xs:complexType name="ArrayOfResponsableTerritorioTabla">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ResponsableTerritorioTabla" nillable="true" type="tns:ResponsableTerritorioTabla" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfResponsableTerritorioTabla" nillable="true" type="tns:ArrayOfResponsableTerritorioTabla" />
+  <xs:complexType name="ResponsableTerritorioTabla">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BARRIO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CIUDAD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CLASE_RESPONSABLE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODIGO" type="xs:int" />
+      <xs:element minOccurs="0" name="COD_CIU" type="xs:int" />
+      <xs:element minOccurs="0" name="COD_CLR" type="xs:int" />
+      <xs:element minOccurs="0" name="COD_DEP" type="xs:int" />
+      <xs:element minOccurs="0" name="COD_PAI" type="xs:int" />
+      <xs:element minOccurs="0" name="DEPTO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DIRECCION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EMAIL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ESTADO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IDENTIFICACION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOMBRE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOMBRE_PILA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TELEFONO_CELULAR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TELEFONO_FIJO" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResponsableTerritorioTabla" nillable="true" type="tns:ResponsableTerritorioTabla" />
+  <xs:complexType name="ArrayOfResponsableTerritorioFiltro">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ResponsableTerritorioFiltro" nillable="true" type="tns:ResponsableTerritorioFiltro" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfResponsableTerritorioFiltro" nillable="true" type="tns:ArrayOfResponsableTerritorioFiltro" />
+  <xs:complexType name="ResponsableTerritorioFiltro">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGO" type="xs:int" />
+      <xs:element minOccurs="0" name="IDENTIFICACION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOMBRE" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResponsableTerritorioFiltro" nillable="true" type="tns:ResponsableTerritorioFiltro" />
+  <xs:complexType name="ArrayOfRegionalesTabla">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RegionalesTabla" nillable="true" type="tns:RegionalesTabla" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRegionalesTabla" nillable="true" type="tns:ArrayOfRegionalesTabla" />
+  <xs:complexType name="RegionalesTabla">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODIGO_PAIS" type="xs:int" />
+      <xs:element minOccurs="0" name="CODIGO_RESPONSABLE" type="xs:int" />
+      <xs:element minOccurs="0" name="ESTADO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GRUPO_FACTURACION" type="xs:int" />
+      <xs:element minOccurs="0" name="NOMBRE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PAIS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RESPONSABLE" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RegionalesTabla" nillable="true" type="tns:RegionalesTabla" />
+</xs:schema>

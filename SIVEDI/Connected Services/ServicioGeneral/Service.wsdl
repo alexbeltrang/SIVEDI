@@ -1,0 +1,762 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:65358/Service.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:65358/Service.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:65358/Service.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" />
+      <xsd:import schemaLocation="http://localhost:65358/Service.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService_ingresaAplicativo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ingresaAplicativo" />
+  </wsdl:message>
+  <wsdl:message name="IService_ingresaAplicativo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ingresaAplicativoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getModuloPadre_InputMessage">
+    <wsdl:part name="parameters" element="tns:getModuloPadre" />
+  </wsdl:message>
+  <wsdl:message name="IService_getModuloPadre_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getModuloPadreResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getModuloHijo_InputMessage">
+    <wsdl:part name="parameters" element="tns:getModuloHijo" />
+  </wsdl:message>
+  <wsdl:message name="IService_getModuloHijo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getModuloHijoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getPerfiles_InputMessage">
+    <wsdl:part name="parameters" element="tns:getPerfiles" />
+  </wsdl:message>
+  <wsdl:message name="IService_getPerfiles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getPerfilesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_insPerfiles_InputMessage">
+    <wsdl:part name="parameters" element="tns:insPerfiles" />
+  </wsdl:message>
+  <wsdl:message name="IService_insPerfiles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insPerfilesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getUsuarios_InputMessage">
+    <wsdl:part name="parameters" element="tns:getUsuarios" />
+  </wsdl:message>
+  <wsdl:message name="IService_getUsuarios_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getUsuariosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_insUsuarios_InputMessage">
+    <wsdl:part name="parameters" element="tns:insUsuarios" />
+  </wsdl:message>
+  <wsdl:message name="IService_insUsuarios_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insUsuariosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getTiposDocumento_InputMessage">
+    <wsdl:part name="parameters" element="tns:getTiposDocumento" />
+  </wsdl:message>
+  <wsdl:message name="IService_getTiposDocumento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getTiposDocumentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_insTipoDocumento_InputMessage">
+    <wsdl:part name="parameters" element="tns:insTipoDocumento" />
+  </wsdl:message>
+  <wsdl:message name="IService_insTipoDocumento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insTipoDocumentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getTipoCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:getTipoCliente" />
+  </wsdl:message>
+  <wsdl:message name="IService_getTipoCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getTipoClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_insTipoCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:insTipoCliente" />
+  </wsdl:message>
+  <wsdl:message name="IService_insTipoCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insTipoClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getUnidadMedida_InputMessage">
+    <wsdl:part name="parameters" element="tns:getUnidadMedida" />
+  </wsdl:message>
+  <wsdl:message name="IService_getUnidadMedida_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getUnidadMedidaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_insUnidadMedida_InputMessage">
+    <wsdl:part name="parameters" element="tns:insUnidadMedida" />
+  </wsdl:message>
+  <wsdl:message name="IService_insUnidadMedida_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insUnidadMedidaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetGeneros_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGeneros" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetGeneros_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGenerosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_insGeneros_InputMessage">
+    <wsdl:part name="parameters" element="tns:insGeneros" />
+  </wsdl:message>
+  <wsdl:message name="IService_insGeneros_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insGenerosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getformasIngreso_InputMessage">
+    <wsdl:part name="parameters" element="tns:getformasIngreso" />
+  </wsdl:message>
+  <wsdl:message name="IService_getformasIngreso_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getformasIngresoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_insFormasIngreso_InputMessage">
+    <wsdl:part name="parameters" element="tns:insFormasIngreso" />
+  </wsdl:message>
+  <wsdl:message name="IService_insFormasIngreso_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insFormasIngresoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getEstadoCivil_InputMessage">
+    <wsdl:part name="parameters" element="tns:getEstadoCivil" />
+  </wsdl:message>
+  <wsdl:message name="IService_getEstadoCivil_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getEstadoCivilResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_insEstadoCivil_InputMessage">
+    <wsdl:part name="parameters" element="tns:insEstadoCivil" />
+  </wsdl:message>
+  <wsdl:message name="IService_insEstadoCivil_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insEstadoCivilResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getEstadoActividad_InputMessage">
+    <wsdl:part name="parameters" element="tns:getEstadoActividad" />
+  </wsdl:message>
+  <wsdl:message name="IService_getEstadoActividad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getEstadoActividadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getEstadoActividadCamposTabla_InputMessage">
+    <wsdl:part name="parameters" element="tns:getEstadoActividadCamposTabla" />
+  </wsdl:message>
+  <wsdl:message name="IService_getEstadoActividadCamposTabla_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getEstadoActividadCamposTablaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_insEstadoActividad_InputMessage">
+    <wsdl:part name="parameters" element="tns:insEstadoActividad" />
+  </wsdl:message>
+  <wsdl:message name="IService_insEstadoActividad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insEstadoActividadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getCampanas_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCampanas" />
+  </wsdl:message>
+  <wsdl:message name="IService_getCampanas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getCampanasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_insCampanas_InputMessage">
+    <wsdl:part name="parameters" element="tns:insCampanas" />
+  </wsdl:message>
+  <wsdl:message name="IService_insCampanas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insCampanasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getPaises_InputMessage">
+    <wsdl:part name="parameters" element="tns:getPaises" />
+  </wsdl:message>
+  <wsdl:message name="IService_getPaises_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getPaisesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_insPaises_InputMessage">
+    <wsdl:part name="parameters" element="tns:insPaises" />
+  </wsdl:message>
+  <wsdl:message name="IService_insPaises_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insPaisesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getDepartamentos_InputMessage">
+    <wsdl:part name="parameters" element="tns:getDepartamentos" />
+  </wsdl:message>
+  <wsdl:message name="IService_getDepartamentos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getDepartamentosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getDepartamentoTabla_InputMessage">
+    <wsdl:part name="parameters" element="tns:getDepartamentoTabla" />
+  </wsdl:message>
+  <wsdl:message name="IService_getDepartamentoTabla_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getDepartamentoTablaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_insDepartamento_InputMessage">
+    <wsdl:part name="parameters" element="tns:insDepartamento" />
+  </wsdl:message>
+  <wsdl:message name="IService_insDepartamento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insDepartamentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getCiudades_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCiudades" />
+  </wsdl:message>
+  <wsdl:message name="IService_getCiudades_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getCiudadesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getCiudadesTabla_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCiudadesTabla" />
+  </wsdl:message>
+  <wsdl:message name="IService_getCiudadesTabla_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getCiudadesTablaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_insCiudades_InputMessage">
+    <wsdl:part name="parameters" element="tns:insCiudades" />
+  </wsdl:message>
+  <wsdl:message name="IService_insCiudades_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insCiudadesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getClaseResponsable_InputMessage">
+    <wsdl:part name="parameters" element="tns:getClaseResponsable" />
+  </wsdl:message>
+  <wsdl:message name="IService_getClaseResponsable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getClaseResponsableResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_insClaseResponsable_InputMessage">
+    <wsdl:part name="parameters" element="tns:insClaseResponsable" />
+  </wsdl:message>
+  <wsdl:message name="IService_insClaseResponsable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insClaseResponsableResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getResponsableTerritorio_InputMessage">
+    <wsdl:part name="parameters" element="tns:getResponsableTerritorio" />
+  </wsdl:message>
+  <wsdl:message name="IService_getResponsableTerritorio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getResponsableTerritorioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_insResponsableTerritorio_InputMessage">
+    <wsdl:part name="parameters" element="tns:insResponsableTerritorio" />
+  </wsdl:message>
+  <wsdl:message name="IService_insResponsableTerritorio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insResponsableTerritorioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getResponsableFiltro_InputMessage">
+    <wsdl:part name="parameters" element="tns:getResponsableFiltro" />
+  </wsdl:message>
+  <wsdl:message name="IService_getResponsableFiltro_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getResponsableFiltroResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getRegionales_InputMessage">
+    <wsdl:part name="parameters" element="tns:getRegionales" />
+  </wsdl:message>
+  <wsdl:message name="IService_getRegionales_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getRegionalesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_insRegionales_InputMessage">
+    <wsdl:part name="parameters" element="tns:insRegionales" />
+  </wsdl:message>
+  <wsdl:message name="IService_insRegionales_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insRegionalesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService">
+    <wsdl:operation name="ingresaAplicativo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ingresaAplicativo" message="tns:IService_ingresaAplicativo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ingresaAplicativoResponse" message="tns:IService_ingresaAplicativo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getModuloPadre">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getModuloPadre" message="tns:IService_getModuloPadre_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getModuloPadreResponse" message="tns:IService_getModuloPadre_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getModuloHijo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getModuloHijo" message="tns:IService_getModuloHijo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getModuloHijoResponse" message="tns:IService_getModuloHijo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getPerfiles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getPerfiles" message="tns:IService_getPerfiles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getPerfilesResponse" message="tns:IService_getPerfiles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insPerfiles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/insPerfiles" message="tns:IService_insPerfiles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/insPerfilesResponse" message="tns:IService_insPerfiles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getUsuarios">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getUsuarios" message="tns:IService_getUsuarios_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getUsuariosResponse" message="tns:IService_getUsuarios_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insUsuarios">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/insUsuarios" message="tns:IService_insUsuarios_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/insUsuariosResponse" message="tns:IService_insUsuarios_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getTiposDocumento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getTiposDocumento" message="tns:IService_getTiposDocumento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getTiposDocumentoResponse" message="tns:IService_getTiposDocumento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insTipoDocumento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/insTipoDocumento" message="tns:IService_insTipoDocumento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/insTipoDocumentoResponse" message="tns:IService_insTipoDocumento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getTipoCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getTipoCliente" message="tns:IService_getTipoCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getTipoClienteResponse" message="tns:IService_getTipoCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insTipoCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/insTipoCliente" message="tns:IService_insTipoCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/insTipoClienteResponse" message="tns:IService_insTipoCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getUnidadMedida">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getUnidadMedida" message="tns:IService_getUnidadMedida_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getUnidadMedidaResponse" message="tns:IService_getUnidadMedida_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insUnidadMedida">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/insUnidadMedida" message="tns:IService_insUnidadMedida_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/insUnidadMedidaResponse" message="tns:IService_insUnidadMedida_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGeneros">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetGeneros" message="tns:IService_GetGeneros_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetGenerosResponse" message="tns:IService_GetGeneros_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insGeneros">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/insGeneros" message="tns:IService_insGeneros_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/insGenerosResponse" message="tns:IService_insGeneros_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getformasIngreso">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getformasIngreso" message="tns:IService_getformasIngreso_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getformasIngresoResponse" message="tns:IService_getformasIngreso_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insFormasIngreso">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/insFormasIngreso" message="tns:IService_insFormasIngreso_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/insFormasIngresoResponse" message="tns:IService_insFormasIngreso_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getEstadoCivil">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getEstadoCivil" message="tns:IService_getEstadoCivil_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getEstadoCivilResponse" message="tns:IService_getEstadoCivil_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insEstadoCivil">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/insEstadoCivil" message="tns:IService_insEstadoCivil_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/insEstadoCivilResponse" message="tns:IService_insEstadoCivil_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getEstadoActividad">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getEstadoActividad" message="tns:IService_getEstadoActividad_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getEstadoActividadResponse" message="tns:IService_getEstadoActividad_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getEstadoActividadCamposTabla">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getEstadoActividadCamposTabla" message="tns:IService_getEstadoActividadCamposTabla_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getEstadoActividadCamposTablaResponse" message="tns:IService_getEstadoActividadCamposTabla_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insEstadoActividad">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/insEstadoActividad" message="tns:IService_insEstadoActividad_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/insEstadoActividadResponse" message="tns:IService_insEstadoActividad_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getCampanas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getCampanas" message="tns:IService_getCampanas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getCampanasResponse" message="tns:IService_getCampanas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insCampanas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/insCampanas" message="tns:IService_insCampanas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/insCampanasResponse" message="tns:IService_insCampanas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getPaises">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getPaises" message="tns:IService_getPaises_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getPaisesResponse" message="tns:IService_getPaises_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insPaises">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/insPaises" message="tns:IService_insPaises_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/insPaisesResponse" message="tns:IService_insPaises_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getDepartamentos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getDepartamentos" message="tns:IService_getDepartamentos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getDepartamentosResponse" message="tns:IService_getDepartamentos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getDepartamentoTabla">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getDepartamentoTabla" message="tns:IService_getDepartamentoTabla_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getDepartamentoTablaResponse" message="tns:IService_getDepartamentoTabla_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insDepartamento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/insDepartamento" message="tns:IService_insDepartamento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/insDepartamentoResponse" message="tns:IService_insDepartamento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getCiudades">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getCiudades" message="tns:IService_getCiudades_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getCiudadesResponse" message="tns:IService_getCiudades_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getCiudadesTabla">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getCiudadesTabla" message="tns:IService_getCiudadesTabla_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getCiudadesTablaResponse" message="tns:IService_getCiudadesTabla_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insCiudades">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/insCiudades" message="tns:IService_insCiudades_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/insCiudadesResponse" message="tns:IService_insCiudades_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getClaseResponsable">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getClaseResponsable" message="tns:IService_getClaseResponsable_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getClaseResponsableResponse" message="tns:IService_getClaseResponsable_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insClaseResponsable">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/insClaseResponsable" message="tns:IService_insClaseResponsable_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/insClaseResponsableResponse" message="tns:IService_insClaseResponsable_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getResponsableTerritorio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getResponsableTerritorio" message="tns:IService_getResponsableTerritorio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getResponsableTerritorioResponse" message="tns:IService_getResponsableTerritorio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insResponsableTerritorio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/insResponsableTerritorio" message="tns:IService_insResponsableTerritorio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/insResponsableTerritorioResponse" message="tns:IService_insResponsableTerritorio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getResponsableFiltro">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getResponsableFiltro" message="tns:IService_getResponsableFiltro_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getResponsableFiltroResponse" message="tns:IService_getResponsableFiltro_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getRegionales">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getRegionales" message="tns:IService_getRegionales_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getRegionalesResponse" message="tns:IService_getRegionales_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insRegionales">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/insRegionales" message="tns:IService_insRegionales_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/insRegionalesResponse" message="tns:IService_insRegionales_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService" type="tns:IService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ingresaAplicativo">
+      <soap:operation soapAction="http://tempuri.org/IService/ingresaAplicativo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getModuloPadre">
+      <soap:operation soapAction="http://tempuri.org/IService/getModuloPadre" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getModuloHijo">
+      <soap:operation soapAction="http://tempuri.org/IService/getModuloHijo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPerfiles">
+      <soap:operation soapAction="http://tempuri.org/IService/getPerfiles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insPerfiles">
+      <soap:operation soapAction="http://tempuri.org/IService/insPerfiles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUsuarios">
+      <soap:operation soapAction="http://tempuri.org/IService/getUsuarios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insUsuarios">
+      <soap:operation soapAction="http://tempuri.org/IService/insUsuarios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTiposDocumento">
+      <soap:operation soapAction="http://tempuri.org/IService/getTiposDocumento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insTipoDocumento">
+      <soap:operation soapAction="http://tempuri.org/IService/insTipoDocumento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTipoCliente">
+      <soap:operation soapAction="http://tempuri.org/IService/getTipoCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insTipoCliente">
+      <soap:operation soapAction="http://tempuri.org/IService/insTipoCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUnidadMedida">
+      <soap:operation soapAction="http://tempuri.org/IService/getUnidadMedida" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insUnidadMedida">
+      <soap:operation soapAction="http://tempuri.org/IService/insUnidadMedida" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGeneros">
+      <soap:operation soapAction="http://tempuri.org/IService/GetGeneros" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insGeneros">
+      <soap:operation soapAction="http://tempuri.org/IService/insGeneros" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getformasIngreso">
+      <soap:operation soapAction="http://tempuri.org/IService/getformasIngreso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insFormasIngreso">
+      <soap:operation soapAction="http://tempuri.org/IService/insFormasIngreso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEstadoCivil">
+      <soap:operation soapAction="http://tempuri.org/IService/getEstadoCivil" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insEstadoCivil">
+      <soap:operation soapAction="http://tempuri.org/IService/insEstadoCivil" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEstadoActividad">
+      <soap:operation soapAction="http://tempuri.org/IService/getEstadoActividad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEstadoActividadCamposTabla">
+      <soap:operation soapAction="http://tempuri.org/IService/getEstadoActividadCamposTabla" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insEstadoActividad">
+      <soap:operation soapAction="http://tempuri.org/IService/insEstadoActividad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCampanas">
+      <soap:operation soapAction="http://tempuri.org/IService/getCampanas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insCampanas">
+      <soap:operation soapAction="http://tempuri.org/IService/insCampanas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPaises">
+      <soap:operation soapAction="http://tempuri.org/IService/getPaises" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insPaises">
+      <soap:operation soapAction="http://tempuri.org/IService/insPaises" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDepartamentos">
+      <soap:operation soapAction="http://tempuri.org/IService/getDepartamentos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDepartamentoTabla">
+      <soap:operation soapAction="http://tempuri.org/IService/getDepartamentoTabla" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insDepartamento">
+      <soap:operation soapAction="http://tempuri.org/IService/insDepartamento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCiudades">
+      <soap:operation soapAction="http://tempuri.org/IService/getCiudades" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCiudadesTabla">
+      <soap:operation soapAction="http://tempuri.org/IService/getCiudadesTabla" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insCiudades">
+      <soap:operation soapAction="http://tempuri.org/IService/insCiudades" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getClaseResponsable">
+      <soap:operation soapAction="http://tempuri.org/IService/getClaseResponsable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insClaseResponsable">
+      <soap:operation soapAction="http://tempuri.org/IService/insClaseResponsable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getResponsableTerritorio">
+      <soap:operation soapAction="http://tempuri.org/IService/getResponsableTerritorio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insResponsableTerritorio">
+      <soap:operation soapAction="http://tempuri.org/IService/insResponsableTerritorio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getResponsableFiltro">
+      <soap:operation soapAction="http://tempuri.org/IService/getResponsableFiltro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRegionales">
+      <soap:operation soapAction="http://tempuri.org/IService/getRegionales" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insRegionales">
+      <soap:operation soapAction="http://tempuri.org/IService/insRegionales" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="BasicHttpBinding_IService" binding="tns:BasicHttpBinding_IService">
+      <soap:address location="http://localhost:65358/Service.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

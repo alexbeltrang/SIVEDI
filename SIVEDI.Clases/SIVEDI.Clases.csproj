@@ -63,6 +63,7 @@
     <Compile Include="TABLAS\campanasTabla.cs" />
     <Compile Include="TABLAS\CiudadesTabla.cs" />
     <Compile Include="TABLAS\ClaseResponsableTabla.cs" />
+    <Compile Include="TABLAS\ClienteConsultaTabla.cs" />
     <Compile Include="TABLAS\DepartamentoTabla.cs" />
     <Compile Include="TABLAS\EstadoActividadTabla.cs" />
     <Compile Include="TABLAS\EstadoCivilTabla.cs" />

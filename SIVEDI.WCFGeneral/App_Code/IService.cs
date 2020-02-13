@@ -103,6 +103,8 @@ public interface IService
     TerritorioFiltro getTerritorioFiltro(int intOpcion, string strCodigoTerrirorio);
     [OperationContract]
     int insTerritorio(Territorios territorios);
+    [OperationContract]
+    ClienteConsultaTabla getConsultaCliente(string strIdentificacion);
 }
 
 

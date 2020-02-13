@@ -153,13 +153,13 @@ namespace SIVEDI.Mantenimiento
                 cboZona.Focus();
                 return false;
             }
-            else if (txtCodigoTerritorio.Text == "" | txtCodigoTerritorio.Text == null/* TODO Change to default(_) if this is not a reference type */ )
+            else if (txtCodigoTerritorio.Text == "" | txtCodigoTerritorio.Text == null )
             {
                 MessageBox.Show("Digite el código del Territorio", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 txtCodigoTerritorio.Focus();
                 return false;
             }
-            else if (txtNombreTerritorio.Text == "" | txtNombreTerritorio.Text == null/* TODO Change to default(_) if this is not a reference type */ )
+            else if (txtNombreTerritorio.Text == "" | txtNombreTerritorio.Text == null )
             {
                 MessageBox.Show("Digite el nombre del Territorio", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 txtNombreTerritorio.Focus();

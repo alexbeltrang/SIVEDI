@@ -535,8 +535,9 @@
             // ClientesToolStripMenuItem
             // 
             this.ClientesToolStripMenuItem.Name = "ClientesToolStripMenuItem";
-            this.ClientesToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.ClientesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.ClientesToolStripMenuItem.Text = "C&lientes";
+            this.ClientesToolStripMenuItem.Click += new System.EventHandler(this.ClientesToolStripMenuItem_Click);
             // 
             // IndicadoresToolStripMenuItem
             // 

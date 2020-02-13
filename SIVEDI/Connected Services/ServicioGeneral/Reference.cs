@@ -296,6 +296,12 @@ namespace SIVEDI.ServicioGeneral {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/insTerritorio", ReplyAction="http://tempuri.org/IService/insTerritorioResponse")]
         System.Threading.Tasks.Task<int> insTerritorioAsync(SIVEDI.Clases.Territorios territorios);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getConsultaCliente", ReplyAction="http://tempuri.org/IService/getConsultaClienteResponse")]
+        SIVEDI.Clases.TABLAS.ClienteConsultaTabla getConsultaCliente(string strIdentificacion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getConsultaCliente", ReplyAction="http://tempuri.org/IService/getConsultaClienteResponse")]
+        System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.ClienteConsultaTabla> getConsultaClienteAsync(string strIdentificacion);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -699,6 +705,14 @@ namespace SIVEDI.ServicioGeneral {
         
         public System.Threading.Tasks.Task<int> insTerritorioAsync(SIVEDI.Clases.Territorios territorios) {
             return base.Channel.insTerritorioAsync(territorios);
+        }
+        
+        public SIVEDI.Clases.TABLAS.ClienteConsultaTabla getConsultaCliente(string strIdentificacion) {
+            return base.Channel.getConsultaCliente(strIdentificacion);
+        }
+        
+        public System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.ClienteConsultaTabla> getConsultaClienteAsync(string strIdentificacion) {
+            return base.Channel.getConsultaClienteAsync(strIdentificacion);
         }
     }
 }

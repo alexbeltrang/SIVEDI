@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualBasic;
 using SIVEDI.Administracion;
 using SIVEDI.Clases;
+using SIVEDI.Cuentas;
 using SIVEDI.Indicadores;
 using SIVEDI.Maestras;
 using SIVEDI.Mantenimiento;
@@ -394,21 +395,21 @@ namespace SIVEDI
                         break;
                     }
 
-                    //case "CONSULTA CLIENTES":
-                    //    {
-                    //        if (clsConnection.blnVentanasEnbebidas)
-                    //        {
-                    //            frmClientes objFormulario = new frmClientes();
-                    //            cargaFormulario(objFormulario);
-                    //        }
-                    //        else
-                    //        {
-                    //            frmClientes objFormulario = new frmClientes();
-                    //            objFormulario.Show();
-                    //        }
+                case "CONSULTA CLIENTES":
+                    {
+                        if (clsConnection.blnVentanasEnbebidas)
+                        {
+                            frmClientes objFormulario = new frmClientes();
+                            cargaFormulario(objFormulario);
+                        }
+                        else
+                        {
+                            frmClientes objFormulario = new frmClientes();
+                            objFormulario.Show();
+                        }
 
-                    //        break;
-                    //    }
+                        break;
+                    }
 
                     //case "REGISTRO CLIENTES":
                     //    {
@@ -948,6 +949,20 @@ namespace SIVEDI
             else
             {
                 frmTerritorios objFormulario = new frmTerritorios();
+                objFormulario.Show();
+            }
+        }
+
+        private void ClientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (clsConnection.blnVentanasEnbebidas)
+            {
+                frmClientes objFormulario = new frmClientes();
+                cargaFormulario(objFormulario);
+            }
+            else
+            {
+                frmClientes objFormulario = new frmClientes();
                 objFormulario.Show();
             }
         }

@@ -539,6 +539,20 @@ public class Service : IService
         return codigoTerritorio;
     }
     #endregion
+
+
+    #region Cuentas
+    public ClienteConsultaTabla getConsultaCliente(string strIdentificacion)
+    {
+        ClienteConsultaTabla clienteConsultaTabla = new ClienteConsultaTabla();
+        sp_Cuentas spRequestCuentas = new sp_Cuentas();
+        DataDB data = new DataDB("SIVEDIBDEntities");
+        StoreProcedure SP = spRequestCuentas.getConsultaClientes("SPR_GET_CONSULTA_CLIENTE", strIdentificacion);
+        clienteConsultaTabla = data.ExecuteQuery<ClienteConsultaTabla>(SP);
+        return clienteConsultaTabla;
+    }
+
+    #endregion
 }
 
 

@@ -334,4 +334,49 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="TerritorioFiltro" nillable="true" type="tns:TerritorioFiltro" />
+  <xs:complexType name="ClienteConsultaTabla">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ANTERIOR_CAMPANA_PEDIDO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CAMPANA_VINCULACION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CIUDAD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COBRA_FLETE" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CODIGO" type="xs:int" />
+      <xs:element minOccurs="0" name="CUENTA_BLOQUEADA" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CUPO_CREDITO" type="xs:int" />
+      <xs:element minOccurs="0" name="DEPARTAMENTO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DIRECCION_DOMICILIO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DIRECCION_ENTREGA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EMAIL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ESINGRESO" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ESTADO_ACTIVIDAD_ACTUAL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ESTADO_ACTIVIDAD_ANTERIOR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ESTADO_CIVIL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ES_CABEZA_GRUPO" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ES_LIDER" type="xs:boolean" />
+      <xs:element minOccurs="0" name="FECHA_NACIMIENTO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FECHA_VINCULACION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FORMA_PAGO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GEOREFERENCIADO" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IDENTIFICACION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IDENTIFICACION_REFERENTE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MOTIVO_BLOQUEO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOMBRE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOMBRE_REFERENTE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PAIS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PENULTIMA_CAMPANA_PEDIDO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RAZON_BLOQUEO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REGIONAL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SECCION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TELEFONO_CELULAR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TELEFONO_FIJO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TELEFONO_OFICINA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TERRITORIO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TER_CID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIPO_CLIENTE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIPO_DOCUMENTO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ULTIMA_CAMPANA_PEDIDO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ZONA" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ClienteConsultaTabla" nillable="true" type="tns:ClienteConsultaTabla" />
 </xs:schema>

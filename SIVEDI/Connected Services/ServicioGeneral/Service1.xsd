@@ -695,4 +695,18 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="getConsultaCliente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strIdentificacion" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getConsultaClienteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" minOccurs="0" name="getConsultaClienteResult" nillable="true" type="q48:ClienteConsultaTabla" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

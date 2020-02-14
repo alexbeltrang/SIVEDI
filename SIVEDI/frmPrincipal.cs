@@ -44,7 +44,7 @@ namespace SIVEDI
 
             treeMenu.Nodes.Clear();
             List<moduloPadre> moduloPadre = new List<moduloPadre>();
-            ServiceClient ServicioGeneral = new ServiceClient();
+            ServicioGeneralClient ServicioGeneral = new ServicioGeneralClient();
             var modulo = ServicioGeneral.getModuloPadre(clsConnection.intIdUsuario);
             foreach (moduloPadre padre in modulo)
             {
@@ -411,21 +411,21 @@ namespace SIVEDI
                         break;
                     }
 
-                    //case "REGISTRO CLIENTES":
-                    //    {
-                    //        if (clsConnection.blnVentanasEnbebidas)
-                    //        {
-                    //            frmRegistroClientes objClientes = new frmRegistroClientes();
-                    //            cargaFormulario(objClientes);
-                    //        }
-                    //        else
-                    //        {
-                    //            frmRegistroClientes objFormulario = new frmRegistroClientes();
-                    //            objFormulario.Show();
-                    //        }
+                case "REGISTRO CLIENTES":
+                    {
+                        if (clsConnection.blnVentanasEnbebidas)
+                        {
+                            frmRegistroClientes objClientes = new frmRegistroClientes();
+                            cargaFormulario(objClientes);
+                        }
+                        else
+                        {
+                            frmRegistroClientes objFormulario = new frmRegistroClientes();
+                            objFormulario.Show();
+                        }
 
-                    //        break;
-                    //    }
+                        break;
+                    }
 
                     //case "PRODUCTOS":
                     //    {
@@ -963,6 +963,20 @@ namespace SIVEDI
             else
             {
                 frmClientes objFormulario = new frmClientes();
+                objFormulario.Show();
+            }
+        }
+
+        private void RegistrarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+              if (clsConnection.blnVentanasEnbebidas)
+            {
+                frmRegistroClientes objFormulario = new frmRegistroClientes();
+                cargaFormulario(objFormulario);
+            }
+            else
+            {
+                frmRegistroClientes objFormulario = new frmRegistroClientes();
                 objFormulario.Show();
             }
         }

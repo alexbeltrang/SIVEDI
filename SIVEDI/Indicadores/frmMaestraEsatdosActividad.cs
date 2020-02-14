@@ -40,7 +40,7 @@ namespace SIVEDI.Indicadores
 
         private void CargaCombos()
         {
-            ServiceClient servicioGeneral = new ServiceClient();
+            ServicioGeneralClient servicioGeneral = new ServicioGeneralClient();
 
 
             var withBlock = cboEstadoNoPasaPedido;
@@ -166,7 +166,7 @@ namespace SIVEDI.Indicadores
         {
             if (e.RowIndex >= 0)
             {
-                ServiceClient servicioGeneral = new ServiceClient();
+                ServicioGeneralClient servicioGeneral = new ServicioGeneralClient();
                 blnActualiza = true;
                 intCodigoEstado = Convert.ToInt32(dtgEstadosActividad.Rows[e.RowIndex].Cells["CODIGO"].Value);
 
@@ -259,7 +259,7 @@ namespace SIVEDI.Indicadores
             if (validaCampos())
             {
                 string strResulInsercion = string.Empty;
-                ServiceClient servicioGeneral = new ServiceClient();
+                ServicioGeneralClient servicioGeneral = new ServicioGeneralClient();
                 EstadoActividad estadoActividad = new EstadoActividad();
 
                 if (rbnSiInactiva.Checked)

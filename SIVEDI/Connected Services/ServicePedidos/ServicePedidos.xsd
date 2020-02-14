@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:50416/ServicePedidos.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" />
+  <xs:element name="getConsultaPedidosCliente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="intCodigoCliente" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getConsultaPedidosClienteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" minOccurs="0" name="getConsultaPedidosClienteResult" nillable="true" type="q1:ArrayOfPedidosClienteTabla" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -50,6 +50,7 @@
     <Compile Include="EstadoActividad.cs" />
     <Compile Include="EstadoCivil.cs" />
     <Compile Include="formasIngreso.cs" />
+    <Compile Include="FormasPago.cs" />
     <Compile Include="Generos.cs" />
     <Compile Include="LoginUsuario.cs" />
     <Compile Include="moduloHijo.cs" />
@@ -68,8 +69,11 @@
     <Compile Include="TABLAS\EstadoActividadTabla.cs" />
     <Compile Include="TABLAS\EstadoCivilTabla.cs" />
     <Compile Include="TABLAS\FormasIngresoTabla.cs" />
+    <Compile Include="TABLAS\FormasPagoTabla.cs" />
     <Compile Include="TABLAS\GenerosTabla.cs" />
     <Compile Include="TABLAS\PaisTabla.cs" />
+    <Compile Include="TABLAS\PedidosClienteTabla.cs" />
+    <Compile Include="TABLAS\ReferenciaClienteTabla.cs" />
     <Compile Include="TABLAS\RegionalesTabla.cs" />
     <Compile Include="TABLAS\ResponsableTerritorioFiltro.cs" />
     <Compile Include="TABLAS\ResponsableTerritorioTabla.cs" />
@@ -79,11 +83,13 @@
     <Compile Include="TABLAS\TerritorioTabla.cs" />
     <Compile Include="TABLAS\TipoClienteTabla.cs" />
     <Compile Include="TABLAS\tipoDocumentoTabla.cs" />
+    <Compile Include="TABLAS\TipoReferenciaTabla.cs" />
     <Compile Include="TABLAS\UnidadesMedidaTabla.cs" />
     <Compile Include="TABLAS\ZonasTabla.cs" />
     <Compile Include="Territorios.cs" />
     <Compile Include="TipoCliente.cs" />
     <Compile Include="TipoDocumento.cs" />
+    <Compile Include="TipoReferencia.cs" />
     <Compile Include="UnidadMedida.cs" />
     <Compile Include="usuarios.cs" />
     <Compile Include="TABLAS\usuariosTabla.cs" />

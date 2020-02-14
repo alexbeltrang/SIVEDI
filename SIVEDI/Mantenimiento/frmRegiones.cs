@@ -31,7 +31,7 @@ namespace SIVEDI.Mantenimiento
         }
         private void cargaCombos()
         {
-            ServiceClient servicioGeneral = new ServiceClient();
+            ServicioGeneralClient servicioGeneral = new ServicioGeneralClient();
             var withBlock = cboPais;
             withBlock.DataSource = servicioGeneral.getPaises(1, 0);
             withBlock.ValueMember = "CODIGO";
@@ -40,7 +40,7 @@ namespace SIVEDI.Mantenimiento
         }
         private void llenaGrilla(int intCodigoPais)
         {
-            ServiceClient servicioGeneral = new ServiceClient();
+            ServicioGeneralClient servicioGeneral = new ServicioGeneralClient();
             var withBlock = dtgRegionales;
             withBlock.DataSource = servicioGeneral.getRegionales(3, 0, intCodigoPais);
         }
@@ -167,7 +167,7 @@ namespace SIVEDI.Mantenimiento
             {
                 string strResultado;
                 Regionales regionales = new Regionales();
-                ServiceClient servicioGeneral = new ServiceClient();
+                ServicioGeneralClient servicioGeneral = new ServicioGeneralClient();
                 if (rbnActivo.Checked)
                 {
                     regionales.ESTADO = true;

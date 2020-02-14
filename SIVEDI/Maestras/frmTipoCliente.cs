@@ -32,7 +32,7 @@ namespace SIVEDI.Maestras
         private void llenaGrilla()
         {
             {
-                ServiceClient servicioGeneral = new ServiceClient();
+                ServicioGeneralClient servicioGeneral = new ServicioGeneralClient();
                 var withBlock = dtgTipoCliente;
                 withBlock.DataSource = servicioGeneral.getTipoCliente(3, 0);
             }
@@ -120,7 +120,7 @@ namespace SIVEDI.Maestras
             {
                 string strResultado;
                 TipoCliente tipoCliente = new TipoCliente();
-                ServiceClient servicioGeneral = new ServiceClient();
+                ServicioGeneralClient servicioGeneral = new ServicioGeneralClient();
                 if (rbnActivo.Checked)
                 {
                     tipoCliente.ESTADO = true;

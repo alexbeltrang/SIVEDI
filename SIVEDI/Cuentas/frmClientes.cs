@@ -1,4 +1,5 @@
 ﻿using SIVEDI.Clases;
+using SIVEDI.ServicePedidos;
 using SIVEDI.ServicioGeneral;
 using System;
 using System.Collections.Generic;
@@ -51,7 +52,7 @@ namespace SIVEDI.Cuentas
         {
             if (txtIdentificacion.Text != "" | txtIdentificacion.Text != null)
             {
-                ServiceClient serviceClient = new ServiceClient();
+                ServicioGeneralClient serviceClient = new ServicioGeneralClient();
                 var datosCliente = serviceClient.getConsultaCliente(txtIdentificacion.Text);
 
                 if (datosCliente.CODIGO > 0)
@@ -150,8 +151,8 @@ namespace SIVEDI.Cuentas
                         rdbEsIngreso.Checked = false;
                         rdbNoEsIngreso.Checked = true;
                     }
-                    //llenaGrillaPedidos();
-                    //llenaGrillaReferencias();
+                    llenaGrillaPedidos();
+                    llenaGrillaReferencias();
                 }
                 else
                 {
@@ -161,5 +162,22 @@ namespace SIVEDI.Cuentas
             }
         }
 
+
+        private void llenaGrillaPedidos()
+        {
+            {
+                ServicePedidosClient servicioPedido = new ServicePedidosClient();
+                var withBlock = dtgPedidoAS;
+                withBlock.DataSource = servicioPedido.getConsultaPedidosCliente(intCodigoCliente);
+            }
+        }
+        private void llenaGrillaReferencias()
+        {
+            {
+                ServicioGeneralClient servicioGeneral = new ServicioGeneralClient();
+                var withBlock = dtgReferencias;
+                withBlock.DataSource = servicioGeneral.getReferenciaCliente(intCodigoCliente);
+            }
+        }
     }
 }

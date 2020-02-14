@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://localhost:65358/Service.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" />
-  <xs:import schemaLocation="http://localhost:65358/Service.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" />
+  <xs:import schemaLocation="http://localhost:65358/ServicioGeneral.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" />
+  <xs:import schemaLocation="http://localhost:65358/ServicioGeneral.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" />
   <xs:element name="ingresaAplicativo">
     <xs:complexType>
       <xs:sequence>
@@ -706,6 +706,50 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" minOccurs="0" name="getConsultaClienteResult" nillable="true" type="q48:ClienteConsultaTabla" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getReferenciaCliente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="intCodigoCliente" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getReferenciaClienteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" minOccurs="0" name="getReferenciaClienteResult" nillable="true" type="q49:ArrayOfReferenciaClienteTabla" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getTipoReferencia">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="intOpcion" type="xs:int" />
+        <xs:element minOccurs="0" name="intCodigoTipoReferencia" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getTipoReferenciaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" minOccurs="0" name="getTipoReferenciaResult" nillable="true" type="q50:ArrayOfTipoReferencia" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getFormaPago">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="intOpcion" type="xs:int" />
+        <xs:element minOccurs="0" name="intCodigoformaPago" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getFormaPagoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" minOccurs="0" name="getFormaPagoResult" nillable="true" type="q51:ArrayOfFormasPago" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

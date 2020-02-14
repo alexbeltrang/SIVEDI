@@ -31,7 +31,7 @@ namespace SIVEDI.Maestras
 
         private void llenaGrilla()
         {
-            ServiceClient servicioGeneral = new ServiceClient();
+            ServicioGeneralClient servicioGeneral = new ServicioGeneralClient();
             var withBlock = dtgEstadoCivil;
             withBlock.DataSource = servicioGeneral.getEstadoCivil(3, 0);
         }
@@ -93,7 +93,7 @@ namespace SIVEDI.Maestras
             {
                 string strResultado;
                 EstadoCivil estadoCivil = new EstadoCivil();
-                ServiceClient servicioGeneral = new ServiceClient();
+                ServicioGeneralClient servicioGeneral = new ServicioGeneralClient();
                 if (rbnActivo.Checked)
                 {
                     estadoCivil.ESTADO = true;

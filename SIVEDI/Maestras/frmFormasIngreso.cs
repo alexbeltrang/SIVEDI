@@ -31,7 +31,7 @@ namespace SIVEDI.Maestras
 
         private void llenaGrilla()
         {
-            ServiceClient servicioGeneral = new ServiceClient();
+            ServicioGeneralClient servicioGeneral = new ServicioGeneralClient();
             var withBlock = dtgFormaIngreso;
             withBlock.DataSource = servicioGeneral.getformasIngreso(3, 0);
         }
@@ -94,7 +94,7 @@ namespace SIVEDI.Maestras
             {
                 string strResultado;
                 formasIngreso formasIngreso = new formasIngreso();
-                ServiceClient servicioGeneral = new ServiceClient();
+                ServicioGeneralClient servicioGeneral = new ServicioGeneralClient();
                 if (rbnActivo.Checked)
                 {
                     formasIngreso.ESTADO = true;

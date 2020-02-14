@@ -32,7 +32,7 @@ namespace SIVEDI.Mantenimiento
         }
         private void cargaCombos()
         {
-            ServiceClient servicioGeneral = new ServiceClient();
+            ServicioGeneralClient servicioGeneral = new ServicioGeneralClient();
             var withBlock = cboPais;
             withBlock.DataSource = servicioGeneral.getPaises(1, 0);
             withBlock.ValueMember = "CODIGO";
@@ -50,7 +50,7 @@ namespace SIVEDI.Mantenimiento
         }
         private void llenaGrilla()
         {
-            ServiceClient servicioGeneral = new ServiceClient();
+            ServicioGeneralClient servicioGeneral = new ServicioGeneralClient();
             var withBlock = dtgResponsables;
             withBlock.DataSource = servicioGeneral.getResponsableTerritorio(2);
         }
@@ -75,7 +75,7 @@ namespace SIVEDI.Mantenimiento
 
         private void cargaDepto()
         {
-            ServiceClient servicioGeneral = new ServiceClient();
+            ServicioGeneralClient servicioGeneral = new ServicioGeneralClient();
             var withBlock = cboDepto;
             withBlock.DataSource = servicioGeneral.getDepartamentos(1, Convert.ToInt32(cboPais.SelectedValue), 0);
             withBlock.ValueMember = "CODIGO";
@@ -93,7 +93,7 @@ namespace SIVEDI.Mantenimiento
 
         private void cargaCiudad()
         {
-            ServiceClient servicioGeneral = new ServiceClient();
+            ServicioGeneralClient servicioGeneral = new ServicioGeneralClient();
             var withBlock = cboCiudad;
             withBlock.DataSource = servicioGeneral.getCiudades(1, Convert.ToInt32(cboDepto.SelectedValue), 0);
             withBlock.ValueMember = "CODIGO";
@@ -189,7 +189,7 @@ namespace SIVEDI.Mantenimiento
         {
             if (e.RowIndex >= 0)
             {
-                ServiceClient servicioGeneral = new ServiceClient();
+                ServicioGeneralClient servicioGeneral = new ServicioGeneralClient();
 
                 intCodigoResponsable = Convert.ToInt32(dtgResponsables.Rows[e.RowIndex].Cells["CODIGO"].Value);
                 txtBarrio.Text = Convert.ToString(dtgResponsables.Rows[e.RowIndex].Cells["BARRIO"].Value);
@@ -235,7 +235,7 @@ namespace SIVEDI.Mantenimiento
             {
                 string strResultado;
                 ResponsableTerritorio responsableTerritorio = new ResponsableTerritorio();
-                ServiceClient servicioGeneral = new ServiceClient();
+                ServicioGeneralClient servicioGeneral = new ServicioGeneralClient();
                 if (rbnActivo.Checked)
                 {
                     responsableTerritorio.ESTADO = true;

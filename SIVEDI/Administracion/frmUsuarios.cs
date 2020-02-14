@@ -44,7 +44,7 @@ namespace SIVEDI.Administracion
         private void cargaCombo()
         {
             {
-                ServiceClient servicioGeneral = new ServiceClient();
+                ServicioGeneralClient servicioGeneral = new ServicioGeneralClient();
                 var withBlock = cboPerfil;
                 withBlock.DataSource = servicioGeneral.getPerfiles(1, 0);
                 withBlock.ValueMember = "CODIGO";
@@ -62,7 +62,7 @@ namespace SIVEDI.Administracion
         }
         private void llenaGrilla()
         {
-            ServiceClient servicioGeneral = new ServiceClient();
+            ServicioGeneralClient servicioGeneral = new ServicioGeneralClient();
             var withBlock = dtgUsuarios;
             withBlock.DataSource = servicioGeneral.getUsuarios(3, string.Empty);
         }
@@ -145,7 +145,7 @@ namespace SIVEDI.Administracion
             if (validaDatos())
             {
                 usuarios UsuarioModel = new usuarios();
-                ServiceClient servicioGeneral = new ServiceClient();
+                ServicioGeneralClient servicioGeneral = new ServicioGeneralClient();
                 string strResultado;
                 if (rbnActivo.Checked)
                 {
@@ -218,7 +218,7 @@ namespace SIVEDI.Administracion
         private void txtLogin_Leave(object sender, EventArgs e)
         {
             usuarios UsuarioModel = new usuarios();
-            ServiceClient servicioGeneral = new ServiceClient();
+            ServicioGeneralClient servicioGeneral = new ServicioGeneralClient();
             var ListUsuarios = servicioGeneral.getUsuarios(2, txtLogin.Text);
             if (ListUsuarios.Count() > 0)
             {

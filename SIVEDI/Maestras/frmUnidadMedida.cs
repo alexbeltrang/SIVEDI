@@ -30,7 +30,7 @@ namespace SIVEDI.Maestras
         }
         private void llenaGrilla()
         {
-            ServiceClient servicioGeneral = new ServiceClient();
+            ServicioGeneralClient servicioGeneral = new ServicioGeneralClient();
             var withBlock = dtgTipoUnidadMedida;
             withBlock.DataSource = servicioGeneral.getUnidadMedida(3, 0);
         }
@@ -101,7 +101,7 @@ namespace SIVEDI.Maestras
             {
                 string strResultado;
                 UnidadMedida UnidadMedida = new UnidadMedida();
-                ServiceClient servicioGeneral = new ServiceClient();
+                ServicioGeneralClient servicioGeneral = new ServicioGeneralClient();
                 if (rbnActivo.Checked)
                 {
                     UnidadMedida.ESTADO = true;

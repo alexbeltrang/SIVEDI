@@ -29,7 +29,7 @@ namespace SIVEDI.Mantenimiento
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            ServiceClient servicioGeneral = new ServiceClient();
+            ServicioGeneralClient servicioGeneral = new ServicioGeneralClient();
             var withBlock = dtgResponsables;
             withBlock.DataSource = servicioGeneral.getResponsableFiltro(txtIdentificacion.Text, txtNombre.Text);
         }

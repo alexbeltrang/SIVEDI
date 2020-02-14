@@ -23,7 +23,7 @@ namespace SIVEDI.Maestras
 
         private void frmCiudades_Load(object sender, EventArgs e)
         {
-            ServiceClient servicioGeneral = new ServiceClient();
+            ServicioGeneralClient servicioGeneral = new ServicioGeneralClient();
             dtgCiudades.ReadOnly = true;
             cargaCombos();
             if (clsConnection.blnCiudadesdesdeDepto)
@@ -49,7 +49,7 @@ namespace SIVEDI.Maestras
 
         private void cargaCombos()
         {
-            ServiceClient servicioGeneral = new ServiceClient();
+            ServicioGeneralClient servicioGeneral = new ServicioGeneralClient();
             var withBlock = cboPais;
             withBlock.DataSource = servicioGeneral.getPaises(1, 0);
             withBlock.ValueMember = "CODIGO";
@@ -59,7 +59,7 @@ namespace SIVEDI.Maestras
 
         private void cargaDepto()
         {
-            ServiceClient servicioGeneral = new ServiceClient();
+            ServicioGeneralClient servicioGeneral = new ServicioGeneralClient();
             var withBlock = cboDepto;
             withBlock.DataSource = servicioGeneral.getDepartamentos(1, Convert.ToInt32(cboPais.SelectedValue), 0);
             withBlock.ValueMember = "CODIGO";
@@ -70,7 +70,7 @@ namespace SIVEDI.Maestras
 
         private void llenaGrilla(int intCodigoDepartamento)
         {
-            ServiceClient servicioGeneral = new ServiceClient();
+            ServicioGeneralClient servicioGeneral = new ServicioGeneralClient();
             var withBlock = dtgCiudades;
             withBlock.DataSource = servicioGeneral.getCiudades(3, intCodigoDepartamento, 0);
         }
@@ -166,7 +166,7 @@ namespace SIVEDI.Maestras
             {
                 string strResultado;
                 Ciudades ciudades = new Ciudades();
-                ServiceClient servicioGeneral = new ServiceClient();
+                ServicioGeneralClient servicioGeneral = new ServicioGeneralClient();
                 if (rbnActivo.Checked)
                 {
                     ciudades.ESTADO = true;

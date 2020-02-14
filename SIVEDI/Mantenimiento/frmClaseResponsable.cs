@@ -31,7 +31,7 @@ namespace SIVEDI.Mantenimiento
 
         private void llenaGrilla()
         {
-            ServiceClient servicioGeneral = new ServiceClient();
+            ServicioGeneralClient servicioGeneral = new ServicioGeneralClient();
             var withBlock = dtgClases;
             withBlock.DataSource = servicioGeneral.getClaseResponsable(3, 0);
         }
@@ -89,7 +89,7 @@ namespace SIVEDI.Mantenimiento
             {
                 string strResultado;
                 ClaseResponsable claseResponsable = new ClaseResponsable();
-                ServiceClient servicioGeneral = new ServiceClient();
+                ServicioGeneralClient servicioGeneral = new ServicioGeneralClient();
                 if (rbnActivo.Checked)
                 {
                     claseResponsable.ESTADO = true;

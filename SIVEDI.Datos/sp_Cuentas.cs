@@ -24,5 +24,22 @@ namespace SIVEDI.Datos
 
             return storeProcedure;
         }
+
+        public StoreProcedure getReferenciaCliente(string spName, int intCodigoCliente)
+        {
+            StoreProcedure storeProcedure = new StoreProcedure();
+            storeProcedure.Nombre = spName;
+            storeProcedure.Parametros = new List<SqlParameter>()
+            {
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NCODIGO_CLIENTE",
+                    SqlDbType = System.Data.SqlDbType.VarChar,
+                    Value = intCodigoCliente
+                },
+            };
+
+            return storeProcedure;
+        }
     }
 }

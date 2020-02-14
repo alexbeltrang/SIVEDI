@@ -62,6 +62,11 @@
     <Compile Include="Administracion\frmUsuarios.Designer.cs">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\ServicePedidos\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\ServicioGeneral\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -72,6 +77,12 @@
     </Compile>
     <Compile Include="Cuentas\frmClientes.Designer.cs">
       <DependentUpon>frmClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cuentas\frmRegistroClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cuentas\frmRegistroClientes.Designer.cs">
+      <DependentUpon>frmRegistroClientes.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPrincipal.cs">
       <SubType>Form</SubType>
@@ -204,6 +215,9 @@
     <EmbeddedResource Include="Cuentas\frmClientes.resx">
       <DependentUpon>frmClientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Cuentas\frmRegistroClientes.resx">
+      <DependentUpon>frmRegistroClientes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
@@ -268,22 +282,33 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Connected Services\ServicioGeneral\Service.wsdl" />
-    <None Include="Connected Services\ServicioGeneral\Service.xsd">
+    <None Include="Connected Services\ServicePedidos\ServicePedidos.wsdl" />
+    <None Include="Connected Services\ServicePedidos\ServicePedidos.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServicioGeneral\Service1.xsd">
+    <None Include="Connected Services\ServicePedidos\ServicePedidos1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServicioGeneral\Service2.xsd">
+    <None Include="Connected Services\ServicePedidos\ServicePedidos2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServicioGeneral\Service3.xsd">
+    <None Include="Connected Services\ServicioGeneral\ServicioGeneral.wsdl" />
+    <None Include="Connected Services\ServicioGeneral\ServicioGeneral.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServicioGeneral\ServicioGeneral1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServicioGeneral\ServicioGeneral2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServicioGeneral\ServicioGeneral3.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Properties\DataSources\SIVEDI.Clases.Ciudades.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.Departamentos.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.EstadoActividad.datasource" />
+    <None Include="Properties\DataSources\SIVEDI.Clases.FormasPago.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.LoginUsuario.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.moduloHijo.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.moduloPadre.datasource" />
@@ -298,6 +323,8 @@
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.FormasIngresoTabla.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.GenerosTabla.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.PaisTabla.datasource" />
+    <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.PedidosClienteTabla.datasource" />
+    <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.ReferenciaClienteTabla.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.RegionalesTabla.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.ResponsableTerritorioFiltro.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.ResponsableTerritorioTabla.datasource" />
@@ -311,6 +338,7 @@
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.UnidasMedidaTabla.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.usuariosTabla.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.ZonasTabla.datasource" />
+    <None Include="Properties\DataSources\SIVEDI.Clases.TipoReferencia.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.usuarios.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.usuariosTabla.datasource" />
     <None Include="Properties\Settings.settings">
@@ -341,22 +369,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ServicePedidos\" />
     <WCFMetadataStorage Include="Connected Services\ServicioGeneral\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\ServicioGeneral\Service.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\ServicioGeneral\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\ServicioGeneral\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\ServicioGeneral\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\basedatos.png" />
@@ -376,6 +390,35 @@
   <ItemGroup>
     <None Include="Resources\resultset_next.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Connected Services\ServicePedidos\ServicePedidos.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServicePedidos\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServicePedidos\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServicePedidos\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServicioGeneral\ServicioGeneral.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServicioGeneral\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServicioGeneral\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServicioGeneral\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

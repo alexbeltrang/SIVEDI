@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfPedidosClienteTabla">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PedidosClienteTabla" nillable="true" type="tns:PedidosClienteTabla" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPedidosClienteTabla" nillable="true" type="tns:ArrayOfPedidosClienteTabla" />
+  <xs:complexType name="PedidosClienteTabla">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CAMPAÑA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODIGO" type="xs:decimal" />
+      <xs:element minOccurs="0" name="COD_ESTADO" type="xs:int" />
+      <xs:element minOccurs="0" name="ESTADO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FACTURA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FECHA_REGISTRO" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PEDIDO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="POR_ESC_DCTO" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PUNTOS" type="xs:int" />
+      <xs:element minOccurs="0" name="VALOR_PAGAR" type="xs:decimal" />
+      <xs:element minOccurs="0" name="VALOR_PUBLICO" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PedidosClienteTabla" nillable="true" type="tns:PedidosClienteTabla" />
+</xs:schema>

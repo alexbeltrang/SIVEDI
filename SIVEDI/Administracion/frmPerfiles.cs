@@ -32,7 +32,7 @@ namespace SIVEDI.Administracion
 
         private void llenaGrilla()
         {
-            ServiceClient servicioGeneral = new ServiceClient();
+            ServicioGeneralClient servicioGeneral = new ServicioGeneralClient();
             dtgPerfiles.DataSource = servicioGeneral.getPerfiles(2, 0);
         }
 
@@ -92,7 +92,7 @@ namespace SIVEDI.Administracion
         {
             if (validaCampos())
             {
-                ServiceClient servicioGeneral = new ServiceClient();
+                ServicioGeneralClient servicioGeneral = new ServicioGeneralClient();
                 int strResultado;
                 int intOpcion = 0;
                 if (rbnActivo.Checked)

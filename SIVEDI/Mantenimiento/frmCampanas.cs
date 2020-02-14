@@ -31,7 +31,7 @@ namespace SIVEDI.Mantenimiento
 
         private void llenaGrilla()
         {
-            ServiceClient servicioGeneral = new ServiceClient();
+            ServicioGeneralClient servicioGeneral = new ServicioGeneralClient();
             var withBlock = dtgCampanas;
             withBlock.DataSource = servicioGeneral.getCampanas(3, 0);
         }
@@ -116,7 +116,7 @@ namespace SIVEDI.Mantenimiento
             {
                 string strResultado;
                 campanas Campanas = new campanas();
-                ServiceClient servicioGeneral = new ServiceClient();
+                ServicioGeneralClient servicioGeneral = new ServicioGeneralClient();
 
                 if (rbnActivo.Checked)
                 {

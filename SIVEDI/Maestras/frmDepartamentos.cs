@@ -41,7 +41,7 @@ namespace SIVEDI.Maestras
 
         private void cargaCombos()
         {
-            ServiceClient servicioGeneral = new ServiceClient();
+            ServicioGeneralClient servicioGeneral = new ServicioGeneralClient();
             var withBlock = cboPais;
             withBlock.DataSource = servicioGeneral.getPaises(1, 0);
             withBlock.ValueMember = "CODIGO";
@@ -50,7 +50,7 @@ namespace SIVEDI.Maestras
         }
         private void llenaGrilla(int intCodigoPais)
         {
-            ServiceClient servicioGeneral = new ServiceClient();
+            ServicioGeneralClient servicioGeneral = new ServicioGeneralClient();
             var withBlock = dtgDepartamentos;
             withBlock.DataSource = servicioGeneral.getDepartamentos(3, intCodigoPais, 0);
         }
@@ -147,7 +147,7 @@ namespace SIVEDI.Maestras
             {
                 string strResultado;
                 Departamentos departamentos = new Departamentos();
-                ServiceClient servicioGeneral = new ServiceClient();
+                ServicioGeneralClient servicioGeneral = new ServicioGeneralClient();
                 if (rbnActivo.Checked)
                 {
                     departamentos.ESTADO = true;

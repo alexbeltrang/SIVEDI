@@ -1475,5 +1475,51 @@ namespace SIVEDI.Datos
             };
             return storeProcedure;
         }
+
+        public StoreProcedure getTipoReferencia(string spName, int intOpcion, int intCodigoReferencia)
+        {
+            StoreProcedure storeProcedure = new StoreProcedure();
+            storeProcedure.Nombre = spName;
+            storeProcedure.Parametros = new List<SqlParameter>()
+            {
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NCODIGO_TIPO",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = intCodigoReferencia
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NOPCION",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = intOpcion
+                }
+            };
+
+            return storeProcedure;
+        }
+
+        public StoreProcedure getFormaPago(string spName, int intOpcion, int intCodigoFormaPago)
+        {
+            StoreProcedure storeProcedure = new StoreProcedure();
+            storeProcedure.Nombre = spName;
+            storeProcedure.Parametros = new List<SqlParameter>()
+            {
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NCODIGO_FORMA",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = intCodigoFormaPago
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NOPCION",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = intOpcion
+                }
+            };
+
+            return storeProcedure;
+        }
     }
 }

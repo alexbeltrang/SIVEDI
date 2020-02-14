@@ -340,9 +340,9 @@
       <xs:element minOccurs="0" name="CAMPANA_VINCULACION" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CIUDAD" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="COBRA_FLETE" type="xs:boolean" />
-      <xs:element minOccurs="0" name="CODIGO" type="xs:int" />
+      <xs:element minOccurs="0" name="CODIGO" type="xs:decimal" />
       <xs:element minOccurs="0" name="CUENTA_BLOQUEADA" type="xs:boolean" />
-      <xs:element minOccurs="0" name="CUPO_CREDITO" type="xs:int" />
+      <xs:element minOccurs="0" name="CUPO_CREDITO" type="xs:decimal" />
       <xs:element minOccurs="0" name="DEPARTAMENTO" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="DIRECCION_DOMICILIO" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="DIRECCION_ENTREGA" nillable="true" type="xs:string" />
@@ -379,4 +379,22 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ClienteConsultaTabla" nillable="true" type="tns:ClienteConsultaTabla" />
+  <xs:complexType name="ArrayOfReferenciaClienteTabla">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ReferenciaClienteTabla" nillable="true" type="tns:ReferenciaClienteTabla" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReferenciaClienteTabla" nillable="true" type="tns:ArrayOfReferenciaClienteTabla" />
+  <xs:complexType name="ReferenciaClienteTabla">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CIUDAD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DIRECCION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOMBRE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PARENTESCO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEL_CELULAR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEL_FIJO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIPO_REFERENCIA" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReferenciaClienteTabla" nillable="true" type="tns:ReferenciaClienteTabla" />
 </xs:schema>

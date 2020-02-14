@@ -30,7 +30,7 @@ namespace SIVEDI.Maestras
         }
         private void llenaGrilla()
         {
-            ServiceClient servicioGeneral = new ServiceClient();
+            ServicioGeneralClient servicioGeneral = new ServicioGeneralClient();
             var withBlock = dtgPaises;
             withBlock.DataSource = servicioGeneral.getPaises(3, 0);
         }
@@ -114,7 +114,7 @@ namespace SIVEDI.Maestras
             {
                 string strResultado;
                 Pais pais = new Pais();
-                ServiceClient servicioGeneral = new ServiceClient();
+                ServicioGeneralClient servicioGeneral = new ServicioGeneralClient();
                 if (rbnActivo.Checked)
                 {
                     pais.ESTADO = true;

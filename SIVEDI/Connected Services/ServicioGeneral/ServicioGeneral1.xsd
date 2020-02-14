@@ -247,4 +247,32 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Territorios" nillable="true" type="tns:Territorios" />
+  <xs:complexType name="ArrayOfTipoReferencia">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TipoReferencia" nillable="true" type="tns:TipoReferencia" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTipoReferencia" nillable="true" type="tns:ArrayOfTipoReferencia" />
+  <xs:complexType name="TipoReferencia">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGO" type="xs:int" />
+      <xs:element minOccurs="0" name="ESTADO" type="xs:boolean" />
+      <xs:element minOccurs="0" name="NOMBRE" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TipoReferencia" nillable="true" type="tns:TipoReferencia" />
+  <xs:complexType name="ArrayOfFormasPago">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FormasPago" nillable="true" type="tns:FormasPago" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFormasPago" nillable="true" type="tns:ArrayOfFormasPago" />
+  <xs:complexType name="FormasPago">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGO" type="xs:int" />
+      <xs:element minOccurs="0" name="ESTADO" type="xs:boolean" />
+      <xs:element minOccurs="0" name="NOMBRE" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FormasPago" nillable="true" type="tns:FormasPago" />
 </xs:schema>

@@ -18,7 +18,7 @@ namespace SIVEDI
             if (validaCampos())
             {
                 LoginUsuario loginUsuario = new LoginUsuario();
-                ServiceClient ServicioGeneral = new ServiceClient();
+                ServicioGeneralClient ServicioGeneral = new ServicioGeneralClient();
                 loginUsuario = ServicioGeneral.ingresaAplicativo(UsernameTextBox.Text, PasswordTextBox.Text);
                 if (loginUsuario != null)
                 {

@@ -30,7 +30,7 @@ namespace SIVEDI.Maestras
         }
         private void llenaGrilla()
         {
-            ServiceClient servicioGeneral = new ServiceClient();
+            ServicioGeneralClient servicioGeneral = new ServicioGeneralClient();
             var withBlock = dtgTipoDocumento;
             withBlock.DataSource = servicioGeneral.getTiposDocumento(3, 0);
         }
@@ -94,7 +94,7 @@ namespace SIVEDI.Maestras
             {
                 string strResultado;
                 TipoDocumento tipoDocumento = new TipoDocumento();
-                ServiceClient servicioGeneral = new ServiceClient();
+                ServicioGeneralClient servicioGeneral = new ServicioGeneralClient();
                 if (rbnActivo.Checked)
                 {
                     tipoDocumento.ESTADO = true;

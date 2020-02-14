@@ -12,322 +12,340 @@ namespace SIVEDI.ServicioGeneral {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServicioGeneral.IService")]
-    public interface IService {
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServicioGeneral.IServicioGeneral")]
+    public interface IServicioGeneral {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ingresaAplicativo", ReplyAction="http://tempuri.org/IService/ingresaAplicativoResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/ingresaAplicativo", ReplyAction="http://tempuri.org/IServicioGeneral/ingresaAplicativoResponse")]
         SIVEDI.Clases.LoginUsuario ingresaAplicativo(string strUser, string strPassword);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ingresaAplicativo", ReplyAction="http://tempuri.org/IService/ingresaAplicativoResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/ingresaAplicativo", ReplyAction="http://tempuri.org/IServicioGeneral/ingresaAplicativoResponse")]
         System.Threading.Tasks.Task<SIVEDI.Clases.LoginUsuario> ingresaAplicativoAsync(string strUser, string strPassword);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getModuloPadre", ReplyAction="http://tempuri.org/IService/getModuloPadreResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getModuloPadre", ReplyAction="http://tempuri.org/IServicioGeneral/getModuloPadreResponse")]
         SIVEDI.Clases.moduloPadre[] getModuloPadre(int intOpcion);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getModuloPadre", ReplyAction="http://tempuri.org/IService/getModuloPadreResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getModuloPadre", ReplyAction="http://tempuri.org/IServicioGeneral/getModuloPadreResponse")]
         System.Threading.Tasks.Task<SIVEDI.Clases.moduloPadre[]> getModuloPadreAsync(int intOpcion);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getModuloHijo", ReplyAction="http://tempuri.org/IService/getModuloHijoResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getModuloHijo", ReplyAction="http://tempuri.org/IServicioGeneral/getModuloHijoResponse")]
         SIVEDI.Clases.moduloHijo[] getModuloHijo(int intCodigoUsuario, int intCodigoPadre);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getModuloHijo", ReplyAction="http://tempuri.org/IService/getModuloHijoResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getModuloHijo", ReplyAction="http://tempuri.org/IServicioGeneral/getModuloHijoResponse")]
         System.Threading.Tasks.Task<SIVEDI.Clases.moduloHijo[]> getModuloHijoAsync(int intCodigoUsuario, int intCodigoPadre);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getPerfiles", ReplyAction="http://tempuri.org/IService/getPerfilesResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getPerfiles", ReplyAction="http://tempuri.org/IServicioGeneral/getPerfilesResponse")]
         SIVEDI.Clases.perfiles[] getPerfiles(int intOpcion, int intCodigoPerfil);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getPerfiles", ReplyAction="http://tempuri.org/IService/getPerfilesResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getPerfiles", ReplyAction="http://tempuri.org/IServicioGeneral/getPerfilesResponse")]
         System.Threading.Tasks.Task<SIVEDI.Clases.perfiles[]> getPerfilesAsync(int intOpcion, int intCodigoPerfil);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/insPerfiles", ReplyAction="http://tempuri.org/IService/insPerfilesResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/insPerfiles", ReplyAction="http://tempuri.org/IServicioGeneral/insPerfilesResponse")]
         int insPerfiles(int intOpcion, SIVEDI.Clases.perfiles perfil);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/insPerfiles", ReplyAction="http://tempuri.org/IService/insPerfilesResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/insPerfiles", ReplyAction="http://tempuri.org/IServicioGeneral/insPerfilesResponse")]
         System.Threading.Tasks.Task<int> insPerfilesAsync(int intOpcion, SIVEDI.Clases.perfiles perfil);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getUsuarios", ReplyAction="http://tempuri.org/IService/getUsuariosResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getUsuarios", ReplyAction="http://tempuri.org/IServicioGeneral/getUsuariosResponse")]
         SIVEDI.Clases.TABLAS.usuariosTabla[] getUsuarios(int intOpcion, string LoginUsuario);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getUsuarios", ReplyAction="http://tempuri.org/IService/getUsuariosResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getUsuarios", ReplyAction="http://tempuri.org/IServicioGeneral/getUsuariosResponse")]
         System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.usuariosTabla[]> getUsuariosAsync(int intOpcion, string LoginUsuario);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/insUsuarios", ReplyAction="http://tempuri.org/IService/insUsuariosResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/insUsuarios", ReplyAction="http://tempuri.org/IServicioGeneral/insUsuariosResponse")]
         int insUsuarios(SIVEDI.Clases.usuarios usuarioModel);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/insUsuarios", ReplyAction="http://tempuri.org/IService/insUsuariosResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/insUsuarios", ReplyAction="http://tempuri.org/IServicioGeneral/insUsuariosResponse")]
         System.Threading.Tasks.Task<int> insUsuariosAsync(SIVEDI.Clases.usuarios usuarioModel);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getTiposDocumento", ReplyAction="http://tempuri.org/IService/getTiposDocumentoResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getTiposDocumento", ReplyAction="http://tempuri.org/IServicioGeneral/getTiposDocumentoResponse")]
         SIVEDI.Clases.TABLAS.tipoDocumentoTabla[] getTiposDocumento(int intOpcion, int intCodigoTipoDocumento);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getTiposDocumento", ReplyAction="http://tempuri.org/IService/getTiposDocumentoResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getTiposDocumento", ReplyAction="http://tempuri.org/IServicioGeneral/getTiposDocumentoResponse")]
         System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.tipoDocumentoTabla[]> getTiposDocumentoAsync(int intOpcion, int intCodigoTipoDocumento);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/insTipoDocumento", ReplyAction="http://tempuri.org/IService/insTipoDocumentoResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/insTipoDocumento", ReplyAction="http://tempuri.org/IServicioGeneral/insTipoDocumentoResponse")]
         int insTipoDocumento(SIVEDI.Clases.TipoDocumento TipoDocumento);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/insTipoDocumento", ReplyAction="http://tempuri.org/IService/insTipoDocumentoResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/insTipoDocumento", ReplyAction="http://tempuri.org/IServicioGeneral/insTipoDocumentoResponse")]
         System.Threading.Tasks.Task<int> insTipoDocumentoAsync(SIVEDI.Clases.TipoDocumento TipoDocumento);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getTipoCliente", ReplyAction="http://tempuri.org/IService/getTipoClienteResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getTipoCliente", ReplyAction="http://tempuri.org/IServicioGeneral/getTipoClienteResponse")]
         SIVEDI.Clases.TABLAS.TipoClienteTabla[] getTipoCliente(int intOpcion, int intCodigoTipoCliente);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getTipoCliente", ReplyAction="http://tempuri.org/IService/getTipoClienteResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getTipoCliente", ReplyAction="http://tempuri.org/IServicioGeneral/getTipoClienteResponse")]
         System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.TipoClienteTabla[]> getTipoClienteAsync(int intOpcion, int intCodigoTipoCliente);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/insTipoCliente", ReplyAction="http://tempuri.org/IService/insTipoClienteResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/insTipoCliente", ReplyAction="http://tempuri.org/IServicioGeneral/insTipoClienteResponse")]
         int insTipoCliente(SIVEDI.Clases.TipoCliente tipoCliente);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/insTipoCliente", ReplyAction="http://tempuri.org/IService/insTipoClienteResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/insTipoCliente", ReplyAction="http://tempuri.org/IServicioGeneral/insTipoClienteResponse")]
         System.Threading.Tasks.Task<int> insTipoClienteAsync(SIVEDI.Clases.TipoCliente tipoCliente);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getUnidadMedida", ReplyAction="http://tempuri.org/IService/getUnidadMedidaResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getUnidadMedida", ReplyAction="http://tempuri.org/IServicioGeneral/getUnidadMedidaResponse")]
         SIVEDI.Clases.TABLAS.UnidadesMedidaTabla[] getUnidadMedida(int intOpcion, int intCodigoUnidadMedida);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getUnidadMedida", ReplyAction="http://tempuri.org/IService/getUnidadMedidaResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getUnidadMedida", ReplyAction="http://tempuri.org/IServicioGeneral/getUnidadMedidaResponse")]
         System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.UnidadesMedidaTabla[]> getUnidadMedidaAsync(int intOpcion, int intCodigoUnidadMedida);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/insUnidadMedida", ReplyAction="http://tempuri.org/IService/insUnidadMedidaResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/insUnidadMedida", ReplyAction="http://tempuri.org/IServicioGeneral/insUnidadMedidaResponse")]
         int insUnidadMedida(SIVEDI.Clases.UnidadMedida unidadMedida);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/insUnidadMedida", ReplyAction="http://tempuri.org/IService/insUnidadMedidaResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/insUnidadMedida", ReplyAction="http://tempuri.org/IServicioGeneral/insUnidadMedidaResponse")]
         System.Threading.Tasks.Task<int> insUnidadMedidaAsync(SIVEDI.Clases.UnidadMedida unidadMedida);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetGeneros", ReplyAction="http://tempuri.org/IService/GetGenerosResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/GetGeneros", ReplyAction="http://tempuri.org/IServicioGeneral/GetGenerosResponse")]
         SIVEDI.Clases.TABLAS.GenerosTabla[] GetGeneros(int intOpcion, int intCodigoGenero);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetGeneros", ReplyAction="http://tempuri.org/IService/GetGenerosResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/GetGeneros", ReplyAction="http://tempuri.org/IServicioGeneral/GetGenerosResponse")]
         System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.GenerosTabla[]> GetGenerosAsync(int intOpcion, int intCodigoGenero);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/insGeneros", ReplyAction="http://tempuri.org/IService/insGenerosResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/insGeneros", ReplyAction="http://tempuri.org/IServicioGeneral/insGenerosResponse")]
         int insGeneros(SIVEDI.Clases.Generos generos);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/insGeneros", ReplyAction="http://tempuri.org/IService/insGenerosResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/insGeneros", ReplyAction="http://tempuri.org/IServicioGeneral/insGenerosResponse")]
         System.Threading.Tasks.Task<int> insGenerosAsync(SIVEDI.Clases.Generos generos);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getformasIngreso", ReplyAction="http://tempuri.org/IService/getformasIngresoResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getformasIngreso", ReplyAction="http://tempuri.org/IServicioGeneral/getformasIngresoResponse")]
         SIVEDI.Clases.TABLAS.FormasIngresoTabla[] getformasIngreso(int intOpcion, int intCodigoFormaIngreso);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getformasIngreso", ReplyAction="http://tempuri.org/IService/getformasIngresoResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getformasIngreso", ReplyAction="http://tempuri.org/IServicioGeneral/getformasIngresoResponse")]
         System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.FormasIngresoTabla[]> getformasIngresoAsync(int intOpcion, int intCodigoFormaIngreso);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/insFormasIngreso", ReplyAction="http://tempuri.org/IService/insFormasIngresoResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/insFormasIngreso", ReplyAction="http://tempuri.org/IServicioGeneral/insFormasIngresoResponse")]
         int insFormasIngreso(SIVEDI.Clases.formasIngreso formasIngreso);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/insFormasIngreso", ReplyAction="http://tempuri.org/IService/insFormasIngresoResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/insFormasIngreso", ReplyAction="http://tempuri.org/IServicioGeneral/insFormasIngresoResponse")]
         System.Threading.Tasks.Task<int> insFormasIngresoAsync(SIVEDI.Clases.formasIngreso formasIngreso);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getEstadoCivil", ReplyAction="http://tempuri.org/IService/getEstadoCivilResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getEstadoCivil", ReplyAction="http://tempuri.org/IServicioGeneral/getEstadoCivilResponse")]
         SIVEDI.Clases.TABLAS.EstadoCivilTabla[] getEstadoCivil(int intOpcion, int intCodigoEstadoCivil);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getEstadoCivil", ReplyAction="http://tempuri.org/IService/getEstadoCivilResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getEstadoCivil", ReplyAction="http://tempuri.org/IServicioGeneral/getEstadoCivilResponse")]
         System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.EstadoCivilTabla[]> getEstadoCivilAsync(int intOpcion, int intCodigoEstadoCivil);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/insEstadoCivil", ReplyAction="http://tempuri.org/IService/insEstadoCivilResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/insEstadoCivil", ReplyAction="http://tempuri.org/IServicioGeneral/insEstadoCivilResponse")]
         int insEstadoCivil(SIVEDI.Clases.EstadoCivil estadoCivil);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/insEstadoCivil", ReplyAction="http://tempuri.org/IService/insEstadoCivilResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/insEstadoCivil", ReplyAction="http://tempuri.org/IServicioGeneral/insEstadoCivilResponse")]
         System.Threading.Tasks.Task<int> insEstadoCivilAsync(SIVEDI.Clases.EstadoCivil estadoCivil);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getEstadoActividad", ReplyAction="http://tempuri.org/IService/getEstadoActividadResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getEstadoActividad", ReplyAction="http://tempuri.org/IServicioGeneral/getEstadoActividadResponse")]
         SIVEDI.Clases.TABLAS.EstadoActividadTabla[] getEstadoActividad(int intOpcion, int intCodigoEstadoActividad);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getEstadoActividad", ReplyAction="http://tempuri.org/IService/getEstadoActividadResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getEstadoActividad", ReplyAction="http://tempuri.org/IServicioGeneral/getEstadoActividadResponse")]
         System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.EstadoActividadTabla[]> getEstadoActividadAsync(int intOpcion, int intCodigoEstadoActividad);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getEstadoActividadCamposTabla", ReplyAction="http://tempuri.org/IService/getEstadoActividadCamposTablaResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getEstadoActividadCamposTabla", ReplyAction="http://tempuri.org/IServicioGeneral/getEstadoActividadCamposTablaResponse")]
         SIVEDI.Clases.EstadoActividad getEstadoActividadCamposTabla(int intOpcion, int intCodigoEstadoActividad);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getEstadoActividadCamposTabla", ReplyAction="http://tempuri.org/IService/getEstadoActividadCamposTablaResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getEstadoActividadCamposTabla", ReplyAction="http://tempuri.org/IServicioGeneral/getEstadoActividadCamposTablaResponse")]
         System.Threading.Tasks.Task<SIVEDI.Clases.EstadoActividad> getEstadoActividadCamposTablaAsync(int intOpcion, int intCodigoEstadoActividad);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/insEstadoActividad", ReplyAction="http://tempuri.org/IService/insEstadoActividadResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/insEstadoActividad", ReplyAction="http://tempuri.org/IServicioGeneral/insEstadoActividadResponse")]
         int insEstadoActividad(SIVEDI.Clases.EstadoActividad estadoActividad);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/insEstadoActividad", ReplyAction="http://tempuri.org/IService/insEstadoActividadResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/insEstadoActividad", ReplyAction="http://tempuri.org/IServicioGeneral/insEstadoActividadResponse")]
         System.Threading.Tasks.Task<int> insEstadoActividadAsync(SIVEDI.Clases.EstadoActividad estadoActividad);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getCampanas", ReplyAction="http://tempuri.org/IService/getCampanasResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getCampanas", ReplyAction="http://tempuri.org/IServicioGeneral/getCampanasResponse")]
         SIVEDI.Clases.TABLAS.CampanasTabla[] getCampanas(int intOpcion, int intCodigoCampana);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getCampanas", ReplyAction="http://tempuri.org/IService/getCampanasResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getCampanas", ReplyAction="http://tempuri.org/IServicioGeneral/getCampanasResponse")]
         System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.CampanasTabla[]> getCampanasAsync(int intOpcion, int intCodigoCampana);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/insCampanas", ReplyAction="http://tempuri.org/IService/insCampanasResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/insCampanas", ReplyAction="http://tempuri.org/IServicioGeneral/insCampanasResponse")]
         int insCampanas(SIVEDI.Clases.campanas Campanas);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/insCampanas", ReplyAction="http://tempuri.org/IService/insCampanasResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/insCampanas", ReplyAction="http://tempuri.org/IServicioGeneral/insCampanasResponse")]
         System.Threading.Tasks.Task<int> insCampanasAsync(SIVEDI.Clases.campanas Campanas);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getPaises", ReplyAction="http://tempuri.org/IService/getPaisesResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getPaises", ReplyAction="http://tempuri.org/IServicioGeneral/getPaisesResponse")]
         SIVEDI.Clases.TABLAS.PaisTabla[] getPaises(int intOpcion, int intCodigoPais);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getPaises", ReplyAction="http://tempuri.org/IService/getPaisesResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getPaises", ReplyAction="http://tempuri.org/IServicioGeneral/getPaisesResponse")]
         System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.PaisTabla[]> getPaisesAsync(int intOpcion, int intCodigoPais);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/insPaises", ReplyAction="http://tempuri.org/IService/insPaisesResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/insPaises", ReplyAction="http://tempuri.org/IServicioGeneral/insPaisesResponse")]
         int insPaises(SIVEDI.Clases.Pais pais);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/insPaises", ReplyAction="http://tempuri.org/IService/insPaisesResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/insPaises", ReplyAction="http://tempuri.org/IServicioGeneral/insPaisesResponse")]
         System.Threading.Tasks.Task<int> insPaisesAsync(SIVEDI.Clases.Pais pais);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getDepartamentos", ReplyAction="http://tempuri.org/IService/getDepartamentosResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getDepartamentos", ReplyAction="http://tempuri.org/IServicioGeneral/getDepartamentosResponse")]
         SIVEDI.Clases.TABLAS.DepartamentoTabla[] getDepartamentos(int intOpcion, int intCodigoPais, int intCodigoDepartamento);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getDepartamentos", ReplyAction="http://tempuri.org/IService/getDepartamentosResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getDepartamentos", ReplyAction="http://tempuri.org/IServicioGeneral/getDepartamentosResponse")]
         System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.DepartamentoTabla[]> getDepartamentosAsync(int intOpcion, int intCodigoPais, int intCodigoDepartamento);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getDepartamentoTabla", ReplyAction="http://tempuri.org/IService/getDepartamentoTablaResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getDepartamentoTabla", ReplyAction="http://tempuri.org/IServicioGeneral/getDepartamentoTablaResponse")]
         SIVEDI.Clases.Departamentos getDepartamentoTabla(int intOpcion, int intCodigoPais, int intCodigoDepartamento);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getDepartamentoTabla", ReplyAction="http://tempuri.org/IService/getDepartamentoTablaResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getDepartamentoTabla", ReplyAction="http://tempuri.org/IServicioGeneral/getDepartamentoTablaResponse")]
         System.Threading.Tasks.Task<SIVEDI.Clases.Departamentos> getDepartamentoTablaAsync(int intOpcion, int intCodigoPais, int intCodigoDepartamento);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/insDepartamento", ReplyAction="http://tempuri.org/IService/insDepartamentoResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/insDepartamento", ReplyAction="http://tempuri.org/IServicioGeneral/insDepartamentoResponse")]
         int insDepartamento(SIVEDI.Clases.Departamentos departamentos);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/insDepartamento", ReplyAction="http://tempuri.org/IService/insDepartamentoResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/insDepartamento", ReplyAction="http://tempuri.org/IServicioGeneral/insDepartamentoResponse")]
         System.Threading.Tasks.Task<int> insDepartamentoAsync(SIVEDI.Clases.Departamentos departamentos);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getCiudades", ReplyAction="http://tempuri.org/IService/getCiudadesResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getCiudades", ReplyAction="http://tempuri.org/IServicioGeneral/getCiudadesResponse")]
         SIVEDI.Clases.TABLAS.CiudadesTabla[] getCiudades(int intOpcion, int intCodigoDepartamento, int intCodigoCiudad);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getCiudades", ReplyAction="http://tempuri.org/IService/getCiudadesResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getCiudades", ReplyAction="http://tempuri.org/IServicioGeneral/getCiudadesResponse")]
         System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.CiudadesTabla[]> getCiudadesAsync(int intOpcion, int intCodigoDepartamento, int intCodigoCiudad);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getCiudadesTabla", ReplyAction="http://tempuri.org/IService/getCiudadesTablaResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getCiudadesTabla", ReplyAction="http://tempuri.org/IServicioGeneral/getCiudadesTablaResponse")]
         SIVEDI.Clases.Ciudades getCiudadesTabla(int intOpcion, int intCodigoDepartamento, int intCodigoCiudad);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getCiudadesTabla", ReplyAction="http://tempuri.org/IService/getCiudadesTablaResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getCiudadesTabla", ReplyAction="http://tempuri.org/IServicioGeneral/getCiudadesTablaResponse")]
         System.Threading.Tasks.Task<SIVEDI.Clases.Ciudades> getCiudadesTablaAsync(int intOpcion, int intCodigoDepartamento, int intCodigoCiudad);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/insCiudades", ReplyAction="http://tempuri.org/IService/insCiudadesResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/insCiudades", ReplyAction="http://tempuri.org/IServicioGeneral/insCiudadesResponse")]
         int insCiudades(SIVEDI.Clases.Ciudades ciudades);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/insCiudades", ReplyAction="http://tempuri.org/IService/insCiudadesResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/insCiudades", ReplyAction="http://tempuri.org/IServicioGeneral/insCiudadesResponse")]
         System.Threading.Tasks.Task<int> insCiudadesAsync(SIVEDI.Clases.Ciudades ciudades);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getClaseResponsable", ReplyAction="http://tempuri.org/IService/getClaseResponsableResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getClaseResponsable", ReplyAction="http://tempuri.org/IServicioGeneral/getClaseResponsableResponse")]
         SIVEDI.Clases.TABLAS.ClaseResponsableTabla[] getClaseResponsable(int intOpcion, int intCodigoClaseResponsable);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getClaseResponsable", ReplyAction="http://tempuri.org/IService/getClaseResponsableResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getClaseResponsable", ReplyAction="http://tempuri.org/IServicioGeneral/getClaseResponsableResponse")]
         System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.ClaseResponsableTabla[]> getClaseResponsableAsync(int intOpcion, int intCodigoClaseResponsable);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/insClaseResponsable", ReplyAction="http://tempuri.org/IService/insClaseResponsableResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/insClaseResponsable", ReplyAction="http://tempuri.org/IServicioGeneral/insClaseResponsableResponse")]
         int insClaseResponsable(SIVEDI.Clases.ClaseResponsable claseResponsable);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/insClaseResponsable", ReplyAction="http://tempuri.org/IService/insClaseResponsableResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/insClaseResponsable", ReplyAction="http://tempuri.org/IServicioGeneral/insClaseResponsableResponse")]
         System.Threading.Tasks.Task<int> insClaseResponsableAsync(SIVEDI.Clases.ClaseResponsable claseResponsable);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getResponsableTerritorio", ReplyAction="http://tempuri.org/IService/getResponsableTerritorioResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getResponsableTerritorio", ReplyAction="http://tempuri.org/IServicioGeneral/getResponsableTerritorioResponse")]
         SIVEDI.Clases.TABLAS.ResponsableTerritorioTabla[] getResponsableTerritorio(int intOpcion);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getResponsableTerritorio", ReplyAction="http://tempuri.org/IService/getResponsableTerritorioResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getResponsableTerritorio", ReplyAction="http://tempuri.org/IServicioGeneral/getResponsableTerritorioResponse")]
         System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.ResponsableTerritorioTabla[]> getResponsableTerritorioAsync(int intOpcion);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/insResponsableTerritorio", ReplyAction="http://tempuri.org/IService/insResponsableTerritorioResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/insResponsableTerritorio", ReplyAction="http://tempuri.org/IServicioGeneral/insResponsableTerritorioResponse")]
         int insResponsableTerritorio(SIVEDI.Clases.ResponsableTerritorio responsableTerritorio);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/insResponsableTerritorio", ReplyAction="http://tempuri.org/IService/insResponsableTerritorioResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/insResponsableTerritorio", ReplyAction="http://tempuri.org/IServicioGeneral/insResponsableTerritorioResponse")]
         System.Threading.Tasks.Task<int> insResponsableTerritorioAsync(SIVEDI.Clases.ResponsableTerritorio responsableTerritorio);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getResponsableFiltro", ReplyAction="http://tempuri.org/IService/getResponsableFiltroResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getResponsableFiltro", ReplyAction="http://tempuri.org/IServicioGeneral/getResponsableFiltroResponse")]
         SIVEDI.Clases.TABLAS.ResponsableTerritorioFiltro[] getResponsableFiltro(string strIdentificacion, string strNombreResponsable);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getResponsableFiltro", ReplyAction="http://tempuri.org/IService/getResponsableFiltroResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getResponsableFiltro", ReplyAction="http://tempuri.org/IServicioGeneral/getResponsableFiltroResponse")]
         System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.ResponsableTerritorioFiltro[]> getResponsableFiltroAsync(string strIdentificacion, string strNombreResponsable);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getRegionales", ReplyAction="http://tempuri.org/IService/getRegionalesResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getRegionales", ReplyAction="http://tempuri.org/IServicioGeneral/getRegionalesResponse")]
         SIVEDI.Clases.TABLAS.RegionalesTabla[] getRegionales(int intOpcion, int intCodigoRegional, int intCodigoPais);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getRegionales", ReplyAction="http://tempuri.org/IService/getRegionalesResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getRegionales", ReplyAction="http://tempuri.org/IServicioGeneral/getRegionalesResponse")]
         System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.RegionalesTabla[]> getRegionalesAsync(int intOpcion, int intCodigoRegional, int intCodigoPais);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/insRegionales", ReplyAction="http://tempuri.org/IService/insRegionalesResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/insRegionales", ReplyAction="http://tempuri.org/IServicioGeneral/insRegionalesResponse")]
         int insRegionales(SIVEDI.Clases.Regionales regionales);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/insRegionales", ReplyAction="http://tempuri.org/IService/insRegionalesResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/insRegionales", ReplyAction="http://tempuri.org/IServicioGeneral/insRegionalesResponse")]
         System.Threading.Tasks.Task<int> insRegionalesAsync(SIVEDI.Clases.Regionales regionales);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getZonas", ReplyAction="http://tempuri.org/IService/getZonasResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getZonas", ReplyAction="http://tempuri.org/IServicioGeneral/getZonasResponse")]
         SIVEDI.Clases.TABLAS.ZonasTabla[] getZonas(int intOpcion, string strCodigoRegional, string strCodigoZona);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getZonas", ReplyAction="http://tempuri.org/IService/getZonasResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getZonas", ReplyAction="http://tempuri.org/IServicioGeneral/getZonasResponse")]
         System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.ZonasTabla[]> getZonasAsync(int intOpcion, string strCodigoRegional, string strCodigoZona);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/insZonas", ReplyAction="http://tempuri.org/IService/insZonasResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/insZonas", ReplyAction="http://tempuri.org/IServicioGeneral/insZonasResponse")]
         int insZonas(SIVEDI.Clases.Zonas zonas);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/insZonas", ReplyAction="http://tempuri.org/IService/insZonasResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/insZonas", ReplyAction="http://tempuri.org/IServicioGeneral/insZonasResponse")]
         System.Threading.Tasks.Task<int> insZonasAsync(SIVEDI.Clases.Zonas zonas);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getSecciones", ReplyAction="http://tempuri.org/IService/getSeccionesResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getSecciones", ReplyAction="http://tempuri.org/IServicioGeneral/getSeccionesResponse")]
         SIVEDI.Clases.TABLAS.SeccionesTabla[] getSecciones(int intOpcion, string strCodigoZona, string strCodigoSeccion);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getSecciones", ReplyAction="http://tempuri.org/IService/getSeccionesResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getSecciones", ReplyAction="http://tempuri.org/IServicioGeneral/getSeccionesResponse")]
         System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.SeccionesTabla[]> getSeccionesAsync(int intOpcion, string strCodigoZona, string strCodigoSeccion);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getSeccionFiltro", ReplyAction="http://tempuri.org/IService/getSeccionFiltroResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getSeccionFiltro", ReplyAction="http://tempuri.org/IServicioGeneral/getSeccionFiltroResponse")]
         SIVEDI.Clases.TABLAS.SeccionFiltro getSeccionFiltro(int intOpcion, string strCodigoSeccion);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getSeccionFiltro", ReplyAction="http://tempuri.org/IService/getSeccionFiltroResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getSeccionFiltro", ReplyAction="http://tempuri.org/IServicioGeneral/getSeccionFiltroResponse")]
         System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.SeccionFiltro> getSeccionFiltroAsync(int intOpcion, string strCodigoSeccion);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/insSecciones", ReplyAction="http://tempuri.org/IService/insSeccionesResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/insSecciones", ReplyAction="http://tempuri.org/IServicioGeneral/insSeccionesResponse")]
         int insSecciones(SIVEDI.Clases.Secciones secciones);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/insSecciones", ReplyAction="http://tempuri.org/IService/insSeccionesResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/insSecciones", ReplyAction="http://tempuri.org/IServicioGeneral/insSeccionesResponse")]
         System.Threading.Tasks.Task<int> insSeccionesAsync(SIVEDI.Clases.Secciones secciones);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getTerritorio", ReplyAction="http://tempuri.org/IService/getTerritorioResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getTerritorio", ReplyAction="http://tempuri.org/IServicioGeneral/getTerritorioResponse")]
         SIVEDI.Clases.TABLAS.TerritorioTabla[] getTerritorio(int intOpcion, string strCodigoSeccion, string strCodigoTerritorio);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getTerritorio", ReplyAction="http://tempuri.org/IService/getTerritorioResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getTerritorio", ReplyAction="http://tempuri.org/IServicioGeneral/getTerritorioResponse")]
         System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.TerritorioTabla[]> getTerritorioAsync(int intOpcion, string strCodigoSeccion, string strCodigoTerritorio);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getTerritorioFiltro", ReplyAction="http://tempuri.org/IService/getTerritorioFiltroResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getTerritorioFiltro", ReplyAction="http://tempuri.org/IServicioGeneral/getTerritorioFiltroResponse")]
         SIVEDI.Clases.TABLAS.TerritorioFiltro getTerritorioFiltro(int intOpcion, string strCodigoTerrirorio);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getTerritorioFiltro", ReplyAction="http://tempuri.org/IService/getTerritorioFiltroResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getTerritorioFiltro", ReplyAction="http://tempuri.org/IServicioGeneral/getTerritorioFiltroResponse")]
         System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.TerritorioFiltro> getTerritorioFiltroAsync(int intOpcion, string strCodigoTerrirorio);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/insTerritorio", ReplyAction="http://tempuri.org/IService/insTerritorioResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/insTerritorio", ReplyAction="http://tempuri.org/IServicioGeneral/insTerritorioResponse")]
         int insTerritorio(SIVEDI.Clases.Territorios territorios);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/insTerritorio", ReplyAction="http://tempuri.org/IService/insTerritorioResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/insTerritorio", ReplyAction="http://tempuri.org/IServicioGeneral/insTerritorioResponse")]
         System.Threading.Tasks.Task<int> insTerritorioAsync(SIVEDI.Clases.Territorios territorios);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getConsultaCliente", ReplyAction="http://tempuri.org/IService/getConsultaClienteResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getConsultaCliente", ReplyAction="http://tempuri.org/IServicioGeneral/getConsultaClienteResponse")]
         SIVEDI.Clases.TABLAS.ClienteConsultaTabla getConsultaCliente(string strIdentificacion);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getConsultaCliente", ReplyAction="http://tempuri.org/IService/getConsultaClienteResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getConsultaCliente", ReplyAction="http://tempuri.org/IServicioGeneral/getConsultaClienteResponse")]
         System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.ClienteConsultaTabla> getConsultaClienteAsync(string strIdentificacion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getReferenciaCliente", ReplyAction="http://tempuri.org/IServicioGeneral/getReferenciaClienteResponse")]
+        SIVEDI.Clases.TABLAS.ReferenciaClienteTabla[] getReferenciaCliente(int intCodigoCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getReferenciaCliente", ReplyAction="http://tempuri.org/IServicioGeneral/getReferenciaClienteResponse")]
+        System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.ReferenciaClienteTabla[]> getReferenciaClienteAsync(int intCodigoCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getTipoReferencia", ReplyAction="http://tempuri.org/IServicioGeneral/getTipoReferenciaResponse")]
+        SIVEDI.Clases.TipoReferencia[] getTipoReferencia(int intOpcion, int intCodigoTipoReferencia);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getTipoReferencia", ReplyAction="http://tempuri.org/IServicioGeneral/getTipoReferenciaResponse")]
+        System.Threading.Tasks.Task<SIVEDI.Clases.TipoReferencia[]> getTipoReferenciaAsync(int intOpcion, int intCodigoTipoReferencia);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getFormaPago", ReplyAction="http://tempuri.org/IServicioGeneral/getFormaPagoResponse")]
+        SIVEDI.Clases.FormasPago[] getFormaPago(int intOpcion, int intCodigoformaPago);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getFormaPago", ReplyAction="http://tempuri.org/IServicioGeneral/getFormaPagoResponse")]
+        System.Threading.Tasks.Task<SIVEDI.Clases.FormasPago[]> getFormaPagoAsync(int intOpcion, int intCodigoformaPago);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IServiceChannel : SIVEDI.ServicioGeneral.IService, System.ServiceModel.IClientChannel {
+    public interface IServicioGeneralChannel : SIVEDI.ServicioGeneral.IServicioGeneral, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class ServiceClient : System.ServiceModel.ClientBase<SIVEDI.ServicioGeneral.IService>, SIVEDI.ServicioGeneral.IService {
+    public partial class ServicioGeneralClient : System.ServiceModel.ClientBase<SIVEDI.ServicioGeneral.IServicioGeneral>, SIVEDI.ServicioGeneral.IServicioGeneral {
         
-        public ServiceClient() {
+        public ServicioGeneralClient() {
         }
         
-        public ServiceClient(string endpointConfigurationName) : 
+        public ServicioGeneralClient(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
         
-        public ServiceClient(string endpointConfigurationName, string remoteAddress) : 
+        public ServicioGeneralClient(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public ServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public ServicioGeneralClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public ServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public ServicioGeneralClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
         
@@ -713,6 +731,30 @@ namespace SIVEDI.ServicioGeneral {
         
         public System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.ClienteConsultaTabla> getConsultaClienteAsync(string strIdentificacion) {
             return base.Channel.getConsultaClienteAsync(strIdentificacion);
+        }
+        
+        public SIVEDI.Clases.TABLAS.ReferenciaClienteTabla[] getReferenciaCliente(int intCodigoCliente) {
+            return base.Channel.getReferenciaCliente(intCodigoCliente);
+        }
+        
+        public System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.ReferenciaClienteTabla[]> getReferenciaClienteAsync(int intCodigoCliente) {
+            return base.Channel.getReferenciaClienteAsync(intCodigoCliente);
+        }
+        
+        public SIVEDI.Clases.TipoReferencia[] getTipoReferencia(int intOpcion, int intCodigoTipoReferencia) {
+            return base.Channel.getTipoReferencia(intOpcion, intCodigoTipoReferencia);
+        }
+        
+        public System.Threading.Tasks.Task<SIVEDI.Clases.TipoReferencia[]> getTipoReferenciaAsync(int intOpcion, int intCodigoTipoReferencia) {
+            return base.Channel.getTipoReferenciaAsync(intOpcion, intCodigoTipoReferencia);
+        }
+        
+        public SIVEDI.Clases.FormasPago[] getFormaPago(int intOpcion, int intCodigoformaPago) {
+            return base.Channel.getFormaPago(intOpcion, intCodigoformaPago);
+        }
+        
+        public System.Threading.Tasks.Task<SIVEDI.Clases.FormasPago[]> getFormaPagoAsync(int intOpcion, int intCodigoformaPago) {
+            return base.Channel.getFormaPagoAsync(intOpcion, intCodigoformaPago);
         }
     }
 }

@@ -39,7 +39,7 @@ namespace SIVEDI.Mantenimiento
         }
         private void cargaCombos()
         {
-            ServiceClient servicioGeneral = new ServiceClient();
+            ServicioGeneralClient servicioGeneral = new ServicioGeneralClient();
             var withBlock = cboPais;
             withBlock.DataSource = servicioGeneral.getPaises(1, 0);
             withBlock.ValueMember = "CODIGO";
@@ -56,7 +56,7 @@ namespace SIVEDI.Mantenimiento
         {
             if (cboPais.SelectedIndex > 0)
             {
-                ServiceClient servicioGeneral = new ServiceClient();
+                ServicioGeneralClient servicioGeneral = new ServicioGeneralClient();
                 var withBlock = cboRegional;
                 withBlock.DataSource = servicioGeneral.getRegionales(1, 0, Convert.ToInt32(cboPais.SelectedValue));
                 withBlock.ValueMember = "CODIGO";
@@ -78,7 +78,7 @@ namespace SIVEDI.Mantenimiento
         {
             if (cboRegional.SelectedIndex > 0)
             {
-                ServiceClient servicioGeneral = new ServiceClient();
+                ServicioGeneralClient servicioGeneral = new ServicioGeneralClient();
                 var withBlock = cboZona;
                 withBlock.DataSource = servicioGeneral.getZonas(1, Convert.ToString(cboRegional.SelectedValue), String.Empty);
                 withBlock.ValueMember = "CODIGO";
@@ -107,7 +107,7 @@ namespace SIVEDI.Mantenimiento
 
         private void llenaGrilla(string strCodigoZona)
         {
-            ServiceClient servicioGeneral = new ServiceClient();
+            ServicioGeneralClient servicioGeneral = new ServicioGeneralClient();
             var withBlock = dtgSecciones;
             withBlock.DataSource = servicioGeneral.getSecciones(3, strCodigoZona, string.Empty);
         }
@@ -172,7 +172,7 @@ namespace SIVEDI.Mantenimiento
         {
             if (e.RowIndex >= 0)
             {
-                ServiceClient servicioGeneral = new ServiceClient();
+                ServicioGeneralClient servicioGeneral = new ServicioGeneralClient();
                 txtCodigoSeccion.Text = Convert.ToString(dtgSecciones.Rows[e.RowIndex].Cells["CODIGO"].Value);
                 txtNombreSeccion.Text = Convert.ToString(dtgSecciones.Rows[e.RowIndex].Cells["NOMBRE"].Value);
                 txtResponsableSeccion.Text = Convert.ToString(dtgSecciones.Rows[e.RowIndex].Cells["RESPONSABLE"].Value);
@@ -225,7 +225,7 @@ namespace SIVEDI.Mantenimiento
             {
                 string strResultado;
                 Secciones secciones = new Secciones();
-                ServiceClient servicioGeneral = new ServiceClient();
+                ServicioGeneralClient servicioGeneral = new ServicioGeneralClient();
                 if (rbnActivo.Checked)
                 {
                     secciones.ESTADO = true;

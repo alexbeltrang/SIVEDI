@@ -143,6 +143,18 @@ namespace SIVEDI.WCFGeneral
             return ListTipoCliente;
         }
 
+        public TipoCliente getTipoClienteTabla(int intOpcion, int intCodigoTipoCliente)
+        {
+            TipoCliente ListTipoCliente = new TipoCliente();
+            SpRequest spRequestUsuario = new SpRequest();
+            DataDB data = new DataDB("SIVEDIBDEntities");
+
+            StoreProcedure SP = spRequestUsuario.getTipoCliente("SPR_GET_TIPO_CLIENTE", intOpcion, intCodigoTipoCliente);
+            ListTipoCliente = data.ExecuteQuery<TipoCliente>(SP);
+
+            return ListTipoCliente;
+        }
+
         public int insTipoCliente(TipoCliente tipoCliente)
         {
             SpRequest spRequestUsuario = new SpRequest();
@@ -559,6 +571,25 @@ namespace SIVEDI.WCFGeneral
             return clienteConsultaTabla;
         }
 
+        public int insCliente(Cliente cliente)
+        {
+            sp_Cuentas SpCuentas = new sp_Cuentas();
+            DataDB data = new DataDB("SIVEDIBDEntities");
+
+            StoreProcedure SP = SpCuentas.insClientes("SPR_IU_CUENTA", cliente);
+            int codigoSeccion = data.ExecuteInsert(SP, "PO_NRESULTADO");
+            return codigoSeccion;
+        }
+        public int insReferenciasCliente(ReferenciaCliente referenciaCliente)
+        {
+            sp_Cuentas SpCuentas = new sp_Cuentas();
+            DataDB data = new DataDB("SIVEDIBDEntities");
+
+            StoreProcedure SP = SpCuentas.insReferenciasCliente("SPR_INS_REFERENCIA", referenciaCliente);
+            int codigoSeccion = data.ExecuteInsert(SP, "PO_NRESULTADO");
+            return codigoSeccion;
+        }
+
         public List<ReferenciaClienteTabla> getReferenciaCliente(int intCodigoCliente)
         {
             List<ReferenciaClienteTabla> referenciaClienteTabla = new List<ReferenciaClienteTabla>();
@@ -600,5 +631,23 @@ namespace SIVEDI.WCFGeneral
 
 
         #endregion
+
+        #region Cupo Mínimo
+
+        public CupoMinimo getCupoMinimoCredito()
+        {
+            CupoMinimo cupoMinimo = new CupoMinimo();
+            sp_Cuentas spCuentas = new sp_Cuentas();
+            DataDB data = new DataDB("SIVEDIBDEntities");
+            StoreProcedure SP = spCuentas.getCupoMinimoCredito("SPR_GET_CUPO_CREDITO");
+            cupoMinimo = data.ExecuteQuery<CupoMinimo>(SP);
+            return cupoMinimo;
+        }
+
+
+        #endregion
+
+
     }
+
 }

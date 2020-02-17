@@ -35,6 +35,12 @@ namespace SIVEDI.WCFGeneral
         [OperationContract]
         List<TipoClienteTabla> getTipoCliente(int intOpcion, int intCodigoTipoCliente);
         [OperationContract]
+        TipoCliente getTipoClienteTabla(int intOpcion, int intCodigoTipoCliente);
+        [OperationContract]
+        int insCliente(Cliente cliente);
+        [OperationContract]
+        int insReferenciasCliente(ReferenciaCliente referenciaCliente);
+        [OperationContract]
         int insTipoCliente(TipoCliente tipoCliente);
         [OperationContract]
         List<UnidadesMedidaTabla> getUnidadMedida(int intOpcion, int intCodigoUnidadMedida);
@@ -116,5 +122,7 @@ namespace SIVEDI.WCFGeneral
         List<TipoReferencia> getTipoReferencia(int intOpcion, int intCodigoTipoReferencia);
         [OperationContract]
         List<FormasPago> getFormaPago(int intOpcion, int intCodigoformaPago);
+        [OperationContract]
+        CupoMinimo getCupoMinimoCredito();
     }
 }

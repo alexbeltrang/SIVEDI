@@ -75,6 +75,24 @@ namespace SIVEDI.ServicioGeneral {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getTipoCliente", ReplyAction="http://tempuri.org/IServicioGeneral/getTipoClienteResponse")]
         System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.TipoClienteTabla[]> getTipoClienteAsync(int intOpcion, int intCodigoTipoCliente);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getTipoClienteTabla", ReplyAction="http://tempuri.org/IServicioGeneral/getTipoClienteTablaResponse")]
+        SIVEDI.Clases.TipoCliente getTipoClienteTabla(int intOpcion, int intCodigoTipoCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getTipoClienteTabla", ReplyAction="http://tempuri.org/IServicioGeneral/getTipoClienteTablaResponse")]
+        System.Threading.Tasks.Task<SIVEDI.Clases.TipoCliente> getTipoClienteTablaAsync(int intOpcion, int intCodigoTipoCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/insCliente", ReplyAction="http://tempuri.org/IServicioGeneral/insClienteResponse")]
+        int insCliente(SIVEDI.Clases.Cliente cliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/insCliente", ReplyAction="http://tempuri.org/IServicioGeneral/insClienteResponse")]
+        System.Threading.Tasks.Task<int> insClienteAsync(SIVEDI.Clases.Cliente cliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/insReferenciasCliente", ReplyAction="http://tempuri.org/IServicioGeneral/insReferenciasClienteResponse")]
+        int insReferenciasCliente(SIVEDI.Clases.ReferenciaCliente referenciaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/insReferenciasCliente", ReplyAction="http://tempuri.org/IServicioGeneral/insReferenciasClienteResponse")]
+        System.Threading.Tasks.Task<int> insReferenciasClienteAsync(SIVEDI.Clases.ReferenciaCliente referenciaCliente);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/insTipoCliente", ReplyAction="http://tempuri.org/IServicioGeneral/insTipoClienteResponse")]
         int insTipoCliente(SIVEDI.Clases.TipoCliente tipoCliente);
         
@@ -320,6 +338,12 @@ namespace SIVEDI.ServicioGeneral {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getFormaPago", ReplyAction="http://tempuri.org/IServicioGeneral/getFormaPagoResponse")]
         System.Threading.Tasks.Task<SIVEDI.Clases.FormasPago[]> getFormaPagoAsync(int intOpcion, int intCodigoformaPago);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getCupoMinimoCredito", ReplyAction="http://tempuri.org/IServicioGeneral/getCupoMinimoCreditoResponse")]
+        SIVEDI.Clases.CupoMinimo getCupoMinimoCredito();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getCupoMinimoCredito", ReplyAction="http://tempuri.org/IServicioGeneral/getCupoMinimoCreditoResponse")]
+        System.Threading.Tasks.Task<SIVEDI.Clases.CupoMinimo> getCupoMinimoCreditoAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -427,6 +451,30 @@ namespace SIVEDI.ServicioGeneral {
         
         public System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.TipoClienteTabla[]> getTipoClienteAsync(int intOpcion, int intCodigoTipoCliente) {
             return base.Channel.getTipoClienteAsync(intOpcion, intCodigoTipoCliente);
+        }
+        
+        public SIVEDI.Clases.TipoCliente getTipoClienteTabla(int intOpcion, int intCodigoTipoCliente) {
+            return base.Channel.getTipoClienteTabla(intOpcion, intCodigoTipoCliente);
+        }
+        
+        public System.Threading.Tasks.Task<SIVEDI.Clases.TipoCliente> getTipoClienteTablaAsync(int intOpcion, int intCodigoTipoCliente) {
+            return base.Channel.getTipoClienteTablaAsync(intOpcion, intCodigoTipoCliente);
+        }
+        
+        public int insCliente(SIVEDI.Clases.Cliente cliente) {
+            return base.Channel.insCliente(cliente);
+        }
+        
+        public System.Threading.Tasks.Task<int> insClienteAsync(SIVEDI.Clases.Cliente cliente) {
+            return base.Channel.insClienteAsync(cliente);
+        }
+        
+        public int insReferenciasCliente(SIVEDI.Clases.ReferenciaCliente referenciaCliente) {
+            return base.Channel.insReferenciasCliente(referenciaCliente);
+        }
+        
+        public System.Threading.Tasks.Task<int> insReferenciasClienteAsync(SIVEDI.Clases.ReferenciaCliente referenciaCliente) {
+            return base.Channel.insReferenciasClienteAsync(referenciaCliente);
         }
         
         public int insTipoCliente(SIVEDI.Clases.TipoCliente tipoCliente) {
@@ -755,6 +803,14 @@ namespace SIVEDI.ServicioGeneral {
         
         public System.Threading.Tasks.Task<SIVEDI.Clases.FormasPago[]> getFormaPagoAsync(int intOpcion, int intCodigoformaPago) {
             return base.Channel.getFormaPagoAsync(intOpcion, intCodigoformaPago);
+        }
+        
+        public SIVEDI.Clases.CupoMinimo getCupoMinimoCredito() {
+            return base.Channel.getCupoMinimoCredito();
+        }
+        
+        public System.Threading.Tasks.Task<SIVEDI.Clases.CupoMinimo> getCupoMinimoCreditoAsync() {
+            return base.Channel.getCupoMinimoCreditoAsync();
         }
     }
 }

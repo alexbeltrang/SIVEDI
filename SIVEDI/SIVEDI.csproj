@@ -306,6 +306,7 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Properties\DataSources\SIVEDI.Clases.Ciudades.datasource" />
+    <None Include="Properties\DataSources\SIVEDI.Clases.CupoMinimo.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.Departamentos.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.EstadoActividad.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.FormasPago.datasource" />
@@ -338,6 +339,7 @@
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.UnidasMedidaTabla.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.usuariosTabla.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.ZonasTabla.datasource" />
+    <None Include="Properties\DataSources\SIVEDI.Clases.TipoCliente.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TipoReferencia.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.usuarios.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.usuariosTabla.datasource" />

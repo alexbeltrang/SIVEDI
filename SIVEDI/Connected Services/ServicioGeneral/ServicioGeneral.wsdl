@@ -68,6 +68,24 @@
   <wsdl:message name="IServicioGeneral_getTipoCliente_OutputMessage">
     <wsdl:part name="parameters" element="tns:getTipoClienteResponse" />
   </wsdl:message>
+  <wsdl:message name="IServicioGeneral_getTipoClienteTabla_InputMessage">
+    <wsdl:part name="parameters" element="tns:getTipoClienteTabla" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_getTipoClienteTabla_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getTipoClienteTablaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_insCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:insCliente" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_insCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_insReferenciasCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:insReferenciasCliente" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_insReferenciasCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insReferenciasClienteResponse" />
+  </wsdl:message>
   <wsdl:message name="IServicioGeneral_insTipoCliente_InputMessage">
     <wsdl:part name="parameters" element="tns:insTipoCliente" />
   </wsdl:message>
@@ -314,6 +332,12 @@
   <wsdl:message name="IServicioGeneral_getFormaPago_OutputMessage">
     <wsdl:part name="parameters" element="tns:getFormaPagoResponse" />
   </wsdl:message>
+  <wsdl:message name="IServicioGeneral_getCupoMinimoCredito_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCupoMinimoCredito" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_getCupoMinimoCredito_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getCupoMinimoCreditoResponse" />
+  </wsdl:message>
   <wsdl:portType name="IServicioGeneral">
     <wsdl:operation name="ingresaAplicativo">
       <wsdl:input wsaw:Action="http://tempuri.org/IServicioGeneral/ingresaAplicativo" message="tns:IServicioGeneral_ingresaAplicativo_InputMessage" />
@@ -354,6 +378,18 @@
     <wsdl:operation name="getTipoCliente">
       <wsdl:input wsaw:Action="http://tempuri.org/IServicioGeneral/getTipoCliente" message="tns:IServicioGeneral_getTipoCliente_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServicioGeneral/getTipoClienteResponse" message="tns:IServicioGeneral_getTipoCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getTipoClienteTabla">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioGeneral/getTipoClienteTabla" message="tns:IServicioGeneral_getTipoClienteTabla_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioGeneral/getTipoClienteTablaResponse" message="tns:IServicioGeneral_getTipoClienteTabla_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioGeneral/insCliente" message="tns:IServicioGeneral_insCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioGeneral/insClienteResponse" message="tns:IServicioGeneral_insCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insReferenciasCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioGeneral/insReferenciasCliente" message="tns:IServicioGeneral_insReferenciasCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioGeneral/insReferenciasClienteResponse" message="tns:IServicioGeneral_insReferenciasCliente_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="insTipoCliente">
       <wsdl:input wsaw:Action="http://tempuri.org/IServicioGeneral/insTipoCliente" message="tns:IServicioGeneral_insTipoCliente_InputMessage" />
@@ -519,6 +555,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IServicioGeneral/getFormaPago" message="tns:IServicioGeneral_getFormaPago_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServicioGeneral/getFormaPagoResponse" message="tns:IServicioGeneral_getFormaPago_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="getCupoMinimoCredito">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioGeneral/getCupoMinimoCredito" message="tns:IServicioGeneral_getCupoMinimoCredito_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioGeneral/getCupoMinimoCreditoResponse" message="tns:IServicioGeneral_getCupoMinimoCredito_OutputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IServicioGeneral" type="tns:IServicioGeneral">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -605,6 +645,33 @@
     </wsdl:operation>
     <wsdl:operation name="getTipoCliente">
       <soap:operation soapAction="http://tempuri.org/IServicioGeneral/getTipoCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTipoClienteTabla">
+      <soap:operation soapAction="http://tempuri.org/IServicioGeneral/getTipoClienteTabla" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insCliente">
+      <soap:operation soapAction="http://tempuri.org/IServicioGeneral/insCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insReferenciasCliente">
+      <soap:operation soapAction="http://tempuri.org/IServicioGeneral/insReferenciasCliente" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -974,6 +1041,15 @@
     </wsdl:operation>
     <wsdl:operation name="getFormaPago">
       <soap:operation soapAction="http://tempuri.org/IServicioGeneral/getFormaPago" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCupoMinimoCredito">
+      <soap:operation soapAction="http://tempuri.org/IServicioGeneral/getCupoMinimoCredito" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

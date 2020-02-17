@@ -109,8 +109,6 @@
             // chkAyudaEnLinea
             // 
             this.chkAyudaEnLinea.AutoSize = true;
-            this.chkAyudaEnLinea.Checked = true;
-            this.chkAyudaEnLinea.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkAyudaEnLinea.Location = new System.Drawing.Point(95, 98);
             this.chkAyudaEnLinea.Name = "chkAyudaEnLinea";
             this.chkAyudaEnLinea.Size = new System.Drawing.Size(102, 17);

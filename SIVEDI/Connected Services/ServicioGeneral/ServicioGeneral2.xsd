@@ -149,10 +149,53 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="getTipoClienteTabla">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="intOpcion" type="xs:int" />
+        <xs:element minOccurs="0" name="intCodigoTipoCliente" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getTipoClienteTablaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" minOccurs="0" name="getTipoClienteTablaResult" nillable="true" type="q11:TipoCliente" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="insCliente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" minOccurs="0" name="cliente" nillable="true" type="q12:Cliente" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="insClienteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="insClienteResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="insReferenciasCliente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" minOccurs="0" name="referenciaCliente" nillable="true" type="q13:ReferenciaCliente" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="insReferenciasClienteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="insReferenciasClienteResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="insTipoCliente">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" minOccurs="0" name="tipoCliente" nillable="true" type="q11:TipoCliente" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" minOccurs="0" name="tipoCliente" nillable="true" type="q14:TipoCliente" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -174,14 +217,14 @@
   <xs:element name="getUnidadMedidaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" minOccurs="0" name="getUnidadMedidaResult" nillable="true" type="q12:ArrayOfUnidadesMedidaTabla" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" minOccurs="0" name="getUnidadMedidaResult" nillable="true" type="q15:ArrayOfUnidadesMedidaTabla" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="insUnidadMedida">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" minOccurs="0" name="unidadMedida" nillable="true" type="q13:UnidadMedida" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" minOccurs="0" name="unidadMedida" nillable="true" type="q16:UnidadMedida" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -203,14 +246,14 @@
   <xs:element name="GetGenerosResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" minOccurs="0" name="GetGenerosResult" nillable="true" type="q14:ArrayOfGenerosTabla" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" minOccurs="0" name="GetGenerosResult" nillable="true" type="q17:ArrayOfGenerosTabla" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="insGeneros">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" minOccurs="0" name="generos" nillable="true" type="q15:Generos" />
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" minOccurs="0" name="generos" nillable="true" type="q18:Generos" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -232,14 +275,14 @@
   <xs:element name="getformasIngresoResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" minOccurs="0" name="getformasIngresoResult" nillable="true" type="q16:ArrayOfFormasIngresoTabla" />
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" minOccurs="0" name="getformasIngresoResult" nillable="true" type="q19:ArrayOfFormasIngresoTabla" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="insFormasIngreso">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" minOccurs="0" name="formasIngreso" nillable="true" type="q17:formasIngreso" />
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" minOccurs="0" name="formasIngreso" nillable="true" type="q20:formasIngreso" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -261,14 +304,14 @@
   <xs:element name="getEstadoCivilResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" minOccurs="0" name="getEstadoCivilResult" nillable="true" type="q18:ArrayOfEstadoCivilTabla" />
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" minOccurs="0" name="getEstadoCivilResult" nillable="true" type="q21:ArrayOfEstadoCivilTabla" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="insEstadoCivil">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" minOccurs="0" name="estadoCivil" nillable="true" type="q19:EstadoCivil" />
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" minOccurs="0" name="estadoCivil" nillable="true" type="q22:EstadoCivil" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -290,7 +333,7 @@
   <xs:element name="getEstadoActividadResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" minOccurs="0" name="getEstadoActividadResult" nillable="true" type="q20:ArrayOfEstadoActividadTabla" />
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" minOccurs="0" name="getEstadoActividadResult" nillable="true" type="q23:ArrayOfEstadoActividadTabla" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -305,14 +348,14 @@
   <xs:element name="getEstadoActividadCamposTablaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" minOccurs="0" name="getEstadoActividadCamposTablaResult" nillable="true" type="q21:EstadoActividad" />
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" minOccurs="0" name="getEstadoActividadCamposTablaResult" nillable="true" type="q24:EstadoActividad" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="insEstadoActividad">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" minOccurs="0" name="estadoActividad" nillable="true" type="q22:EstadoActividad" />
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" minOccurs="0" name="estadoActividad" nillable="true" type="q25:EstadoActividad" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -334,14 +377,14 @@
   <xs:element name="getCampanasResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" minOccurs="0" name="getCampanasResult" nillable="true" type="q23:ArrayOfCampanasTabla" />
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" minOccurs="0" name="getCampanasResult" nillable="true" type="q26:ArrayOfCampanasTabla" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="insCampanas">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" minOccurs="0" name="Campanas" nillable="true" type="q24:campanas" />
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" minOccurs="0" name="Campanas" nillable="true" type="q27:campanas" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -363,14 +406,14 @@
   <xs:element name="getPaisesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" minOccurs="0" name="getPaisesResult" nillable="true" type="q25:ArrayOfPaisTabla" />
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" minOccurs="0" name="getPaisesResult" nillable="true" type="q28:ArrayOfPaisTabla" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="insPaises">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" minOccurs="0" name="pais" nillable="true" type="q26:Pais" />
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" minOccurs="0" name="pais" nillable="true" type="q29:Pais" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -393,7 +436,7 @@
   <xs:element name="getDepartamentosResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" minOccurs="0" name="getDepartamentosResult" nillable="true" type="q27:ArrayOfDepartamentoTabla" />
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" minOccurs="0" name="getDepartamentosResult" nillable="true" type="q30:ArrayOfDepartamentoTabla" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -409,14 +452,14 @@
   <xs:element name="getDepartamentoTablaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" minOccurs="0" name="getDepartamentoTablaResult" nillable="true" type="q28:Departamentos" />
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" minOccurs="0" name="getDepartamentoTablaResult" nillable="true" type="q31:Departamentos" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="insDepartamento">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" minOccurs="0" name="departamentos" nillable="true" type="q29:Departamentos" />
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" minOccurs="0" name="departamentos" nillable="true" type="q32:Departamentos" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -439,7 +482,7 @@
   <xs:element name="getCiudadesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" minOccurs="0" name="getCiudadesResult" nillable="true" type="q30:ArrayOfCiudadesTabla" />
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" minOccurs="0" name="getCiudadesResult" nillable="true" type="q33:ArrayOfCiudadesTabla" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -455,14 +498,14 @@
   <xs:element name="getCiudadesTablaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" minOccurs="0" name="getCiudadesTablaResult" nillable="true" type="q31:Ciudades" />
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" minOccurs="0" name="getCiudadesTablaResult" nillable="true" type="q34:Ciudades" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="insCiudades">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" minOccurs="0" name="ciudades" nillable="true" type="q32:Ciudades" />
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" minOccurs="0" name="ciudades" nillable="true" type="q35:Ciudades" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -484,14 +527,14 @@
   <xs:element name="getClaseResponsableResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" minOccurs="0" name="getClaseResponsableResult" nillable="true" type="q33:ArrayOfClaseResponsableTabla" />
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" minOccurs="0" name="getClaseResponsableResult" nillable="true" type="q36:ArrayOfClaseResponsableTabla" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="insClaseResponsable">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" minOccurs="0" name="claseResponsable" nillable="true" type="q34:ClaseResponsable" />
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" minOccurs="0" name="claseResponsable" nillable="true" type="q37:ClaseResponsable" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -512,14 +555,14 @@
   <xs:element name="getResponsableTerritorioResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" minOccurs="0" name="getResponsableTerritorioResult" nillable="true" type="q35:ArrayOfResponsableTerritorioTabla" />
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" minOccurs="0" name="getResponsableTerritorioResult" nillable="true" type="q38:ArrayOfResponsableTerritorioTabla" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="insResponsableTerritorio">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" minOccurs="0" name="responsableTerritorio" nillable="true" type="q36:ResponsableTerritorio" />
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" minOccurs="0" name="responsableTerritorio" nillable="true" type="q39:ResponsableTerritorio" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -541,7 +584,7 @@
   <xs:element name="getResponsableFiltroResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" minOccurs="0" name="getResponsableFiltroResult" nillable="true" type="q37:ArrayOfResponsableTerritorioFiltro" />
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" minOccurs="0" name="getResponsableFiltroResult" nillable="true" type="q40:ArrayOfResponsableTerritorioFiltro" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -557,14 +600,14 @@
   <xs:element name="getRegionalesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" minOccurs="0" name="getRegionalesResult" nillable="true" type="q38:ArrayOfRegionalesTabla" />
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" minOccurs="0" name="getRegionalesResult" nillable="true" type="q41:ArrayOfRegionalesTabla" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="insRegionales">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" minOccurs="0" name="regionales" nillable="true" type="q39:Regionales" />
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" minOccurs="0" name="regionales" nillable="true" type="q42:Regionales" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -587,14 +630,14 @@
   <xs:element name="getZonasResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" minOccurs="0" name="getZonasResult" nillable="true" type="q40:ArrayOfZonasTabla" />
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" minOccurs="0" name="getZonasResult" nillable="true" type="q43:ArrayOfZonasTabla" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="insZonas">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" minOccurs="0" name="zonas" nillable="true" type="q41:Zonas" />
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" minOccurs="0" name="zonas" nillable="true" type="q44:Zonas" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -617,7 +660,7 @@
   <xs:element name="getSeccionesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" minOccurs="0" name="getSeccionesResult" nillable="true" type="q42:ArrayOfSeccionesTabla" />
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" minOccurs="0" name="getSeccionesResult" nillable="true" type="q45:ArrayOfSeccionesTabla" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -632,14 +675,14 @@
   <xs:element name="getSeccionFiltroResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" minOccurs="0" name="getSeccionFiltroResult" nillable="true" type="q43:SeccionFiltro" />
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" minOccurs="0" name="getSeccionFiltroResult" nillable="true" type="q46:SeccionFiltro" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="insSecciones">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" minOccurs="0" name="secciones" nillable="true" type="q44:Secciones" />
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" minOccurs="0" name="secciones" nillable="true" type="q47:Secciones" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -662,7 +705,7 @@
   <xs:element name="getTerritorioResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" minOccurs="0" name="getTerritorioResult" nillable="true" type="q45:ArrayOfTerritorioTabla" />
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" minOccurs="0" name="getTerritorioResult" nillable="true" type="q48:ArrayOfTerritorioTabla" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -677,14 +720,14 @@
   <xs:element name="getTerritorioFiltroResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" minOccurs="0" name="getTerritorioFiltroResult" nillable="true" type="q46:TerritorioFiltro" />
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" minOccurs="0" name="getTerritorioFiltroResult" nillable="true" type="q49:TerritorioFiltro" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="insTerritorio">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" minOccurs="0" name="territorios" nillable="true" type="q47:Territorios" />
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" minOccurs="0" name="territorios" nillable="true" type="q50:Territorios" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -705,7 +748,7 @@
   <xs:element name="getConsultaClienteResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" minOccurs="0" name="getConsultaClienteResult" nillable="true" type="q48:ClienteConsultaTabla" />
+        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" minOccurs="0" name="getConsultaClienteResult" nillable="true" type="q51:ClienteConsultaTabla" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -719,7 +762,7 @@
   <xs:element name="getReferenciaClienteResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" minOccurs="0" name="getReferenciaClienteResult" nillable="true" type="q49:ArrayOfReferenciaClienteTabla" />
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" minOccurs="0" name="getReferenciaClienteResult" nillable="true" type="q52:ArrayOfReferenciaClienteTabla" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -734,7 +777,7 @@
   <xs:element name="getTipoReferenciaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" minOccurs="0" name="getTipoReferenciaResult" nillable="true" type="q50:ArrayOfTipoReferencia" />
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" minOccurs="0" name="getTipoReferenciaResult" nillable="true" type="q53:ArrayOfTipoReferencia" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -749,7 +792,19 @@
   <xs:element name="getFormaPagoResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" minOccurs="0" name="getFormaPagoResult" nillable="true" type="q51:ArrayOfFormasPago" />
+        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" minOccurs="0" name="getFormaPagoResult" nillable="true" type="q54:ArrayOfFormasPago" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getCupoMinimoCredito">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getCupoMinimoCreditoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" minOccurs="0" name="getCupoMinimoCreditoResult" nillable="true" type="q55:CupoMinimo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

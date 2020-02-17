@@ -252,7 +252,7 @@
             // 
             // Label35
             // 
-            this.Label35.Location = new System.Drawing.Point(166, 259);
+            this.Label35.Location = new System.Drawing.Point(167, 259);
             this.Label35.Name = "Label35";
             this.Label35.Size = new System.Drawing.Size(56, 30);
             this.Label35.TabIndex = 37;

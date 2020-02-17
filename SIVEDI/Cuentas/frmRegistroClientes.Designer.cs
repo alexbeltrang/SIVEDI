@@ -31,9 +31,9 @@ namespace SIVEDI.Cuentas
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Panel1 = new System.Windows.Forms.Panel();
             this.Label42 = new System.Windows.Forms.Label();
             this.GroupBox4 = new System.Windows.Forms.GroupBox();
@@ -369,6 +369,7 @@ namespace SIVEDI.Cuentas
             this.txtEstrato.Size = new System.Drawing.Size(55, 20);
             this.txtEstrato.TabIndex = 14;
             this.totCampos.SetToolTip(this.txtEstrato, "Ingrese el estrato socioeconómico de la cuenta");
+            this.txtEstrato.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEstrato_KeyPress);
             // 
             // Label17
             // 
@@ -417,6 +418,7 @@ namespace SIVEDI.Cuentas
             this.cboZona.Size = new System.Drawing.Size(176, 21);
             this.cboZona.TabIndex = 39;
             this.totCampos.SetToolTip(this.cboZona, "Seleccione la Zona a la que pertenece la cuenta");
+            this.cboZona.SelectedIndexChanged += new System.EventHandler(this.cboZona_SelectedIndexChanged);
             // 
             // cboRegional
             // 
@@ -427,6 +429,7 @@ namespace SIVEDI.Cuentas
             this.cboRegional.Size = new System.Drawing.Size(176, 21);
             this.cboRegional.TabIndex = 38;
             this.totCampos.SetToolTip(this.cboRegional, "Seleccione la Regional a la que pertenece la cuenta");
+            this.cboRegional.SelectedIndexChanged += new System.EventHandler(this.cboRegional_SelectedIndexChanged);
             // 
             // cboCiudad
             // 
@@ -447,6 +450,7 @@ namespace SIVEDI.Cuentas
             this.cboDepto.Size = new System.Drawing.Size(176, 21);
             this.cboDepto.TabIndex = 36;
             this.totCampos.SetToolTip(this.cboDepto, "Seleccione el Departamento");
+            this.cboDepto.SelectedIndexChanged += new System.EventHandler(this.cboDepto_SelectedIndexChanged);
             // 
             // cboPais
             // 
@@ -457,6 +461,7 @@ namespace SIVEDI.Cuentas
             this.cboPais.Size = new System.Drawing.Size(176, 21);
             this.cboPais.TabIndex = 35;
             this.totCampos.SetToolTip(this.cboPais, "Seleccione el País");
+            this.cboPais.SelectedIndexChanged += new System.EventHandler(this.cboPais_SelectedIndexChanged);
             // 
             // cboCampanavinculacion
             // 
@@ -496,6 +501,7 @@ namespace SIVEDI.Cuentas
             this.cboTipoCliente.Size = new System.Drawing.Size(170, 21);
             this.cboTipoCliente.TabIndex = 8;
             this.totCampos.SetToolTip(this.cboTipoCliente, "Seleccione el tipo de cliente de la cuenta");
+            this.cboTipoCliente.SelectedIndexChanged += new System.EventHandler(this.cboTipoCliente_SelectedIndexChanged);
             // 
             // cboEstadoCivil
             // 
@@ -622,6 +628,7 @@ namespace SIVEDI.Cuentas
             this.txtCupoAsignado.ReadOnly = true;
             this.txtCupoAsignado.Size = new System.Drawing.Size(86, 20);
             this.txtCupoAsignado.TabIndex = 18;
+            this.txtCupoAsignado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCupoAsignado_KeyPress);
             // 
             // Label34
             // 
@@ -816,6 +823,7 @@ namespace SIVEDI.Cuentas
             this.txtTelefonoOficina.Size = new System.Drawing.Size(86, 20);
             this.txtTelefonoOficina.TabIndex = 17;
             this.totCampos.SetToolTip(this.txtTelefonoOficina, "Ingrese el número telefónico de la oficina de la cuenta");
+            this.txtTelefonoOficina.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefonoOficina_KeyPress);
             // 
             // Label8
             // 
@@ -835,6 +843,7 @@ namespace SIVEDI.Cuentas
             this.txtTelefonoCelular.Size = new System.Drawing.Size(107, 20);
             this.txtTelefonoCelular.TabIndex = 16;
             this.totCampos.SetToolTip(this.txtTelefonoCelular, "Ingrese el número telefónico celular de la cuenta");
+            this.txtTelefonoCelular.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefonoCelular_KeyPress);
             // 
             // Label7
             // 
@@ -854,6 +863,7 @@ namespace SIVEDI.Cuentas
             this.txtTelefonoFijo.Size = new System.Drawing.Size(86, 20);
             this.txtTelefonoFijo.TabIndex = 15;
             this.totCampos.SetToolTip(this.txtTelefonoFijo, "Ingrese el número telefónico fijo de la cuenta");
+            this.txtTelefonoFijo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefonoFijo_KeyPress);
             // 
             // Label6
             // 
@@ -894,6 +904,7 @@ namespace SIVEDI.Cuentas
             this.txtDireccionDomicilio.Size = new System.Drawing.Size(411, 47);
             this.txtDireccionDomicilio.TabIndex = 11;
             this.totCampos.SetToolTip(this.txtDireccionDomicilio, "Ingrese la dirección de domicilio de la cuenta");
+            this.txtDireccionDomicilio.Leave += new System.EventHandler(this.txtDireccionDomicilio_Leave);
             // 
             // Label4
             // 
@@ -940,6 +951,8 @@ namespace SIVEDI.Cuentas
             this.txtIdentificacion.Size = new System.Drawing.Size(116, 20);
             this.txtIdentificacion.TabIndex = 0;
             this.totCampos.SetToolTip(this.txtIdentificacion, "Digite el número de identificación de la cuenta");
+            this.txtIdentificacion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIdentificacion_KeyPress);
+            this.txtIdentificacion.Leave += new System.EventHandler(this.txtIdentificacion_Leave);
             // 
             // Label1
             // 
@@ -1007,6 +1020,7 @@ namespace SIVEDI.Cuentas
             this.txtTelefonoFijoRef.Size = new System.Drawing.Size(116, 20);
             this.txtTelefonoFijoRef.TabIndex = 46;
             this.totCampos.SetToolTip(this.txtTelefonoFijoRef, "Ingrese el primer nombre de la cuenta");
+            this.txtTelefonoFijoRef.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefonoFijoRef_KeyPress);
             // 
             // txtTelefonoCelularRef
             // 
@@ -1017,6 +1031,7 @@ namespace SIVEDI.Cuentas
             this.txtTelefonoCelularRef.Size = new System.Drawing.Size(116, 20);
             this.txtTelefonoCelularRef.TabIndex = 47;
             this.totCampos.SetToolTip(this.txtTelefonoCelularRef, "Ingrese el primer nombre de la cuenta");
+            this.txtTelefonoCelularRef.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefonoCelularRef_KeyPress);
             // 
             // txtParentesco
             // 
@@ -1040,42 +1055,43 @@ namespace SIVEDI.Cuentas
             this.dtgReferencias.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dtgReferencias.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dtgReferencias.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenVertical;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgReferencias.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgReferencias.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
             this.dtgReferencias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgReferencias.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgReferencias.DefaultCellStyle = dataGridViewCellStyle20;
             this.dtgReferencias.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dtgReferencias.Location = new System.Drawing.Point(9, 163);
             this.dtgReferencias.MultiSelect = false;
             this.dtgReferencias.Name = "dtgReferencias";
             this.dtgReferencias.ReadOnly = true;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgReferencias.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgReferencias.RowHeadersDefaultCellStyle = dataGridViewCellStyle21;
             this.dtgReferencias.RowHeadersVisible = false;
             this.dtgReferencias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgReferencias.ShowEditingIcon = false;
             this.dtgReferencias.Size = new System.Drawing.Size(569, 291);
             this.dtgReferencias.TabIndex = 51;
             this.totCampos.SetToolTip(this.dtgReferencias, "Listado de referencias de la cuanta");
+            this.dtgReferencias.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgReferencias_CellDoubleClick);
             // 
             // btnAdicionareferencia
             // 
@@ -1086,6 +1102,7 @@ namespace SIVEDI.Cuentas
             this.btnAdicionareferencia.Text = "&Adicionar";
             this.totCampos.SetToolTip(this.btnAdicionareferencia, "Adiciona Referencia a la lista de la cuenta");
             this.btnAdicionareferencia.UseVisualStyleBackColor = true;
+            this.btnAdicionareferencia.Click += new System.EventHandler(this.btnAdicionareferencia_Click);
             // 
             // txtReferidoPor
             // 
@@ -1095,6 +1112,7 @@ namespace SIVEDI.Cuentas
             this.txtReferidoPor.Size = new System.Drawing.Size(144, 20);
             this.txtReferidoPor.TabIndex = 41;
             this.totCampos.SetToolTip(this.txtReferidoPor, "Número de identificación del referente");
+            this.txtReferidoPor.Leave += new System.EventHandler(this.txtReferidoPor_Leave);
             // 
             // txtNombreReferente
             // 
@@ -1202,6 +1220,7 @@ namespace SIVEDI.Cuentas
             this.btnGrabarcliente.TabIndex = 52;
             this.btnGrabarcliente.Text = "&Grabar";
             this.btnGrabarcliente.UseVisualStyleBackColor = true;
+            this.btnGrabarcliente.Click += new System.EventHandler(this.btnGrabarcliente_Click);
             // 
             // Panel3
             // 

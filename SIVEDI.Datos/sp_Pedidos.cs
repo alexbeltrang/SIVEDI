@@ -24,5 +24,6 @@ namespace SIVEDI.Datos
 
             return storeProcedure;
         }
+
     }
 }

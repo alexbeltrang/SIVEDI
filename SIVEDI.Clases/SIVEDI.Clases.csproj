@@ -44,8 +44,10 @@
     <Compile Include="campanas.cs" />
     <Compile Include="Ciudades.cs" />
     <Compile Include="ClaseResponsable.cs" />
+    <Compile Include="Cliente.cs" />
     <Compile Include="clsConnection.cs" />
     <Compile Include="clsValidar.cs" />
+    <Compile Include="CupoMinimo.cs" />
     <Compile Include="Departamentos.cs" />
     <Compile Include="EstadoActividad.cs" />
     <Compile Include="EstadoCivil.cs" />
@@ -58,6 +60,7 @@
     <Compile Include="Pais.cs" />
     <Compile Include="perfiles.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReferenciaCliente.cs" />
     <Compile Include="Regionales.cs" />
     <Compile Include="ResponsableTerritorio.cs" />
     <Compile Include="Secciones.cs" />

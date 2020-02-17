@@ -89,6 +89,73 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="TipoCliente" nillable="true" type="tns:TipoCliente" />
+  <xs:complexType name="Cliente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CABEZA_GRUPO" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CAM_NID_ANTEPENULTIMA_CAMPANA" type="xs:int" />
+      <xs:element minOccurs="0" name="CAM_NID_INGRESO" type="xs:int" />
+      <xs:element minOccurs="0" name="CAM_NID_PENULTIMA_CAMPANA" type="xs:int" />
+      <xs:element minOccurs="0" name="CAM_NID_ULTIMA_CAMPANA" type="xs:int" />
+      <xs:element minOccurs="0" name="CIU_NID" type="xs:int" />
+      <xs:element minOccurs="0" name="COBRA_FLETE" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CODIGO" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CUENTA_BLOQUEADA" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CUPO_CREDITO" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DEP_NID" type="xs:int" />
+      <xs:element minOccurs="0" name="DIRECCION_DOMICILIO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DIRECCION_ENTREGA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ECV_NID" type="xs:int" />
+      <xs:element minOccurs="0" name="EMAIL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ESA_NID" type="xs:int" />
+      <xs:element minOccurs="0" name="ESA_NID_ANTERIOR" type="xs:int" />
+      <xs:element minOccurs="0" name="ESINGRESO" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ESTRATO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FECHA_NACIMIENTO" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FECHA_VINCULACION" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FIN_NID" type="xs:int" />
+      <xs:element minOccurs="0" name="FORMA_PAGO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FPG_NID" type="xs:int" />
+      <xs:element minOccurs="0" name="GEN_NID" type="xs:int" />
+      <xs:element minOccurs="0" name="GEOREFERENCIADO" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ID_REFERIDO_POR" type="xs:decimal" />
+      <xs:element minOccurs="0" name="LIDER" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MTB_NID" type="xs:int" />
+      <xs:element minOccurs="0" name="NUMERO_IDENTIFICACION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PAI_NID" type="xs:int" />
+      <xs:element minOccurs="0" name="PRIMER_APELLIDO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PRIMER_NOMBRE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PROFESION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RAZON_BLOQUEO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REG_CID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SEC_CID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SEGUNDO_APELLIDO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SEGUNDO_NOMBRE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TDO_NID" type="xs:int" />
+      <xs:element minOccurs="0" name="TELEFONO_CELULAR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TELEFONO_FIJO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TELEFONO_OFICINA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TER_CID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIC_NID" type="xs:int" />
+      <xs:element minOccurs="0" name="ULTIMO_ESTADO_ACTIVIDAD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ZON_CID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Cliente" nillable="true" type="tns:Cliente" />
+  <xs:complexType name="ReferenciaCliente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CIUDAD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODIGO" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CODIGO_CLIENTE" type="xs:int" />
+      <xs:element minOccurs="0" name="CODIGO_TIPO_REFERENCIA" type="xs:int" />
+      <xs:element minOccurs="0" name="DIRECCION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOMBRE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PARENTESCO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEL_CELULAR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEL_FIJO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIPO_REFERENCIA" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReferenciaCliente" nillable="true" type="tns:ReferenciaCliente" />
   <xs:complexType name="UnidadMedida">
     <xs:sequence>
       <xs:element minOccurs="0" name="ABREVIATURA" nillable="true" type="xs:string" />
@@ -275,4 +342,10 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="FormasPago" nillable="true" type="tns:FormasPago" />
+  <xs:complexType name="CupoMinimo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CUPO_MINIMO" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CupoMinimo" nillable="true" type="tns:CupoMinimo" />
 </xs:schema>

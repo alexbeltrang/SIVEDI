@@ -31,6 +31,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\SIVEDI\packages\NPOI.Excel.2.1.1\lib\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI, Version=2.1.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\SIVEDI\packages\NPOI.Excel.2.1.1\lib\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML, Version=2.1.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\SIVEDI\packages\NPOI.Excel.2.1.1\lib\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net, Version=2.1.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\SIVEDI\packages\NPOI.Excel.2.1.1\lib\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats, Version=2.1.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\SIVEDI\packages\NPOI.Excel.2.1.1\lib\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -53,12 +68,17 @@
     <Compile Include="EstadoCivil.cs" />
     <Compile Include="formasIngreso.cs" />
     <Compile Include="FormasPago.cs" />
+    <Compile Include="GeneraExcel.cs" />
     <Compile Include="Generos.cs" />
+    <Compile Include="ListaPrecios.cs" />
     <Compile Include="LoginUsuario.cs" />
     <Compile Include="moduloHijo.cs" />
     <Compile Include="moduloPadre.cs" />
     <Compile Include="Pais.cs" />
     <Compile Include="perfiles.cs" />
+    <Compile Include="ProductoCodigoVenta.cs" />
+    <Compile Include="ProductoListaPrecio.cs" />
+    <Compile Include="Productos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReferenciaCliente.cs" />
     <Compile Include="Regionales.cs" />
@@ -74,8 +94,12 @@
     <Compile Include="TABLAS\FormasIngresoTabla.cs" />
     <Compile Include="TABLAS\FormasPagoTabla.cs" />
     <Compile Include="TABLAS\GenerosTabla.cs" />
+    <Compile Include="TABLAS\ListaPreciosProducto.cs" />
+    <Compile Include="TABLAS\ListaPreciosProductoComboBox.cs" />
+    <Compile Include="TABLAS\ListaPreciosTabla.cs" />
     <Compile Include="TABLAS\PaisTabla.cs" />
     <Compile Include="TABLAS\PedidosClienteTabla.cs" />
+    <Compile Include="TABLAS\ProductoTabla.cs" />
     <Compile Include="TABLAS\ReferenciaClienteTabla.cs" />
     <Compile Include="TABLAS\RegionalesTabla.cs" />
     <Compile Include="TABLAS\ResponsableTerritorioFiltro.cs" />
@@ -97,6 +121,9 @@
     <Compile Include="usuarios.cs" />
     <Compile Include="TABLAS\usuariosTabla.cs" />
     <Compile Include="Zonas.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

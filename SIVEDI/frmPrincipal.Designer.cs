@@ -331,6 +331,7 @@
             this.ProductosToolStripMenuItem.Name = "ProductosToolStripMenuItem";
             this.ProductosToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.ProductosToolStripMenuItem.Text = "&Productos";
+            this.ProductosToolStripMenuItem.Click += new System.EventHandler(this.ProductosToolStripMenuItem_Click);
             // 
             // MantenimeintoToolStripMenuItem
             // 
@@ -490,12 +491,14 @@
             this.AdminListaPreciosToolStripMenuItem.Name = "AdminListaPreciosToolStripMenuItem";
             this.AdminListaPreciosToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
             this.AdminListaPreciosToolStripMenuItem.Text = "Admin Lista &Precios";
+            this.AdminListaPreciosToolStripMenuItem.Click += new System.EventHandler(this.AdminListaPreciosToolStripMenuItem_Click);
             // 
             // ListaPreciosProductoToolStripMenuItem
             // 
             this.ListaPreciosProductoToolStripMenuItem.Name = "ListaPreciosProductoToolStripMenuItem";
             this.ListaPreciosProductoToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
             this.ListaPreciosProductoToolStripMenuItem.Text = "Lis&ta Precios Producto";
+            this.ListaPreciosProductoToolStripMenuItem.Click += new System.EventHandler(this.ListaPreciosProductoToolStripMenuItem_Click);
             // 
             // CodigosVentaToolStripMenuItem
             // 
@@ -530,14 +533,14 @@
             // RegistrarToolStripMenuItem
             // 
             this.RegistrarToolStripMenuItem.Name = "RegistrarToolStripMenuItem";
-            this.RegistrarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.RegistrarToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.RegistrarToolStripMenuItem.Text = "R&egistrar";
             this.RegistrarToolStripMenuItem.Click += new System.EventHandler(this.RegistrarToolStripMenuItem_Click);
             // 
             // ClientesToolStripMenuItem
             // 
             this.ClientesToolStripMenuItem.Name = "ClientesToolStripMenuItem";
-            this.ClientesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ClientesToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.ClientesToolStripMenuItem.Text = "C&lientes";
             this.ClientesToolStripMenuItem.Click += new System.EventHandler(this.ClientesToolStripMenuItem_Click);
             // 

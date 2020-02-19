@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://localhost:50416/ServicePedidos.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" />
+  <xs:import schemaLocation="http://localhost:50416/ServicePedidos.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" />
   <xs:element name="getConsultaPedidosCliente">
     <xs:complexType>
       <xs:sequence>
@@ -12,6 +13,81 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" minOccurs="0" name="getConsultaPedidosClienteResult" nillable="true" type="q1:ArrayOfPedidosClienteTabla" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getListaPreciosTabla">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="intOpcion" type="xs:int" />
+        <xs:element minOccurs="0" name="intCodigoListaPrecios" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getListaPreciosTablaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" minOccurs="0" name="getListaPreciosTablaResult" nillable="true" type="q2:ArrayOfListaPreciosTabla" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="insListaPrecios">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" minOccurs="0" name="listaPrecios" nillable="true" type="q3:ListaPrecios" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="insListaPreciosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="insListaPreciosResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getlistaPreciosProd">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="intOpcion" type="xs:int" />
+        <xs:element minOccurs="0" name="intCodigoProducto" type="xs:int" />
+        <xs:element minOccurs="0" name="intCodigoListaPrecio" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getlistaPreciosProdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" minOccurs="0" name="getlistaPreciosProdResult" nillable="true" type="q4:ArrayOfListaPreciosProductoComboBox" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="iuListaPreciosProducto">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" minOccurs="0" name="productoListaPrecio" nillable="true" type="q5:ProductoListaPrecio" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="iuListaPreciosProductoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="iuListaPreciosProductoResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getlistaPreciosProdExporta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="intOpcion" type="xs:int" />
+        <xs:element minOccurs="0" name="intCodigoProducto" type="xs:int" />
+        <xs:element minOccurs="0" name="intCodigoListaPrecio" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getlistaPreciosProdExportaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" minOccurs="0" name="getlistaPreciosProdExportaResult" nillable="true" type="q6:ArrayOfListaPreciosProducto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

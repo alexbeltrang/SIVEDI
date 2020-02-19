@@ -1521,5 +1521,152 @@ namespace SIVEDI.Datos
 
             return storeProcedure;
         }
+
+        public StoreProcedure getProductos(string spName, int intOpcion, int CodigoProducto, string Referencia, int CodigoVenta)
+        {
+            StoreProcedure storeProcedure = new StoreProcedure();
+            storeProcedure.Nombre = spName;
+            storeProcedure.Parametros = new List<SqlParameter>()
+            {
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NCODIGO_PRODUCTO",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = CodigoProducto
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NOPCION",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = intOpcion
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_CREFERENCIA",
+                    SqlDbType = System.Data.SqlDbType.VarChar,
+                    Value = Referencia
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NCODIGO_VENTA",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = CodigoVenta
+                }
+            };
+
+            return storeProcedure;
+        }
+
+        public StoreProcedure getProductosCodigoVenta(string spName, int intOpcion, string CodigoVenta, int intCodigoLista)
+        {
+            StoreProcedure storeProcedure = new StoreProcedure();
+            storeProcedure.Nombre = spName;
+            storeProcedure.Parametros = new List<SqlParameter>()
+            {
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NCODIGO_VENTA",
+                    SqlDbType = System.Data.SqlDbType.VarChar,
+                    Value = CodigoVenta
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NOPCION",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = intOpcion
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NCOD_LISTA_PRECIOS",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = intCodigoLista
+                }
+            };
+
+            return storeProcedure;
+        }
+
+        public StoreProcedure insProductos(string spName, Productos productos)
+        {
+            StoreProcedure storeProcedure = new StoreProcedure();
+            storeProcedure.Nombre = spName;
+            storeProcedure.Parametros = new List<SqlParameter>()
+            {
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NID",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = productos.CODIGO
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_CREFERENCIA",
+                    SqlDbType = System.Data.SqlDbType.VarChar,
+                    Value = productos.REFERENCIA
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_CNOMBRE",
+                    SqlDbType = System.Data.SqlDbType.VarChar,
+                    Value = productos.NOMBRE
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NPORC_IVA",
+                    SqlDbType = System.Data.SqlDbType.Decimal,
+                    Value = productos.IVA
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_CMOTIVO_VENTA",
+                    SqlDbType = System.Data.SqlDbType.VarChar,
+                    Value = productos.MOTIVO_VENTA
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_CCENTRO_GASTO_VENTA",
+                    SqlDbType = System.Data.SqlDbType.VarChar,
+                    Value = productos.CENTRO_GASTO_VENTA
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_CMOTIVO_OBSEQUIO",
+                    SqlDbType = System.Data.SqlDbType.VarChar,
+                    Value = productos.MOTIVO_OBSEQUIO
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_CCENTRO_GASTO_OBSEQUIO",
+                    SqlDbType = System.Data.SqlDbType.VarChar,
+                    Value = productos.CENTRO_GASTO_OBSEQUIO
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_OESTADO",
+                    SqlDbType = System.Data.SqlDbType.Bit,
+                    Value = productos.ESTADO
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NUNIDAD_MEDIDA",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = productos.CODIGO_UNIDAD_MEDIDA
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NTOTAL_PUNTOS",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = productos.PUNTOS
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PO_NEFECTIVO",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Direction = System.Data.ParameterDirection.Output,
+                    Value = productos.CODIGO
+                }
+            };
+            return storeProcedure;
+        }
     }
 }

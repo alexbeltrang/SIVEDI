@@ -33,7 +33,22 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>packages\NPOI.Excel.2.1.1\lib\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="NPOI, Version=2.1.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>packages\NPOI.Excel.2.1.1\lib\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML, Version=2.1.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>packages\NPOI.Excel.2.1.1\lib\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net, Version=2.1.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>packages\NPOI.Excel.2.1.1\lib\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats, Version=2.1.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>packages\NPOI.Excel.2.1.1\lib\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -96,6 +111,24 @@
     <Compile Include="Indicadores\frmMaestraEsatdosActividad.Designer.cs">
       <DependentUpon>frmMaestraEsatdosActividad.cs</DependentUpon>
     </Compile>
+    <Compile Include="ListaPrecios\frmAsignaVariableProdLP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListaPrecios\frmAsignaVariableProdLP.Designer.cs">
+      <DependentUpon>frmAsignaVariableProdLP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListaPrecios\frmListaPrecioProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListaPrecios\frmListaPrecioProducto.Designer.cs">
+      <DependentUpon>frmListaPrecioProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListaPrecios\frmListaPrecios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListaPrecios\frmListaPrecios.Designer.cs">
+      <DependentUpon>frmListaPrecios.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +164,12 @@
     </Compile>
     <Compile Include="Maestras\frmGeneros.Designer.cs">
       <DependentUpon>frmGeneros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maestras\frmMaestraProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maestras\frmMaestraProductos.Designer.cs">
+      <DependentUpon>frmMaestraProductos.cs</DependentUpon>
     </Compile>
     <Compile Include="Maestras\frmPaises.cs">
       <SubType>Form</SubType>
@@ -224,6 +263,12 @@
     <EmbeddedResource Include="Indicadores\frmMaestraEsatdosActividad.resx">
       <DependentUpon>frmMaestraEsatdosActividad.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ListaPrecios\frmListaPrecioProducto.resx">
+      <DependentUpon>frmListaPrecioProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaPrecios\frmListaPrecios.resx">
+      <DependentUpon>frmListaPrecios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -241,6 +286,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Maestras\frmGeneros.resx">
       <DependentUpon>frmGeneros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maestras\frmMaestraProductos.resx">
+      <DependentUpon>frmMaestraProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Maestras\frmPaises.resx">
       <DependentUpon>frmPaises.cs</DependentUpon>
@@ -292,6 +340,9 @@
     <None Include="Connected Services\ServicePedidos\ServicePedidos2.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\ServicePedidos\ServicePedidos3.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\ServicioGeneral\ServicioGeneral.wsdl" />
     <None Include="Connected Services\ServicioGeneral\ServicioGeneral.xsd">
       <SubType>Designer</SubType>
@@ -305,6 +356,7 @@
     <None Include="Connected Services\ServicioGeneral\ServicioGeneral3.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="packages.config" />
     <None Include="Properties\DataSources\SIVEDI.Clases.Ciudades.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.CupoMinimo.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.Departamentos.datasource" />
@@ -314,6 +366,7 @@
     <None Include="Properties\DataSources\SIVEDI.Clases.moduloHijo.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.moduloPadre.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.perfiles.datasource" />
+    <None Include="Properties\DataSources\SIVEDI.Clases.ProductoCodigoVenta.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.campanasTabla.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.CiudadesTabla.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.ClaseResponsableTabla.datasource" />
@@ -323,8 +376,12 @@
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.EstadoCivilTabla.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.FormasIngresoTabla.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.GenerosTabla.datasource" />
+    <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.ListaPreciosProducto.datasource" />
+    <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.ListaPreciosProductoComboBox.datasource" />
+    <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.ListaPreciosTabla.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.PaisTabla.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.PedidosClienteTabla.datasource" />
+    <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.ProductoTabla.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.ReferenciaClienteTabla.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.RegionalesTabla.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.ResponsableTerritorioFiltro.datasource" />

@@ -1,4 +1,5 @@
-﻿using SIVEDI.Clases.TABLAS;
+﻿using SIVEDI.Clases;
+using SIVEDI.Clases.TABLAS;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,5 +15,15 @@ namespace SIVEDI.WCFPedidos
     {
         [OperationContract]
         List<PedidosClienteTabla> getConsultaPedidosCliente(int intCodigoCliente);
+        [OperationContract]
+        List<ListaPreciosTabla> getListaPreciosTabla(int intOpcion, int intCodigoListaPrecios);
+        [OperationContract]
+        int insListaPrecios(ListaPrecios listaPrecios);
+        [OperationContract]
+        List<ListaPreciosProductoComboBox> getlistaPreciosProd(int intOpcion, int intCodigoProducto, int intCodigoListaPrecio);
+        [OperationContract]
+        int iuListaPreciosProducto(ProductoListaPrecio productoListaPrecio);
+        [OperationContract]
+        List<ListaPreciosProducto> getlistaPreciosProdExporta(int intOpcion, int intCodigoProducto, int intCodigoListaPrecio);
     }
 }

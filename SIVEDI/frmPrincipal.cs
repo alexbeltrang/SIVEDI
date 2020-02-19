@@ -3,6 +3,7 @@ using SIVEDI.Administracion;
 using SIVEDI.Clases;
 using SIVEDI.Cuentas;
 using SIVEDI.Indicadores;
+using SIVEDI.ListaPrecios;
 using SIVEDI.Maestras;
 using SIVEDI.Mantenimiento;
 using SIVEDI.ServicioGeneral;
@@ -427,53 +428,53 @@ namespace SIVEDI
                         break;
                     }
 
-                    //case "PRODUCTOS":
-                    //    {
-                    //        if (clsConnection.blnVentanasEnbebidas)
-                    //        {
-                    //            frmMaestraProductos objClientes = new frmMaestraProductos();
-                    //            cargaFormulario(objClientes);
-                    //        }
-                    //        else
-                    //        {
-                    //            frmMaestraProductos objFormulario = new frmMaestraProductos();
-                    //            objFormulario.Show();
-                    //        }
+                case "PRODUCTOS":
+                    {
+                        if (clsConnection.blnVentanasEnbebidas)
+                        {
+                            frmMaestraProductos objClientes = new frmMaestraProductos();
+                            cargaFormulario(objClientes);
+                        }
+                        else
+                        {
+                            frmMaestraProductos objFormulario = new frmMaestraProductos();
+                            objFormulario.Show();
+                        }
 
-                    //        break;
-                    //    }
+                        break;
+                    }
 
-                    //case "ADMIN LISTAS":
-                    //    {
-                    //        if (clsConnection.blnVentanasEnbebidas)
-                    //        {
-                    //            frmListaPrecios objClientes = new frmListaPrecios();
-                    //            cargaFormulario(objClientes);
-                    //        }
-                    //        else
-                    //        {
-                    //            frmListaPrecios objFormulario = new frmListaPrecios();
-                    //            objFormulario.Show();
-                    //        }
+                case "ADMIN LISTAS":
+                    {
+                        if (clsConnection.blnVentanasEnbebidas)
+                        {
+                            frmListaPrecios objClientes = new frmListaPrecios();
+                            cargaFormulario(objClientes);
+                        }
+                        else
+                        {
+                            frmListaPrecios objFormulario = new frmListaPrecios();
+                            objFormulario.Show();
+                        }
 
-                    //        break;
-                    //    }
+                        break;
+                    }
 
-                    //case "LISTA PRECIOS PROD":
-                    //    {
-                    //        if (clsConnection.blnVentanasEnbebidas)
-                    //        {
-                    //            frmListaPrecioProducto objFormulario = new frmListaPrecioProducto();
-                    //            cargaFormulario(objFormulario);
-                    //        }
-                    //        else
-                    //        {
-                    //            frmListaPrecioProducto objFormulario = new frmListaPrecioProducto();
-                    //            objFormulario.Show();
-                    //        }
+                case "LISTA PRECIOS PROD":
+                    {
+                        if (clsConnection.blnVentanasEnbebidas)
+                        {
+                            frmListaPrecioProducto objFormulario = new frmListaPrecioProducto();
+                            cargaFormulario(objFormulario);
+                        }
+                        else
+                        {
+                            frmListaPrecioProducto objFormulario = new frmListaPrecioProducto();
+                            objFormulario.Show();
+                        }
 
-                    //        break;
-                    //    }
+                        break;
+                    }
 
                     //case "ASIGNA MANUAL":
                     //    {
@@ -969,7 +970,7 @@ namespace SIVEDI
 
         private void RegistrarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-              if (clsConnection.blnVentanasEnbebidas)
+            if (clsConnection.blnVentanasEnbebidas)
             {
                 frmRegistroClientes objFormulario = new frmRegistroClientes();
                 cargaFormulario(objFormulario);
@@ -977,6 +978,48 @@ namespace SIVEDI
             else
             {
                 frmRegistroClientes objFormulario = new frmRegistroClientes();
+                objFormulario.Show();
+            }
+        }
+
+        private void ProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (clsConnection.blnVentanasEnbebidas)
+            {
+                frmMaestraProductos objFormulario = new frmMaestraProductos();
+                cargaFormulario(objFormulario);
+            }
+            else
+            {
+                frmMaestraProductos objFormulario = new frmMaestraProductos();
+                objFormulario.Show();
+            }
+        }
+
+        private void AdminListaPreciosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (clsConnection.blnVentanasEnbebidas)
+            {
+                frmListaPrecios objFormulario = new frmListaPrecios();
+                cargaFormulario(objFormulario);
+            }
+            else
+            {
+                frmListaPrecios objFormulario = new frmListaPrecios();
+                objFormulario.Show();
+            }
+        }
+
+        private void ListaPreciosProductoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (clsConnection.blnVentanasEnbebidas)
+            {
+                frmListaPrecioProducto objFormulario = new frmListaPrecioProducto();
+                cargaFormulario(objFormulario);
+            }
+            else
+            {
+                frmListaPrecioProducto objFormulario = new frmListaPrecioProducto();
                 objFormulario.Show();
             }
         }

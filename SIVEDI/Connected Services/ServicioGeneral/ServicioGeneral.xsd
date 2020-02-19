@@ -397,4 +397,27 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ReferenciaClienteTabla" nillable="true" type="tns:ReferenciaClienteTabla" />
+  <xs:complexType name="ArrayOfProductoTabla">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProductoTabla" nillable="true" type="tns:ProductoTabla" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProductoTabla" nillable="true" type="tns:ArrayOfProductoTabla" />
+  <xs:complexType name="ProductoTabla">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CENTRO_GASTO_OBSEQUIO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CENTRO_GASTO_VENTA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODIGO" type="xs:int" />
+      <xs:element minOccurs="0" name="CODIGO_UNIDAD_MEDIDA" type="xs:int" />
+      <xs:element minOccurs="0" name="ESTADO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IVA" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MOTIVO_OBSEQUIO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MOTIVO_VENTA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOMBRE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PUNTOS" type="xs:int" />
+      <xs:element minOccurs="0" name="REFERENCIA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UNIDAD_MEDIDA" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProductoTabla" nillable="true" type="tns:ProductoTabla" />
 </xs:schema>

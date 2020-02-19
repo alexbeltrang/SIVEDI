@@ -124,5 +124,11 @@ namespace SIVEDI.WCFGeneral
         List<FormasPago> getFormaPago(int intOpcion, int intCodigoformaPago);
         [OperationContract]
         CupoMinimo getCupoMinimoCredito();
+        [OperationContract]
+        List<ProductoTabla> getProductos(int intOpcion, int intCodigoProducto, string Referencia, int intCodigoVenta);
+        [OperationContract]
+        List<ProductoCodigoVenta> getProductosCodigoVenta(int intOpcion, string strCodigoVenta, int CodigoLista);
+        [OperationContract]
+        int insProducto(Productos productos);
     }
 }

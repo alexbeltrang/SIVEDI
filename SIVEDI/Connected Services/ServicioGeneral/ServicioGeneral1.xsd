@@ -348,4 +348,38 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="CupoMinimo" nillable="true" type="tns:CupoMinimo" />
+  <xs:complexType name="ArrayOfProductoCodigoVenta">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProductoCodigoVenta" nillable="true" type="tns:ProductoCodigoVenta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProductoCodigoVenta" nillable="true" type="tns:ArrayOfProductoCodigoVenta" />
+  <xs:complexType name="ProductoCodigoVenta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGO" type="xs:int" />
+      <xs:element minOccurs="0" name="CODIGO_VENTA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODIGO_VENTA_NOMBRE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOMBRE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PUNTOS" type="xs:int" />
+      <xs:element minOccurs="0" name="REFERENCIA" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProductoCodigoVenta" nillable="true" type="tns:ProductoCodigoVenta" />
+  <xs:complexType name="Productos">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CENTRO_GASTO_OBSEQUIO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CENTRO_GASTO_VENTA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODIGO" type="xs:int" />
+      <xs:element minOccurs="0" name="CODIGO_UNIDAD_MEDIDA" type="xs:int" />
+      <xs:element minOccurs="0" name="DESCRIPCION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ESTADO" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IVA" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MOTIVO_OBSEQUIO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MOTIVO_VENTA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOMBRE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PUNTOS" type="xs:int" />
+      <xs:element minOccurs="0" name="REFERENCIA" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Productos" nillable="true" type="tns:Productos" />
 </xs:schema>

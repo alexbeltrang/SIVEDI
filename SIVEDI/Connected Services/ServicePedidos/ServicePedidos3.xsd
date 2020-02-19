@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ListaPrecios">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGO" type="xs:int" />
+      <xs:element minOccurs="0" name="CODIGO_CAMPANA" type="xs:int" />
+      <xs:element minOccurs="0" name="CODIGO_LISTA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ESTADO" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ES_ESTANDAR" type="xs:boolean" />
+      <xs:element minOccurs="0" name="NOMBRE" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ListaPrecios" nillable="true" type="tns:ListaPrecios" />
+  <xs:complexType name="ProductoListaPrecio">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="APLICA_SUPERA_MONTO_MIN" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CODIGO_LISTA_PRECIOS" type="xs:int" />
+      <xs:element minOccurs="0" name="CODIGO_PRODUCTO_LISTA" type="xs:int" />
+      <xs:element minOccurs="0" name="CODIGO_VENTA" type="xs:int" />
+      <xs:element minOccurs="0" name="COSTO_PRODUCTO" type="xs:int" />
+      <xs:element minOccurs="0" name="ESFALTANTE_ANUNCIADO" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ES_ACCESORIO" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LIMITE_VENTA" type="xs:int" />
+      <xs:element minOccurs="0" name="PERMITE_DIGITAR" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PRECIO_LISTA" type="xs:int" />
+      <xs:element minOccurs="0" name="PUNTOS" type="xs:int" />
+      <xs:element minOccurs="0" name="SE_APLICA_ESCALA" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SUMA_LLEGAR_ESCALA" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SUMA_NETO" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SUMA_VALOR_PUBLICO" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProductoListaPrecio" nillable="true" type="tns:ProductoListaPrecio" />
+</xs:schema>

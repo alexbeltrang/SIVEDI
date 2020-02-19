@@ -338,6 +338,24 @@
   <wsdl:message name="IServicioGeneral_getCupoMinimoCredito_OutputMessage">
     <wsdl:part name="parameters" element="tns:getCupoMinimoCreditoResponse" />
   </wsdl:message>
+  <wsdl:message name="IServicioGeneral_getProductos_InputMessage">
+    <wsdl:part name="parameters" element="tns:getProductos" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_getProductos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getProductosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_getProductosCodigoVenta_InputMessage">
+    <wsdl:part name="parameters" element="tns:getProductosCodigoVenta" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_getProductosCodigoVenta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getProductosCodigoVentaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_insProducto_InputMessage">
+    <wsdl:part name="parameters" element="tns:insProducto" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_insProducto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insProductoResponse" />
+  </wsdl:message>
   <wsdl:portType name="IServicioGeneral">
     <wsdl:operation name="ingresaAplicativo">
       <wsdl:input wsaw:Action="http://tempuri.org/IServicioGeneral/ingresaAplicativo" message="tns:IServicioGeneral_ingresaAplicativo_InputMessage" />
@@ -558,6 +576,18 @@
     <wsdl:operation name="getCupoMinimoCredito">
       <wsdl:input wsaw:Action="http://tempuri.org/IServicioGeneral/getCupoMinimoCredito" message="tns:IServicioGeneral_getCupoMinimoCredito_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServicioGeneral/getCupoMinimoCreditoResponse" message="tns:IServicioGeneral_getCupoMinimoCredito_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getProductos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioGeneral/getProductos" message="tns:IServicioGeneral_getProductos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioGeneral/getProductosResponse" message="tns:IServicioGeneral_getProductos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getProductosCodigoVenta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioGeneral/getProductosCodigoVenta" message="tns:IServicioGeneral_getProductosCodigoVenta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioGeneral/getProductosCodigoVentaResponse" message="tns:IServicioGeneral_getProductosCodigoVenta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insProducto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioGeneral/insProducto" message="tns:IServicioGeneral_insProducto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioGeneral/insProductoResponse" message="tns:IServicioGeneral_insProducto_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IServicioGeneral" type="tns:IServicioGeneral">
@@ -1050,6 +1080,33 @@
     </wsdl:operation>
     <wsdl:operation name="getCupoMinimoCredito">
       <soap:operation soapAction="http://tempuri.org/IServicioGeneral/getCupoMinimoCredito" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProductos">
+      <soap:operation soapAction="http://tempuri.org/IServicioGeneral/getProductos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProductosCodigoVenta">
+      <soap:operation soapAction="http://tempuri.org/IServicioGeneral/getProductosCodigoVenta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insProducto">
+      <soap:operation soapAction="http://tempuri.org/IServicioGeneral/insProducto" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

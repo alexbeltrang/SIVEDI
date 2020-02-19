@@ -559,7 +559,6 @@ namespace SIVEDI.WCFGeneral
         }
         #endregion
 
-
         #region Cuentas
         public ClienteConsultaTabla getConsultaCliente(string strIdentificacion)
         {
@@ -600,7 +599,6 @@ namespace SIVEDI.WCFGeneral
             return referenciaClienteTabla;
         }
         #endregion
-
 
         #region Clase Tipo Referencia
 
@@ -647,7 +645,39 @@ namespace SIVEDI.WCFGeneral
 
         #endregion
 
+        #region Productos
 
+        public List<ProductoTabla> getProductos(int intOpcion, int intCodigoProducto, string Referencia, int intCodigoVenta)
+        {
+            List<ProductoTabla> ListProductoTabla = new List<ProductoTabla>();
+            SpRequest spRequestUsuario = new SpRequest();
+            DataDB data = new DataDB("SIVEDIBDEntities");
+            StoreProcedure SP = spRequestUsuario.getProductos("SPR_GET_MAESTRA_PRODUCTO", intOpcion, intCodigoProducto, Referencia, intCodigoVenta);
+            ListProductoTabla = data.ExecuteQueryList<ProductoTabla>(SP);
+            return ListProductoTabla;
+        }
+
+        public List<ProductoCodigoVenta> getProductosCodigoVenta(int intOpcion, string strCodigoVenta, int CodigoLista)
+        {
+            List<ProductoCodigoVenta> ListProductoCodigoVenta = new List<ProductoCodigoVenta>();
+            SpRequest spRequestUsuario = new SpRequest();
+            DataDB data = new DataDB("SIVEDIBDEntities");
+            StoreProcedure SP = spRequestUsuario.getProductosCodigoVenta("SPR_GET_PRODUCTO_CODIGO_VENTA", intOpcion, strCodigoVenta, CodigoLista);
+            ListProductoCodigoVenta = data.ExecuteQueryList<ProductoCodigoVenta>(SP);
+            return ListProductoCodigoVenta;
+        }
+
+
+        public int insProducto(Productos productos)
+        {
+            SpRequest spRequestUsuario = new SpRequest();
+            DataDB data = new DataDB("SIVEDIBDEntities");
+
+            StoreProcedure SP = spRequestUsuario.insProductos("SPR_IU_PRODUCTO", productos);
+            int codigoProducto = data.ExecuteInsert(SP, "PO_NEFECTIVO");
+            return codigoProducto;
+        }
+        #endregion
     }
 
 }

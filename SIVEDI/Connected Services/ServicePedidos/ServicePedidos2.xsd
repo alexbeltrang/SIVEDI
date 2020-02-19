@@ -15,11 +15,73 @@
       <xs:element minOccurs="0" name="FACTURA" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="FECHA_REGISTRO" type="xs:dateTime" />
       <xs:element minOccurs="0" name="PEDIDO" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="POR_ESC_DCTO" type="xs:decimal" />
+      <xs:element minOccurs="0" name="POR_ESC_DCTO" type="xs:int" />
       <xs:element minOccurs="0" name="PUNTOS" type="xs:int" />
       <xs:element minOccurs="0" name="VALOR_PAGAR" type="xs:decimal" />
       <xs:element minOccurs="0" name="VALOR_PUBLICO" type="xs:decimal" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="PedidosClienteTabla" nillable="true" type="tns:PedidosClienteTabla" />
+  <xs:complexType name="ArrayOfListaPreciosTabla">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ListaPreciosTabla" nillable="true" type="tns:ListaPreciosTabla" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfListaPreciosTabla" nillable="true" type="tns:ArrayOfListaPreciosTabla" />
+  <xs:complexType name="ListaPreciosTabla">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGO" type="xs:int" />
+      <xs:element minOccurs="0" name="CODIGO_CAMPANA" type="xs:int" />
+      <xs:element minOccurs="0" name="CODIGO_LISTA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ESTADO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ES_ESTANDAR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOMBRE" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ListaPreciosTabla" nillable="true" type="tns:ListaPreciosTabla" />
+  <xs:complexType name="ArrayOfListaPreciosProductoComboBox">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ListaPreciosProductoComboBox" nillable="true" type="tns:ListaPreciosProductoComboBox" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfListaPreciosProductoComboBox" nillable="true" type="tns:ArrayOfListaPreciosProductoComboBox" />
+  <xs:complexType name="ListaPreciosProductoComboBox">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGO" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CODIGO_VENTA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOMBRE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REFERENCIA" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ListaPreciosProductoComboBox" nillable="true" type="tns:ListaPreciosProductoComboBox" />
+  <xs:complexType name="ArrayOfListaPreciosProducto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ListaPreciosProducto" nillable="true" type="tns:ListaPreciosProducto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfListaPreciosProducto" nillable="true" type="tns:ArrayOfListaPreciosProducto" />
+  <xs:complexType name="ListaPreciosProducto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="APLICA_ESCALA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODIGO" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CODIGO_VENTA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COSTO" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DIGITA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ES_ACCESORIO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ES_FALTANTE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IVA" type="xs:decimal" />
+      <xs:element minOccurs="0" name="LIMITE" type="xs:int" />
+      <xs:element minOccurs="0" name="NOMBRE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PRECIO" type="xs:int" />
+      <xs:element minOccurs="0" name="PRECIO_CATALOGO" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PRINCIPAL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PUNTOS" type="xs:int" />
+      <xs:element minOccurs="0" name="REFERENCIA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SUMA_ESCALA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SUMA_MINIMO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SUMA_NETO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SUMA_PUBLICO" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ListaPreciosProducto" nillable="true" type="tns:ListaPreciosProducto" />
 </xs:schema>

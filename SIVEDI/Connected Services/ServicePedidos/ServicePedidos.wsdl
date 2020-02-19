@@ -5,6 +5,7 @@
       <xsd:import schemaLocation="http://localhost:50416/ServicePedidos.svc?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost:50416/ServicePedidos.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://localhost:50416/ServicePedidos.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" />
+      <xsd:import schemaLocation="http://localhost:50416/ServicePedidos.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IServicePedidos_getConsultaPedidosCliente_InputMessage">
@@ -13,16 +14,111 @@
   <wsdl:message name="IServicePedidos_getConsultaPedidosCliente_OutputMessage">
     <wsdl:part name="parameters" element="tns:getConsultaPedidosClienteResponse" />
   </wsdl:message>
+  <wsdl:message name="IServicePedidos_getListaPreciosTabla_InputMessage">
+    <wsdl:part name="parameters" element="tns:getListaPreciosTabla" />
+  </wsdl:message>
+  <wsdl:message name="IServicePedidos_getListaPreciosTabla_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getListaPreciosTablaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicePedidos_insListaPrecios_InputMessage">
+    <wsdl:part name="parameters" element="tns:insListaPrecios" />
+  </wsdl:message>
+  <wsdl:message name="IServicePedidos_insListaPrecios_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insListaPreciosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicePedidos_getlistaPreciosProd_InputMessage">
+    <wsdl:part name="parameters" element="tns:getlistaPreciosProd" />
+  </wsdl:message>
+  <wsdl:message name="IServicePedidos_getlistaPreciosProd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getlistaPreciosProdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicePedidos_iuListaPreciosProducto_InputMessage">
+    <wsdl:part name="parameters" element="tns:iuListaPreciosProducto" />
+  </wsdl:message>
+  <wsdl:message name="IServicePedidos_iuListaPreciosProducto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:iuListaPreciosProductoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicePedidos_getlistaPreciosProdExporta_InputMessage">
+    <wsdl:part name="parameters" element="tns:getlistaPreciosProdExporta" />
+  </wsdl:message>
+  <wsdl:message name="IServicePedidos_getlistaPreciosProdExporta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getlistaPreciosProdExportaResponse" />
+  </wsdl:message>
   <wsdl:portType name="IServicePedidos">
     <wsdl:operation name="getConsultaPedidosCliente">
       <wsdl:input wsaw:Action="http://tempuri.org/IServicePedidos/getConsultaPedidosCliente" message="tns:IServicePedidos_getConsultaPedidosCliente_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServicePedidos/getConsultaPedidosClienteResponse" message="tns:IServicePedidos_getConsultaPedidosCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getListaPreciosTabla">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicePedidos/getListaPreciosTabla" message="tns:IServicePedidos_getListaPreciosTabla_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicePedidos/getListaPreciosTablaResponse" message="tns:IServicePedidos_getListaPreciosTabla_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insListaPrecios">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicePedidos/insListaPrecios" message="tns:IServicePedidos_insListaPrecios_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicePedidos/insListaPreciosResponse" message="tns:IServicePedidos_insListaPrecios_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getlistaPreciosProd">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicePedidos/getlistaPreciosProd" message="tns:IServicePedidos_getlistaPreciosProd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicePedidos/getlistaPreciosProdResponse" message="tns:IServicePedidos_getlistaPreciosProd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="iuListaPreciosProducto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicePedidos/iuListaPreciosProducto" message="tns:IServicePedidos_iuListaPreciosProducto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicePedidos/iuListaPreciosProductoResponse" message="tns:IServicePedidos_iuListaPreciosProducto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getlistaPreciosProdExporta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicePedidos/getlistaPreciosProdExporta" message="tns:IServicePedidos_getlistaPreciosProdExporta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicePedidos/getlistaPreciosProdExportaResponse" message="tns:IServicePedidos_getlistaPreciosProdExporta_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IServicePedidos" type="tns:IServicePedidos">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="getConsultaPedidosCliente">
       <soap:operation soapAction="http://tempuri.org/IServicePedidos/getConsultaPedidosCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getListaPreciosTabla">
+      <soap:operation soapAction="http://tempuri.org/IServicePedidos/getListaPreciosTabla" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insListaPrecios">
+      <soap:operation soapAction="http://tempuri.org/IServicePedidos/insListaPrecios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getlistaPreciosProd">
+      <soap:operation soapAction="http://tempuri.org/IServicePedidos/getlistaPreciosProd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="iuListaPreciosProducto">
+      <soap:operation soapAction="http://tempuri.org/IServicePedidos/iuListaPreciosProducto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getlistaPreciosProdExporta">
+      <soap:operation soapAction="http://tempuri.org/IServicePedidos/getlistaPreciosProdExporta" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

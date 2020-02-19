@@ -344,6 +344,24 @@ namespace SIVEDI.ServicioGeneral {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getCupoMinimoCredito", ReplyAction="http://tempuri.org/IServicioGeneral/getCupoMinimoCreditoResponse")]
         System.Threading.Tasks.Task<SIVEDI.Clases.CupoMinimo> getCupoMinimoCreditoAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getProductos", ReplyAction="http://tempuri.org/IServicioGeneral/getProductosResponse")]
+        SIVEDI.Clases.TABLAS.ProductoTabla[] getProductos(int intOpcion, int intCodigoProducto, string Referencia, int intCodigoVenta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getProductos", ReplyAction="http://tempuri.org/IServicioGeneral/getProductosResponse")]
+        System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.ProductoTabla[]> getProductosAsync(int intOpcion, int intCodigoProducto, string Referencia, int intCodigoVenta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getProductosCodigoVenta", ReplyAction="http://tempuri.org/IServicioGeneral/getProductosCodigoVentaResponse")]
+        SIVEDI.Clases.ProductoCodigoVenta[] getProductosCodigoVenta(int intOpcion, string strCodigoVenta, int CodigoLista);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getProductosCodigoVenta", ReplyAction="http://tempuri.org/IServicioGeneral/getProductosCodigoVentaResponse")]
+        System.Threading.Tasks.Task<SIVEDI.Clases.ProductoCodigoVenta[]> getProductosCodigoVentaAsync(int intOpcion, string strCodigoVenta, int CodigoLista);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/insProducto", ReplyAction="http://tempuri.org/IServicioGeneral/insProductoResponse")]
+        int insProducto(SIVEDI.Clases.Productos productos);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/insProducto", ReplyAction="http://tempuri.org/IServicioGeneral/insProductoResponse")]
+        System.Threading.Tasks.Task<int> insProductoAsync(SIVEDI.Clases.Productos productos);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -811,6 +829,30 @@ namespace SIVEDI.ServicioGeneral {
         
         public System.Threading.Tasks.Task<SIVEDI.Clases.CupoMinimo> getCupoMinimoCreditoAsync() {
             return base.Channel.getCupoMinimoCreditoAsync();
+        }
+        
+        public SIVEDI.Clases.TABLAS.ProductoTabla[] getProductos(int intOpcion, int intCodigoProducto, string Referencia, int intCodigoVenta) {
+            return base.Channel.getProductos(intOpcion, intCodigoProducto, Referencia, intCodigoVenta);
+        }
+        
+        public System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.ProductoTabla[]> getProductosAsync(int intOpcion, int intCodigoProducto, string Referencia, int intCodigoVenta) {
+            return base.Channel.getProductosAsync(intOpcion, intCodigoProducto, Referencia, intCodigoVenta);
+        }
+        
+        public SIVEDI.Clases.ProductoCodigoVenta[] getProductosCodigoVenta(int intOpcion, string strCodigoVenta, int CodigoLista) {
+            return base.Channel.getProductosCodigoVenta(intOpcion, strCodigoVenta, CodigoLista);
+        }
+        
+        public System.Threading.Tasks.Task<SIVEDI.Clases.ProductoCodigoVenta[]> getProductosCodigoVentaAsync(int intOpcion, string strCodigoVenta, int CodigoLista) {
+            return base.Channel.getProductosCodigoVentaAsync(intOpcion, strCodigoVenta, CodigoLista);
+        }
+        
+        public int insProducto(SIVEDI.Clases.Productos productos) {
+            return base.Channel.insProducto(productos);
+        }
+        
+        public System.Threading.Tasks.Task<int> insProductoAsync(SIVEDI.Clases.Productos productos) {
+            return base.Channel.insProductoAsync(productos);
         }
     }
 }

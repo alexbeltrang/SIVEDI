@@ -22,11 +22,12 @@
     <MetadataSource Address="http://localhost:50416/ServicePedidos.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
+    <MetadataFile FileName="ServicePedidos.disco" MetadataType="Disco" ID="03b4b554-8759-43fb-96b4-6f1ff86311c6" SourceId="1" SourceUrl="http://localhost:50416/ServicePedidos.svc?disco" />
+    <MetadataFile FileName="ServicePedidos.wsdl" MetadataType="Wsdl" ID="613fd3ab-f095-4ced-8ec1-bc41b8aacd9b" SourceId="1" SourceUrl="http://localhost:50416/ServicePedidos.svc?wsdl" />
     <MetadataFile FileName="ServicePedidos.xsd" MetadataType="Schema" ID="4b8edcfc-0c23-4b8a-84cd-1152f2cdd105" SourceId="1" SourceUrl="http://localhost:50416/ServicePedidos.svc?xsd=xsd0" />
     <MetadataFile FileName="ServicePedidos1.xsd" MetadataType="Schema" ID="1feb2e53-3df9-4273-9043-ed9f930b38f0" SourceId="1" SourceUrl="http://localhost:50416/ServicePedidos.svc?xsd=xsd1" />
     <MetadataFile FileName="ServicePedidos2.xsd" MetadataType="Schema" ID="1342ae85-d0bd-48f0-90ee-0b2a1a9c8314" SourceId="1" SourceUrl="http://localhost:50416/ServicePedidos.svc?xsd=xsd2" />
-    <MetadataFile FileName="ServicePedidos.disco" MetadataType="Disco" ID="03b4b554-8759-43fb-96b4-6f1ff86311c6" SourceId="1" SourceUrl="http://localhost:50416/ServicePedidos.svc?disco" />
-    <MetadataFile FileName="ServicePedidos.wsdl" MetadataType="Wsdl" ID="613fd3ab-f095-4ced-8ec1-bc41b8aacd9b" SourceId="1" SourceUrl="http://localhost:50416/ServicePedidos.svc?wsdl" />
+    <MetadataFile FileName="ServicePedidos3.xsd" MetadataType="Schema" ID="343b8e0b-1a9c-44e4-aca0-0272c904810b" SourceId="1" SourceUrl="http://localhost:50416/ServicePedidos.svc?xsd=xsd3" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

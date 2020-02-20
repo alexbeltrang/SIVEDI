@@ -476,21 +476,21 @@ namespace SIVEDI
                         break;
                     }
 
-                    //case "ASIGNA MANUAL":
-                    //    {
-                    //        if (clsConnection.blnVentanasEnbebidas)
-                    //        {
-                    //            frmCodigoVenta objFormulario = new frmCodigoVenta();
-                    //            cargaFormulario(objFormulario);
-                    //        }
-                    //        else
-                    //        {
-                    //            frmCodigoVenta objFormulario = new frmCodigoVenta();
-                    //            objFormulario.Show();
-                    //        }
+                case "ASIGNA MANUAL":
+                    {
+                        if (clsConnection.blnVentanasEnbebidas)
+                        {
+                            frmCodigoVenta objFormulario = new frmCodigoVenta();
+                            cargaFormulario(objFormulario);
+                        }
+                        else
+                        {
+                            frmCodigoVenta objFormulario = new frmCodigoVenta();
+                            objFormulario.Show();
+                        }
 
-                    //        break;
-                    //    }
+                        break;
+                    }
 
                     //case "CARGA MASIVA":
                     //    {
@@ -1020,6 +1020,20 @@ namespace SIVEDI
             else
             {
                 frmListaPrecioProducto objFormulario = new frmListaPrecioProducto();
+                objFormulario.Show();
+            }
+        }
+
+        private void AsignaciónManualToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (clsConnection.blnVentanasEnbebidas)
+            {
+                frmCodigoVenta objFormulario = new frmCodigoVenta();
+                cargaFormulario(objFormulario);
+            }
+            else
+            {
+                frmCodigoVenta objFormulario = new frmCodigoVenta();
                 objFormulario.Show();
             }
         }

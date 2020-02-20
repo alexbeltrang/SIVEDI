@@ -1,17 +1,15 @@
 ﻿using SIVEDI.Clases;
-using SIVEDI.Clases.TABLAS;
 using SIVEDI.ServicePedidos;
 using SIVEDI.ServicioGeneral;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.OleDb;
+using NPOI.HSSF.UserModel;
+using System.IO;
+using NPOI.SS.UserModel;
 
 namespace SIVEDI.ListaPrecios
 {
@@ -21,6 +19,8 @@ namespace SIVEDI.ListaPrecios
         ServicioGeneralClient ServicioGeneral = new ServicioGeneralClient();
         private string strFileName;
         public Thread thColor;
+        DataTable dt = new DataTable();
+        OperacionesExcel operacionesExcel = new OperacionesExcel();
         public frmListaPrecioProducto()
         {
             InitializeComponent();
@@ -104,7 +104,6 @@ namespace SIVEDI.ListaPrecios
                     productoListaPrecio.SUMA_VALOR_PUBLICO = false;
 
                     strResultado = Convert.ToString(ServicePedidos.iuListaPreciosProducto(productoListaPrecio));
-                    //strResultado = objListaPrecios.iuListaPreciosProdcuto(0, cboListaPrecios.SelectedValue, 15.2, 999, false, false, false, false, false, false, 0, false, DataRowView("CDV_NID").ToString(), true, dttDatosProducto.Rows(0).Item("PRD_PUNTO_PREMIO"));
                 }
 
                 for (int idx = 1; idx <= this.chkListaProductos.Items.Count - 1; idx++)
@@ -146,10 +145,17 @@ namespace SIVEDI.ListaPrecios
             }
         }
 
-        private void btnBuscaAsignado_Click(System.Object sender, System.EventArgs e)
+        private void btnBuscaAsignado_Click(object sender, EventArgs e)
         {
             if (cboListaPrecios.SelectedIndex > 0)
                 cargaProductos(txtNombreProdAsignado.Text.Trim(), 1);
+            else
+                MessageBox.Show("Seleccione una lista de precios", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+        }
+        private void btnBuscarProducto_Click(object sender, EventArgs e)
+        {
+            if (cboListaPrecios.SelectedIndex > 0)
+                cargaProductos(txtNombreProdDisponible.Text, 2);
             else
                 MessageBox.Show("Seleccione una lista de precios", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
         }
@@ -160,16 +166,16 @@ namespace SIVEDI.ListaPrecios
             {
                 {
                     var withBlock = dtgProductos;
-                    //withBlock.DataSource = objProductos.getProductoNombreLista(strNombreProducto, cboListaPrecios.SelectedValue);
+                    withBlock.DataSource = ServicePedidos.getProductoNombreLista(strNombreProducto, Convert.ToInt32(cboListaPrecios.SelectedValue));
                 }
             }
             else if (intOpcion == 2)
             {
                 {
                     var withBlock = chkListaProductos;
-                    //withBlock.DataSource = objProductos.getProductoNombreListaProd(strNombreProducto, cboListaPrecios.SelectedValue);
-                    withBlock.DisplayMember = "PRD_CNOMBRE";
-                    withBlock.ValueMember = "CDV_NID";
+                    withBlock.DataSource = ServicePedidos.getProductoNombreListaProd(strNombreProducto, Convert.ToInt32(cboListaPrecios.SelectedValue));
+                    withBlock.DisplayMember = "NOMBRE";
+                    withBlock.ValueMember = "CODIGO";
                 }
             }
         }
@@ -211,23 +217,127 @@ namespace SIVEDI.ListaPrecios
         {
             CheckForIllegalCrossThreadCalls = false;
             SaveFileDialog save = new SaveFileDialog();
-            save.Filter = "Archivo Excel | *.xlsx";
+            save.Filter = "Archivo Excel | *.xlsx|Archivo Excel |*.xls";
             if (save.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 strFileName = save.FileName;
-                //thColor = new System.Threading.Thread(ExcelNPOI(strFileName));
-                //if (thColor.ThreadState != System.Threading.ThreadState.Running)
-                //    thColor.Start();
-                ExcelNPOI(strFileName);
+                thColor = new System.Threading.Thread(ExcelNPOI);
+                if (thColor.ThreadState != System.Threading.ThreadState.Running)
+                    thColor.Start();
             }
         }
 
 
-        private void ExcelNPOI(string ruta)
+        private void ExcelNPOI()
         {
             GeneraExcel generaExcel = new GeneraExcel();
             var ListaPreciosPructo = ServicePedidos.getlistaPreciosProdExporta(3, 0, Convert.ToInt32(cboListaPrecios.SelectedValue));
-            generaExcel.generaArchivo(ListaPreciosPructo, ruta);
+            try
+            {
+                generaExcel.generaArchivo(ListaPreciosPructo, strFileName);
+                MessageBox.Show("El archivo fue generado en la ruta: " + strFileName, "Archivo Generado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error al generar archivo", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+            }
+        }
+
+        private void btnCargaInformacion_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                CheckForIllegalCrossThreadCalls = false;
+
+                // Instanciamos nuestro cuadro de dialogo
+                OpenFileDialog openFileDialog1 = new OpenFileDialog();
+                // Directorio Predeterminado
+                // openFileDialog1.InitialDirectory = "C:\"
+                // Filtramos solo archivos con extension *.xls
+                openFileDialog1.Filter = "Archivo Excel | *.xlsx|Archivo Excel |*.xls";
+                // Si se presiona abrir entonces...
+                if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    // Asignamos la ruta donde se almacena el fichero excel que se va a importar
+                    string RutaArchivo;
+                    RutaArchivo = openFileDialog1.FileName;
+                    dt = operacionesExcel.Excel_To_DataTable(RutaArchivo, 0);
+                    // Llenamos el Datagridview
+                    thColor = new System.Threading.Thread(CargaInformacion);
+                    if (thColor.ThreadState != System.Threading.ThreadState.Running)
+                        thColor.Start();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+            }
+        }
+
+
+        private void CargaInformacion()
+        {
+            try
+            {
+                pbrCarga.Value = 0;
+                pbrCarga.Minimum = 0;
+                this.Cursor = Cursors.Default;
+                pbrCarga.Maximum = dt.Rows.Count;
+
+                for (var i = 0; i <= dt.Rows.Count - 1; i++)
+                {
+                    ProductoListaPrecio productoListaPrecio = new ProductoListaPrecio();
+                    pbrCarga.Refresh();
+                    pbrCarga.Value = pbrCarga.Value + 1;
+                    lblPorcentajeCarga.Text = Convert.ToInt32(pbrCarga.Value * 100 / (double)pbrCarga.Maximum) + "%";
+
+                    DataRow row = dt.Rows[i];
+
+                    productoListaPrecio.CODIGO_PRODUCTO_LISTA = Convert.ToInt32(row[0]);
+                    productoListaPrecio.PRECIO_LISTA = Convert.ToDecimal(row[4]);
+                    productoListaPrecio.LIMITE_VENTA = Convert.ToInt32(row[5]);
+                    productoListaPrecio.ES_PRINCIPAL = row[6].ToString() == "1" ? true : false;
+                    productoListaPrecio.PERMITE_DIGITAR = row[7].ToString() == "1" ? true : false; 
+                    productoListaPrecio.SUMA_VALOR_PUBLICO = row[8].ToString() == "1" ? true : false; 
+                    productoListaPrecio.SUMA_LLEGAR_ESCALA = row[9].ToString() == "1" ? true : false; 
+                    productoListaPrecio.SE_APLICA_ESCALA = row[10].ToString() == "1" ? true : false;
+                    productoListaPrecio.APLICA_SUPERA_MONTO_MIN = row[11].ToString() == "1" ? true : false; 
+                    productoListaPrecio.SUMA_NETO = row[12].ToString() == "1" ? true : false;  
+                    productoListaPrecio.ES_ACCESORIO = row[13].ToString() == "1" ? true : false; 
+                    productoListaPrecio.PORCENTAJE_IVA = Convert.ToDecimal(row[14]);
+                    productoListaPrecio.COSTO_PRODUCTO = Convert.ToDecimal(row[15]);
+                    productoListaPrecio.PUNTOS = Convert.ToInt32(row[16]);
+                    productoListaPrecio.ESFALTANTE_ANUNCIADO = row[17].ToString() == "1" ? true : false; 
+                    productoListaPrecio.TIPO_PRODUCTO = "STANDARD";
+                    productoListaPrecio.PRECIO_CATALOGO = Convert.ToDecimal(row[18]);
+                    ServicePedidos.updPreciosProdcuto(productoListaPrecio);
+                }
+                MessageBox.Show("Archivo cargado exitosamente", "Carga de Información", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                lblPorcentajeCarga.Text = null;
+                pbrCarga.Value = 0;
+                pbrCarga.Minimum = 0;
+                pbrCarga.Refresh();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+            }
+        }
+
+        private void EliminarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int strResult;
+                int filaSeleccionada = dtgProductos.SelectedRows[0].Index;
+                strResult = ServicePedidos.DelCodigoListaPreciosProd(Convert.ToInt32(dtgProductos.Rows[filaSeleccionada].Cells["CODIGO"].Value));
+                llenarGrillaProdLista();
+                cargaProductos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+            }
         }
 
 

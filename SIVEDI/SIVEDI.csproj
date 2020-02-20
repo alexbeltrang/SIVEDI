@@ -263,6 +263,9 @@
     <EmbeddedResource Include="Indicadores\frmMaestraEsatdosActividad.resx">
       <DependentUpon>frmMaestraEsatdosActividad.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ListaPrecios\frmAsignaVariableProdLP.resx">
+      <DependentUpon>frmAsignaVariableProdLP.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ListaPrecios\frmListaPrecioProducto.resx">
       <DependentUpon>frmListaPrecioProducto.cs</DependentUpon>
     </EmbeddedResource>
@@ -376,6 +379,7 @@
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.EstadoCivilTabla.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.FormasIngresoTabla.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.GenerosTabla.datasource" />
+    <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.ListaPreciosNombreProducto.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.ListaPreciosProducto.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.ListaPreciosProductoComboBox.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.ListaPreciosTabla.datasource" />
@@ -392,6 +396,7 @@
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.TerritorioTabla.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.TipoClienteTabla.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.tipoDocumentoTabla.datasource" />
+    <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.TipoProductoTabla.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.UnidadesMedidaTabla.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.UnidasMedidaTabla.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.usuariosTabla.datasource" />

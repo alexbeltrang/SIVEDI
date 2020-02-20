@@ -34,7 +34,7 @@ namespace SIVEDI.WCFPedidos
             List<ListaPreciosTabla> PedidosListaPreciosTabla = new List<ListaPreciosTabla>();
             sp_Pedidos spRequestPedidos = new sp_Pedidos();
             DataDB data = new DataDB("SIVEDIBDEntities");
-            StoreProcedure SP = spRequestPedidos.getListaPrecios("SPR_GET_LISTA_PRECIOS",intOpcion, intCodigoListaPrecios);
+            StoreProcedure SP = spRequestPedidos.getListaPrecios("SPR_GET_LISTA_PRECIOS", intOpcion, intCodigoListaPrecios);
             PedidosListaPreciosTabla = data.ExecuteQueryList<ListaPreciosTabla>(SP);
             return PedidosListaPreciosTabla;
         }
@@ -58,6 +58,25 @@ namespace SIVEDI.WCFPedidos
             PedidosListaPreciosProducto = data.ExecuteQueryList<ListaPreciosProducto>(SP);
             return PedidosListaPreciosProducto;
         }
+        public List<ListaPreciosProducto> getProductoNombreLista(string strNombreProducto, int intCodigoListaPrecios)
+        {
+            List<ListaPreciosProducto> PedidosListaPreciosProducto = new List<ListaPreciosProducto>();
+            sp_Pedidos spRequestPedidos = new sp_Pedidos();
+            DataDB data = new DataDB("SIVEDIBDEntities");
+            StoreProcedure SP = spRequestPedidos.getProductoNombreLista("SPR_GET_LISTA_PRECIOS_PRODUCTO_NOMBRE", strNombreProducto, intCodigoListaPrecios);
+            PedidosListaPreciosProducto = data.ExecuteQueryList<ListaPreciosProducto>(SP);
+            return PedidosListaPreciosProducto;
+        }
+
+        public List<ListaPreciosProducto> getProductoNombreListaProd(string strNombreProducto, int intCodigoListaPrecios)
+        {
+            List<ListaPreciosProducto> PedidosListaPreciosProducto = new List<ListaPreciosProducto>();
+            sp_Pedidos spRequestPedidos = new sp_Pedidos();
+            DataDB data = new DataDB("SIVEDIBDEntities");
+            StoreProcedure SP = spRequestPedidos.getProductoNombreLista("SPR_GET_PRODUCTO_NOMBRE_LISTA", strNombreProducto, intCodigoListaPrecios);
+            PedidosListaPreciosProducto = data.ExecuteQueryList<ListaPreciosProducto>(SP);
+            return PedidosListaPreciosProducto;
+        }
 
         public int insListaPrecios(ListaPrecios listaPrecios)
         {
@@ -76,6 +95,26 @@ namespace SIVEDI.WCFPedidos
 
             StoreProcedure SP = spRequestPedidos.iuListaPreciosProducto("SPR_IU_PROD_LISTA_PRECIO", productoListaPrecio);
             int codigoProductoLista = data.ExecuteInsert(SP, "PO_NRESULT");
+            return codigoProductoLista;
+        }
+
+        public int updPreciosProdcuto(ProductoListaPrecio productoListaPrecio)
+        {
+            sp_Pedidos spRequestPedidos = new sp_Pedidos();
+            DataDB data = new DataDB("SIVEDIBDEntities");
+
+            StoreProcedure SP = spRequestPedidos.updPreciosProdcuto("SPR_UPD_CONDICION_PRODUCTO", productoListaPrecio);
+            int codigoProductoLista = data.ExecuteInsert(SP, "PO_NRESULT");
+            return codigoProductoLista;
+        }
+
+        public int DelCodigoListaPreciosProd(int intCodigoVenta)
+        {
+            sp_Pedidos spRequestPedidos = new sp_Pedidos();
+            DataDB data = new DataDB("SIVEDIBDEntities");
+
+            StoreProcedure SP = spRequestPedidos.DelCodigoListaPreciosProd("SPR_DEL_ASIGNACION_LISTA_PRECIO_PROD", intCodigoVenta);
+            int codigoProductoLista = data.ExecuteUD(SP);
             return codigoProductoLista;
         }
         #endregion

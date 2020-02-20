@@ -65,6 +65,7 @@
       <xs:element minOccurs="0" name="APLICA_ESCALA" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CODIGO" type="xs:decimal" />
       <xs:element minOccurs="0" name="CODIGO_VENTA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODIGO_VENTA_ID" type="xs:decimal" />
       <xs:element minOccurs="0" name="COSTO" type="xs:decimal" />
       <xs:element minOccurs="0" name="DIGITA" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ES_ACCESORIO" nillable="true" type="xs:string" />
@@ -72,7 +73,7 @@
       <xs:element minOccurs="0" name="IVA" type="xs:decimal" />
       <xs:element minOccurs="0" name="LIMITE" type="xs:int" />
       <xs:element minOccurs="0" name="NOMBRE" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="PRECIO" type="xs:int" />
+      <xs:element minOccurs="0" name="PRECIO" type="xs:decimal" />
       <xs:element minOccurs="0" name="PRECIO_CATALOGO" type="xs:decimal" />
       <xs:element minOccurs="0" name="PRINCIPAL" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="PUNTOS" type="xs:int" />

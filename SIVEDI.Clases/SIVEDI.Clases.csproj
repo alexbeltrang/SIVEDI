@@ -74,6 +74,7 @@
     <Compile Include="LoginUsuario.cs" />
     <Compile Include="moduloHijo.cs" />
     <Compile Include="moduloPadre.cs" />
+    <Compile Include="OperacionesExcel.cs" />
     <Compile Include="Pais.cs" />
     <Compile Include="perfiles.cs" />
     <Compile Include="ProductoCodigoVenta.cs" />
@@ -110,12 +111,14 @@
     <Compile Include="TABLAS\TerritorioTabla.cs" />
     <Compile Include="TABLAS\TipoClienteTabla.cs" />
     <Compile Include="TABLAS\tipoDocumentoTabla.cs" />
+    <Compile Include="TABLAS\TipoProductoTabla.cs" />
     <Compile Include="TABLAS\TipoReferenciaTabla.cs" />
     <Compile Include="TABLAS\UnidadesMedidaTabla.cs" />
     <Compile Include="TABLAS\ZonasTabla.cs" />
     <Compile Include="Territorios.cs" />
     <Compile Include="TipoCliente.cs" />
     <Compile Include="TipoDocumento.cs" />
+    <Compile Include="TipoProducto.cs" />
     <Compile Include="TipoReferencia.cs" />
     <Compile Include="UnidadMedida.cs" />
     <Compile Include="usuarios.cs" />

@@ -420,4 +420,18 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ProductoTabla" nillable="true" type="tns:ProductoTabla" />
+  <xs:complexType name="ArrayOfTipoProductoTabla">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TipoProductoTabla" nillable="true" type="tns:TipoProductoTabla" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTipoProductoTabla" nillable="true" type="tns:ArrayOfTipoProductoTabla" />
+  <xs:complexType name="TipoProductoTabla">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ESTADO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOMBRE" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TipoProductoTabla" nillable="true" type="tns:TipoProductoTabla" />
 </xs:schema>

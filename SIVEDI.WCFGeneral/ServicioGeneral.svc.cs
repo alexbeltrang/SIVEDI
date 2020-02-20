@@ -678,6 +678,21 @@ namespace SIVEDI.WCFGeneral
             return codigoProducto;
         }
         #endregion
+
+        #region Tipos Producto
+        public List<TipoProductoTabla> getTiposProducto(int intOpcion, string strTipoProducto)
+        {
+            List<TipoProductoTabla> ListTipoProducto = new List<TipoProductoTabla>();
+            SpRequest spRequestUsuario = new SpRequest();
+            DataDB data = new DataDB("SIVEDIBDEntities");
+
+            StoreProcedure SP = spRequestUsuario.getlistaTipoProducto("SPR_GET_TIPO_PRODUCTO", intOpcion, strTipoProducto);
+            ListTipoProducto = data.ExecuteQueryList<TipoProductoTabla>(SP);
+
+            return ListTipoProducto;
+        }
+
+        #endregion
     }
 
 }

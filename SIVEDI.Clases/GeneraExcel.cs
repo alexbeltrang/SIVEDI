@@ -47,7 +47,11 @@ namespace SIVEDI.Clases
 
             //Creación de los encabezados de cada columna
             var r = sheet.CreateRow(0);
-            foreach (ListaPreciosProducto Lista in (List<ListaPreciosProducto>)ListaPrecios)
+
+            List<ListaPreciosProducto> ListaExportable = new List<ListaPreciosProducto>((IEnumerable<ListaPreciosProducto>)ListaPrecios);
+
+
+            foreach (ListaPreciosProducto Lista in ListaExportable)
             {
                 IRow row = sheet.GetRow(i);
                 foreach (var prop in Lista.GetType().GetProperties())
@@ -62,7 +66,7 @@ namespace SIVEDI.Clases
                 break;
             }
             i = 1;
-            foreach (ListaPreciosProducto Lista in (List<ListaPreciosProducto>)ListaPrecios)
+            foreach (ListaPreciosProducto Lista in ListaExportable)
             {
                 var z = sheet.CreateRow(i);
                 IRow row = sheet.GetRow(i);
@@ -115,32 +119,32 @@ namespace SIVEDI.Clases
                 cell11.CellStyle = testeStyle1;
 
                 ICell cell12 = row.CreateCell(12);
-                cell11.SetCellValue(Lista.SUMA_NETO);
-                cell11.CellStyle = testeStyle1;
+                cell12.SetCellValue(Lista.SUMA_NETO);
+                cell12.CellStyle = testeStyle1;
 
                 ICell cell13 = row.CreateCell(13);
-                cell11.SetCellValue(Lista.ES_ACCESORIO);
-                cell11.CellStyle = testeStyle1;
+                cell13.SetCellValue(Lista.ES_ACCESORIO);
+                cell13.CellStyle = testeStyle1;
 
                 ICell cell14 = row.CreateCell(14);
-                cell11.SetCellValue(Lista.IVA.ToString());
-                cell11.CellStyle = testeStyle1;
+                cell14.SetCellValue(Lista.IVA.ToString());
+                cell14.CellStyle = testeStyle1;
 
                 ICell cell15 = row.CreateCell(15);
-                cell11.SetCellValue(Lista.COSTO.ToString());
-                cell11.CellStyle = testeStyle1;
+                cell15.SetCellValue(Lista.COSTO.ToString());
+                cell15.CellStyle = testeStyle1;
 
                 ICell cell16 = row.CreateCell(16);
-                cell11.SetCellValue(Lista.PUNTOS);
-                cell11.CellStyle = testeStyle1;
+                cell16.SetCellValue(Lista.PUNTOS);
+                cell16.CellStyle = testeStyle1;
 
                 ICell cell17 = row.CreateCell(17);
-                cell11.SetCellValue(Lista.ES_FALTANTE);
-                cell11.CellStyle = testeStyle1;
+                cell17.SetCellValue(Lista.ES_FALTANTE);
+                cell17.CellStyle = testeStyle1;
 
                 ICell cell18 = row.CreateCell(18);
-                cell11.SetCellValue(Lista.PRECIO_CATALOGO.ToString());
-                cell11.CellStyle = testeStyle1;
+                cell18.SetCellValue(Lista.PRECIO_CATALOGO.ToString());
+                cell18.CellStyle = testeStyle1;
 
 
                 i++;
@@ -152,7 +156,7 @@ namespace SIVEDI.Clases
             }
 
 
-            string strArchivo = strRutaArchivo + DateTime.Now.ToString("yyyyMMdd") + ".xls";
+            string strArchivo = strRutaArchivo; //+ DateTime.Now.ToString("yyyyMMdd") + ".xls";
 
             using (var fs = new FileStream(strArchivo, FileMode.Create, FileAccess.Write))
             {
@@ -179,5 +183,8 @@ namespace SIVEDI.Clases
             }
             return strArchivo;
         }
+
+
+
     }
 }

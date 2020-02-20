@@ -130,5 +130,7 @@ namespace SIVEDI.WCFGeneral
         List<ProductoCodigoVenta> getProductosCodigoVenta(int intOpcion, string strCodigoVenta, int CodigoLista);
         [OperationContract]
         int insProducto(Productos productos);
+        [OperationContract]
+        List<TipoProductoTabla> getTiposProducto(int intOpcion, string strTipoProducto);
     }
 }

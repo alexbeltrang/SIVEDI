@@ -17,17 +17,21 @@
       <xs:element minOccurs="0" name="CODIGO_LISTA_PRECIOS" type="xs:int" />
       <xs:element minOccurs="0" name="CODIGO_PRODUCTO_LISTA" type="xs:int" />
       <xs:element minOccurs="0" name="CODIGO_VENTA" type="xs:int" />
-      <xs:element minOccurs="0" name="COSTO_PRODUCTO" type="xs:int" />
+      <xs:element minOccurs="0" name="COSTO_PRODUCTO" type="xs:decimal" />
       <xs:element minOccurs="0" name="ESFALTANTE_ANUNCIADO" type="xs:boolean" />
       <xs:element minOccurs="0" name="ES_ACCESORIO" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ES_PRINCIPAL" type="xs:boolean" />
       <xs:element minOccurs="0" name="LIMITE_VENTA" type="xs:int" />
       <xs:element minOccurs="0" name="PERMITE_DIGITAR" type="xs:boolean" />
-      <xs:element minOccurs="0" name="PRECIO_LISTA" type="xs:int" />
+      <xs:element minOccurs="0" name="PORCENTAJE_IVA" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PRECIO_CATALOGO" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PRECIO_LISTA" type="xs:decimal" />
       <xs:element minOccurs="0" name="PUNTOS" type="xs:int" />
       <xs:element minOccurs="0" name="SE_APLICA_ESCALA" type="xs:boolean" />
       <xs:element minOccurs="0" name="SUMA_LLEGAR_ESCALA" type="xs:boolean" />
       <xs:element minOccurs="0" name="SUMA_NETO" type="xs:boolean" />
       <xs:element minOccurs="0" name="SUMA_VALOR_PUBLICO" type="xs:boolean" />
+      <xs:element minOccurs="0" name="TIPO_PRODUCTO" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ProductoListaPrecio" nillable="true" type="tns:ProductoListaPrecio" />

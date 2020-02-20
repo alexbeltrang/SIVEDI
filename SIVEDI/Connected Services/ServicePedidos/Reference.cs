@@ -50,6 +50,30 @@ namespace SIVEDI.ServicePedidos {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicePedidos/getlistaPreciosProdExporta", ReplyAction="http://tempuri.org/IServicePedidos/getlistaPreciosProdExportaResponse")]
         System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.ListaPreciosProducto[]> getlistaPreciosProdExportaAsync(int intOpcion, int intCodigoProducto, int intCodigoListaPrecio);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicePedidos/getProductoNombreLista", ReplyAction="http://tempuri.org/IServicePedidos/getProductoNombreListaResponse")]
+        SIVEDI.Clases.TABLAS.ListaPreciosProducto[] getProductoNombreLista(string strNombreProducto, int intCodigoListaPrecios);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicePedidos/getProductoNombreLista", ReplyAction="http://tempuri.org/IServicePedidos/getProductoNombreListaResponse")]
+        System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.ListaPreciosProducto[]> getProductoNombreListaAsync(string strNombreProducto, int intCodigoListaPrecios);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicePedidos/getProductoNombreListaProd", ReplyAction="http://tempuri.org/IServicePedidos/getProductoNombreListaProdResponse")]
+        SIVEDI.Clases.TABLAS.ListaPreciosProducto[] getProductoNombreListaProd(string strNombreProducto, int intCodigoListaPrecios);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicePedidos/getProductoNombreListaProd", ReplyAction="http://tempuri.org/IServicePedidos/getProductoNombreListaProdResponse")]
+        System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.ListaPreciosProducto[]> getProductoNombreListaProdAsync(string strNombreProducto, int intCodigoListaPrecios);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicePedidos/updPreciosProdcuto", ReplyAction="http://tempuri.org/IServicePedidos/updPreciosProdcutoResponse")]
+        int updPreciosProdcuto(SIVEDI.Clases.ProductoListaPrecio productoListaPrecio);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicePedidos/updPreciosProdcuto", ReplyAction="http://tempuri.org/IServicePedidos/updPreciosProdcutoResponse")]
+        System.Threading.Tasks.Task<int> updPreciosProdcutoAsync(SIVEDI.Clases.ProductoListaPrecio productoListaPrecio);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicePedidos/DelCodigoListaPreciosProd", ReplyAction="http://tempuri.org/IServicePedidos/DelCodigoListaPreciosProdResponse")]
+        int DelCodigoListaPreciosProd(int intCodigoVenta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicePedidos/DelCodigoListaPreciosProd", ReplyAction="http://tempuri.org/IServicePedidos/DelCodigoListaPreciosProdResponse")]
+        System.Threading.Tasks.Task<int> DelCodigoListaPreciosProdAsync(int intCodigoVenta);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -125,6 +149,38 @@ namespace SIVEDI.ServicePedidos {
         
         public System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.ListaPreciosProducto[]> getlistaPreciosProdExportaAsync(int intOpcion, int intCodigoProducto, int intCodigoListaPrecio) {
             return base.Channel.getlistaPreciosProdExportaAsync(intOpcion, intCodigoProducto, intCodigoListaPrecio);
+        }
+        
+        public SIVEDI.Clases.TABLAS.ListaPreciosProducto[] getProductoNombreLista(string strNombreProducto, int intCodigoListaPrecios) {
+            return base.Channel.getProductoNombreLista(strNombreProducto, intCodigoListaPrecios);
+        }
+        
+        public System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.ListaPreciosProducto[]> getProductoNombreListaAsync(string strNombreProducto, int intCodigoListaPrecios) {
+            return base.Channel.getProductoNombreListaAsync(strNombreProducto, intCodigoListaPrecios);
+        }
+        
+        public SIVEDI.Clases.TABLAS.ListaPreciosProducto[] getProductoNombreListaProd(string strNombreProducto, int intCodigoListaPrecios) {
+            return base.Channel.getProductoNombreListaProd(strNombreProducto, intCodigoListaPrecios);
+        }
+        
+        public System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.ListaPreciosProducto[]> getProductoNombreListaProdAsync(string strNombreProducto, int intCodigoListaPrecios) {
+            return base.Channel.getProductoNombreListaProdAsync(strNombreProducto, intCodigoListaPrecios);
+        }
+        
+        public int updPreciosProdcuto(SIVEDI.Clases.ProductoListaPrecio productoListaPrecio) {
+            return base.Channel.updPreciosProdcuto(productoListaPrecio);
+        }
+        
+        public System.Threading.Tasks.Task<int> updPreciosProdcutoAsync(SIVEDI.Clases.ProductoListaPrecio productoListaPrecio) {
+            return base.Channel.updPreciosProdcutoAsync(productoListaPrecio);
+        }
+        
+        public int DelCodigoListaPreciosProd(int intCodigoVenta) {
+            return base.Channel.DelCodigoListaPreciosProd(intCodigoVenta);
+        }
+        
+        public System.Threading.Tasks.Task<int> DelCodigoListaPreciosProdAsync(int intCodigoVenta) {
+            return base.Channel.DelCodigoListaPreciosProdAsync(intCodigoVenta);
         }
     }
 }

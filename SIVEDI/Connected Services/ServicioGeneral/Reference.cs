@@ -362,6 +362,12 @@ namespace SIVEDI.ServicioGeneral {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/insProducto", ReplyAction="http://tempuri.org/IServicioGeneral/insProductoResponse")]
         System.Threading.Tasks.Task<int> insProductoAsync(SIVEDI.Clases.Productos productos);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getTiposProducto", ReplyAction="http://tempuri.org/IServicioGeneral/getTiposProductoResponse")]
+        SIVEDI.Clases.TABLAS.TipoProductoTabla[] getTiposProducto(int intOpcion, string strTipoProducto);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getTiposProducto", ReplyAction="http://tempuri.org/IServicioGeneral/getTiposProductoResponse")]
+        System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.TipoProductoTabla[]> getTiposProductoAsync(int intOpcion, string strTipoProducto);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -853,6 +859,14 @@ namespace SIVEDI.ServicioGeneral {
         
         public System.Threading.Tasks.Task<int> insProductoAsync(SIVEDI.Clases.Productos productos) {
             return base.Channel.insProductoAsync(productos);
+        }
+        
+        public SIVEDI.Clases.TABLAS.TipoProductoTabla[] getTiposProducto(int intOpcion, string strTipoProducto) {
+            return base.Channel.getTiposProducto(intOpcion, strTipoProducto);
+        }
+        
+        public System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.TipoProductoTabla[]> getTiposProductoAsync(int intOpcion, string strTipoProducto) {
+            return base.Channel.getTiposProductoAsync(intOpcion, strTipoProducto);
         }
     }
 }

@@ -238,5 +238,171 @@ namespace SIVEDI.Datos
             return storeProcedure;
         }
 
+        public StoreProcedure getProductoNombreLista(string spName, string strNombreProducto, int intCodigoListaPrecios)
+        {
+            StoreProcedure storeProcedure = new StoreProcedure();
+            storeProcedure.Nombre = spName;
+            storeProcedure.Parametros = new List<SqlParameter>()
+            {
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_CNOMBRE_PRODUCTO",
+                    SqlDbType = System.Data.SqlDbType.VarChar,
+                    Value = strNombreProducto
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NCODIGO_LISTA_PRECIOS",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = intCodigoListaPrecios
+                }
+            };
+
+            return storeProcedure;
+        }
+
+        public StoreProcedure updPreciosProdcuto(string spName, ProductoListaPrecio productoListaPrecio)
+        {
+            StoreProcedure storeProcedure = new StoreProcedure();
+            storeProcedure.Nombre = spName;
+            storeProcedure.Parametros = new List<SqlParameter>()
+            {
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NCODIGO_PRODUCTO_LISTA",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = productoListaPrecio.CODIGO_PRODUCTO_LISTA
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NPRECIO_LISTA",
+                    SqlDbType = System.Data.SqlDbType.Decimal,
+                    Value = productoListaPrecio.PRECIO_LISTA
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NLIMITE_VENTA",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = productoListaPrecio.LIMITE_VENTA
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_OPERMITE_DIGITAR",
+                    SqlDbType = System.Data.SqlDbType.Bit,
+                    Value = productoListaPrecio.PERMITE_DIGITAR
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_OSUMA_VALOR_PUBLICO",
+                    SqlDbType = System.Data.SqlDbType.Bit,
+                    Value = productoListaPrecio.SUMA_VALOR_PUBLICO
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_OSUMA_LLEGAR_ESCALA",
+                    SqlDbType = System.Data.SqlDbType.Bit,
+                    Value = productoListaPrecio.SUMA_LLEGAR_ESCALA
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_OSE_APLICA_ESCALA",
+                    SqlDbType = System.Data.SqlDbType.Bit,
+                    Value = productoListaPrecio.SE_APLICA_ESCALA
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_OAPLICA_SUPERA_MONTO_MIN",
+                    SqlDbType = System.Data.SqlDbType.Bit,
+                    Value = productoListaPrecio.APLICA_SUPERA_MONTO_MIN
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_OES_ACCESORIO",
+                    SqlDbType = System.Data.SqlDbType.Bit,
+                    Value = productoListaPrecio.ES_ACCESORIO
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NCOSTO_PRODUCTO",
+                    SqlDbType = System.Data.SqlDbType.Decimal,
+                    Value = productoListaPrecio.COSTO_PRODUCTO
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_OESFALTANTE_ANUNCIADO",
+                    SqlDbType = System.Data.SqlDbType.Bit,
+                    Value = productoListaPrecio.ESFALTANTE_ANUNCIADO
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_OESPRINCIPAL",
+                    SqlDbType = System.Data.SqlDbType.Bit,
+                    Value = productoListaPrecio.ES_PRINCIPAL
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_PORCENTAJEIVA",
+                    SqlDbType = System.Data.SqlDbType.Decimal,
+                    Value = productoListaPrecio.PORCENTAJE_IVA
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_CTIPO_PRODCUTO",
+                    SqlDbType = System.Data.SqlDbType.VarChar,
+                    Value = productoListaPrecio.TIPO_PRODUCTO
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_OSUMA_NETO",
+                    SqlDbType = System.Data.SqlDbType.Bit,
+                    Value = productoListaPrecio.SUMA_NETO
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NPUNTO_PREMIO",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = productoListaPrecio.PUNTOS
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NPRECIO_CATALOGO",
+                    SqlDbType = System.Data.SqlDbType.Decimal,
+                    Value = productoListaPrecio.PRECIO_CATALOGO
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PO_NRESULT",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Direction = System.Data.ParameterDirection.Output,
+                    Value = productoListaPrecio.CODIGO_PRODUCTO_LISTA
+                }
+            };
+
+            return storeProcedure;
+        }
+
+        public StoreProcedure DelCodigoListaPreciosProd(string spName,  int intCodigoVenta)
+        {
+            StoreProcedure storeProcedure = new StoreProcedure();
+            storeProcedure.Nombre = spName;
+            storeProcedure.Parametros = new List<SqlParameter>()
+            {
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NCODIGO_PRODUCTO_LISTA",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = intCodigoVenta
+                },
+                 new SqlParameter()
+                {
+                    ParameterName = "@PO_NRESULT",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Direction = System.Data.ParameterDirection.Output,
+                    Value = intCodigoVenta
+                }
+            };
+
+            return storeProcedure;
+        }
     }
 }

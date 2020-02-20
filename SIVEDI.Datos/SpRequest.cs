@@ -858,7 +858,7 @@ namespace SIVEDI.Datos
 
             return storeProcedure;
         }
-        
+
         public StoreProcedure insDepartamento(string spName, Departamentos departamentos)
         {
             StoreProcedure storeProcedure = new StoreProcedure();
@@ -905,7 +905,7 @@ namespace SIVEDI.Datos
             };
             return storeProcedure;
         }
-        
+
         public StoreProcedure getCiudades(string spName, int intOpcion, int intCodigoDepartamento, int intCodigoCiudad)
         {
             StoreProcedure storeProcedure = new StoreProcedure();
@@ -934,7 +934,7 @@ namespace SIVEDI.Datos
 
             return storeProcedure;
         }
-        
+
         public StoreProcedure insCiudades(string spName, Ciudades ciudades)
         {
             StoreProcedure storeProcedure = new StoreProcedure();
@@ -981,7 +981,7 @@ namespace SIVEDI.Datos
             };
             return storeProcedure;
         }
-        
+
         public StoreProcedure getClaseResponsable(string spName, int intOpcion, int intCodigoResponsable)
         {
             StoreProcedure storeProcedure = new StoreProcedure();
@@ -1004,7 +1004,7 @@ namespace SIVEDI.Datos
 
             return storeProcedure;
         }
-        
+
         public StoreProcedure insClaseResponsable(string spName, ClaseResponsable claseResponsable)
         {
             StoreProcedure storeProcedure = new StoreProcedure();
@@ -1039,7 +1039,7 @@ namespace SIVEDI.Datos
             };
             return storeProcedure;
         }
-        
+
         public StoreProcedure getResponsableTerritorio(string spName, int intOpcion)
         {
             StoreProcedure storeProcedure = new StoreProcedure();
@@ -1406,7 +1406,7 @@ namespace SIVEDI.Datos
             return storeProcedure;
         }
 
-        public StoreProcedure getTerritorios(string spName, int intOpcion,  string strCodigoSeccion, string strCodigoTerritorio)
+        public StoreProcedure getTerritorios(string spName, int intOpcion, string strCodigoSeccion, string strCodigoTerritorio)
         {
             StoreProcedure storeProcedure = new StoreProcedure();
             storeProcedure.Nombre = spName;
@@ -1668,5 +1668,29 @@ namespace SIVEDI.Datos
             };
             return storeProcedure;
         }
+
+        public StoreProcedure getlistaTipoProducto(string spName, int intOpcion, string strTipoProdcuto)
+        {
+            StoreProcedure storeProcedure = new StoreProcedure();
+            storeProcedure.Nombre = spName;
+            storeProcedure.Parametros = new List<SqlParameter>()
+            {
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_CCODIGO_PRODUCTO",
+                    SqlDbType = System.Data.SqlDbType.VarChar,
+                    Value = strTipoProdcuto
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NOPCION",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = intOpcion
+                }
+            };
+
+            return storeProcedure;
+        }
+
     }
 }

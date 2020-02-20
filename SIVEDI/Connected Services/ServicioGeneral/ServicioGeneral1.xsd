@@ -357,7 +357,7 @@
   <xs:complexType name="ProductoCodigoVenta">
     <xs:sequence>
       <xs:element minOccurs="0" name="CODIGO" type="xs:int" />
-      <xs:element minOccurs="0" name="CODIGO_VENTA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODIGO_VENTA" type="xs:decimal" />
       <xs:element minOccurs="0" name="CODIGO_VENTA_NOMBRE" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="NOMBRE" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="PUNTOS" type="xs:int" />

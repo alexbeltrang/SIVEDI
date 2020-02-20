@@ -91,4 +91,62 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="getProductoNombreLista">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strNombreProducto" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intCodigoListaPrecios" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getProductoNombreListaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" minOccurs="0" name="getProductoNombreListaResult" nillable="true" type="q7:ArrayOfListaPreciosProducto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getProductoNombreListaProd">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strNombreProducto" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intCodigoListaPrecios" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getProductoNombreListaProdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" minOccurs="0" name="getProductoNombreListaProdResult" nillable="true" type="q8:ArrayOfListaPreciosProducto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updPreciosProdcuto">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" minOccurs="0" name="productoListaPrecio" nillable="true" type="q9:ProductoListaPrecio" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updPreciosProdcutoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="updPreciosProdcutoResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DelCodigoListaPreciosProd">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="intCodigoVenta" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DelCodigoListaPreciosProdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DelCodigoListaPreciosProdResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

@@ -198,8 +198,9 @@
             // EliminarToolStripMenuItem
             // 
             this.EliminarToolStripMenuItem.Name = "EliminarToolStripMenuItem";
-            this.EliminarToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.EliminarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.EliminarToolStripMenuItem.Text = "&Eliminar";
+            this.EliminarToolStripMenuItem.Click += new System.EventHandler(this.EliminarToolStripMenuItem_Click);
             // 
             // btnAsignar
             // 
@@ -246,6 +247,7 @@
             this.btnBuscarProducto.TabIndex = 3;
             this.btnBuscarProducto.Text = "Buscar";
             this.btnBuscarProducto.UseVisualStyleBackColor = true;
+            this.btnBuscarProducto.Click += new System.EventHandler(this.btnBuscarProducto_Click);
             // 
             // txtNombreProdDisponible
             // 
@@ -292,6 +294,7 @@
             this.btnCargaInformacion.TabIndex = 56;
             this.btnCargaInformacion.Text = "Cargar Archivo";
             this.btnCargaInformacion.UseVisualStyleBackColor = true;
+            this.btnCargaInformacion.Click += new System.EventHandler(this.btnCargaInformacion_Click);
             // 
             // lblPorcentajeCarga
             // 

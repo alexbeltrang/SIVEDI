@@ -855,4 +855,19 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="getTiposProducto">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="intOpcion" type="xs:int" />
+        <xs:element minOccurs="0" name="strTipoProducto" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getTiposProductoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" minOccurs="0" name="getTiposProductoResult" nillable="true" type="q59:ArrayOfTipoProductoTabla" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

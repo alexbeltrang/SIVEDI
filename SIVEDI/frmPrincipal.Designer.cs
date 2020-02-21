@@ -351,7 +351,7 @@
             // CampañasToolStripMenuItem
             // 
             this.CampañasToolStripMenuItem.Name = "CampañasToolStripMenuItem";
-            this.CampañasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.CampañasToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.CampañasToolStripMenuItem.Text = "Campaña&s";
             this.CampañasToolStripMenuItem.Click += new System.EventHandler(this.CampañasToolStripMenuItem_Click);
             // 
@@ -365,7 +365,7 @@
             this.ClaseResponsablesToolStripMenuItem,
             this.ResponsablesToolStripMenuItem});
             this.TerritoriosToolStripMenuItem.Name = "TerritoriosToolStripMenuItem";
-            this.TerritoriosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.TerritoriosToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.TerritoriosToolStripMenuItem.Text = "&Territorios";
             // 
             // RegionesToolStripMenuItem
@@ -413,25 +413,25 @@
             // EscalaDescuentosToolStripMenuItem
             // 
             this.EscalaDescuentosToolStripMenuItem.Name = "EscalaDescuentosToolStripMenuItem";
-            this.EscalaDescuentosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.EscalaDescuentosToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.EscalaDescuentosToolStripMenuItem.Text = "&Escala Descuentos";
             // 
             // OfertasSimplesToolStripMenuItem
             // 
             this.OfertasSimplesToolStripMenuItem.Name = "OfertasSimplesToolStripMenuItem";
-            this.OfertasSimplesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.OfertasSimplesToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.OfertasSimplesToolStripMenuItem.Text = "O&fertas Simples";
             // 
             // CombosToolStripMenuItem
             // 
             this.CombosToolStripMenuItem.Name = "CombosToolStripMenuItem";
-            this.CombosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.CombosToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.CombosToolStripMenuItem.Text = "&Combos";
             // 
             // EquivalenciasToolStripMenuItem
             // 
             this.EquivalenciasToolStripMenuItem.Name = "EquivalenciasToolStripMenuItem";
-            this.EquivalenciasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.EquivalenciasToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.EquivalenciasToolStripMenuItem.Text = "E&quivalencias";
             // 
             // ConcursosToolStripMenuItem
@@ -440,19 +440,19 @@
             this.DeVentasToolStripMenuItem,
             this.ReferidosToolStripMenuItem});
             this.ConcursosToolStripMenuItem.Name = "ConcursosToolStripMenuItem";
-            this.ConcursosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ConcursosToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.ConcursosToolStripMenuItem.Text = "Concu&rsos";
             // 
             // DeVentasToolStripMenuItem
             // 
             this.DeVentasToolStripMenuItem.Name = "DeVentasToolStripMenuItem";
-            this.DeVentasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.DeVentasToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.DeVentasToolStripMenuItem.Text = "&Ventas";
             // 
             // ReferidosToolStripMenuItem
             // 
             this.ReferidosToolStripMenuItem.Name = "ReferidosToolStripMenuItem";
-            this.ReferidosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ReferidosToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.ReferidosToolStripMenuItem.Text = "&Referidos";
             // 
             // FleteXCiudadToolStripMenuItem
@@ -461,7 +461,7 @@
             this.CargaFletesXArchivoToolStripMenuItem,
             this.FletesXCiudadToolStripMenuItem});
             this.FleteXCiudadToolStripMenuItem.Name = "FleteXCiudadToolStripMenuItem";
-            this.FleteXCiudadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.FleteXCiudadToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.FleteXCiudadToolStripMenuItem.Text = "F&letes";
             // 
             // CargaFletesXArchivoToolStripMenuItem
@@ -521,6 +521,7 @@
             this.CargaMasivaCódigosVentaToolStripMenuItem.Name = "CargaMasivaCódigosVentaToolStripMenuItem";
             this.CargaMasivaCódigosVentaToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
             this.CargaMasivaCódigosVentaToolStripMenuItem.Text = "Carga Masiva Códigos Venta";
+            this.CargaMasivaCódigosVentaToolStripMenuItem.Click += new System.EventHandler(this.CargaMasivaCódigosVentaToolStripMenuItem_Click);
             // 
             // CuentasToolStripMenuItem
             // 

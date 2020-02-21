@@ -35,4 +35,14 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ProductoListaPrecio" nillable="true" type="tns:ProductoListaPrecio" />
+  <xs:complexType name="CodigoVenta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGO" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CODIGO_PRODUCTO" type="xs:int" />
+      <xs:element minOccurs="0" name="CODIGO_VENTA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ESTADO" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ES_PRINCIPAL" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CodigoVenta" nillable="true" type="tns:CodigoVenta" />
 </xs:schema>

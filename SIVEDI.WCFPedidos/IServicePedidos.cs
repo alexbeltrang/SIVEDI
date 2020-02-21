@@ -33,5 +33,13 @@ namespace SIVEDI.WCFPedidos
         int updPreciosProdcuto(ProductoListaPrecio productoListaPrecio);
         [OperationContract]
         int DelCodigoListaPreciosProd(int intCodigoVenta);
+        [OperationContract]
+        List<AsignaCodigoVenta> getProductoNombre(string strReferencia, string strNombreProducto);
+        [OperationContract]
+        List<CodigoVentaTabla> getCodigoVenta(int intOpcion, int intCodigoProducto);
+        [OperationContract]
+        int DelCodigoVenta(int intCodigoVenta);
+        [OperationContract]
+        int iuCodigoVenta(CodigoVenta codigoVenta);
     }
 }

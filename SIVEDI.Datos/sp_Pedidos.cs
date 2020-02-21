@@ -261,6 +261,29 @@ namespace SIVEDI.Datos
             return storeProcedure;
         }
 
+        public StoreProcedure getProductoNombre(string spName, string strReferencia, string strNombreProducto)
+        {
+            StoreProcedure storeProcedure = new StoreProcedure();
+            storeProcedure.Nombre = spName;
+            storeProcedure.Parametros = new List<SqlParameter>()
+            {
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_CREFERENCIA",
+                    SqlDbType = System.Data.SqlDbType.VarChar,
+                    Value = strReferencia
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_CNOMBRE",
+                    SqlDbType = System.Data.SqlDbType.VarChar,
+                    Value = strNombreProducto
+                }
+            };
+
+            return storeProcedure;
+        }
+
         public StoreProcedure updPreciosProdcuto(string spName, ProductoListaPrecio productoListaPrecio)
         {
             StoreProcedure storeProcedure = new StoreProcedure();
@@ -381,7 +404,7 @@ namespace SIVEDI.Datos
             return storeProcedure;
         }
 
-        public StoreProcedure DelCodigoListaPreciosProd(string spName,  int intCodigoVenta)
+        public StoreProcedure DelCodigoListaPreciosProd(string spName, int intCodigoVenta)
         {
             StoreProcedure storeProcedure = new StoreProcedure();
             storeProcedure.Nombre = spName;
@@ -399,6 +422,88 @@ namespace SIVEDI.Datos
                     SqlDbType = System.Data.SqlDbType.Int,
                     Direction = System.Data.ParameterDirection.Output,
                     Value = intCodigoVenta
+                }
+            };
+
+            return storeProcedure;
+        }
+
+        public StoreProcedure getCodigoVenta(string spName, int intOpcion, int intCodigoProducto)
+        {
+            StoreProcedure storeProcedure = new StoreProcedure();
+            storeProcedure.Nombre = spName;
+            storeProcedure.Parametros = new List<SqlParameter>()
+            {
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NCODIGO_PRODUCTO",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = intCodigoProducto
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NOPCION",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = intOpcion
+                }
+            };
+
+            return storeProcedure;
+        }
+
+        public StoreProcedure DelCodigoVenta(string spName, int intCodigoVenta)
+        {
+            StoreProcedure storeProcedure = new StoreProcedure();
+            storeProcedure.Nombre = spName;
+            storeProcedure.Parametros = new List<SqlParameter>()
+            {
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NCODIGO_VENTA",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = intCodigoVenta
+                }
+            };
+
+            return storeProcedure;
+        }
+
+        public StoreProcedure iuCodigoVenta(string spName, CodigoVenta codigoVenta)
+        {
+            StoreProcedure storeProcedure = new StoreProcedure();
+            storeProcedure.Nombre = spName;
+            storeProcedure.Parametros = new List<SqlParameter>()
+            {
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_CCODIGO_PRODUCTO",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = codigoVenta.CODIGO_PRODUCTO
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_CCODIGO_VENTA",
+                    SqlDbType = System.Data.SqlDbType.VarChar,
+                    Value = codigoVenta.CODIGO_VENTA
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_OESTADO",
+                    SqlDbType = System.Data.SqlDbType.Bit,
+                    Value = codigoVenta.ESTADO
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_OES_PRINCIPAL",
+                    SqlDbType = System.Data.SqlDbType.Bit,
+                    Value = codigoVenta.ES_PRINCIPAL
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PO_NRESULT",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Direction= System.Data.ParameterDirection.Output,
+                    Value = codigoVenta.CODIGO
                 }
             };
 

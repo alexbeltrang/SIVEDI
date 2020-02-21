@@ -149,4 +149,62 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="getProductoNombre">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strReferencia" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strNombreProducto" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getProductoNombreResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" minOccurs="0" name="getProductoNombreResult" nillable="true" type="q10:ArrayOfAsignaCodigoVenta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getCodigoVenta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="intOpcion" type="xs:int" />
+        <xs:element minOccurs="0" name="intCodigoProducto" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getCodigoVentaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" minOccurs="0" name="getCodigoVentaResult" nillable="true" type="q11:ArrayOfCodigoVentaTabla" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DelCodigoVenta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="intCodigoVenta" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DelCodigoVentaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DelCodigoVentaResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="iuCodigoVenta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" minOccurs="0" name="codigoVenta" nillable="true" type="q12:CodigoVenta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="iuCodigoVentaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="iuCodigoVentaResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

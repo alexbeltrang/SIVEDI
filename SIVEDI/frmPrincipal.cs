@@ -492,21 +492,21 @@ namespace SIVEDI
                         break;
                     }
 
-                    //case "CARGA MASIVA":
-                    //    {
-                    //        if (clsConnection.blnVentanasEnbebidas)
-                    //        {
-                    //            frmCargaCodVentaMasivo objFormulario = new frmCargaCodVentaMasivo();
-                    //            cargaFormulario(objFormulario);
-                    //        }
-                    //        else
-                    //        {
-                    //            frmCargaCodVentaMasivo objFormulario = new frmCargaCodVentaMasivo();
-                    //            objFormulario.Show();
-                    //        }
+                case "CARGA MASIVA":
+                    {
+                        if (clsConnection.blnVentanasEnbebidas)
+                        {
+                            frmCargaCodVentaMasivo objFormulario = new frmCargaCodVentaMasivo();
+                            cargaFormulario(objFormulario);
+                        }
+                        else
+                        {
+                            frmCargaCodVentaMasivo objFormulario = new frmCargaCodVentaMasivo();
+                            objFormulario.Show();
+                        }
 
-                    //        break;
-                    //    }
+                        break;
+                    }
 
                     //case "PEDIDOS":
                     //    {
@@ -1034,6 +1034,20 @@ namespace SIVEDI
             else
             {
                 frmCodigoVenta objFormulario = new frmCodigoVenta();
+                objFormulario.Show();
+            }
+        }
+
+        private void CargaMasivaCódigosVentaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+                  if (clsConnection.blnVentanasEnbebidas)
+            {
+                frmCargaCodVentaMasivo objFormulario = new frmCargaCodVentaMasivo();
+                cargaFormulario(objFormulario);
+            }
+            else
+            {
+                frmCargaCodVentaMasivo objFormulario = new frmCargaCodVentaMasivo();
                 objFormulario.Show();
             }
         }

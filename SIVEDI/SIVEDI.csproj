@@ -111,11 +111,23 @@
     <Compile Include="Indicadores\frmMaestraEsatdosActividad.Designer.cs">
       <DependentUpon>frmMaestraEsatdosActividad.cs</DependentUpon>
     </Compile>
+    <Compile Include="ListaPrecios\frmAsignaCodVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListaPrecios\frmAsignaCodVenta.Designer.cs">
+      <DependentUpon>frmAsignaCodVenta.cs</DependentUpon>
+    </Compile>
     <Compile Include="ListaPrecios\frmAsignaVariableProdLP.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ListaPrecios\frmAsignaVariableProdLP.Designer.cs">
       <DependentUpon>frmAsignaVariableProdLP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListaPrecios\frmCargaCodVentaMasivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListaPrecios\frmCargaCodVentaMasivo.Designer.cs">
+      <DependentUpon>frmCargaCodVentaMasivo.cs</DependentUpon>
     </Compile>
     <Compile Include="ListaPrecios\frmCodigoVenta.cs">
       <SubType>Form</SubType>
@@ -269,8 +281,14 @@
     <EmbeddedResource Include="Indicadores\frmMaestraEsatdosActividad.resx">
       <DependentUpon>frmMaestraEsatdosActividad.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ListaPrecios\frmAsignaCodVenta.resx">
+      <DependentUpon>frmAsignaCodVenta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ListaPrecios\frmAsignaVariableProdLP.resx">
       <DependentUpon>frmAsignaVariableProdLP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaPrecios\frmCargaCodVentaMasivo.resx">
+      <DependentUpon>frmCargaCodVentaMasivo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListaPrecios\frmCodigoVenta.resx">
       <DependentUpon>frmCodigoVenta.cs</DependentUpon>
@@ -370,6 +388,7 @@
     </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\SIVEDI.Clases.Ciudades.datasource" />
+    <None Include="Properties\DataSources\SIVEDI.Clases.CodigoVenta.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.CupoMinimo.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.Departamentos.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.EstadoActividad.datasource" />
@@ -379,10 +398,12 @@
     <None Include="Properties\DataSources\SIVEDI.Clases.moduloPadre.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.perfiles.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.ProductoCodigoVenta.datasource" />
+    <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.AsignaCodigoVenta.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.campanasTabla.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.CiudadesTabla.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.ClaseResponsableTabla.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.ClienteConsultaTabla.datasource" />
+    <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.CodigoVentaTabla.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.DepartamentoTabla.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.EstadoActividadTabla.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.EstadoCivilTabla.datasource" />

@@ -74,6 +74,30 @@ namespace SIVEDI.ServicePedidos {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicePedidos/DelCodigoListaPreciosProd", ReplyAction="http://tempuri.org/IServicePedidos/DelCodigoListaPreciosProdResponse")]
         System.Threading.Tasks.Task<int> DelCodigoListaPreciosProdAsync(int intCodigoVenta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicePedidos/getProductoNombre", ReplyAction="http://tempuri.org/IServicePedidos/getProductoNombreResponse")]
+        SIVEDI.Clases.TABLAS.AsignaCodigoVenta[] getProductoNombre(string strReferencia, string strNombreProducto);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicePedidos/getProductoNombre", ReplyAction="http://tempuri.org/IServicePedidos/getProductoNombreResponse")]
+        System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.AsignaCodigoVenta[]> getProductoNombreAsync(string strReferencia, string strNombreProducto);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicePedidos/getCodigoVenta", ReplyAction="http://tempuri.org/IServicePedidos/getCodigoVentaResponse")]
+        SIVEDI.Clases.TABLAS.CodigoVentaTabla[] getCodigoVenta(int intOpcion, int intCodigoProducto);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicePedidos/getCodigoVenta", ReplyAction="http://tempuri.org/IServicePedidos/getCodigoVentaResponse")]
+        System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.CodigoVentaTabla[]> getCodigoVentaAsync(int intOpcion, int intCodigoProducto);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicePedidos/DelCodigoVenta", ReplyAction="http://tempuri.org/IServicePedidos/DelCodigoVentaResponse")]
+        int DelCodigoVenta(int intCodigoVenta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicePedidos/DelCodigoVenta", ReplyAction="http://tempuri.org/IServicePedidos/DelCodigoVentaResponse")]
+        System.Threading.Tasks.Task<int> DelCodigoVentaAsync(int intCodigoVenta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicePedidos/iuCodigoVenta", ReplyAction="http://tempuri.org/IServicePedidos/iuCodigoVentaResponse")]
+        int iuCodigoVenta(SIVEDI.Clases.CodigoVenta codigoVenta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicePedidos/iuCodigoVenta", ReplyAction="http://tempuri.org/IServicePedidos/iuCodigoVentaResponse")]
+        System.Threading.Tasks.Task<int> iuCodigoVentaAsync(SIVEDI.Clases.CodigoVenta codigoVenta);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -181,6 +205,38 @@ namespace SIVEDI.ServicePedidos {
         
         public System.Threading.Tasks.Task<int> DelCodigoListaPreciosProdAsync(int intCodigoVenta) {
             return base.Channel.DelCodigoListaPreciosProdAsync(intCodigoVenta);
+        }
+        
+        public SIVEDI.Clases.TABLAS.AsignaCodigoVenta[] getProductoNombre(string strReferencia, string strNombreProducto) {
+            return base.Channel.getProductoNombre(strReferencia, strNombreProducto);
+        }
+        
+        public System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.AsignaCodigoVenta[]> getProductoNombreAsync(string strReferencia, string strNombreProducto) {
+            return base.Channel.getProductoNombreAsync(strReferencia, strNombreProducto);
+        }
+        
+        public SIVEDI.Clases.TABLAS.CodigoVentaTabla[] getCodigoVenta(int intOpcion, int intCodigoProducto) {
+            return base.Channel.getCodigoVenta(intOpcion, intCodigoProducto);
+        }
+        
+        public System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.CodigoVentaTabla[]> getCodigoVentaAsync(int intOpcion, int intCodigoProducto) {
+            return base.Channel.getCodigoVentaAsync(intOpcion, intCodigoProducto);
+        }
+        
+        public int DelCodigoVenta(int intCodigoVenta) {
+            return base.Channel.DelCodigoVenta(intCodigoVenta);
+        }
+        
+        public System.Threading.Tasks.Task<int> DelCodigoVentaAsync(int intCodigoVenta) {
+            return base.Channel.DelCodigoVentaAsync(intCodigoVenta);
+        }
+        
+        public int iuCodigoVenta(SIVEDI.Clases.CodigoVenta codigoVenta) {
+            return base.Channel.iuCodigoVenta(codigoVenta);
+        }
+        
+        public System.Threading.Tasks.Task<int> iuCodigoVentaAsync(SIVEDI.Clases.CodigoVenta codigoVenta) {
+            return base.Channel.iuCodigoVentaAsync(codigoVenta);
         }
     }
 }

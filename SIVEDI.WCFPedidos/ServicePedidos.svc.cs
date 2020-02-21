@@ -78,6 +78,26 @@ namespace SIVEDI.WCFPedidos
             return PedidosListaPreciosProducto;
         }
 
+        public List<AsignaCodigoVenta> getProductoNombre(string strReferencia, string strNombreProducto)
+        {
+            List<AsignaCodigoVenta> AsignaCodigoVenta = new List<AsignaCodigoVenta>();
+            sp_Pedidos spRequestPedidos = new sp_Pedidos();
+            DataDB data = new DataDB("SIVEDIBDEntities");
+            StoreProcedure SP = spRequestPedidos.getProductoNombre("SPR_GET_PRODUCTO_NOMBRE", strReferencia, strNombreProducto);
+            AsignaCodigoVenta = data.ExecuteQueryList<AsignaCodigoVenta>(SP);
+            return AsignaCodigoVenta;
+        }
+
+        public List<CodigoVentaTabla> getCodigoVenta(int intOpcion, int intCodigoProducto)
+        {
+            List<CodigoVentaTabla> CodigoVenta = new List<CodigoVentaTabla>();
+            sp_Pedidos spRequestPedidos = new sp_Pedidos();
+            DataDB data = new DataDB("SIVEDIBDEntities");
+            StoreProcedure SP = spRequestPedidos.getCodigoVenta("SPR_GET_CODIGO_VENTA", intOpcion, intCodigoProducto);
+            CodigoVenta = data.ExecuteQueryList<CodigoVentaTabla>(SP);
+            return CodigoVenta;
+        }
+
         public int insListaPrecios(ListaPrecios listaPrecios)
         {
             sp_Pedidos spRequestPedidos = new sp_Pedidos();
@@ -117,6 +137,28 @@ namespace SIVEDI.WCFPedidos
             int codigoProductoLista = data.ExecuteUD(SP);
             return codigoProductoLista;
         }
+
+        public int DelCodigoVenta(int intCodigoVenta)
+        {
+            sp_Pedidos spRequestPedidos = new sp_Pedidos();
+            DataDB data = new DataDB("SIVEDIBDEntities");
+
+            StoreProcedure SP = spRequestPedidos.DelCodigoVenta("SPR_DEL_CODIGO_VENTA", intCodigoVenta);
+            int codigoProductoLista = data.ExecuteUD(SP);
+            return codigoProductoLista;
+        }
+
+
+        public int iuCodigoVenta(CodigoVenta codigoVenta)
+        {
+            sp_Pedidos spRequestPedidos = new sp_Pedidos();
+            DataDB data = new DataDB("SIVEDIBDEntities");
+
+            StoreProcedure SP = spRequestPedidos.iuCodigoVenta("SPR_IU_CODIGO_VENTA", codigoVenta);
+            int codigoProductoLista = data.ExecuteInsert(SP, "PO_NRESULT");
+            return codigoProductoLista;
+        }
+
         #endregion
     }
 }

@@ -62,6 +62,7 @@
     <Compile Include="Cliente.cs" />
     <Compile Include="clsConnection.cs" />
     <Compile Include="clsValidar.cs" />
+    <Compile Include="CodigoVenta.cs" />
     <Compile Include="CupoMinimo.cs" />
     <Compile Include="Departamentos.cs" />
     <Compile Include="EstadoActividad.cs" />
@@ -85,10 +86,12 @@
     <Compile Include="Regionales.cs" />
     <Compile Include="ResponsableTerritorio.cs" />
     <Compile Include="Secciones.cs" />
+    <Compile Include="TABLAS\AsignaCodigoVenta.cs" />
     <Compile Include="TABLAS\campanasTabla.cs" />
     <Compile Include="TABLAS\CiudadesTabla.cs" />
     <Compile Include="TABLAS\ClaseResponsableTabla.cs" />
     <Compile Include="TABLAS\ClienteConsultaTabla.cs" />
+    <Compile Include="TABLAS\CodigoVentaTabla.cs" />
     <Compile Include="TABLAS\DepartamentoTabla.cs" />
     <Compile Include="TABLAS\EstadoActividadTabla.cs" />
     <Compile Include="TABLAS\EstadoCivilTabla.cs" />

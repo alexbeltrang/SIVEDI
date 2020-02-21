@@ -94,6 +94,7 @@
             this.dtgProductos.ShowEditingIcon = false;
             this.dtgProductos.Size = new System.Drawing.Size(817, 274);
             this.dtgProductos.TabIndex = 12;
+            this.dtgProductos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgProductos_CellDoubleClick);
             // 
             // ContextMenuStrip1
             // 
@@ -107,6 +108,7 @@
             this.EditarToolStripMenuItem.Name = "EditarToolStripMenuItem";
             this.EditarToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
             this.EditarToolStripMenuItem.Text = "&Editar";
+            this.EditarToolStripMenuItem.Click += new System.EventHandler(this.EditarToolStripMenuItem_Click);
             // 
             // pnlBusqueda
             // 
@@ -134,7 +136,7 @@
             // txtNombreProducto
             // 
             this.txtNombreProducto.Location = new System.Drawing.Point(133, 39);
-            this.txtNombreProducto.MaxLength = 20;
+            this.txtNombreProducto.MaxLength = 150;
             this.txtNombreProducto.Name = "txtNombreProducto";
             this.txtNombreProducto.Size = new System.Drawing.Size(339, 20);
             this.txtNombreProducto.TabIndex = 3;

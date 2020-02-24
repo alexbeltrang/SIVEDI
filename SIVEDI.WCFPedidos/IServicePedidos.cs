@@ -41,5 +41,18 @@ namespace SIVEDI.WCFPedidos
         int DelCodigoVenta(int intCodigoVenta);
         [OperationContract]
         int iuCodigoVenta(CodigoVenta codigoVenta);
+        [OperationContract]
+        List<EquivalenciasTabla> getEquivalencias(int intOpcion, int intCodigoEquivalencia, String strCodigoSolicita);
+        [OperationContract]
+        List<CombosTabla> getCombos(int intOpcion, int intCodigoCombo, string strCodigoVenta, int intCodigoListaPrecios);
+        [OperationContract]
+        List<ProductoPredidoTablas> getProductoPedidos(string strCodigoVenta, int intCodigoListaPrecios);
+        [OperationContract]
+        List<Cliente_pedido> getClientePedido(string strIdentificacion);
+        [OperationContract]
+        List<ClienteListaPrecios> getClienteListaPrecios(int intOpcion, string strIdentificacion);
+        [OperationContract]
+        List<ProductosCombo> getProductoCombos(int intCodigoCombo);
+        
     }
 }

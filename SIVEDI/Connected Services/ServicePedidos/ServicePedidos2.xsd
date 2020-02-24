@@ -127,4 +127,75 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="CodigoVentaTabla" nillable="true" type="tns:CodigoVentaTabla" />
+  <xs:complexType name="ArrayOfEquivalenciasTabla">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EquivalenciasTabla" nillable="true" type="tns:EquivalenciasTabla" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEquivalenciasTabla" nillable="true" type="tns:ArrayOfEquivalenciasTabla" />
+  <xs:complexType name="EquivalenciasTabla">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGO" type="xs:int" />
+      <xs:element minOccurs="0" name="CODIGO_ENTREGA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODIGO_VENTA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ESTADO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LISTA_PRECIOS" type="xs:int" />
+      <xs:element minOccurs="0" name="NOMBRE_ENTREGA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOMBRE_SOLICITA" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EquivalenciasTabla" nillable="true" type="tns:EquivalenciasTabla" />
+  <xs:complexType name="ArrayOfCombosTabla">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CombosTabla" nillable="true" type="tns:CombosTabla" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCombosTabla" nillable="true" type="tns:ArrayOfCombosTabla" />
+  <xs:complexType name="CombosTabla">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGO" type="xs:int" />
+      <xs:element minOccurs="0" name="CODIGO_LISTA_PRECIOS" type="xs:int" />
+      <xs:element minOccurs="0" name="CODIGO_VENTA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ESTADO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOMBRE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PORC_DESCUENTO" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PRECIO_VENTA" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CombosTabla" nillable="true" type="tns:CombosTabla" />
+  <xs:complexType name="ArrayOfProductoPredidoTablas">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProductoPredidoTablas" nillable="true" type="tns:ProductoPredidoTablas" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProductoPredidoTablas" nillable="true" type="tns:ArrayOfProductoPredidoTablas" />
+  <xs:complexType name="ProductoPredidoTablas">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="APLICA_ESCALA" type="xs:boolean" />
+      <xs:element minOccurs="0" name="APLICA_SUPERA_MONTO_MINIMO" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CENTRO_GASTO_OBSEQUIO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CENTRO_GASTO_VENTA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODIGO" type="xs:int" />
+      <xs:element minOccurs="0" name="CODIGO_TIPO_PRODUCTO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODIGO_VENTA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COSTO_PRODUCTO" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ES_ACCESORIO" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ES_CODIGO_PRINCIPAL" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ES_FALTANTE_ANUNCIADO" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IVA" type="xs:decimal" />
+      <xs:element minOccurs="0" name="LIMITE_VENTA" type="xs:int" />
+      <xs:element minOccurs="0" name="MOTIVO_OBSEQUIO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MOTIVO_VENTA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOMBRE_PRODUCTO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PERMITE_DIGITAR" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PRECIO_CATALOGO" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PRECIO_LISTA" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PUNTOS_PREMIO" type="xs:int" />
+      <xs:element minOccurs="0" name="REFERENCIA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SUMA_PARA_LLEGAR_ESCALA" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SUMA_PARA_VALOR_NETO" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SUMA_VALOR_PUBLICO" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProductoPredidoTablas" nillable="true" type="tns:ProductoPredidoTablas" />
 </xs:schema>

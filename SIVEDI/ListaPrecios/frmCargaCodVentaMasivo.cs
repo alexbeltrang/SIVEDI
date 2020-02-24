@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -17,6 +18,7 @@ namespace SIVEDI.ListaPrecios
         DataTable dt = new DataTable();
         OperacionesExcel operacionesExcel = new OperacionesExcel();
         ServicePedidosClient ServicePedidos = new ServicePedidosClient();
+        public Thread thColor;
         public frmCargaCodVentaMasivo()
         {
             InitializeComponent();
@@ -26,6 +28,7 @@ namespace SIVEDI.ListaPrecios
         {
             this.BackColor = System.Drawing.ColorTranslator.FromHtml(System.Configuration.ConfigurationManager.AppSettings["color"]);
             totCampos.Active = clsConnection.blnAyudaEnlinea;
+            lblPorcentajeCarga.Text = null;
             dtgCodigoVenta.ReadOnly = true;
         }
 
@@ -40,7 +43,7 @@ namespace SIVEDI.ListaPrecios
                 // Directorio Predeterminado
                 // openFileDialog1.InitialDirectory = "C:\"
                 // Filtramos solo archivos con extension *.xls
-                openFileDialog1.Filter = "Archivo Excel | *.xlsx|Archivo Excel |*.xls";
+                openFileDialog1.Filter = "Todos los archivos| *.*|Archivo Excel | *.xlsx|Archivo Excel |*.xls";
                 // Si se presiona abrir entonces...
                 if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
@@ -68,22 +71,48 @@ namespace SIVEDI.ListaPrecios
 
         private void btnGrabar_Click(object sender, EventArgs e)
         {
-            if (dtgCodigoVenta.Rows.Count > 0)
+            thColor = new System.Threading.Thread(CargaInformacion);
+            if (thColor.ThreadState != System.Threading.ThreadState.Running)
+                thColor.Start();
+        }
+
+        private void CargaInformacion()
+        {
+            try
             {
-                for (var i = 0; i <= dtgCodigoVenta.Rows.Count - 1; i++)
+                if (dtgCodigoVenta.Rows.Count > 0)
                 {
-                    CodigoVenta codigoVenta = new CodigoVenta();
-                    codigoVenta.CODIGO_PRODUCTO = Convert.ToInt32(dtgCodigoVenta.Rows[i].Cells[0].Value);
-                    codigoVenta.CODIGO_VENTA = Convert.ToString(dtgCodigoVenta.Rows[i].Cells[0].Value);
-                    codigoVenta.ESTADO = Convert.ToInt32(dtgCodigoVenta.Rows[i].Cells[3].Value) == 1 ? true : false;
-                    codigoVenta.ES_PRINCIPAL= Convert.ToInt32(dtgCodigoVenta.Rows[i].Cells[2].Value) == 1 ? true : false;
-                    ServicePedidos.iuCodigoVenta(codigoVenta);
+                    pbrCarga.Value = 0;
+                    pbrCarga.Minimum = 0;
+                    this.Cursor = Cursors.Default;
+                    pbrCarga.Maximum = dt.Rows.Count;
+                    for (var i = 0; i <= dtgCodigoVenta.Rows.Count - 1; i++)
+                    {
+                        CodigoVenta codigoVenta = new CodigoVenta();
+                        pbrCarga.Refresh();
+                        pbrCarga.Value = pbrCarga.Value + 1;
+                        lblPorcentajeCarga.Text = Convert.ToInt32(pbrCarga.Value * 100 / (double)pbrCarga.Maximum) + "%";
+
+                        codigoVenta.REFERENCIA = dtgCodigoVenta.Rows[i].Cells[0].Value.ToString();
+                        codigoVenta.CODIGO_VENTA = Convert.ToString(dtgCodigoVenta.Rows[i].Cells[1].Value);
+                        codigoVenta.ESTADO = Convert.ToInt32(dtgCodigoVenta.Rows[i].Cells[3].Value) == 1 ? true : false;
+                        codigoVenta.ES_PRINCIPAL = Convert.ToInt32(dtgCodigoVenta.Rows[i].Cells[2].Value) == 1 ? true : false;
+                        ServicePedidos.iuCodigoVenta(codigoVenta);
+                    }
+                    limpiaCampos();
+                    MessageBox.Show("Archivo cargado exitosamente", "Carga Exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                    lblPorcentajeCarga.Text = null;
+                    pbrCarga.Value = 0;
+                    pbrCarga.Minimum = 0;
+                    pbrCarga.Refresh();
                 }
-                limpiaCampos();
-                MessageBox.Show("Archivo cargado exitosamente", "Carga Exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                else
+                    MessageBox.Show("Seleccione un arhcivo para realizar la carga", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
             }
-            else
-                MessageBox.Show("Seleccione un arhcivo para realizar la carga", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+            }
         }
     }
 }

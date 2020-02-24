@@ -60,6 +60,8 @@
     <Compile Include="Ciudades.cs" />
     <Compile Include="ClaseResponsable.cs" />
     <Compile Include="Cliente.cs" />
+    <Compile Include="ClienteListaPrecios.cs" />
+    <Compile Include="Cliente_pedido.cs" />
     <Compile Include="clsConnection.cs" />
     <Compile Include="clsValidar.cs" />
     <Compile Include="CodigoVenta.cs" />
@@ -75,12 +77,16 @@
     <Compile Include="LoginUsuario.cs" />
     <Compile Include="moduloHijo.cs" />
     <Compile Include="moduloPadre.cs" />
+    <Compile Include="OfertaImpulsa.cs" />
+    <Compile Include="OfertasSimples.cs" />
     <Compile Include="OperacionesExcel.cs" />
     <Compile Include="Pais.cs" />
     <Compile Include="perfiles.cs" />
     <Compile Include="ProductoCodigoVenta.cs" />
     <Compile Include="ProductoListaPrecio.cs" />
     <Compile Include="Productos.cs" />
+    <Compile Include="ProductosAplicaOferta.cs" />
+    <Compile Include="ProductosCombo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReferenciaCliente.cs" />
     <Compile Include="Regionales.cs" />
@@ -92,7 +98,9 @@
     <Compile Include="TABLAS\ClaseResponsableTabla.cs" />
     <Compile Include="TABLAS\ClienteConsultaTabla.cs" />
     <Compile Include="TABLAS\CodigoVentaTabla.cs" />
+    <Compile Include="TABLAS\CombosTabla.cs" />
     <Compile Include="TABLAS\DepartamentoTabla.cs" />
+    <Compile Include="TABLAS\EquivalenciasTabla.cs" />
     <Compile Include="TABLAS\EstadoActividadTabla.cs" />
     <Compile Include="TABLAS\EstadoCivilTabla.cs" />
     <Compile Include="TABLAS\FormasIngresoTabla.cs" />
@@ -103,6 +111,7 @@
     <Compile Include="TABLAS\ListaPreciosTabla.cs" />
     <Compile Include="TABLAS\PaisTabla.cs" />
     <Compile Include="TABLAS\PedidosClienteTabla.cs" />
+    <Compile Include="TABLAS\ProductoPredidoTablas.cs" />
     <Compile Include="TABLAS\ProductoTabla.cs" />
     <Compile Include="TABLAS\ReferenciaClienteTabla.cs" />
     <Compile Include="TABLAS\RegionalesTabla.cs" />

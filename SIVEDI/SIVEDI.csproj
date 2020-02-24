@@ -261,6 +261,12 @@
     <Compile Include="Mantenimiento\frmZonas.Designer.cs">
       <DependentUpon>frmZonas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Operaciones\frmDigitaPedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operaciones\frmDigitaPedidos.Designer.cs">
+      <DependentUpon>frmDigitaPedidos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Administracion\frmPerfiles.resx">
@@ -356,6 +362,9 @@
     <EmbeddedResource Include="Mantenimiento\frmZonas.resx">
       <DependentUpon>frmZonas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Operaciones\frmDigitaPedidos.resx">
+      <DependentUpon>frmDigitaPedidos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -388,6 +397,8 @@
     </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\SIVEDI.Clases.Ciudades.datasource" />
+    <None Include="Properties\DataSources\SIVEDI.Clases.ClienteListaPrecios.datasource" />
+    <None Include="Properties\DataSources\SIVEDI.Clases.Cliente_pedido.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.CodigoVenta.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.CupoMinimo.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.Departamentos.datasource" />
@@ -398,13 +409,16 @@
     <None Include="Properties\DataSources\SIVEDI.Clases.moduloPadre.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.perfiles.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.ProductoCodigoVenta.datasource" />
+    <None Include="Properties\DataSources\SIVEDI.Clases.ProductosCombo.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.AsignaCodigoVenta.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.campanasTabla.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.CiudadesTabla.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.ClaseResponsableTabla.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.ClienteConsultaTabla.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.CodigoVentaTabla.datasource" />
+    <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.CombosTabla.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.DepartamentoTabla.datasource" />
+    <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.EquivalenciasTabla.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.EstadoActividadTabla.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.EstadoCivilTabla.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.FormasIngresoTabla.datasource" />
@@ -415,6 +429,7 @@
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.ListaPreciosTabla.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.PaisTabla.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.PedidosClienteTabla.datasource" />
+    <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.ProductoPredidoTablas.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.ProductoTabla.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.ReferenciaClienteTabla.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.RegionalesTabla.datasource" />

@@ -159,6 +159,67 @@ namespace SIVEDI.WCFPedidos
             return codigoProductoLista;
         }
 
+        public List<EquivalenciasTabla> getEquivalencias(int intOpcion, int intCodigoEquivalencia, String strCodigoSolicita)
+        {
+            List<EquivalenciasTabla> PedidosEquivalenciasTabla = new List<EquivalenciasTabla>();
+            sp_Pedidos spRequestPedidos = new sp_Pedidos();
+            DataDB data = new DataDB("SIVEDIBDEntities");
+            StoreProcedure SP = spRequestPedidos.getEquivalencias("SPR_GET_EQUIVALENCIAS", intOpcion, intCodigoEquivalencia, strCodigoSolicita);
+            PedidosEquivalenciasTabla = data.ExecuteQueryList<EquivalenciasTabla>(SP);
+            return PedidosEquivalenciasTabla;
+        }
+
+        public List<CombosTabla> getCombos(int intOpcion, int intCodigoCombo, string strCodigoVenta, int intCodigoListaPrecios)
+        {
+            List<CombosTabla> PedidosCombosTabla = new List<CombosTabla>();
+            sp_Pedidos spRequestPedidos = new sp_Pedidos();
+            DataDB data = new DataDB("SIVEDIBDEntities");
+            StoreProcedure SP = spRequestPedidos.getCombos("SPR_GET_COMBO", intOpcion, intCodigoCombo, strCodigoVenta, intCodigoListaPrecios);
+            PedidosCombosTabla = data.ExecuteQueryList<CombosTabla>(SP);
+            return PedidosCombosTabla;
+        }
+
+        public List<ProductosCombo> getProductoCombos(int intCodigoCombo)
+        {
+            List<ProductosCombo> PedidosProductosCombo = new List<ProductosCombo>();
+            sp_Pedidos spRequestPedidos = new sp_Pedidos();
+            DataDB data = new DataDB("SIVEDIBDEntities");
+            StoreProcedure SP = spRequestPedidos.getProductoCombos("SPR_GET_PRODUCTO_COMBO", intCodigoCombo);
+            PedidosProductosCombo = data.ExecuteQueryList<ProductosCombo>(SP);
+            return PedidosProductosCombo;
+        }
+
+        public List<ProductoPredidoTablas> getProductoPedidos(string strCodigoVenta, int intCodigoListaPrecios)
+        {
+            List<ProductoPredidoTablas> PedidosProductoPredidoTablas = new List<ProductoPredidoTablas>();
+            sp_Pedidos spRequestPedidos = new sp_Pedidos();
+            DataDB data = new DataDB("SIVEDIBDEntities");
+            StoreProcedure SP = spRequestPedidos.getProductoPedidos("SPR_GET_PRODUCTO_PEDIDO", strCodigoVenta, intCodigoListaPrecios);
+            PedidosProductoPredidoTablas = data.ExecuteQueryList<ProductoPredidoTablas>(SP);
+            return PedidosProductoPredidoTablas;
+        }
+
+        public List<Cliente_pedido> getClientePedido(string strIdentificacion)
+        {
+            List<Cliente_pedido> PedidosCliente_pedido = new List<Cliente_pedido>();
+            sp_Pedidos spRequestPedidos = new sp_Pedidos();
+            DataDB data = new DataDB("SIVEDIBDEntities");
+            StoreProcedure SP = spRequestPedidos.getClientePedido("SPR_GET_CLIENTE_PEDIDO", strIdentificacion);
+            PedidosCliente_pedido = data.ExecuteQueryList<Cliente_pedido>(SP);
+            return PedidosCliente_pedido;
+        }
+
+        public List<ClienteListaPrecios> getClienteListaPrecios(int intOpcion, string strIdentificacion)
+        {
+            List<ClienteListaPrecios> PedidosClienteListaPrecios = new List<ClienteListaPrecios>();
+            sp_Pedidos spRequestPedidos = new sp_Pedidos();
+            DataDB data = new DataDB("SIVEDIBDEntities");
+            StoreProcedure SP = spRequestPedidos.getClienteListaPrecios("SPR_GET_CAMPANA_CLIENTE", intOpcion, strIdentificacion);
+            PedidosClienteListaPrecios = data.ExecuteQueryList<ClienteListaPrecios>(SP);
+            return PedidosClienteListaPrecios;
+        }
+
+        
         #endregion
     }
 }

@@ -56,7 +56,7 @@ namespace SIVEDI.ListaPrecios
         }
         private bool validaCampos()
         {
-            if (txtCodigoVenta.Text == "" | txtCodigoVenta.Text == null/* TODO Change to default(_) if this is not a reference type */ )
+            if (txtCodigoVenta.Text == "" | txtCodigoVenta.Text == null )
             {
                 MessageBox.Show("Digite el código de venta para el producto " + txtNombreProducto.Text, "Validación", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 return false;

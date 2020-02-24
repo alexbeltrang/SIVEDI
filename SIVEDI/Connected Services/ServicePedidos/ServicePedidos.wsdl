@@ -92,6 +92,42 @@
   <wsdl:message name="IServicePedidos_iuCodigoVenta_OutputMessage">
     <wsdl:part name="parameters" element="tns:iuCodigoVentaResponse" />
   </wsdl:message>
+  <wsdl:message name="IServicePedidos_getEquivalencias_InputMessage">
+    <wsdl:part name="parameters" element="tns:getEquivalencias" />
+  </wsdl:message>
+  <wsdl:message name="IServicePedidos_getEquivalencias_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getEquivalenciasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicePedidos_getCombos_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCombos" />
+  </wsdl:message>
+  <wsdl:message name="IServicePedidos_getCombos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getCombosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicePedidos_getProductoPedidos_InputMessage">
+    <wsdl:part name="parameters" element="tns:getProductoPedidos" />
+  </wsdl:message>
+  <wsdl:message name="IServicePedidos_getProductoPedidos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getProductoPedidosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicePedidos_getClientePedido_InputMessage">
+    <wsdl:part name="parameters" element="tns:getClientePedido" />
+  </wsdl:message>
+  <wsdl:message name="IServicePedidos_getClientePedido_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getClientePedidoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicePedidos_getClienteListaPrecios_InputMessage">
+    <wsdl:part name="parameters" element="tns:getClienteListaPrecios" />
+  </wsdl:message>
+  <wsdl:message name="IServicePedidos_getClienteListaPrecios_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getClienteListaPreciosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicePedidos_getProductoCombos_InputMessage">
+    <wsdl:part name="parameters" element="tns:getProductoCombos" />
+  </wsdl:message>
+  <wsdl:message name="IServicePedidos_getProductoCombos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getProductoCombosResponse" />
+  </wsdl:message>
   <wsdl:portType name="IServicePedidos">
     <wsdl:operation name="getConsultaPedidosCliente">
       <wsdl:input wsaw:Action="http://tempuri.org/IServicePedidos/getConsultaPedidosCliente" message="tns:IServicePedidos_getConsultaPedidosCliente_InputMessage" />
@@ -148,6 +184,30 @@
     <wsdl:operation name="iuCodigoVenta">
       <wsdl:input wsaw:Action="http://tempuri.org/IServicePedidos/iuCodigoVenta" message="tns:IServicePedidos_iuCodigoVenta_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServicePedidos/iuCodigoVentaResponse" message="tns:IServicePedidos_iuCodigoVenta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getEquivalencias">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicePedidos/getEquivalencias" message="tns:IServicePedidos_getEquivalencias_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicePedidos/getEquivalenciasResponse" message="tns:IServicePedidos_getEquivalencias_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getCombos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicePedidos/getCombos" message="tns:IServicePedidos_getCombos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicePedidos/getCombosResponse" message="tns:IServicePedidos_getCombos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getProductoPedidos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicePedidos/getProductoPedidos" message="tns:IServicePedidos_getProductoPedidos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicePedidos/getProductoPedidosResponse" message="tns:IServicePedidos_getProductoPedidos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getClientePedido">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicePedidos/getClientePedido" message="tns:IServicePedidos_getClientePedido_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicePedidos/getClientePedidoResponse" message="tns:IServicePedidos_getClientePedido_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getClienteListaPrecios">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicePedidos/getClienteListaPrecios" message="tns:IServicePedidos_getClienteListaPrecios_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicePedidos/getClienteListaPreciosResponse" message="tns:IServicePedidos_getClienteListaPrecios_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getProductoCombos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicePedidos/getProductoCombos" message="tns:IServicePedidos_getProductoCombos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicePedidos/getProductoCombosResponse" message="tns:IServicePedidos_getProductoCombos_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IServicePedidos" type="tns:IServicePedidos">
@@ -271,6 +331,60 @@
     </wsdl:operation>
     <wsdl:operation name="iuCodigoVenta">
       <soap:operation soapAction="http://tempuri.org/IServicePedidos/iuCodigoVenta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEquivalencias">
+      <soap:operation soapAction="http://tempuri.org/IServicePedidos/getEquivalencias" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCombos">
+      <soap:operation soapAction="http://tempuri.org/IServicePedidos/getCombos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProductoPedidos">
+      <soap:operation soapAction="http://tempuri.org/IServicePedidos/getProductoPedidos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getClientePedido">
+      <soap:operation soapAction="http://tempuri.org/IServicePedidos/getClientePedido" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getClienteListaPrecios">
+      <soap:operation soapAction="http://tempuri.org/IServicePedidos/getClienteListaPrecios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProductoCombos">
+      <soap:operation soapAction="http://tempuri.org/IServicePedidos/getProductoCombos" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

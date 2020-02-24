@@ -207,4 +207,95 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="getEquivalencias">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="intOpcion" type="xs:int" />
+        <xs:element minOccurs="0" name="intCodigoEquivalencia" type="xs:int" />
+        <xs:element minOccurs="0" name="strCodigoSolicita" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getEquivalenciasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" minOccurs="0" name="getEquivalenciasResult" nillable="true" type="q13:ArrayOfEquivalenciasTabla" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getCombos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="intOpcion" type="xs:int" />
+        <xs:element minOccurs="0" name="intCodigoCombo" type="xs:int" />
+        <xs:element minOccurs="0" name="strCodigoVenta" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intCodigoListaPrecios" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getCombosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" minOccurs="0" name="getCombosResult" nillable="true" type="q14:ArrayOfCombosTabla" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getProductoPedidos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strCodigoVenta" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intCodigoListaPrecios" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getProductoPedidosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" minOccurs="0" name="getProductoPedidosResult" nillable="true" type="q15:ArrayOfProductoPredidoTablas" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getClientePedido">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strIdentificacion" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getClientePedidoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" minOccurs="0" name="getClientePedidoResult" nillable="true" type="q16:ArrayOfCliente_pedido" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getClienteListaPrecios">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="intOpcion" type="xs:int" />
+        <xs:element minOccurs="0" name="strIdentificacion" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getClienteListaPreciosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" minOccurs="0" name="getClienteListaPreciosResult" nillable="true" type="q17:ArrayOfClienteListaPrecios" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getProductoCombos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="intCodigoCombo" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getProductoCombosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" minOccurs="0" name="getProductoCombosResult" nillable="true" type="q18:ArrayOfProductosCombo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

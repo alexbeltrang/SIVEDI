@@ -13,5 +13,6 @@ namespace SIVEDI.Clases
         public string CODIGO_VENTA { get; set; }
         public bool ESTADO { get; set; }
         public bool ES_PRINCIPAL { get; set; }
+        public string REFERENCIA { get; set; }
     }
 }

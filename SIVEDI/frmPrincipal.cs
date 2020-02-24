@@ -6,6 +6,7 @@ using SIVEDI.Indicadores;
 using SIVEDI.ListaPrecios;
 using SIVEDI.Maestras;
 using SIVEDI.Mantenimiento;
+using SIVEDI.Operaciones;
 using SIVEDI.ServicioGeneral;
 using System;
 using System.Collections.Generic;
@@ -508,21 +509,21 @@ namespace SIVEDI
                         break;
                     }
 
-                    //case "PEDIDOS":
-                    //    {
-                    //        if (clsConnection.blnVentanasEnbebidas)
-                    //        {
-                    //            frmDigitaPedidos objFormulario = new frmDigitaPedidos();
-                    //            cargaFormulario(objFormulario);
-                    //        }
-                    //        else
-                    //        {
-                    //            frmDigitaPedidos objFormulario = new frmDigitaPedidos();
-                    //            objFormulario.Show();
-                    //        }
+                case "PEDIDOS":
+                    {
+                        if (clsConnection.blnVentanasEnbebidas)
+                        {
+                            frmDigitaPedidos objFormulario = new frmDigitaPedidos();
+                            cargaFormulario(objFormulario);
+                        }
+                        else
+                        {
+                            frmDigitaPedidos objFormulario = new frmDigitaPedidos();
+                            objFormulario.Show();
+                        }
 
-                    //        break;
-                    //    }
+                        break;
+                    }
 
                     //case "ESCALAS DESCUENTO":
                     //    {
@@ -1040,7 +1041,7 @@ namespace SIVEDI
 
         private void CargaMasivaCódigosVentaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-                  if (clsConnection.blnVentanasEnbebidas)
+            if (clsConnection.blnVentanasEnbebidas)
             {
                 frmCargaCodVentaMasivo objFormulario = new frmCargaCodVentaMasivo();
                 cargaFormulario(objFormulario);
@@ -1048,6 +1049,20 @@ namespace SIVEDI
             else
             {
                 frmCargaCodVentaMasivo objFormulario = new frmCargaCodVentaMasivo();
+                objFormulario.Show();
+            }
+        }
+
+        private void PedidosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (clsConnection.blnVentanasEnbebidas)
+            {
+                frmDigitaPedidos objFormulario = new frmDigitaPedidos();
+                cargaFormulario(objFormulario);
+            }
+            else
+            {
+                frmDigitaPedidos objFormulario = new frmDigitaPedidos();
                 objFormulario.Show();
             }
         }

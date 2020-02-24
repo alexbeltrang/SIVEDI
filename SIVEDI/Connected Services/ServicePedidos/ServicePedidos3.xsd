@@ -42,7 +42,76 @@
       <xs:element minOccurs="0" name="CODIGO_VENTA" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ESTADO" type="xs:boolean" />
       <xs:element minOccurs="0" name="ES_PRINCIPAL" type="xs:boolean" />
+      <xs:element minOccurs="0" name="REFERENCIA" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="CodigoVenta" nillable="true" type="tns:CodigoVenta" />
+  <xs:complexType name="ArrayOfCliente_pedido">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Cliente_pedido" nillable="true" type="tns:Cliente_pedido" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCliente_pedido" nillable="true" type="tns:ArrayOfCliente_pedido" />
+  <xs:complexType name="Cliente_pedido">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="COBRA_FLETE" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CODIGO" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CODIGO_CIUDAD" type="xs:int" />
+      <xs:element minOccurs="0" name="CODIGO_LISTA" type="xs:int" />
+      <xs:element minOccurs="0" name="CODIGO_TERRITORIO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODIGO_TIPO_CLIENTE" type="xs:int" />
+      <xs:element minOccurs="0" name="CODIGO_ZONA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CUENTA_BLOQUEADA" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CUPO_CREDITO" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DIRECCION_DOMICILIO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DIRECCION_ENTREGA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EMAIL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ESTADO_ACTIVIDAD_ANTERIOR" type="xs:int" />
+      <xs:element minOccurs="0" name="ES_CABEZA_GRUPO" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ES_GEOREFERENCIADO" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ES_INGRESO" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ES_LIDER" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IDENTIFICACION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOMBRE_CLIENTE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOMBRE_LISTA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RAZON_BLOQUEO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TELEFONO_CELULAR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TELEFONO_FIJO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TERRITORIO" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Cliente_pedido" nillable="true" type="tns:Cliente_pedido" />
+  <xs:complexType name="ArrayOfClienteListaPrecios">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ClienteListaPrecios" nillable="true" type="tns:ClienteListaPrecios" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfClienteListaPrecios" nillable="true" type="tns:ArrayOfClienteListaPrecios" />
+  <xs:complexType name="ClienteListaPrecios">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGO" type="xs:int" />
+      <xs:element minOccurs="0" name="CODIGO_LISTA_PRECIOS" type="xs:int" />
+      <xs:element minOccurs="0" name="NIVEL_CAMPANA" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ClienteListaPrecios" nillable="true" type="tns:ClienteListaPrecios" />
+  <xs:complexType name="ArrayOfProductosCombo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProductosCombo" nillable="true" type="tns:ProductosCombo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProductosCombo" nillable="true" type="tns:ArrayOfProductosCombo" />
+  <xs:complexType name="ProductosCombo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGO" type="xs:int" />
+      <xs:element minOccurs="0" name="CODIGO_PROD" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CODIGO_VENTA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOMBRE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PRECIO_LISTA" type="xs:decimal" />
+      <xs:element minOccurs="0" name="REFERENCIA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UNIDADES" type="xs:int" />
+      <xs:element minOccurs="0" name="VALOR_VENTA" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProductosCombo" nillable="true" type="tns:ProductosCombo" />
 </xs:schema>

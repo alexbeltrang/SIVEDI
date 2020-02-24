@@ -150,27 +150,27 @@ namespace SIVEDI.ListaPrecios
 
         private bool validaCampos()
         {
-            if (txtPrecioVenta.Text == "" | txtPrecioVenta.Text == null/* TODO Change to default(_) if this is not a reference type */ )
+            if (txtPrecioVenta.Text == "" | txtPrecioVenta.Text == null )
             {
                 MessageBox.Show("Ingrese el precio de venta del producto", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 return false;
             }
-            else if (txtIvaProducto.Text == "" | txtIvaProducto.Text == null/* TODO Change to default(_) if this is not a reference type */ )
+            else if (txtIvaProducto.Text == "" | txtIvaProducto.Text == null )
             {
                 MessageBox.Show("Ingrese el porcentaje de iva del producto", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 return false;
             }
-            else if (txtLimiteVenta.Text == "" | txtLimiteVenta.Text == null/* TODO Change to default(_) if this is not a reference type */ )
+            else if (txtLimiteVenta.Text == "" | txtLimiteVenta.Text == null )
             {
                 MessageBox.Show("Ingrese el máximo de unidades a vender del producto", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 return false;
             }
-            else if (txtCostoProd.Text == "" | txtCostoProd.Text == null/* TODO Change to default(_) if this is not a reference type */ )
+            else if (txtCostoProd.Text == "" | txtCostoProd.Text == null )
             {
                 MessageBox.Show("Ingrese el costo del producto", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 return false;
             }
-            else if (txtPuntosOtorga.Text == "" | txtPuntosOtorga.Text == null/* TODO Change to default(_) if this is not a reference type */ )
+            else if (txtPuntosOtorga.Text == "" | txtPuntosOtorga.Text == null )
             {
                 MessageBox.Show("Ingrese el total de puntos para premios otorga el producto", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 return false;

@@ -147,5 +147,51 @@ namespace SIVEDI.Datos
 
             return storeProcedure;
         }
+
+        public StoreProcedure getValorPublicoPedido(string spName, string strCedulaAsesor, int intCampana)
+        {
+            StoreProcedure storeProcedure = new StoreProcedure();
+            storeProcedure.Nombre = spName;
+            storeProcedure.Parametros = new List<SqlParameter>()
+            {
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_CNUMERO_CEDULA",
+                    SqlDbType = System.Data.SqlDbType.VarChar,
+                    Value = strCedulaAsesor
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NCODIGO_CAMPANA",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = intCampana
+                }
+            };
+
+            return storeProcedure;
+        }
+
+        public StoreProcedure getPremiosConcurso(string spName, int intValorPedido, int intCodigoConcurso)
+        {
+            StoreProcedure storeProcedure = new StoreProcedure();
+            storeProcedure.Nombre = spName;
+            storeProcedure.Parametros = new List<SqlParameter>()
+            {
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NVALOR_PEDIDO",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = intValorPedido
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_CCODIGO_CONCURSO",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = intCodigoConcurso
+                }
+            };
+
+            return storeProcedure;
+        }
     }
 }

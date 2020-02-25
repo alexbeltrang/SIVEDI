@@ -84,6 +84,7 @@
     <Compile Include="Pais.cs" />
     <Compile Include="perfiles.cs" />
     <Compile Include="PreliquidaConcursos.cs" />
+    <Compile Include="PremiosConcursoVenta.cs" />
     <Compile Include="ProductoCodigoVenta.cs" />
     <Compile Include="ProductoListaPrecio.cs" />
     <Compile Include="Productos.cs" />
@@ -137,6 +138,7 @@
     <Compile Include="UnidadMedida.cs" />
     <Compile Include="usuarios.cs" />
     <Compile Include="TABLAS\usuariosTabla.cs" />
+    <Compile Include="ValorPublicoPedido.cs" />
     <Compile Include="Zonas.cs" />
   </ItemGroup>
   <ItemGroup>

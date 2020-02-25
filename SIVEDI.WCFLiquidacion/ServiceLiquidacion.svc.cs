@@ -31,11 +31,11 @@ namespace SIVEDI.WCFLiquidacion
             bool blnCumpleOferta, blnCumplepasaPedido, blnCumplecondCampana;
             decimal intValorNeto;
             Decimal intValorPublicoAcumuladoAsesor;
-            int intValorPublicoTotalCampanasParamentrizacion;
+            decimal intValorPublicoTotalCampanasParamentrizacion;
             int intTotalCumpleCampanas;
             decimal dclValorColchon;
             int intCodigoCampanaActual;
-            DataTable dttDatosProductosconcurso = new DataTable();
+
             // se consulta a la base de datos las ofertas simples de la lista de precios que tiene asociado el asesor
             var dttOfertas = getlistaOfertas(0, 3, intCodigoListaPrecios, intCodigoEstadoActiCliente, strCodigoZonaCliente);
             // se recorren todas las ofertas
@@ -475,29 +475,31 @@ namespace SIVEDI.WCFLiquidacion
                         foreach (DetalleCampanaPedido detalleCampana in dttValorCampanas)
                         {
                             detalleCampana.VALOR_MON = detalleCampana.VALOR_MON - (detalleCampana.VALOR_MON * (dclValorColchon / 100));
-                            
+
                             if (detalleCampana.CODIGO == intCodigoCampanaActual)
                                 detalleCampana.VALOR_PEDIDO = intValorPublicoAcumuladoAsesor;
                             else
                             {
-                                detalleCampana.VALOR_PEDIDO= objconcursoVentas.getValorPublicoPedido(strIdentificacionCliente, dttValorCampanas.Rows(g).Item("CAM_NID"), strConexion);
-                                intValorPublicoAcumuladoAsesor = intValorPublicoAcumuladoAsesor + dttValorCampanas.Rows(g).Item("VALOR_PEDIDO_AS");
+                                var ValorPublicoPedido = getValorPublicoPedido(strIdentificacionCliente, detalleCampana.CODIGO);
+                                detalleCampana.VALOR_PEDIDO = ValorPublicoPedido.FirstOrDefault().VALOR_PUBLICO;
+                                intValorPublicoAcumuladoAsesor = intValorPublicoAcumuladoAsesor + detalleCampana.VALOR_PEDIDO;
                             }
                         }
                     }
                     else
-                        for (var g = 0; g <= dttValorCampanas.Rows.Count - 1; g++)
+                        foreach (DetalleCampanaPedido detalleCampana in dttValorCampanas)
                         {
-                            dttValorCampanas.Rows(g).Item("VALOR_PEDIDO_AS") = objconcursoVentas.getValorPublicoPedido(strIdentificacionCliente, dttValorCampanas.Rows(g).Item("CAM_NID"), strConexion);
-                            intValorPublicoAcumuladoAsesor = intValorPublicoAcumuladoAsesor + dttValorCampanas.Rows(g).Item("VALOR_PEDIDO_AS");
+                            var ValorPublicoPedido = getValorPublicoPedido(strIdentificacionCliente, detalleCampana.CODIGO);
+                            detalleCampana.VALOR_PEDIDO = ValorPublicoPedido.FirstOrDefault().VALOR_PUBLICO;
+                            intValorPublicoAcumuladoAsesor = intValorPublicoAcumuladoAsesor + detalleCampana.VALOR_PEDIDO;
                         }
 
 
                     blnCumplepasaPedido = true;
 
-                    for (var b = 0; b <= dttValorCampanas.Rows.Count - 1; b++)
+                    foreach (DetalleCampanaPedido detalleCampana in dttValorCampanas)
                     {
-                        if (dttValorCampanas.Rows(b).Item("VALOR_PEDIDO_AS") <= 0)
+                        if (detalleCampana.VALOR_PEDIDO <= 0)
                         {
                             blnCumplepasaPedido = false;
                             blnCumplecondCampana = false;
@@ -505,241 +507,244 @@ namespace SIVEDI.WCFLiquidacion
                     }
                     if (blnCumplepasaPedido)
                     {
-                        if (dttConcursosVentas.Rows(v).Item("ES_ACUMULADO"))
+                        if (ConcursosVentas.ES_ACUMULADO)
                         {
-                            for (var t = 0; t <= dttValorCampanas.Rows.Count - 1; t++)
-                                intValorPublicoTotalCampanasParamentrizacion = intValorPublicoTotalCampanasParamentrizacion + dttValorCampanas.Rows(t).Item("CAM_ZONA_NVALOR_MONTO");
-                            if (dttConcursosVentas.Rows(v).Item("CON_OENTREGA_PREMIO_ACUMULADO"))
+                            foreach (DetalleCampanaPedido detalleCampana in dttValorCampanas)
+                            {
+                                intValorPublicoTotalCampanasParamentrizacion = intValorPublicoTotalCampanasParamentrizacion + detalleCampana.VALOR_MON;
+                            }
+                            if (ConcursosVentas.ENTREGA_PREMIO_ACUMULADO)
                             {
                                 if (intValorPublicoAcumuladoAsesor >= intValorPublicoTotalCampanasParamentrizacion)
                                 {
-                                    dttDatosProductosconcurso = objconcursoVentas.getPremiosConcurso(intValorPublicoAcumuladoAsesor, dttConcursosVentas.Rows(v).Item("CON_NID"), strConexion);
+                                    var dttDatosProductosconcurso = getPremiosConcurso(Convert.ToInt32(intValorPublicoAcumuladoAsesor), ConcursosVentas.CODIGO);
 
-                                    for (var w = 0; w <= dttDatosProductosconcurso.Rows.Count - 1; w++)
+                                    foreach (PremiosConcursoVenta premiosConcursoVenta in dttDatosProductosconcurso)
                                     {
                                         DataRow row;
-                                        row = dttPedidoDefinitivo.NewRow;
-                                        row("CODIGO") = dttDatosProductosconcurso.Rows(w).Item("CDV_CCODIGO_VENTA");
-                                        row("NOMBRE") = dttDatosProductosconcurso.Rows(w).Item("PRD_CNOMBRE");
-                                        row("CANTIDAD") = dttDatosProductosconcurso.Rows(w).Item("OBS_NUNIDADES_ENTREGA");
-                                        DataTable dttProductoFinal = new DataTable();
-                                        dttProductoFinal = objOfertas.getProductoPedidos(dttDatosProductosconcurso.Rows(w).Item("CDV_CCODIGO_VENTA"), intCodigoListaPrecios, strConexion);
-                                        if (dttProductoFinal.Rows(0).Item("LPP_NPORC_IVA") > 0)
+                                        row = dttPedidoDefinitivo.NewRow();
+                                        row["CODIGO"] = premiosConcursoVenta.CODIGO_VENTA;
+                                        row["NOMBRE"] = premiosConcursoVenta.NOMBRE_PRODUCTO;
+                                        row["CANTIDAD"] = premiosConcursoVenta.UNIDADES_ENTREGA;
+
+                                        var dttProductoFinal = getProductoPedidos(premiosConcursoVenta.CODIGO_VENTA, intCodigoListaPrecios);
+
+                                        if (dttProductoFinal.FirstOrDefault().IVA > 0)
                                         {
-                                            row("PRECIO_NET") = 0;
-                                            row("PRECIO_TOTAL") = 0;
-                                            row("TIENE_IVA") = "S";
-                                            row("VALOR_IVA") = 0;
+                                            row["PRECIO_NET"] = 0;
+                                            row["PRECIO_TOTAL"] = 0;
+                                            row["TIENE_IVA"] = "S";
+                                            row["VALOR_IVA"] = 0;
                                         }
                                         else
                                         {
-                                            row("PRECIO_NET") = 0;
-                                            row("PRECIO_TOTAL") = 0;
-                                            row("TIENE_IVA") = "N";
-                                            row("VALOR_IVA") = 0;
+                                            row["PRECIO_NET"] = 0;
+                                            row["PRECIO_TOTAL"] = 0;
+                                            row["TIENE_IVA"] = "N";
+                                            row["VALOR_IVA"] = 0;
                                         }
-                                        row("SAV_LISTA_PRECIOS_PROD") = dttProductoFinal.Rows(0).Item("CODIGO");
-                                        row("PRECIO_UNI") = 0;
-                                        row("PRECIO_PUB") = 0;
-                                        row("SUMA_VALOR_PUBLICO") = dttProductoFinal.Rows(0).Item("LPP_OSUMA_VALOR_PUBLICO");
-                                        row("ESCALA_DESCUENTOS") = dttProductoFinal.Rows(0).Item("LPP_OSUMA_LLEGAR_ESCALA");
-                                        row("SE_LE_APLICA_ESCALA_DCTOS") = dttProductoFinal.Rows(0).Item("LPP_OSE_APLICA_ESCALA");
-                                        row("MONTO_PEDIDO") = dttProductoFinal.Rows(0).Item("LPP_OAPLICA_SUPERA_MONTO_MIN");
-                                        row("ES_ACCESORIO") = dttProductoFinal.Rows(0).Item("LPP_OES_ACCESORIO");
-                                        row("PORC_IVA") = dttProductoFinal.Rows(0).Item("LPP_NPORC_IVA");
-                                        row("MOTIVO_VENTA") = dttProductoFinal.Rows(0).Item("PRD_CMOTIVO_VENTA");
-                                        row("CENTRO_GASTO") = dttProductoFinal.Rows(0).Item("PRD_CCENTRO_GASTO_VENTA");
-                                        row("MOTIVO_OBSEQUIO") = dttProductoFinal.Rows(0).Item("PRD_CMOTIVO_OBSEQUIO");
-                                        row("CENTRO_GASTO_OBSEQUIO") = dttProductoFinal.Rows(0).Item("PRD_CCENTRO_GASTO_OBSEQUIO");
-                                        row("TIPO_PRODUCTO") = dttProductoFinal.Rows(0).Item("TPR_CID");
-                                        row("PRECIO_LISTA") = 0;
-                                        row("PORC_DESCUENTO_ESPECIAL") = 0;
-                                        row("VALOR_DESCUENTO_ESPECIAL") = 0;
-                                        row("OFERTA_APLICADA") = true;
-                                        row("ELIMINA") = false;
-                                        row("PORC_ESCALA_DESCUENTO") = "0";
-                                        row("VALOR_ESCALA_UNITARIO") = "0";
-                                        row("VALOR_ESCALA_TOTAL") = "0";
-                                        row("SUMA_NETO") = dttProductoFinal.Rows(0).Item("LPP_OSUMA_VALOR_NETO");
-                                        row("PUNTOS_PRODUCTO") = 0;
+                                        row["SAV_LISTA_PRECIOS_PROD"] = dttProductoFinal.FirstOrDefault().CODIGO;
+                                        row["PRECIO_UNI"] = 0;
+                                        row["PRECIO_PUB"] = 0;
+                                        row["SUMA_VALOR_PUBLICO"] = dttProductoFinal.FirstOrDefault().SUMA_VALOR_PUBLICO;
+                                        row["ESCALA_DESCUENTOS"] = dttProductoFinal.FirstOrDefault().SUMA_PARA_LLEGAR_ESCALA;
+                                        row["SE_LE_APLICA_ESCALA_DCTOS"] = dttProductoFinal.FirstOrDefault().APLICA_ESCALA;
+                                        row["MONTO_PEDIDO"] = dttProductoFinal.FirstOrDefault().APLICA_SUPERA_MONTO_MINIMO;
+                                        row["ES_ACCESORIO"] = dttProductoFinal.FirstOrDefault().ES_ACCESORIO;
+                                        row["PORC_IVA"] = dttProductoFinal.FirstOrDefault().IVA;
+                                        row["MOTIVO_VENTA"] = dttProductoFinal.FirstOrDefault().MOTIVO_VENTA;
+                                        row["CENTRO_GASTO"] = dttProductoFinal.FirstOrDefault().CENTRO_GASTO_VENTA;
+                                        row["MOTIVO_OBSEQUIO"] = dttProductoFinal.FirstOrDefault().MOTIVO_OBSEQUIO;
+                                        row["CENTRO_GASTO_OBSEQUIO"] = dttProductoFinal.FirstOrDefault().CENTRO_GASTO_OBSEQUIO;
+                                        row["TIPO_PRODUCTO"] = dttProductoFinal.FirstOrDefault().CODIGO_TIPO_PRODUCTO;
+                                        row["PRECIO_LISTA"] = 0;
+                                        row["PORC_DESCUENTO_ESPECIAL"] = 0;
+                                        row["VALOR_DESCUENTO_ESPECIAL"] = 0;
+                                        row["OFERTA_APLICADA"] = true;
+                                        row["ELIMINA"] = false;
+                                        row["PORC_ESCALA_DESCUENTO"] = "0";
+                                        row["VALOR_ESCALA_UNITARIO"] = "0";
+                                        row["VALOR_ESCALA_TOTAL"] = "0";
+                                        row["SUMA_NETO"] = dttProductoFinal.FirstOrDefault().SUMA_PARA_VALOR_NETO;
+                                        row["PUNTOS_PRODUCTO"] = 0;
                                         dttPedidoDefinitivo.Rows.Add(row);
                                     }
                                 }
                             }
                             else
                             {
-                                dttDatosProductosconcurso = objconcursoVentas.getPremiosConcurso(intValorPublicoAcumuladoAsesor, dttConcursosVentas.Rows(v).Item("CON_NID"), strConexion);
+                                var dttDatosProductosconcurso = getPremiosConcurso(Convert.ToInt32(intValorPublicoAcumuladoAsesor), ConcursosVentas.CODIGO);
 
-                                for (var w = 0; w <= dttDatosProductosconcurso.Rows.Count - 1; w++)
+                                foreach (PremiosConcursoVenta premiosConcurso in dttDatosProductosconcurso)
                                 {
                                     DataRow row;
-                                    row = dttPedidoDefinitivo.NewRow;
-                                    row("CODIGO") = dttDatosProductosconcurso.Rows(w).Item("CDV_CCODIGO_VENTA");
-                                    row("NOMBRE") = dttDatosProductosconcurso.Rows(w).Item("PRD_CNOMBRE");
-                                    row("CANTIDAD") = dttDatosProductosconcurso.Rows(w).Item("OBS_NUNIDADES_ENTREGA");
-                                    DataTable dttProductoFinal = new DataTable();
-                                    dttProductoFinal = objOfertas.getProductoPedidos(dttDatosProductosconcurso.Rows(w).Item("CDV_CCODIGO_VENTA"), intCodigoListaPrecios, strConexion);
-                                    if (dttProductoFinal.Rows(0).Item("LPP_NPORC_IVA") > 0)
+                                    row = dttPedidoDefinitivo.NewRow();
+                                    row["CODIGO"] = premiosConcurso.CODIGO_VENTA;
+                                    row["NOMBRE"] = premiosConcurso.NOMBRE_PRODUCTO;
+                                    row["CANTIDAD"] = premiosConcurso.UNIDADES_ENTREGA;
+
+                                    var dttProductoFinal = getProductoPedidos(premiosConcurso.CODIGO_VENTA, intCodigoListaPrecios);
+                                    if (dttProductoFinal.FirstOrDefault().IVA > 0)
                                     {
-                                        row("PRECIO_NET") = 0;
-                                        row("PRECIO_TOTAL") = 0;
-                                        row("TIENE_IVA") = "S";
-                                        row("VALOR_IVA") = 0;
+                                        row["PRECIO_NET"] = 0;
+                                        row["PRECIO_TOTAL"] = 0;
+                                        row["TIENE_IVA"] = "S";
+                                        row["VALOR_IVA"] = 0;
                                     }
                                     else
                                     {
-                                        row("PRECIO_NET") = 0;
-                                        row("PRECIO_TOTAL") = 0;
-                                        row("TIENE_IVA") = "N";
-                                        row("VALOR_IVA") = 0;
+                                        row["PRECIO_NET"] = 0;
+                                        row["PRECIO_TOTAL"] = 0;
+                                        row["TIENE_IVA"] = "N";
+                                        row["VALOR_IVA"] = 0;
                                     }
-                                    row("SAV_LISTA_PRECIOS_PROD") = dttProductoFinal.Rows(0).Item("CODIGO");
-                                    row("PRECIO_UNI") = 0;
-                                    row("PRECIO_PUB") = 0;
-                                    row("SUMA_VALOR_PUBLICO") = dttProductoFinal.Rows(0).Item("LPP_OSUMA_VALOR_PUBLICO");
-                                    row("ESCALA_DESCUENTOS") = dttProductoFinal.Rows(0).Item("LPP_OSUMA_LLEGAR_ESCALA");
-                                    row("SE_LE_APLICA_ESCALA_DCTOS") = dttProductoFinal.Rows(0).Item("LPP_OSE_APLICA_ESCALA");
-                                    row("MONTO_PEDIDO") = dttProductoFinal.Rows(0).Item("LPP_OAPLICA_SUPERA_MONTO_MIN");
-                                    row("ES_ACCESORIO") = dttProductoFinal.Rows(0).Item("LPP_OES_ACCESORIO");
-                                    row("PORC_IVA") = dttProductoFinal.Rows(0).Item("LPP_NPORC_IVA");
-                                    row("MOTIVO_VENTA") = dttProductoFinal.Rows(0).Item("PRD_CMOTIVO_VENTA");
-                                    row("CENTRO_GASTO") = dttProductoFinal.Rows(0).Item("PRD_CCENTRO_GASTO_VENTA");
-                                    row("MOTIVO_OBSEQUIO") = dttProductoFinal.Rows(0).Item("PRD_CMOTIVO_OBSEQUIO");
-                                    row("CENTRO_GASTO_OBSEQUIO") = dttProductoFinal.Rows(0).Item("PRD_CCENTRO_GASTO_OBSEQUIO");
-                                    row("TIPO_PRODUCTO") = dttProductoFinal.Rows(0).Item("TPR_CID");
-                                    row("PRECIO_LISTA") = 0;
-                                    row("PORC_DESCUENTO_ESPECIAL") = 0;
-                                    row("VALOR_DESCUENTO_ESPECIAL") = 0;
-                                    row("OFERTA_APLICADA") = true;
-                                    row("ELIMINA") = false;
-                                    row("PORC_ESCALA_DESCUENTO") = "0";
-                                    row("VALOR_ESCALA_UNITARIO") = "0";
-                                    row("VALOR_ESCALA_TOTAL") = "0";
-                                    row("SUMA_NETO") = dttProductoFinal.Rows(0).Item("LPP_OSUMA_VALOR_NETO");
-                                    row("PUNTOS_PRODUCTO") = 0;
+                                    row["SAV_LISTA_PRECIOS_PROD"] = dttProductoFinal.FirstOrDefault().CODIGO;
+                                    row["PRECIO_UNI"] = 0;
+                                    row["PRECIO_PUB"] = 0;
+                                    row["SUMA_VALOR_PUBLICO"] = dttProductoFinal.FirstOrDefault().SUMA_VALOR_PUBLICO;
+                                    row["ESCALA_DESCUENTOS"] = dttProductoFinal.FirstOrDefault().SUMA_PARA_LLEGAR_ESCALA;
+                                    row["SE_LE_APLICA_ESCALA_DCTOS"] = dttProductoFinal.FirstOrDefault().APLICA_ESCALA;
+                                    row["MONTO_PEDIDO"] = dttProductoFinal.FirstOrDefault().APLICA_SUPERA_MONTO_MINIMO;
+                                    row["ES_ACCESORIO"] = dttProductoFinal.FirstOrDefault().ES_ACCESORIO;
+                                    row["PORC_IVA"] = dttProductoFinal.FirstOrDefault().IVA;
+                                    row["MOTIVO_VENTA"] = dttProductoFinal.FirstOrDefault().MOTIVO_VENTA;
+                                    row["CENTRO_GASTO"] = dttProductoFinal.FirstOrDefault().CENTRO_GASTO_VENTA;
+                                    row["MOTIVO_OBSEQUIO"] = dttProductoFinal.FirstOrDefault().MOTIVO_OBSEQUIO;
+                                    row["CENTRO_GASTO_OBSEQUIO"] = dttProductoFinal.FirstOrDefault().CENTRO_GASTO_OBSEQUIO;
+                                    row["TIPO_PRODUCTO"] = dttProductoFinal.FirstOrDefault().CODIGO_TIPO_PRODUCTO;
+                                    row["PRECIO_LISTA"] = 0;
+                                    row["PORC_DESCUENTO_ESPECIAL"] = 0;
+                                    row["VALOR_DESCUENTO_ESPECIAL"] = 0;
+                                    row["OFERTA_APLICADA"] = true;
+                                    row["ELIMINA"] = false;
+                                    row["PORC_ESCALA_DESCUENTO"] = "0";
+                                    row["VALOR_ESCALA_UNITARIO"] = "0";
+                                    row["VALOR_ESCALA_TOTAL"] = "0";
+                                    row["SUMA_NETO"] = dttProductoFinal.FirstOrDefault().SUMA_PARA_VALOR_NETO;
+                                    row["PUNTOS_PRODUCTO"] = 0;
                                     dttPedidoDefinitivo.Rows.Add(row);
                                 }
                             }
                         }
                         else
                         {
-                            for (var g = 0; g <= dttValorCampanas.Rows.Count - 1; g++)
+                            foreach (DetalleCampanaPedido detalleCampana in dttValorCampanas)
                             {
-                                if (dttValorCampanas.Rows(g).Item("VALOR_PEDIDO_AS") >= dttValorCampanas.Rows(g).Item("CAM_ZONA_NVALOR_MONTO"))
+                                if (detalleCampana.VALOR_PEDIDO >= detalleCampana.VALOR_MON)
                                     intTotalCumpleCampanas = intTotalCumpleCampanas + 1;
                             }
-                            if (intTotalCumpleCampanas == dttValorCampanas.Rows.Count)
+                            if (intTotalCumpleCampanas == dttValorCampanas.Count())
                                 blnCumplecondCampana = true;
                             else
                                 blnCumplecondCampana = false;
 
                             if (blnCumplecondCampana)
                             {
-                                if (dttConcursosVentas.Rows(v).Item("CON_OENTREGA_PREMIO_ACUMULADO"))
+                                if (ConcursosVentas.ENTREGA_PREMIO_ACUMULADO)
                                 {
-                                    dttDatosProductosconcurso = objconcursoVentas.getPremiosConcurso(intValorPublicoAcumuladoAsesor, dttConcursosVentas.Rows(v).Item("CON_NID"), strConexion);
+                                    var dttDatosProductosconcurso = getPremiosConcurso(Convert.ToInt32(intValorPublicoAcumuladoAsesor), ConcursosVentas.CODIGO);
 
-                                    for (var w = 0; w <= dttDatosProductosconcurso.Rows.Count - 1; w++)
+                                    foreach (PremiosConcursoVenta premiosConcurso in dttDatosProductosconcurso)
                                     {
                                         DataRow row;
-                                        row = dttPedidoDefinitivo.NewRow;
-                                        row("CODIGO") = dttDatosProductosconcurso.Rows(w).Item("CDV_CCODIGO_VENTA");
-                                        row("NOMBRE") = dttDatosProductosconcurso.Rows(w).Item("PRD_CNOMBRE");
-                                        row("CANTIDAD") = dttDatosProductosconcurso.Rows(w).Item("OBS_NUNIDADES_ENTREGA");
-                                        DataTable dttProductoFinal = new DataTable();
-                                        dttProductoFinal = objOfertas.getProductoPedidos(dttDatosProductosconcurso.Rows(w).Item("CDV_CCODIGO_VENTA"), intCodigoListaPrecios, strConexion);
-                                        if (dttProductoFinal.Rows(0).Item("LPP_NPORC_IVA") > 0)
+                                        row = dttPedidoDefinitivo.NewRow();
+                                        row["CODIGO"] = premiosConcurso.CODIGO_VENTA;
+                                        row["NOMBRE"] = premiosConcurso.NOMBRE_PRODUCTO;
+                                        row["CANTIDAD"] = premiosConcurso.UNIDADES_ENTREGA;
+
+                                        var dttProductoFinal = getProductoPedidos(premiosConcurso.CODIGO_VENTA, intCodigoListaPrecios);
+                                        if (dttProductoFinal.FirstOrDefault().IVA > 0)
                                         {
-                                            row("PRECIO_NET") = 0;
-                                            row("PRECIO_TOTAL") = 0;
-                                            row("TIENE_IVA") = "S";
-                                            row("VALOR_IVA") = 0;
+                                            row["PRECIO_NET"] = 0;
+                                            row["PRECIO_TOTAL"] = 0;
+                                            row["TIENE_IVA"] = "S";
+                                            row["VALOR_IVA"] = 0;
                                         }
                                         else
                                         {
-                                            row("PRECIO_NET") = 0;
-                                            row("PRECIO_TOTAL") = 0;
-                                            row("TIENE_IVA") = "N";
-                                            row("VALOR_IVA") = 0;
+                                            row["PRECIO_NET"] = 0;
+                                            row["PRECIO_TOTAL"] = 0;
+                                            row["TIENE_IVA"] = "N";
+                                            row["VALOR_IVA"] = 0;
                                         }
-                                        row("SAV_LISTA_PRECIOS_PROD") = dttProductoFinal.Rows(0).Item("CODIGO");
-                                        row("PRECIO_UNI") = 0;
-                                        row("PRECIO_PUB") = 0;
-                                        row("SUMA_VALOR_PUBLICO") = dttProductoFinal.Rows(0).Item("LPP_OSUMA_VALOR_PUBLICO");
-                                        row("ESCALA_DESCUENTOS") = dttProductoFinal.Rows(0).Item("LPP_OSUMA_LLEGAR_ESCALA");
-                                        row("SE_LE_APLICA_ESCALA_DCTOS") = dttProductoFinal.Rows(0).Item("LPP_OSE_APLICA_ESCALA");
-                                        row("MONTO_PEDIDO") = dttProductoFinal.Rows(0).Item("LPP_OAPLICA_SUPERA_MONTO_MIN");
-                                        row("ES_ACCESORIO") = dttProductoFinal.Rows(0).Item("LPP_OES_ACCESORIO");
-                                        row("PORC_IVA") = dttProductoFinal.Rows(0).Item("LPP_NPORC_IVA");
-                                        row("MOTIVO_VENTA") = dttProductoFinal.Rows(0).Item("PRD_CMOTIVO_VENTA");
-                                        row("CENTRO_GASTO") = dttProductoFinal.Rows(0).Item("PRD_CCENTRO_GASTO_VENTA");
-                                        row("MOTIVO_OBSEQUIO") = dttProductoFinal.Rows(0).Item("PRD_CMOTIVO_OBSEQUIO");
-                                        row("CENTRO_GASTO_OBSEQUIO") = dttProductoFinal.Rows(0).Item("PRD_CCENTRO_GASTO_OBSEQUIO");
-                                        row("TIPO_PRODUCTO") = dttProductoFinal.Rows(0).Item("TPR_CID");
-                                        row("PRECIO_LISTA") = 0;
-                                        row("PORC_DESCUENTO_ESPECIAL") = 0;
-                                        row("VALOR_DESCUENTO_ESPECIAL") = 0;
-                                        row("OFERTA_APLICADA") = true;
-                                        row("ELIMINA") = false;
-                                        row("PORC_ESCALA_DESCUENTO") = "0";
-                                        row("VALOR_ESCALA_UNITARIO") = "0";
-                                        row("VALOR_ESCALA_TOTAL") = "0";
-                                        row("SUMA_NETO") = dttProductoFinal.Rows(0).Item("LPP_OSUMA_VALOR_NETO");
-                                        row("PUNTOS_PRODUCTO") = 0;
+                                        row["SAV_LISTA_PRECIOS_PROD"] = dttProductoFinal.FirstOrDefault().CODIGO;
+                                        row["PRECIO_UNI"] = 0;
+                                        row["PRECIO_PUB"] = 0;
+                                        row["SUMA_VALOR_PUBLICO"] = dttProductoFinal.FirstOrDefault().SUMA_VALOR_PUBLICO;
+                                        row["ESCALA_DESCUENTOS"] = dttProductoFinal.FirstOrDefault().SUMA_PARA_LLEGAR_ESCALA;
+                                        row["SE_LE_APLICA_ESCALA_DCTOS"] = dttProductoFinal.FirstOrDefault().APLICA_ESCALA;
+                                        row["MONTO_PEDIDO"] = dttProductoFinal.FirstOrDefault().APLICA_SUPERA_MONTO_MINIMO;
+                                        row["ES_ACCESORIO"] = dttProductoFinal.FirstOrDefault().ES_ACCESORIO;
+                                        row["PORC_IVA"] = dttProductoFinal.FirstOrDefault().IVA;
+                                        row["MOTIVO_VENTA"] = dttProductoFinal.FirstOrDefault().MOTIVO_VENTA;
+                                        row["CENTRO_GASTO"] = dttProductoFinal.FirstOrDefault().CENTRO_GASTO_VENTA;
+                                        row["MOTIVO_OBSEQUIO"] = dttProductoFinal.FirstOrDefault().MOTIVO_OBSEQUIO;
+                                        row["CENTRO_GASTO_OBSEQUIO"] = dttProductoFinal.FirstOrDefault().CENTRO_GASTO_OBSEQUIO;
+                                        row["TIPO_PRODUCTO"] = dttProductoFinal.FirstOrDefault().CODIGO_TIPO_PRODUCTO;
+                                        row["PRECIO_LISTA"] = 0;
+                                        row["PORC_DESCUENTO_ESPECIAL"] = 0;
+                                        row["VALOR_DESCUENTO_ESPECIAL"] = 0;
+                                        row["OFERTA_APLICADA"] = true;
+                                        row["ELIMINA"] = false;
+                                        row["PORC_ESCALA_DESCUENTO"] = "0";
+                                        row["VALOR_ESCALA_UNITARIO"] = "0";
+                                        row["VALOR_ESCALA_TOTAL"] = "0";
+                                        row["SUMA_NETO"] = dttProductoFinal.FirstOrDefault().SUMA_PARA_VALOR_NETO;
+                                        row["PUNTOS_PRODUCTO"] = 0;
                                         dttPedidoDefinitivo.Rows.Add(row);
                                     }
                                 }
                                 else
                                 {
-                                    dttDatosProductosconcurso = objconcursoVentas.getPremiosConcurso(intValorPublicoAcumuladoAsesor, dttConcursosVentas.Rows(v).Item("CON_NID"), strConexion);
+                                    var dttDatosProductosconcurso = getPremiosConcurso(Convert.ToInt32(intValorPublicoAcumuladoAsesor), ConcursosVentas.CODIGO);
 
-                                    for (var w = 0; w <= dttDatosProductosconcurso.Rows.Count - 1; w++)
+                                    foreach (PremiosConcursoVenta premiosConcurso in dttDatosProductosconcurso)
                                     {
                                         DataRow row;
-                                        row = dttPedidoDefinitivo.NewRow;
-                                        row("CODIGO") = dttDatosProductosconcurso.Rows(w).Item("CDV_CCODIGO_VENTA");
-                                        row("NOMBRE") = dttDatosProductosconcurso.Rows(w).Item("PRD_CNOMBRE");
-                                        row("CANTIDAD") = dttDatosProductosconcurso.Rows(w).Item("OBS_NUNIDADES_ENTREGA");
-                                        DataTable dttProductoFinal = new DataTable();
-                                        dttProductoFinal = objOfertas.getProductoPedidos(dttDatosProductosconcurso.Rows(w).Item("CDV_CCODIGO_VENTA"), intCodigoListaPrecios, strConexion);
-                                        if (dttProductoFinal.Rows(0).Item("LPP_NPORC_IVA") > 0)
+                                        row = dttPedidoDefinitivo.NewRow();
+                                        row["CODIGO"] = premiosConcurso.CODIGO_VENTA;
+                                        row["NOMBRE"] = premiosConcurso.NOMBRE_PRODUCTO;
+                                        row["CANTIDAD"] = premiosConcurso.UNIDADES_ENTREGA;
+
+                                        var dttProductoFinal = getProductoPedidos(premiosConcurso.CODIGO_VENTA, intCodigoListaPrecios);
+                                        if (dttProductoFinal.FirstOrDefault().IVA > 0)
                                         {
-                                            row("PRECIO_NET") = 0;
-                                            row("PRECIO_TOTAL") = 0;
-                                            row("TIENE_IVA") = "S";
-                                            row("VALOR_IVA") = 0;
+                                            row["PRECIO_NET"] = 0;
+                                            row["PRECIO_TOTAL"] = 0;
+                                            row["TIENE_IVA"] = "S";
+                                            row["VALOR_IVA"] = 0;
                                         }
                                         else
                                         {
-                                            row("PRECIO_NET") = 0;
-                                            row("PRECIO_TOTAL") = 0;
-                                            row("TIENE_IVA") = "N";
-                                            row("VALOR_IVA") = 0;
+                                            row["PRECIO_NET"] = 0;
+                                            row["PRECIO_TOTAL"] = 0;
+                                            row["TIENE_IVA"] = "N";
+                                            row["VALOR_IVA"] = 0;
                                         }
-                                        row("SAV_LISTA_PRECIOS_PROD") = dttProductoFinal.Rows(0).Item("CODIGO");
-                                        row("PRECIO_UNI") = 0;
-                                        row("PRECIO_PUB") = 0;
-                                        row("SUMA_VALOR_PUBLICO") = dttProductoFinal.Rows(0).Item("LPP_OSUMA_VALOR_PUBLICO");
-                                        row("ESCALA_DESCUENTOS") = dttProductoFinal.Rows(0).Item("LPP_OSUMA_LLEGAR_ESCALA");
-                                        row("SE_LE_APLICA_ESCALA_DCTOS") = dttProductoFinal.Rows(0).Item("LPP_OSE_APLICA_ESCALA");
-                                        row("MONTO_PEDIDO") = dttProductoFinal.Rows(0).Item("LPP_OAPLICA_SUPERA_MONTO_MIN");
-                                        row("ES_ACCESORIO") = dttProductoFinal.Rows(0).Item("LPP_OES_ACCESORIO");
-                                        row("PORC_IVA") = dttProductoFinal.Rows(0).Item("LPP_NPORC_IVA");
-                                        row("MOTIVO_VENTA") = dttProductoFinal.Rows(0).Item("PRD_CMOTIVO_VENTA");
-                                        row("CENTRO_GASTO") = dttProductoFinal.Rows(0).Item("PRD_CCENTRO_GASTO_VENTA");
-                                        row("MOTIVO_OBSEQUIO") = dttProductoFinal.Rows(0).Item("PRD_CMOTIVO_OBSEQUIO");
-                                        row("CENTRO_GASTO_OBSEQUIO") = dttProductoFinal.Rows(0).Item("PRD_CCENTRO_GASTO_OBSEQUIO");
-                                        row("TIPO_PRODUCTO") = dttProductoFinal.Rows(0).Item("TPR_CID");
-                                        row("PRECIO_LISTA") = 0;
-                                        row("PORC_DESCUENTO_ESPECIAL") = 0;
-                                        row("VALOR_DESCUENTO_ESPECIAL") = 0;
-                                        row("OFERTA_APLICADA") = true;
-                                        row("ELIMINA") = false;
-                                        row("PORC_ESCALA_DESCUENTO") = "0";
-                                        row("VALOR_ESCALA_UNITARIO") = "0";
-                                        row("VALOR_ESCALA_TOTAL") = "0";
-                                        row("SUMA_NETO") = dttProductoFinal.Rows(0).Item("LPP_OSUMA_VALOR_NETO");
-                                        row("PUNTOS_PRODUCTO") = 0;
+                                        row["SAV_LISTA_PRECIOS_PROD"] = dttProductoFinal.FirstOrDefault().CODIGO;
+                                        row["PRECIO_UNI"] = 0;
+                                        row["PRECIO_PUB"] = 0;
+                                        row["SUMA_VALOR_PUBLICO"] = dttProductoFinal.FirstOrDefault().SUMA_VALOR_PUBLICO;
+                                        row["ESCALA_DESCUENTOS"] = dttProductoFinal.FirstOrDefault().SUMA_PARA_LLEGAR_ESCALA;
+                                        row["SE_LE_APLICA_ESCALA_DCTOS"] = dttProductoFinal.FirstOrDefault().APLICA_ESCALA;
+                                        row["MONTO_PEDIDO"] = dttProductoFinal.FirstOrDefault().APLICA_SUPERA_MONTO_MINIMO;
+                                        row["ES_ACCESORIO"] = dttProductoFinal.FirstOrDefault().ES_ACCESORIO;
+                                        row["PORC_IVA"] = dttProductoFinal.FirstOrDefault().IVA;
+                                        row["MOTIVO_VENTA"] = dttProductoFinal.FirstOrDefault().MOTIVO_VENTA;
+                                        row["CENTRO_GASTO"] = dttProductoFinal.FirstOrDefault().CENTRO_GASTO_VENTA;
+                                        row["MOTIVO_OBSEQUIO"] = dttProductoFinal.FirstOrDefault().MOTIVO_OBSEQUIO;
+                                        row["CENTRO_GASTO_OBSEQUIO"] = dttProductoFinal.FirstOrDefault().CENTRO_GASTO_OBSEQUIO;
+                                        row["TIPO_PRODUCTO"] = dttProductoFinal.FirstOrDefault().CODIGO_TIPO_PRODUCTO;
+                                        row["PRECIO_LISTA"] = 0;
+                                        row["PORC_DESCUENTO_ESPECIAL"] = 0;
+                                        row["VALOR_DESCUENTO_ESPECIAL"] = 0;
+                                        row["OFERTA_APLICADA"] = true;
+                                        row["ELIMINA"] = false;
+                                        row["PORC_ESCALA_DESCUENTO"] = "0";
+                                        row["VALOR_ESCALA_UNITARIO"] = "0";
+                                        row["VALOR_ESCALA_TOTAL"] = "0";
+                                        row["SUMA_NETO"] = dttProductoFinal.FirstOrDefault().SUMA_PARA_VALOR_NETO;
+                                        row["PUNTOS_PRODUCTO"] = 0;
                                         dttPedidoDefinitivo.Rows.Add(row);
                                     }
                                 }
@@ -1242,6 +1247,26 @@ namespace SIVEDI.WCFLiquidacion
             StoreProcedure SP = spRequestPedidos.getDetalleCampana("SPR_GET_DETALLE_CAMPANA_CONCURSO", strCodigoZona, intCodigoConcurso);
             PedidosDetalleCampanaPedido = data.ExecuteQueryList<DetalleCampanaPedido>(SP);
             return PedidosDetalleCampanaPedido;
+        }
+
+        private List<ValorPublicoPedido> getValorPublicoPedido(string strCedulaAsesor, int intCampana)
+        {
+            List<ValorPublicoPedido> PedidosValorPublicoPedido = new List<ValorPublicoPedido>();
+            sp_Liquidacion spRequestPedidos = new sp_Liquidacion();
+            DataDB data = new DataDB("SIVEDIBDEntities");
+            StoreProcedure SP = spRequestPedidos.getValorPublicoPedido("SPR_GET_VALOR_PEDIDO_CONCURSO_VENTA", strCedulaAsesor, intCampana);
+            PedidosValorPublicoPedido = data.ExecuteQueryList<ValorPublicoPedido>(SP);
+            return PedidosValorPublicoPedido;
+        }
+
+        private List<PremiosConcursoVenta> getPremiosConcurso(int intValorPedido, int intCodigoConcurso)
+        {
+            List<PremiosConcursoVenta> PedidosPremiosConcursoVenta = new List<PremiosConcursoVenta>();
+            sp_Liquidacion spRequestPedidos = new sp_Liquidacion();
+            DataDB data = new DataDB("SIVEDIBDEntities");
+            StoreProcedure SP = spRequestPedidos.getPremiosConcurso("SPR_GET_PREMIOS_CONCURSO_VENTA", intValorPedido, intCodigoConcurso);
+            PedidosPremiosConcursoVenta = data.ExecuteQueryList<PremiosConcursoVenta>(SP);
+            return PedidosPremiosConcursoVenta;
         }
     }
 }

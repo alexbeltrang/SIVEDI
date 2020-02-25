@@ -67,6 +67,7 @@
     <Compile Include="CodigoVenta.cs" />
     <Compile Include="CupoMinimo.cs" />
     <Compile Include="Departamentos.cs" />
+    <Compile Include="DetalleCampanaPedido.cs" />
     <Compile Include="EstadoActividad.cs" />
     <Compile Include="EstadoCivil.cs" />
     <Compile Include="formasIngreso.cs" />
@@ -82,6 +83,7 @@
     <Compile Include="OperacionesExcel.cs" />
     <Compile Include="Pais.cs" />
     <Compile Include="perfiles.cs" />
+    <Compile Include="PreliquidaConcursos.cs" />
     <Compile Include="ProductoCodigoVenta.cs" />
     <Compile Include="ProductoListaPrecio.cs" />
     <Compile Include="Productos.cs" />

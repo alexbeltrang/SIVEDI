@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="e1e88eba-12fb-46cc-a88a-553105fa6f73" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:50776/ServiceLiquidacion.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ServiceLiquidacion1.xsd" MetadataType="Schema" ID="e39c2750-0e1b-4c41-a04c-cb31b55f3942" SourceId="1" SourceUrl="http://localhost:50776/ServiceLiquidacion.svc?xsd=xsd2" />
+    <MetadataFile FileName="ServiceLiquidacion11.xsd" MetadataType="Schema" ID="74cfe1a8-4044-4d38-95eb-4337bc495b94" SourceId="1" SourceUrl="http://localhost:50776/ServiceLiquidacion.svc?xsd=xsd1" />
+    <MetadataFile FileName="ServiceLiquidacion.disco" MetadataType="Disco" ID="080f1689-94c8-47f4-b623-cba09848ac13" SourceId="1" SourceUrl="http://localhost:50776/ServiceLiquidacion.svc?disco" />
+    <MetadataFile FileName="ServiceLiquidacion.xsd" MetadataType="Schema" ID="15d296d6-e07b-45f7-9dc9-1cb51b64216f" SourceId="1" SourceUrl="http://localhost:50776/ServiceLiquidacion.svc?xsd=xsd0" />
+    <MetadataFile FileName="ServiceLiquidacion.wsdl" MetadataType="Wsdl" ID="b7840bd3-44b5-431d-b7df-fe5920650ada" SourceId="1" SourceUrl="http://localhost:50776/ServiceLiquidacion.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

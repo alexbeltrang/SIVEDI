@@ -1,6 +1,7 @@
 ﻿using SIVEDI.Clases;
 using SIVEDI.Clases.TABLAS;
 using SIVEDI.ServicePedidos;
+using SIVEDI.ServicioLiquidacion;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -30,6 +31,7 @@ namespace SIVEDI.Operaciones
         int intCampanaCliente;
         string strZonaAsesor;
         ServicePedidosClient ServicePedidos = new ServicePedidosClient();
+        ServiceLiquidacionClient ServiceLiquidacion = new ServiceLiquidacionClient();
         public frmDigitaPedidos()
         {
             InitializeComponent();
@@ -257,7 +259,7 @@ namespace SIVEDI.Operaciones
 
         private void cargaProductoDigitado()
         {
-            if (txtCodigoProducto.Text != "" | txtCodigoProducto.Text != null)
+            if (txtCodigoProducto.Text != string.Empty)
             {
                 var dttEquivalencia = ServicePedidos.getEquivalencias(4, 0, txtCodigoProducto.Text);
                 if (dttEquivalencia.Count() > 0)
@@ -605,15 +607,24 @@ namespace SIVEDI.Operaciones
 
         private void btnLiquidar_Click(object sender, EventArgs e)
         {
-            DataTable dttPedidoPreliquidado = new DataTable();
-            dttPedidoPreliquidado = facturacion.dllFacturacion.preliquidaPedido(dttPedidoDigitado, intCodigoListaPrecios, clsConnection.strCadenaConexionBaseDatos, intcodigoActividadcliente, strZonaAsesor, intcodigoTipoCliente, blnEsIngreso, strCedulaCliente.Trim, intCodigoCiudadCliente, blnCobraFleteCliente, intcodigoTipoCliente);
-            llenaGrilla(dttPedidoPreliquidado);
-            ocultaCampos(true);
-            calculaValoresFinales(dttPedidoPreliquidado);
+            try
             {
-                var withBlock = dtgPedidosOriginal;
-                withBlock.Columns(0).Visible = false;
-                withBlock.Columns(1).Visible = false;
+                DataTable dttPedidoPreliquidado = new DataTable();
+                dttPedidoDigitado.TableName = "digitado";
+                dttPedidoDigitado.Namespace = "digitado";
+                dttPedidoPreliquidado = ServiceLiquidacion.preliquidaPedido(dttPedidoDigitado, intCodigoListaPrecios, clsConnection.strCadenaConexionBaseDatos, intcodigoActividadcliente, strZonaAsesor, intcodigoTipoCliente, blnEsIngreso, strCedulaCliente.Trim(), intCodigoCiudadCliente, blnCobraFleteCliente, intcodigoTipoCliente);
+                llenaGrilla(dttPedidoPreliquidado);
+                ocultaCampos(true);
+                //calculaValoresFinales(dttPedidoPreliquidado);
+                //{
+                //    var withBlock = dtgPedidosOriginal;
+                //    withBlock.Columns(0).Visible = false;
+                //    withBlock.Columns(1).Visible = false;
+                //}
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
             }
         }
 

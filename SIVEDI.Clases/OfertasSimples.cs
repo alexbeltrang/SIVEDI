@@ -9,7 +9,7 @@ namespace SIVEDI.Clases
     public class OfertasSimples
     {
         public decimal CODIGO { get; set; }
-        public int NOMBRE { get; set; }
+        public string NOMBRE { get; set; }
         public decimal FACTOR_CONVERSION { get; set; }
         public bool ES_POR_CANTIDAD { get; set; }
         public bool ES_POR_MONTO { get; set; }

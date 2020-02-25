@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
@@ -13,5 +14,7 @@ namespace SIVEDI.WCFLiquidacion
     {
         [OperationContract]
         void DoWork();
+        [OperationContract]
+        DataTable preliquidaPedido(DataTable dttPedidoOriginal, int intCodigoListaPrecios, string strConexion, int intCodigoEstadoActiCliente, string strCodigoZonaCliente, int intCodigoTipoCliente, bool blnEsIngreso, string strIdentificacionCliente, int intCodigoCiudadCliente, bool blnCobraFlete, int intTipoCliente);
     }
 }

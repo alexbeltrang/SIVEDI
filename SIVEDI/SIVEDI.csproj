@@ -87,6 +87,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\ServicioLiquidacion\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Cuentas\frmClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -395,6 +400,16 @@
     <None Include="Connected Services\ServicioGeneral\ServicioGeneral3.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\ServicioLiquidacion\ServiceLiquidacion.wsdl" />
+    <None Include="Connected Services\ServicioLiquidacion\ServiceLiquidacion.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServicioLiquidacion\ServiceLiquidacion1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServicioLiquidacion\ServiceLiquidacion11.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\SIVEDI.Clases.Ciudades.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.ClienteListaPrecios.datasource" />
@@ -450,6 +465,7 @@
     <None Include="Properties\DataSources\SIVEDI.Clases.TipoReferencia.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.usuarios.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.usuariosTabla.datasource" />
+    <None Include="Properties\DataSources\System.Data.DataTable.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -480,6 +496,7 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\ServicePedidos\" />
     <WCFMetadataStorage Include="Connected Services\ServicioGeneral\" />
+    <WCFMetadataStorage Include="Connected Services\ServicioLiquidacion\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\basedatos.png" />
@@ -525,6 +542,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\ServicioGeneral\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServicioLiquidacion\ServiceLiquidacion.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServicioLiquidacion\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServicioLiquidacion\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServicioLiquidacion\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

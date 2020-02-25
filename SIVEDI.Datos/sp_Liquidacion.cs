@@ -83,5 +83,69 @@ namespace SIVEDI.Datos
             return storeProcedure;
         }
 
+        public StoreProcedure getConcursos(string spName, string strCodigoZona, int intCodigoListaPrecios, bool blnEsIngreso, int intCodigoTipocliente, int intCodigoEstadoActividad)
+        {
+            StoreProcedure storeProcedure = new StoreProcedure();
+            storeProcedure.Nombre = spName;
+            storeProcedure.Parametros = new List<SqlParameter>()
+            {
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_CCODIGO_ZONA",
+                    SqlDbType = System.Data.SqlDbType.VarChar,
+                    Value = strCodigoZona
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_CCODIGO_LISTA_PRECIOS",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = intCodigoListaPrecios
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_OES_INGRESOS",
+                    SqlDbType = System.Data.SqlDbType.Bit,
+                    Value = blnEsIngreso
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NCODIGO_TIPO_CLIENTE",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = intCodigoTipocliente
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NCODIGO_ESTADO_ACTIVIDAD",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = intCodigoEstadoActividad
+                },
+
+            };
+
+            return storeProcedure;
+        }
+
+        public StoreProcedure getDetalleCampana(string spName, string strCodigoZona, int intCodigoConcurso)
+        {
+            StoreProcedure storeProcedure = new StoreProcedure();
+            storeProcedure.Nombre = spName;
+            storeProcedure.Parametros = new List<SqlParameter>()
+            {
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_CCODIGO_ZONA",
+                    SqlDbType = System.Data.SqlDbType.VarChar,
+                    Value = strCodigoZona
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NCODIGO_CONCURSO",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = intCodigoConcurso
+                }
+            };
+
+            return storeProcedure;
+        }
     }
 }

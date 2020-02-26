@@ -175,7 +175,7 @@
       <xs:element minOccurs="0" name="APLICA_SUPERA_MONTO_MINIMO" type="xs:boolean" />
       <xs:element minOccurs="0" name="CENTRO_GASTO_OBSEQUIO" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CENTRO_GASTO_VENTA" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="CODIGO" type="xs:int" />
+      <xs:element minOccurs="0" name="CODIGO" type="xs:decimal" />
       <xs:element minOccurs="0" name="CODIGO_TIPO_PRODUCTO" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CODIGO_VENTA" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="COSTO_PRODUCTO" type="xs:decimal" />

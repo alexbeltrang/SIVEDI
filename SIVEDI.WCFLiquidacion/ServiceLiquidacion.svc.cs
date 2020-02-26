@@ -467,7 +467,7 @@ namespace SIVEDI.WCFLiquidacion
                 {
                     dclValorColchon = ConcursosVentas.PORCENTAJE_COLCHON;
                     var dttClienteListaPrecios = getClienteListaPrecios(2, strIdentificacionCliente);
-                    intCodigoCampanaActual = dttClienteListaPrecios.FirstOrDefault().NIVEL_CAMPANA;
+                    intCodigoCampanaActual = dttClienteListaPrecios.FirstOrDefault().CODIGO;
                     var dttValorCampanas = getDetalleCampana(strCodigoZonaCliente, ConcursosVentas.CODIGO);
 
                     if (ConcursosVentas.VALIDA_CAMPANA_ACTUAL)
@@ -490,8 +490,11 @@ namespace SIVEDI.WCFLiquidacion
                         foreach (DetalleCampanaPedido detalleCampana in dttValorCampanas)
                         {
                             var ValorPublicoPedido = getValorPublicoPedido(strIdentificacionCliente, detalleCampana.CODIGO);
-                            detalleCampana.VALOR_PEDIDO = ValorPublicoPedido.FirstOrDefault().VALOR_PUBLICO;
-                            intValorPublicoAcumuladoAsesor = intValorPublicoAcumuladoAsesor + detalleCampana.VALOR_PEDIDO;
+                            if (ValorPublicoPedido.Count() > 0)
+                            {
+                                detalleCampana.VALOR_PEDIDO = ValorPublicoPedido.FirstOrDefault().VALOR_PUBLICO;
+                                intValorPublicoAcumuladoAsesor = intValorPublicoAcumuladoAsesor + detalleCampana.VALOR_PEDIDO;
+                            }
                         }
 
 

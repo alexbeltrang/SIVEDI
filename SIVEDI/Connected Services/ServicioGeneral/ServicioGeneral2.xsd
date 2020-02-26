@@ -870,4 +870,19 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="getConcursoFiltro">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="intCampanaEntrega" type="xs:int" />
+        <xs:element minOccurs="0" name="strNombreConcruso" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getConcursoFiltroResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" minOccurs="0" name="getConcursoFiltroResult" nillable="true" type="q60:ArrayOfConcursoVentaTabla" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

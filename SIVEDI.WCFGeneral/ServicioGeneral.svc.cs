@@ -693,6 +693,21 @@ namespace SIVEDI.WCFGeneral
         }
 
         #endregion
+
+
+        #region Consursos Ventas
+        public List<ConcursoVentaTabla> getConcursoFiltro(int intCampanaEntrega, string strNombreConcruso)
+        {
+            List<ConcursoVentaTabla> ListTipoProducto = new List<ConcursoVentaTabla>();
+            sp_Pedidos spRequestUsuario = new sp_Pedidos();
+            DataDB data = new DataDB("SIVEDIBDEntities");
+
+            StoreProcedure SP = spRequestUsuario.getConcursoFiltro("SPR_GET_FILTRO_CONCURSOS_VENTA", intCampanaEntrega, strNombreConcruso);
+            ListTipoProducto = data.ExecuteQueryList<ConcursoVentaTabla>(SP);
+
+            return ListTipoProducto;
+        }
+        #endregion
     }
 
 }

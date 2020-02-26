@@ -525,85 +525,85 @@ namespace SIVEDI
                         break;
                     }
 
-                    //case "ESCALAS DESCUENTO":
-                    //    {
-                    //        if (clsConnection.blnVentanasEnbebidas)
-                    //        {
-                    //            frmEscalasDescuento objFormulario = new frmEscalasDescuento();
-                    //            cargaFormulario(objFormulario);
-                    //        }
-                    //        else
-                    //        {
-                    //            frmEscalasDescuento objFormulario = new frmEscalasDescuento();
-                    //            objFormulario.Show();
-                    //        }
+                //case "ESCALAS DESCUENTO":
+                //    {
+                //        if (clsConnection.blnVentanasEnbebidas)
+                //        {
+                //            frmEscalasDescuento objFormulario = new frmEscalasDescuento();
+                //            cargaFormulario(objFormulario);
+                //        }
+                //        else
+                //        {
+                //            frmEscalasDescuento objFormulario = new frmEscalasDescuento();
+                //            objFormulario.Show();
+                //        }
 
-                    //        break;
-                    //    }
+                //        break;
+                //    }
 
-                    //case "OFERTAS SIMPLES":
-                    //    {
-                    //        if (clsConnection.blnVentanasEnbebidas)
-                    //        {
-                    //            frmOfertaSimple objFormulario = new frmOfertaSimple();
-                    //            cargaFormulario(objFormulario);
-                    //        }
-                    //        else
-                    //        {
-                    //            frmOfertaSimple objFormulario = new frmOfertaSimple();
-                    //            objFormulario.Show();
-                    //        }
+                //case "OFERTAS SIMPLES":
+                //    {
+                //        if (clsConnection.blnVentanasEnbebidas)
+                //        {
+                //            frmOfertaSimple objFormulario = new frmOfertaSimple();
+                //            cargaFormulario(objFormulario);
+                //        }
+                //        else
+                //        {
+                //            frmOfertaSimple objFormulario = new frmOfertaSimple();
+                //            objFormulario.Show();
+                //        }
 
-                    //        break;
-                    //    }
+                //        break;
+                //    }
 
-                    //case "COMBOS":
-                    //    {
-                    //        if (clsConnection.blnVentanasEnbebidas)
-                    //        {
-                    //            frmCargaCombos objFormulario = new frmCargaCombos();
-                    //            cargaFormulario(objFormulario);
-                    //        }
-                    //        else
-                    //        {
-                    //            frmCargaCombos objFormulario = new frmCargaCombos();
-                    //            objFormulario.Show();
-                    //        }
+                //case "COMBOS":
+                //    {
+                //        if (clsConnection.blnVentanasEnbebidas)
+                //        {
+                //            frmCargaCombos objFormulario = new frmCargaCombos();
+                //            cargaFormulario(objFormulario);
+                //        }
+                //        else
+                //        {
+                //            frmCargaCombos objFormulario = new frmCargaCombos();
+                //            objFormulario.Show();
+                //        }
 
-                    //        break;
-                    //    }
+                //        break;
+                //    }
 
-                    //case "EQUIVALENCIAS":
-                    //    {
-                    //        if (clsConnection.blnVentanasEnbebidas)
-                    //        {
-                    //            frmEquivalencias objFormulario = new frmEquivalencias();
-                    //            cargaFormulario(objFormulario);
-                    //        }
-                    //        else
-                    //        {
-                    //            frmEquivalencias objFormulario = new frmEquivalencias();
-                    //            objFormulario.Show();
-                    //        }
+                //case "EQUIVALENCIAS":
+                //    {
+                //        if (clsConnection.blnVentanasEnbebidas)
+                //        {
+                //            frmEquivalencias objFormulario = new frmEquivalencias();
+                //            cargaFormulario(objFormulario);
+                //        }
+                //        else
+                //        {
+                //            frmEquivalencias objFormulario = new frmEquivalencias();
+                //            objFormulario.Show();
+                //        }
 
-                    //        break;
-                    //    }
+                //        break;
+                //    }
 
-                    //case "VENTAS":
-                    //    {
-                    //        if (clsConnection.blnVentanasEnbebidas)
-                    //        {
-                    //            frmConcursosVentas objFormulario = new frmConcursosVentas();
-                    //            cargaFormulario(objFormulario);
-                    //        }
-                    //        else
-                    //        {
-                    //            frmConcursosVentas objFormulario = new frmConcursosVentas();
-                    //            objFormulario.Show();
-                    //        }
+                case "VENTAS":
+                    {
+                        if (clsConnection.blnVentanasEnbebidas)
+                        {
+                            frmConcursosVentas objFormulario = new frmConcursosVentas();
+                            cargaFormulario(objFormulario);
+                        }
+                        else
+                        {
+                            frmConcursosVentas objFormulario = new frmConcursosVentas();
+                            objFormulario.Show();
+                        }
 
-                    //        break;
-                    //    }
+                        break;
+                    }
 
                     //case "FLETE X CIUDAD":
                     //    {
@@ -1063,6 +1063,20 @@ namespace SIVEDI
             else
             {
                 frmDigitaPedidos objFormulario = new frmDigitaPedidos();
+                objFormulario.Show();
+            }
+        }
+
+        private void DeVentasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (clsConnection.blnVentanasEnbebidas)
+            {
+                frmConcursosVentas objFormulario = new frmConcursosVentas();
+                cargaFormulario(objFormulario);
+            }
+            else
+            {
+                frmConcursosVentas objFormulario = new frmConcursosVentas();
                 objFormulario.Show();
             }
         }

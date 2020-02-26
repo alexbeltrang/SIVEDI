@@ -236,6 +236,12 @@
     <Compile Include="Mantenimiento\frmClaseResponsable.Designer.cs">
       <DependentUpon>frmClaseResponsable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mantenimiento\frmConcursosVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\frmConcursosVentas.Designer.cs">
+      <DependentUpon>frmConcursosVentas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mantenimiento\frmRegiones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -352,6 +358,9 @@
     <EmbeddedResource Include="Mantenimiento\frmClaseResponsable.resx">
       <DependentUpon>frmClaseResponsable.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\frmConcursosVentas.resx">
+      <DependentUpon>frmConcursosVentas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mantenimiento\frmRegiones.resx">
       <DependentUpon>frmRegiones.cs</DependentUpon>
     </EmbeddedResource>
@@ -432,6 +441,7 @@
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.ClienteConsultaTabla.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.CodigoVentaTabla.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.CombosTabla.datasource" />
+    <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.ConcursoVentaTabla.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.DepartamentoTabla.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.EquivalenciasTabla.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.EstadoActividadTabla.datasource" />

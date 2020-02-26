@@ -434,4 +434,19 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="TipoProductoTabla" nillable="true" type="tns:TipoProductoTabla" />
+  <xs:complexType name="ArrayOfConcursoVentaTabla">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ConcursoVentaTabla" nillable="true" type="tns:ConcursoVentaTabla" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfConcursoVentaTabla" nillable="true" type="tns:ArrayOfConcursoVentaTabla" />
+  <xs:complexType name="ConcursoVentaTabla">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CAMPAÑA_ENTREGA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODIGO" type="xs:int" />
+      <xs:element minOccurs="0" name="ESTADO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOMBRE" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ConcursoVentaTabla" nillable="true" type="tns:ConcursoVentaTabla" />
 </xs:schema>

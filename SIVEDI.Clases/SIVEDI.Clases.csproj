@@ -102,6 +102,7 @@
     <Compile Include="TABLAS\ClienteConsultaTabla.cs" />
     <Compile Include="TABLAS\CodigoVentaTabla.cs" />
     <Compile Include="TABLAS\CombosTabla.cs" />
+    <Compile Include="TABLAS\ConcursoVentaTabla.cs" />
     <Compile Include="TABLAS\DepartamentoTabla.cs" />
     <Compile Include="TABLAS\EquivalenciasTabla.cs" />
     <Compile Include="TABLAS\EstadoActividadTabla.cs" />

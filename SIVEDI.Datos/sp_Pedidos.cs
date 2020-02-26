@@ -654,5 +654,28 @@ namespace SIVEDI.Datos
             return storeProcedure;
         }
 
+        public StoreProcedure getConcursoFiltro(string spName, int intCampanaEntrega, string strNombreConcruso)
+        {
+            StoreProcedure storeProcedure = new StoreProcedure();
+            storeProcedure.Nombre = spName;
+            storeProcedure.Parametros = new List<SqlParameter>()
+            {
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_CCAMPANA_ENTREGA",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = intCampanaEntrega
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_CNOMBRE_CONCURSO",
+                    SqlDbType = System.Data.SqlDbType.VarChar,
+                    Value = strNombreConcruso
+                }
+            };
+
+            return storeProcedure;
+        }
+
     }
 }

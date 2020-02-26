@@ -362,6 +362,12 @@
   <wsdl:message name="IServicioGeneral_getTiposProducto_OutputMessage">
     <wsdl:part name="parameters" element="tns:getTiposProductoResponse" />
   </wsdl:message>
+  <wsdl:message name="IServicioGeneral_getConcursoFiltro_InputMessage">
+    <wsdl:part name="parameters" element="tns:getConcursoFiltro" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_getConcursoFiltro_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getConcursoFiltroResponse" />
+  </wsdl:message>
   <wsdl:portType name="IServicioGeneral">
     <wsdl:operation name="ingresaAplicativo">
       <wsdl:input wsaw:Action="http://tempuri.org/IServicioGeneral/ingresaAplicativo" message="tns:IServicioGeneral_ingresaAplicativo_InputMessage" />
@@ -598,6 +604,10 @@
     <wsdl:operation name="getTiposProducto">
       <wsdl:input wsaw:Action="http://tempuri.org/IServicioGeneral/getTiposProducto" message="tns:IServicioGeneral_getTiposProducto_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServicioGeneral/getTiposProductoResponse" message="tns:IServicioGeneral_getTiposProducto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getConcursoFiltro">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioGeneral/getConcursoFiltro" message="tns:IServicioGeneral_getConcursoFiltro_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioGeneral/getConcursoFiltroResponse" message="tns:IServicioGeneral_getConcursoFiltro_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IServicioGeneral" type="tns:IServicioGeneral">
@@ -1126,6 +1136,15 @@
     </wsdl:operation>
     <wsdl:operation name="getTiposProducto">
       <soap:operation soapAction="http://tempuri.org/IServicioGeneral/getTiposProducto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getConcursoFiltro">
+      <soap:operation soapAction="http://tempuri.org/IServicioGeneral/getConcursoFiltro" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

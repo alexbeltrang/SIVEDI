@@ -368,6 +368,12 @@ namespace SIVEDI.ServicioGeneral {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getTiposProducto", ReplyAction="http://tempuri.org/IServicioGeneral/getTiposProductoResponse")]
         System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.TipoProductoTabla[]> getTiposProductoAsync(int intOpcion, string strTipoProducto);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getConcursoFiltro", ReplyAction="http://tempuri.org/IServicioGeneral/getConcursoFiltroResponse")]
+        SIVEDI.Clases.TABLAS.ConcursoVentaTabla[] getConcursoFiltro(int intCampanaEntrega, string strNombreConcruso);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getConcursoFiltro", ReplyAction="http://tempuri.org/IServicioGeneral/getConcursoFiltroResponse")]
+        System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.ConcursoVentaTabla[]> getConcursoFiltroAsync(int intCampanaEntrega, string strNombreConcruso);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -867,6 +873,14 @@ namespace SIVEDI.ServicioGeneral {
         
         public System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.TipoProductoTabla[]> getTiposProductoAsync(int intOpcion, string strTipoProducto) {
             return base.Channel.getTiposProductoAsync(intOpcion, strTipoProducto);
+        }
+        
+        public SIVEDI.Clases.TABLAS.ConcursoVentaTabla[] getConcursoFiltro(int intCampanaEntrega, string strNombreConcruso) {
+            return base.Channel.getConcursoFiltro(intCampanaEntrega, strNombreConcruso);
+        }
+        
+        public System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.ConcursoVentaTabla[]> getConcursoFiltroAsync(int intCampanaEntrega, string strNombreConcruso) {
+            return base.Channel.getConcursoFiltroAsync(intCampanaEntrega, strNombreConcruso);
         }
     }
 }

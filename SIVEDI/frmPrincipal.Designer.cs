@@ -446,13 +446,14 @@
             // DeVentasToolStripMenuItem
             // 
             this.DeVentasToolStripMenuItem.Name = "DeVentasToolStripMenuItem";
-            this.DeVentasToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.DeVentasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.DeVentasToolStripMenuItem.Text = "&Ventas";
+            this.DeVentasToolStripMenuItem.Click += new System.EventHandler(this.DeVentasToolStripMenuItem_Click);
             // 
             // ReferidosToolStripMenuItem
             // 
             this.ReferidosToolStripMenuItem.Name = "ReferidosToolStripMenuItem";
-            this.ReferidosToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.ReferidosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.ReferidosToolStripMenuItem.Text = "&Referidos";
             // 
             // FleteXCiudadToolStripMenuItem
@@ -535,14 +536,14 @@
             // RegistrarToolStripMenuItem
             // 
             this.RegistrarToolStripMenuItem.Name = "RegistrarToolStripMenuItem";
-            this.RegistrarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.RegistrarToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.RegistrarToolStripMenuItem.Text = "R&egistrar";
             this.RegistrarToolStripMenuItem.Click += new System.EventHandler(this.RegistrarToolStripMenuItem_Click);
             // 
             // ClientesToolStripMenuItem
             // 
             this.ClientesToolStripMenuItem.Name = "ClientesToolStripMenuItem";
-            this.ClientesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ClientesToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.ClientesToolStripMenuItem.Text = "C&lientes";
             this.ClientesToolStripMenuItem.Click += new System.EventHandler(this.ClientesToolStripMenuItem_Click);
             // 
@@ -572,7 +573,7 @@
             // PedidosToolStripMenuItem
             // 
             this.PedidosToolStripMenuItem.Name = "PedidosToolStripMenuItem";
-            this.PedidosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.PedidosToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.PedidosToolStripMenuItem.Text = "&Pedidos";
             this.PedidosToolStripMenuItem.Click += new System.EventHandler(this.PedidosToolStripMenuItem_Click);
             // 

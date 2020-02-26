@@ -132,5 +132,7 @@ namespace SIVEDI.WCFGeneral
         int insProducto(Productos productos);
         [OperationContract]
         List<TipoProductoTabla> getTiposProducto(int intOpcion, string strTipoProducto);
+        [OperationContract]
+        List<ConcursoVentaTabla> getConcursoFiltro(int intCampanaEntrega, string strNombreConcruso);
     }
 }

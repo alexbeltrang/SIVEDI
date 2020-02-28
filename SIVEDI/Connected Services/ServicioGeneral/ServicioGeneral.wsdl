@@ -368,6 +368,132 @@
   <wsdl:message name="IServicioGeneral_getConcursoFiltro_OutputMessage">
     <wsdl:part name="parameters" element="tns:getConcursoFiltroResponse" />
   </wsdl:message>
+  <wsdl:message name="IServicioGeneral_getZonasConcursoVentas_InputMessage">
+    <wsdl:part name="parameters" element="tns:getZonasConcursoVentas" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_getZonasConcursoVentas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getZonasConcursoVentasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_getEstadoActividadConcursoVenta_InputMessage">
+    <wsdl:part name="parameters" element="tns:getEstadoActividadConcursoVenta" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_getEstadoActividadConcursoVenta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getEstadoActividadConcursoVentaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_getListaEstadosActiDisponiblesConcursoVentas_InputMessage">
+    <wsdl:part name="parameters" element="tns:getListaEstadosActiDisponiblesConcursoVentas" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_getListaEstadosActiDisponiblesConcursoVentas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getListaEstadosActiDisponiblesConcursoVentasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_getZonasAsignadasConcuusoVentas_InputMessage">
+    <wsdl:part name="parameters" element="tns:getZonasAsignadasConcuusoVentas" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_getZonasAsignadasConcuusoVentas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getZonasAsignadasConcuusoVentasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_getCampanasConcursoVentas_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCampanasConcursoVentas" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_getCampanasConcursoVentas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getCampanasConcursoVentasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_getDatosZonaCampanaConcursoVentas_InputMessage">
+    <wsdl:part name="parameters" element="tns:getDatosZonaCampanaConcursoVentas" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_getDatosZonaCampanaConcursoVentas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getDatosZonaCampanaConcursoVentasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_getPremiosConcursoVentas_InputMessage">
+    <wsdl:part name="parameters" element="tns:getPremiosConcursoVentas" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_getPremiosConcursoVentas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getPremiosConcursoVentasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_getConcursosVentas_InputMessage">
+    <wsdl:part name="parameters" element="tns:getConcursosVentas" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_getConcursosVentas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getConcursosVentasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_getTipoClienteConcursosVentas_InputMessage">
+    <wsdl:part name="parameters" element="tns:getTipoClienteConcursosVentas" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_getTipoClienteConcursosVentas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getTipoClienteConcursosVentasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_getCampanasAsignadasConcursoVentas_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCampanasAsignadasConcursoVentas" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_getCampanasAsignadasConcursoVentas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getCampanasAsignadasConcursoVentasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_insConcursoVentas_InputMessage">
+    <wsdl:part name="parameters" element="tns:insConcursoVentas" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_insConcursoVentas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insConcursoVentasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_delTipoClienteConcurso_InputMessage">
+    <wsdl:part name="parameters" element="tns:delTipoClienteConcurso" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_delTipoClienteConcurso_OutputMessage">
+    <wsdl:part name="parameters" element="tns:delTipoClienteConcursoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_insTipoClienteConcursoVentas_InputMessage">
+    <wsdl:part name="parameters" element="tns:insTipoClienteConcursoVentas" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_insTipoClienteConcursoVentas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insTipoClienteConcursoVentasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_insZonasConcursoVentas_InputMessage">
+    <wsdl:part name="parameters" element="tns:insZonasConcursoVentas" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_insZonasConcursoVentas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insZonasConcursoVentasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_delTerritorioConcurso_InputMessage">
+    <wsdl:part name="parameters" element="tns:delTerritorioConcurso" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_delTerritorioConcurso_OutputMessage">
+    <wsdl:part name="parameters" element="tns:delTerritorioConcursoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_iuCampanasConcursoVentas_InputMessage">
+    <wsdl:part name="parameters" element="tns:iuCampanasConcursoVentas" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_iuCampanasConcursoVentas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:iuCampanasConcursoVentasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_delCampanaConcursoVenta_InputMessage">
+    <wsdl:part name="parameters" element="tns:delCampanaConcursoVenta" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_delCampanaConcursoVenta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:delCampanaConcursoVentaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_iuEstadoActividadConcursoVentas_InputMessage">
+    <wsdl:part name="parameters" element="tns:iuEstadoActividadConcursoVentas" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_iuEstadoActividadConcursoVentas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:iuEstadoActividadConcursoVentasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_delEstadoActividadConcursoVentas_InputMessage">
+    <wsdl:part name="parameters" element="tns:delEstadoActividadConcursoVentas" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_delEstadoActividadConcursoVentas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:delEstadoActividadConcursoVentasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_insProductoConcursoVentas_InputMessage">
+    <wsdl:part name="parameters" element="tns:insProductoConcursoVentas" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_insProductoConcursoVentas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insProductoConcursoVentasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_updCampanaZona_InputMessage">
+    <wsdl:part name="parameters" element="tns:updCampanaZona" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_updCampanaZona_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updCampanaZonaResponse" />
+  </wsdl:message>
   <wsdl:portType name="IServicioGeneral">
     <wsdl:operation name="ingresaAplicativo">
       <wsdl:input wsaw:Action="http://tempuri.org/IServicioGeneral/ingresaAplicativo" message="tns:IServicioGeneral_ingresaAplicativo_InputMessage" />
@@ -608,6 +734,90 @@
     <wsdl:operation name="getConcursoFiltro">
       <wsdl:input wsaw:Action="http://tempuri.org/IServicioGeneral/getConcursoFiltro" message="tns:IServicioGeneral_getConcursoFiltro_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServicioGeneral/getConcursoFiltroResponse" message="tns:IServicioGeneral_getConcursoFiltro_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getZonasConcursoVentas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioGeneral/getZonasConcursoVentas" message="tns:IServicioGeneral_getZonasConcursoVentas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioGeneral/getZonasConcursoVentasResponse" message="tns:IServicioGeneral_getZonasConcursoVentas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getEstadoActividadConcursoVenta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioGeneral/getEstadoActividadConcursoVenta" message="tns:IServicioGeneral_getEstadoActividadConcursoVenta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioGeneral/getEstadoActividadConcursoVentaResponse" message="tns:IServicioGeneral_getEstadoActividadConcursoVenta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getListaEstadosActiDisponiblesConcursoVentas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioGeneral/getListaEstadosActiDisponiblesConcursoVentas" message="tns:IServicioGeneral_getListaEstadosActiDisponiblesConcursoVentas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioGeneral/getListaEstadosActiDisponiblesConcursoVentasResponse" message="tns:IServicioGeneral_getListaEstadosActiDisponiblesConcursoVentas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getZonasAsignadasConcuusoVentas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioGeneral/getZonasAsignadasConcuusoVentas" message="tns:IServicioGeneral_getZonasAsignadasConcuusoVentas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioGeneral/getZonasAsignadasConcuusoVentasResponse" message="tns:IServicioGeneral_getZonasAsignadasConcuusoVentas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getCampanasConcursoVentas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioGeneral/getCampanasConcursoVentas" message="tns:IServicioGeneral_getCampanasConcursoVentas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioGeneral/getCampanasConcursoVentasResponse" message="tns:IServicioGeneral_getCampanasConcursoVentas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getDatosZonaCampanaConcursoVentas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioGeneral/getDatosZonaCampanaConcursoVentas" message="tns:IServicioGeneral_getDatosZonaCampanaConcursoVentas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioGeneral/getDatosZonaCampanaConcursoVentasResponse" message="tns:IServicioGeneral_getDatosZonaCampanaConcursoVentas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getPremiosConcursoVentas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioGeneral/getPremiosConcursoVentas" message="tns:IServicioGeneral_getPremiosConcursoVentas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioGeneral/getPremiosConcursoVentasResponse" message="tns:IServicioGeneral_getPremiosConcursoVentas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getConcursosVentas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioGeneral/getConcursosVentas" message="tns:IServicioGeneral_getConcursosVentas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioGeneral/getConcursosVentasResponse" message="tns:IServicioGeneral_getConcursosVentas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getTipoClienteConcursosVentas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioGeneral/getTipoClienteConcursosVentas" message="tns:IServicioGeneral_getTipoClienteConcursosVentas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioGeneral/getTipoClienteConcursosVentasResponse" message="tns:IServicioGeneral_getTipoClienteConcursosVentas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getCampanasAsignadasConcursoVentas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioGeneral/getCampanasAsignadasConcursoVentas" message="tns:IServicioGeneral_getCampanasAsignadasConcursoVentas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioGeneral/getCampanasAsignadasConcursoVentasResponse" message="tns:IServicioGeneral_getCampanasAsignadasConcursoVentas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insConcursoVentas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioGeneral/insConcursoVentas" message="tns:IServicioGeneral_insConcursoVentas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioGeneral/insConcursoVentasResponse" message="tns:IServicioGeneral_insConcursoVentas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="delTipoClienteConcurso">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioGeneral/delTipoClienteConcurso" message="tns:IServicioGeneral_delTipoClienteConcurso_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioGeneral/delTipoClienteConcursoResponse" message="tns:IServicioGeneral_delTipoClienteConcurso_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insTipoClienteConcursoVentas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioGeneral/insTipoClienteConcursoVentas" message="tns:IServicioGeneral_insTipoClienteConcursoVentas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioGeneral/insTipoClienteConcursoVentasResponse" message="tns:IServicioGeneral_insTipoClienteConcursoVentas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insZonasConcursoVentas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioGeneral/insZonasConcursoVentas" message="tns:IServicioGeneral_insZonasConcursoVentas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioGeneral/insZonasConcursoVentasResponse" message="tns:IServicioGeneral_insZonasConcursoVentas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="delTerritorioConcurso">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioGeneral/delTerritorioConcurso" message="tns:IServicioGeneral_delTerritorioConcurso_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioGeneral/delTerritorioConcursoResponse" message="tns:IServicioGeneral_delTerritorioConcurso_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="iuCampanasConcursoVentas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioGeneral/iuCampanasConcursoVentas" message="tns:IServicioGeneral_iuCampanasConcursoVentas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioGeneral/iuCampanasConcursoVentasResponse" message="tns:IServicioGeneral_iuCampanasConcursoVentas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="delCampanaConcursoVenta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioGeneral/delCampanaConcursoVenta" message="tns:IServicioGeneral_delCampanaConcursoVenta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioGeneral/delCampanaConcursoVentaResponse" message="tns:IServicioGeneral_delCampanaConcursoVenta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="iuEstadoActividadConcursoVentas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioGeneral/iuEstadoActividadConcursoVentas" message="tns:IServicioGeneral_iuEstadoActividadConcursoVentas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioGeneral/iuEstadoActividadConcursoVentasResponse" message="tns:IServicioGeneral_iuEstadoActividadConcursoVentas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="delEstadoActividadConcursoVentas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioGeneral/delEstadoActividadConcursoVentas" message="tns:IServicioGeneral_delEstadoActividadConcursoVentas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioGeneral/delEstadoActividadConcursoVentasResponse" message="tns:IServicioGeneral_delEstadoActividadConcursoVentas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insProductoConcursoVentas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioGeneral/insProductoConcursoVentas" message="tns:IServicioGeneral_insProductoConcursoVentas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioGeneral/insProductoConcursoVentasResponse" message="tns:IServicioGeneral_insProductoConcursoVentas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updCampanaZona">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioGeneral/updCampanaZona" message="tns:IServicioGeneral_updCampanaZona_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioGeneral/updCampanaZonaResponse" message="tns:IServicioGeneral_updCampanaZona_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IServicioGeneral" type="tns:IServicioGeneral">
@@ -1145,6 +1355,195 @@
     </wsdl:operation>
     <wsdl:operation name="getConcursoFiltro">
       <soap:operation soapAction="http://tempuri.org/IServicioGeneral/getConcursoFiltro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getZonasConcursoVentas">
+      <soap:operation soapAction="http://tempuri.org/IServicioGeneral/getZonasConcursoVentas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEstadoActividadConcursoVenta">
+      <soap:operation soapAction="http://tempuri.org/IServicioGeneral/getEstadoActividadConcursoVenta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getListaEstadosActiDisponiblesConcursoVentas">
+      <soap:operation soapAction="http://tempuri.org/IServicioGeneral/getListaEstadosActiDisponiblesConcursoVentas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getZonasAsignadasConcuusoVentas">
+      <soap:operation soapAction="http://tempuri.org/IServicioGeneral/getZonasAsignadasConcuusoVentas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCampanasConcursoVentas">
+      <soap:operation soapAction="http://tempuri.org/IServicioGeneral/getCampanasConcursoVentas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDatosZonaCampanaConcursoVentas">
+      <soap:operation soapAction="http://tempuri.org/IServicioGeneral/getDatosZonaCampanaConcursoVentas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPremiosConcursoVentas">
+      <soap:operation soapAction="http://tempuri.org/IServicioGeneral/getPremiosConcursoVentas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getConcursosVentas">
+      <soap:operation soapAction="http://tempuri.org/IServicioGeneral/getConcursosVentas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTipoClienteConcursosVentas">
+      <soap:operation soapAction="http://tempuri.org/IServicioGeneral/getTipoClienteConcursosVentas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCampanasAsignadasConcursoVentas">
+      <soap:operation soapAction="http://tempuri.org/IServicioGeneral/getCampanasAsignadasConcursoVentas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insConcursoVentas">
+      <soap:operation soapAction="http://tempuri.org/IServicioGeneral/insConcursoVentas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delTipoClienteConcurso">
+      <soap:operation soapAction="http://tempuri.org/IServicioGeneral/delTipoClienteConcurso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insTipoClienteConcursoVentas">
+      <soap:operation soapAction="http://tempuri.org/IServicioGeneral/insTipoClienteConcursoVentas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insZonasConcursoVentas">
+      <soap:operation soapAction="http://tempuri.org/IServicioGeneral/insZonasConcursoVentas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delTerritorioConcurso">
+      <soap:operation soapAction="http://tempuri.org/IServicioGeneral/delTerritorioConcurso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="iuCampanasConcursoVentas">
+      <soap:operation soapAction="http://tempuri.org/IServicioGeneral/iuCampanasConcursoVentas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delCampanaConcursoVenta">
+      <soap:operation soapAction="http://tempuri.org/IServicioGeneral/delCampanaConcursoVenta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="iuEstadoActividadConcursoVentas">
+      <soap:operation soapAction="http://tempuri.org/IServicioGeneral/iuEstadoActividadConcursoVentas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delEstadoActividadConcursoVentas">
+      <soap:operation soapAction="http://tempuri.org/IServicioGeneral/delEstadoActividadConcursoVentas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insProductoConcursoVentas">
+      <soap:operation soapAction="http://tempuri.org/IServicioGeneral/insProductoConcursoVentas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updCampanaZona">
+      <soap:operation soapAction="http://tempuri.org/IServicioGeneral/updCampanaZona" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

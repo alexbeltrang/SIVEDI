@@ -134,6 +134,12 @@ namespace SIVEDI.ServicePedidos {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicePedidos/getProductoCombos", ReplyAction="http://tempuri.org/IServicePedidos/getProductoCombosResponse")]
         System.Threading.Tasks.Task<SIVEDI.Clases.ProductosCombo[]> getProductoCombosAsync(int intCodigoCombo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicePedidos/getListaPreciosXcampana", ReplyAction="http://tempuri.org/IServicePedidos/getListaPreciosXcampanaResponse")]
+        SIVEDI.Clases.ListaPreciosCampana[] getListaPreciosXcampana(int intCodigoCampana);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicePedidos/getListaPreciosXcampana", ReplyAction="http://tempuri.org/IServicePedidos/getListaPreciosXcampanaResponse")]
+        System.Threading.Tasks.Task<SIVEDI.Clases.ListaPreciosCampana[]> getListaPreciosXcampanaAsync(int intCodigoCampana);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -321,6 +327,14 @@ namespace SIVEDI.ServicePedidos {
         
         public System.Threading.Tasks.Task<SIVEDI.Clases.ProductosCombo[]> getProductoCombosAsync(int intCodigoCombo) {
             return base.Channel.getProductoCombosAsync(intCodigoCombo);
+        }
+        
+        public SIVEDI.Clases.ListaPreciosCampana[] getListaPreciosXcampana(int intCodigoCampana) {
+            return base.Channel.getListaPreciosXcampana(intCodigoCampana);
+        }
+        
+        public System.Threading.Tasks.Task<SIVEDI.Clases.ListaPreciosCampana[]> getListaPreciosXcampanaAsync(int intCodigoCampana) {
+            return base.Channel.getListaPreciosXcampanaAsync(intCodigoCampana);
         }
     }
 }

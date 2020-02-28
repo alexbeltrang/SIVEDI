@@ -298,4 +298,18 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="getListaPreciosXcampana">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="intCodigoCampana" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getListaPreciosXcampanaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" minOccurs="0" name="getListaPreciosXcampanaResult" nillable="true" type="q19:ArrayOfListaPreciosCampana" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

@@ -218,6 +218,12 @@
     <Compile Include="Maestras\frmUnidadMedida.Designer.cs">
       <DependentUpon>frmUnidadMedida.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mantenimiento\frmAdminConcursoVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\frmAdminConcursoVentas.Designer.cs">
+      <DependentUpon>frmAdminConcursoVentas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mantenimiento\frmBusquedaResponsable.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -349,6 +355,9 @@
     <EmbeddedResource Include="Maestras\frmUnidadMedida.resx">
       <DependentUpon>frmUnidadMedida.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\frmAdminConcursoVentas.resx">
+      <DependentUpon>frmAdminConcursoVentas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mantenimiento\frmBusquedaResponsable.resx">
       <DependentUpon>frmBusquedaResponsable.cs</DependentUpon>
     </EmbeddedResource>
@@ -420,18 +429,23 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\SIVEDI.Clases.CampanasConcursoVentas.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.Ciudades.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.ClienteListaPrecios.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.Cliente_pedido.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.CodigoVenta.datasource" />
+    <None Include="Properties\DataSources\SIVEDI.Clases.ConcursoVentas.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.CupoMinimo.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.Departamentos.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.EstadoActividad.datasource" />
+    <None Include="Properties\DataSources\SIVEDI.Clases.EstadoActividadConcursoVentas.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.FormasPago.datasource" />
+    <None Include="Properties\DataSources\SIVEDI.Clases.ListaPreciosCampana.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.LoginUsuario.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.moduloHijo.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.moduloPadre.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.perfiles.datasource" />
+    <None Include="Properties\DataSources\SIVEDI.Clases.PremiosConcursoVentas.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.ProductoCodigoVenta.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.ProductosCombo.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.AsignaCodigoVenta.datasource" />
@@ -470,11 +484,15 @@
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.UnidadesMedidaTabla.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.UnidasMedidaTabla.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.usuariosTabla.datasource" />
+    <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.ZonasAsignadasConcursoVentasTabla.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.ZonasTabla.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TipoCliente.datasource" />
+    <None Include="Properties\DataSources\SIVEDI.Clases.TipoClienteConcursoVenta.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TipoReferencia.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.usuarios.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.usuariosTabla.datasource" />
+    <None Include="Properties\DataSources\SIVEDI.Clases.ZonaConcursoVentas.datasource" />
+    <None Include="Properties\DataSources\SIVEDI.Clases.ZonasConcursoVentas.datasource" />
     <None Include="Properties\DataSources\System.Data.DataTable.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -68,6 +68,16 @@ namespace SIVEDI.WCFPedidos
             return PedidosListaPreciosProducto;
         }
 
+        public List<ListaPreciosCampana> getListaPreciosXcampana(int intCodigoCampana)
+        {
+            List<ListaPreciosCampana> PedidosListaPreciosCampana = new List<ListaPreciosCampana>();
+            sp_Pedidos spRequestPedidos = new sp_Pedidos();
+            DataDB data = new DataDB("SIVEDIBDEntities");
+            StoreProcedure SP = spRequestPedidos.getListaPreciosXcampana("SPR_GET_LISTA_PRECIOS_X_CAMPANA", intCodigoCampana);
+            PedidosListaPreciosCampana = data.ExecuteQueryList<ListaPreciosCampana>(SP);
+            return PedidosListaPreciosCampana;
+        }
+
         public List<ListaPreciosProducto> getProductoNombreListaProd(string strNombreProducto, int intCodigoListaPrecios)
         {
             List<ListaPreciosProducto> PedidosListaPreciosProducto = new List<ListaPreciosProducto>();

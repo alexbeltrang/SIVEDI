@@ -449,4 +449,21 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ConcursoVentaTabla" nillable="true" type="tns:ConcursoVentaTabla" />
+  <xs:complexType name="ArrayOfZonasAsignadasConcursoVentasTabla">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ZonasAsignadasConcursoVentasTabla" nillable="true" type="tns:ZonasAsignadasConcursoVentasTabla" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfZonasAsignadasConcursoVentasTabla" nillable="true" type="tns:ArrayOfZonasAsignadasConcursoVentasTabla" />
+  <xs:complexType name="ZonasAsignadasConcursoVentasTabla">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGO" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CODIGO_CONCURSO" type="xs:int" />
+      <xs:element minOccurs="0" name="CODIGO_ZONA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ES_ACUM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOMBRE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PORCENTAJE" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ZonasAsignadasConcursoVentasTabla" nillable="true" type="tns:ZonasAsignadasConcursoVentasTabla" />
 </xs:schema>

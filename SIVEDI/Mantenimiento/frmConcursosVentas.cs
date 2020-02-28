@@ -1,4 +1,5 @@
-﻿using SIVEDI.ServicioGeneral;
+﻿using SIVEDI.Clases;
+using SIVEDI.ServicioGeneral;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -54,6 +55,38 @@ namespace SIVEDI.Mantenimiento
         private void btnBuscar_Click_1(object sender, EventArgs e)
         {
             llenaGrilla();
+        }
+
+        private void AdicionarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            clsConnection.intCodigoConcursoVentas = 0;
+            frmAdminConcursoVentas frmAdminConcurso = new frmAdminConcursoVentas();
+             frmAdminConcurso.Show();
+        }
+
+        private void EditarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int filaSeleccionada = dtgConcursos.SelectedRows[0].Index;
+            clsConnection.intCodigoConcursoVentas = Convert.ToInt32(dtgConcursos.Rows[filaSeleccionada].Cells[0].Value);
+            frmAdminConcursoVentas frmAdminConcurso = new frmAdminConcursoVentas();
+            frmAdminConcurso.Show();
+        }
+
+        private void tmrActualiza_Tick(object sender, EventArgs e)
+        {
+            if (clsConnection.blnActualizaListaconcursosNvo)
+            {
+                llenaGrilla();
+                clsConnection.blnActualizaListaconcursosNvo = false;
+            }
+        }
+
+        private void dtgConcursos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int filaSeleccionada = dtgConcursos.SelectedRows[0].Index;
+            clsConnection.intCodigoConcursoVentas = Convert.ToInt32( dtgConcursos.Rows[filaSeleccionada].Cells[0].Value);
+            frmAdminConcursoVentas frmAdminConcurso = new frmAdminConcursoVentas();
+            frmAdminConcurso.Show();
         }
     }
 }

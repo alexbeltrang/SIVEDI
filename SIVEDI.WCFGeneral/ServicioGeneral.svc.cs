@@ -707,7 +707,236 @@ namespace SIVEDI.WCFGeneral
 
             return ListTipoProducto;
         }
+
+        public List<ZonaConcursoVentas> getZonasConcursoVentas(int intCodigoConcurso)
+        {
+            List<ZonaConcursoVentas> ListTipoCliente = new List<ZonaConcursoVentas>();
+            SpRequest spRequestUsuario = new SpRequest();
+            DataDB data = new DataDB("SIVEDIBDEntities");
+
+            StoreProcedure SP = spRequestUsuario.getZonasConcursoVentas("SPR_GET_ZONAS_CONVTAS", intCodigoConcurso);
+            ListTipoCliente = data.ExecuteQueryList<ZonaConcursoVentas>(SP);
+
+            return ListTipoCliente;
+        }
+
+        public List<EstadoActividadConcursoVentas> getEstadoActividadConcursoVenta(int intCodigoConcurso)
+        {
+            List<EstadoActividadConcursoVentas> ListTipoCliente = new List<EstadoActividadConcursoVentas>();
+            SpRequest spRequestUsuario = new SpRequest();
+            DataDB data = new DataDB("SIVEDIBDEntities");
+
+            StoreProcedure SP = spRequestUsuario.getEstadoActividadConcursoVenta("SPR_GET_ESTADO_ACTIVIDAD_CONC_VENTA", intCodigoConcurso);
+            ListTipoCliente = data.ExecuteQueryList<EstadoActividadConcursoVentas>(SP);
+
+            return ListTipoCliente;
+        }
+        public List<EstadoActividadConcursoVentas> getListaEstadosActiDisponiblesConcursoVentas(int intCodigoConcurso)
+        {
+            List<EstadoActividadConcursoVentas> ListTipoCliente = new List<EstadoActividadConcursoVentas>();
+            SpRequest spRequestUsuario = new SpRequest();
+            DataDB data = new DataDB("SIVEDIBDEntities");
+
+            StoreProcedure SP = spRequestUsuario.getListaEstadosActiDisponiblesConcursoVentas("SPR_GET_ESTADOS_DISPONIBLE_CONC_VENTA", intCodigoConcurso);
+            ListTipoCliente = data.ExecuteQueryList<EstadoActividadConcursoVentas>(SP);
+
+            return ListTipoCliente;
+        }
+
+        public List<ZonasAsignadasConcursoVentasTabla> getZonasAsignadasConcuusoVentas(int intOpcion, int intCodigoConcurso, int intCodigoDetalle)
+        {
+            List<ZonasAsignadasConcursoVentasTabla> ListTipoProducto = new List<ZonasAsignadasConcursoVentasTabla>();
+            SpRequest spRequestUsuario = new SpRequest();
+            DataDB data = new DataDB("SIVEDIBDEntities");
+
+            StoreProcedure SP = spRequestUsuario.getZonasAsignadasConcuusoVentas("SPR_GET_DATOS_ZONAS_CONCURSO_VENTAS", intOpcion, intCodigoConcurso, intCodigoDetalle);
+            ListTipoProducto = data.ExecuteQueryList<ZonasAsignadasConcursoVentasTabla>(SP);
+
+            return ListTipoProducto;
+        }
+        public List<CampanasConcursoVentas> getCampanasConcursoVentas(int intCodigoConcurso)
+        {
+            List<CampanasConcursoVentas> ListTipoCliente = new List<CampanasConcursoVentas>();
+            SpRequest spRequestUsuario = new SpRequest();
+            DataDB data = new DataDB("SIVEDIBDEntities");
+
+            StoreProcedure SP = spRequestUsuario.getCampanasConcursoVentas("SPR_GET_CAMPANA_DISPONIBLE_CONCURSO_VENTAS", intCodigoConcurso);
+            ListTipoCliente = data.ExecuteQueryList<CampanasConcursoVentas>(SP);
+
+            return ListTipoCliente;
+        }
+
+        public List<CampanasConcursoVentas> getCampanasAsignadasConcursoVentas(int intCodigoConcurso)
+        {
+            List<CampanasConcursoVentas> ListTipoCliente = new List<CampanasConcursoVentas>();
+            SpRequest spRequestUsuario = new SpRequest();
+            DataDB data = new DataDB("SIVEDIBDEntities");
+
+            StoreProcedure SP = spRequestUsuario.getCampanasConcursoVentas("SPR_GET_CAMPANA_CONCURSO_VENTAS", intCodigoConcurso);
+            ListTipoCliente = data.ExecuteQueryList<CampanasConcursoVentas>(SP);
+
+            return ListTipoCliente;
+        }
+        public List<ZonasConcursoVentas> getDatosZonaCampanaConcursoVentas(int intCodigoConcurso)
+        {
+            List<ZonasConcursoVentas> ListTipoCliente = new List<ZonasConcursoVentas>();
+            SpRequest spRequestUsuario = new SpRequest();
+            DataDB data = new DataDB("SIVEDIBDEntities");
+
+            StoreProcedure SP = spRequestUsuario.getDatosZonaCampanaConcursoVentas("SPR_GET_ZONA_CAMPANA_CONCURSO_VENTA", intCodigoConcurso);
+            ListTipoCliente = data.ExecuteQueryList<ZonasConcursoVentas>(SP);
+
+            return ListTipoCliente;
+        }
+
+        public List<PremiosConcursoVentas> getPremiosConcursoVentas(int intCodigoConcurso)
+        {
+            List<PremiosConcursoVentas> ListTipoCliente = new List<PremiosConcursoVentas>();
+            SpRequest spRequestUsuario = new SpRequest();
+            DataDB data = new DataDB("SIVEDIBDEntities");
+
+            StoreProcedure SP = spRequestUsuario.getDatosZonaCampanaConcursoVentas("SPR_GET_PREMIOS_CONC_VENTAS", intCodigoConcurso);
+            ListTipoCliente = data.ExecuteQueryList<PremiosConcursoVentas>(SP);
+
+            return ListTipoCliente;
+        }
+
+        public List<ConcursoVentas> getConcursosVentas(int intOpcion, int intCodigoConcurso)
+        {
+            List<ConcursoVentas> ListConcursoVentas = new List<ConcursoVentas>();
+            SpRequest spRequestUsuario = new SpRequest();
+            DataDB data = new DataDB("SIVEDIBDEntities");
+
+            StoreProcedure SP = spRequestUsuario.getConcursosVentas("SPR_GET_CONCURSOS_VENTA", intOpcion, intCodigoConcurso);
+            ListConcursoVentas = data.ExecuteQueryList<ConcursoVentas>(SP);
+
+            return ListConcursoVentas;
+        }
+
+        public List<TipoClienteConcursoVenta> getTipoClienteConcursosVentas(int intCodigoConcurso)
+        {
+            List<TipoClienteConcursoVenta> ListTipoCliente = new List<TipoClienteConcursoVenta>();
+            SpRequest spRequestUsuario = new SpRequest();
+            DataDB data = new DataDB("SIVEDIBDEntities");
+
+            StoreProcedure SP = spRequestUsuario.getDatosZonaCampanaConcursoVentas("SPR_GET_TIPO_CLIENTE_CONCURSO_VENTA", intCodigoConcurso);
+            ListTipoCliente = data.ExecuteQueryList<TipoClienteConcursoVenta>(SP);
+
+            return ListTipoCliente;
+        }
+
+        public int insConcursoVentas(ConcursoVentas concursoVentas)
+        {
+            SpRequest spRequest = new SpRequest();
+            DataDB data = new DataDB("SIVEDIBDEntities");
+
+            StoreProcedure SP = spRequest.insConcursoVentas("SPR_IU_CONCURSO_VENTA", concursoVentas);
+            int codigoConcurso = data.ExecuteInsert(SP, "PO_ORESULTADO");
+            return codigoConcurso;
+        }
+
+        public int delTipoClienteConcurso(int intCodigoConcurso)
+        {
+            SpRequest spRequest = new SpRequest();
+            DataDB data = new DataDB("SIVEDIBDEntities");
+
+            StoreProcedure SP = spRequest.delTipoClienteConcurso("SPR_DEL_TIPO_CLIENTE_CONCURSO", intCodigoConcurso);
+            int codigoProductoLista = data.ExecuteUD(SP);
+            return codigoProductoLista;
+        }
+
+        public int insTipoClienteConcursoVentas(TipoClienteConcurso tipoClienteConcurso)
+        {
+            SpRequest spRequest = new SpRequest();
+            DataDB data = new DataDB("SIVEDIBDEntities");
+
+            StoreProcedure SP = spRequest.insTipoClienteConcursoVentas("SPR_INS_TIPO_CLIENTE_CONCURSO", tipoClienteConcurso);
+            int codigoConcurso = data.ExecuteInsert(SP, "PO_ORESULTADO");
+            return codigoConcurso;
+        }
+
+        public int insZonasConcursoVentas(ZonaConcursoVentasIns zonaConcursoVentasIns)
+        {
+            SpRequest spRequest = new SpRequest();
+            DataDB data = new DataDB("SIVEDIBDEntities");
+
+            StoreProcedure SP = spRequest.insZonasConcursoVentas("SPR_IU_ZONA_CONCURSO_VENTA", zonaConcursoVentasIns);
+            int codigo = data.ExecuteInsert(SP, "PO_NRESULTADO");
+            return codigo;
+        }
+
+        public int delTerritorioConcurso(int intCodigoTerritorio)
+        {
+            SpRequest spRequest = new SpRequest();
+            DataDB data = new DataDB("SIVEDIBDEntities");
+
+            StoreProcedure SP = spRequest.delTerritorioConcurso("SPR_DEL_TERRITORIO_CONCURSO", intCodigoTerritorio);
+            int codigoProductoLista = data.ExecuteUD(SP);
+            return codigoProductoLista;
+        }
+
+        public int iuCampanasConcursoVentas(CampanasConcursoVentasIns campanasConcursoVentasIns)
+        {
+            SpRequest spRequest = new SpRequest();
+            DataDB data = new DataDB("SIVEDIBDEntities");
+
+            StoreProcedure SP = spRequest.iuCampanasConcursoVentas("SPR_IU_CAMPANAS_CONCURSO_VENTAS", campanasConcursoVentasIns);
+            int codigo = data.ExecuteInsert(SP, "PO_NRESULTADO");
+            return codigo;
+        }
+
+        public int delCampanaConcursoVenta(int intCodigoCampana, int intCodigoconcurso)
+        {
+            SpRequest spRequest = new SpRequest();
+            DataDB data = new DataDB("SIVEDIBDEntities");
+
+            StoreProcedure SP = spRequest.delCampanaConcursoVenta("SPR_DEL_CAMPANA_ASIGNADA_CONCURSO_VENTA", intCodigoCampana, intCodigoconcurso);
+            int codigoProductoLista = data.ExecuteUD(SP);
+            return codigoProductoLista;
+        }
+        public int iuEstadoActividadConcursoVentas(EstadoActividadIns estadoActividadIns)
+        {
+            SpRequest spRequest = new SpRequest();
+            DataDB data = new DataDB("SIVEDIBDEntities");
+
+            StoreProcedure SP = spRequest.iuEstadoActividadConcursoVentas("SPR_IU_ESTADO_ACTIVIDAD_CONC_VENTAS", estadoActividadIns);
+            int codigo = data.ExecuteInsert(SP, "PO_ORESULTADO");
+            return codigo;
+        }
+
+        public int delEstadoActividadConcursoVentas(int intCodigoActividadAsignado)
+        {
+            SpRequest spRequest = new SpRequest();
+            DataDB data = new DataDB("SIVEDIBDEntities");
+
+            StoreProcedure SP = spRequest.delEstadoActividadConcursoVentas("SPR_DEL_ESTADO_ACTIVIDAD_CONC_VENTAS", intCodigoActividadAsignado);
+            int codigoProductoLista = data.ExecuteUD(SP);
+            return codigoProductoLista;
+        }
+
+        public int insProductoConcursoVentas(ObsequioConcursoVentaIns obsequioConcursoVentaIns)
+        {
+            SpRequest spRequest = new SpRequest();
+            DataDB data = new DataDB("SIVEDIBDEntities");
+
+            StoreProcedure SP = spRequest.insProductoConcursoVentas("SPR_UI_OBSEQUIO_CONCURSO_VENTA", obsequioConcursoVentaIns);
+            int codigo = data.ExecuteInsert(SP, "PO_NRESULTADO");
+            return codigo;
+        }
+
+        public int updCampanaZona(int intCodigoAsignado, decimal intValorValidaCampana)
+        {
+            SpRequest spRequest = new SpRequest();
+            DataDB data = new DataDB("SIVEDIBDEntities");
+
+            StoreProcedure SP = spRequest.updCampanaZona("SPR_UPD_ZONA_CAMPANA_CONCURSO_VENTA", intCodigoAsignado, intValorValidaCampana);
+            int codigoProductoLista = data.ExecuteUD(SP);
+            return codigoProductoLista;
+        }
+
         #endregion
+
+
     }
 
 }

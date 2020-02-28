@@ -1692,5 +1692,540 @@ namespace SIVEDI.Datos
             return storeProcedure;
         }
 
+        public StoreProcedure getZonasConcursoVentas(string spName, int intCodigoConcurso)
+        {
+            StoreProcedure storeProcedure = new StoreProcedure();
+            storeProcedure.Nombre = spName;
+            storeProcedure.Parametros = new List<SqlParameter>()
+            {
+                new SqlParameter()
+                {
+                    ParameterName = "@SPR_GET_ZONAS_CONVTAS",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = intCodigoConcurso
+                }
+            };
+
+            return storeProcedure;
+        }
+
+        public StoreProcedure getEstadoActividadConcursoVenta(string spName, int intCodigoConcurso)
+        {
+            StoreProcedure storeProcedure = new StoreProcedure();
+            storeProcedure.Nombre = spName;
+            storeProcedure.Parametros = new List<SqlParameter>()
+            {
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NCODIGO_CONCURSO",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = intCodigoConcurso
+                }
+            };
+
+            return storeProcedure;
+        }
+
+        public StoreProcedure getListaEstadosActiDisponiblesConcursoVentas(string spName, int intCodigoConcurso)
+        {
+            StoreProcedure storeProcedure = new StoreProcedure();
+            storeProcedure.Nombre = spName;
+            storeProcedure.Parametros = new List<SqlParameter>()
+            {
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NCODIGO_CONCURSO",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = intCodigoConcurso
+                }
+            };
+
+            return storeProcedure;
+        }
+
+        public StoreProcedure getZonasAsignadasConcuusoVentas(string spName, int intOpcion, int intCodigoConcurso, int intCodigoDetalle)
+        {
+            StoreProcedure storeProcedure = new StoreProcedure();
+            storeProcedure.Nombre = spName;
+            storeProcedure.Parametros = new List<SqlParameter>()
+            {
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_CCODIGO_CONCURSO",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = intCodigoConcurso
+                },
+                 new SqlParameter()
+                {
+                    ParameterName = "@PI_NOPCION",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = intOpcion
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_CCODIGO_DETALLE",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = intCodigoDetalle
+                }
+            };
+
+            return storeProcedure;
+        }
+
+        public StoreProcedure getCampanasConcursoVentas(string spName, int intCodigoConcurso)
+        {
+            StoreProcedure storeProcedure = new StoreProcedure();
+            storeProcedure.Nombre = spName;
+            storeProcedure.Parametros = new List<SqlParameter>()
+            {
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NCODIGO_CONCURSO",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = intCodigoConcurso
+                }
+            };
+
+            return storeProcedure;
+        }
+
+        public StoreProcedure getDatosZonaCampanaConcursoVentas(string spName, int intCodigoConcurso)
+        {
+            StoreProcedure storeProcedure = new StoreProcedure();
+            storeProcedure.Nombre = spName;
+            storeProcedure.Parametros = new List<SqlParameter>()
+            {
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NCODIGO_CONCURSO",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = intCodigoConcurso
+                }
+            };
+
+            return storeProcedure;
+        }
+
+        public StoreProcedure getPremiosConcursoVentas(string spName, int intCodigoConcurso)
+        {
+            StoreProcedure storeProcedure = new StoreProcedure();
+            storeProcedure.Nombre = spName;
+            storeProcedure.Parametros = new List<SqlParameter>()
+            {
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NCODIGO_CONCURSO",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = intCodigoConcurso
+                }
+            };
+
+            return storeProcedure;
+        }
+        public StoreProcedure getConcursosVentas(string spName, int intOpcion, int intCodigoConcurso)
+        {
+            StoreProcedure storeProcedure = new StoreProcedure();
+            storeProcedure.Nombre = spName;
+            storeProcedure.Parametros = new List<SqlParameter>()
+            {
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NCODIGO_CONCURSO",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = intCodigoConcurso
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NOPCION",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = intOpcion
+                }
+            };
+
+            return storeProcedure;
+        }
+
+        public StoreProcedure getTipoClienteConcursosVentas(string spName, int intCodigoConcurso)
+        {
+            StoreProcedure storeProcedure = new StoreProcedure();
+            storeProcedure.Nombre = spName;
+            storeProcedure.Parametros = new List<SqlParameter>()
+            {
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NCODIGO_CONCURSO",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = intCodigoConcurso
+                }
+            };
+
+            return storeProcedure;
+        }
+
+        public StoreProcedure insConcursoVentas(string spName, ConcursoVentas concursoVentas)
+        {
+            StoreProcedure storeProcedure = new StoreProcedure();
+            storeProcedure.Nombre = spName;
+            storeProcedure.Parametros = new List<SqlParameter>()
+            {
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NCODIGO_CONCURSO",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = concursoVentas.CODIGO
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_CNOMBRE_CONCURSO",
+                    SqlDbType = System.Data.SqlDbType.VarChar,
+                    Value = concursoVentas.NOMBRE
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NCODIGO_CAMPANA_ENTREGA",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = concursoVentas.CAMPANA_ENTREGA
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_OVALIDA_CAMPANA_ACTUAL",
+                    SqlDbType = System.Data.SqlDbType.Bit,
+                    Value = concursoVentas.VALIDA_CAMPANA_ACTUAL
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_OESINGRESO",
+                    SqlDbType = System.Data.SqlDbType.Bit,
+                    Value = concursoVentas.ES_PARA_INGRESO
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_OESTADO",
+                    SqlDbType = System.Data.SqlDbType.Bit,
+                    Value = concursoVentas.ESTADO
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_OENTREGA_PREMIO_ACUMULADO",
+                    SqlDbType = System.Data.SqlDbType.Bit,
+                    Value = concursoVentas.ENTREGA_PREMIO_ACUMULADO
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PO_ORESULTADO",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Direction = System.Data.ParameterDirection.Output,
+                    Value = concursoVentas.CODIGO
+                }
+            };
+            return storeProcedure;
+        }
+
+        public StoreProcedure delTipoClienteConcurso(string spName, int intCodigoConcurso)
+        {
+            StoreProcedure storeProcedure = new StoreProcedure();
+            storeProcedure.Nombre = spName;
+            storeProcedure.Parametros = new List<SqlParameter>()
+            {
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NCODIGO_CONCURSO",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = intCodigoConcurso
+                }
+            };
+
+            return storeProcedure;
+        }
+
+        public StoreProcedure insTipoClienteConcursoVentas(string spName, TipoClienteConcurso tipoClienteConcurso)
+        {
+            StoreProcedure storeProcedure = new StoreProcedure();
+            storeProcedure.Nombre = spName;
+            storeProcedure.Parametros = new List<SqlParameter>()
+            {
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NCODIGO_CONCURSO",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = tipoClienteConcurso.CODIGO_CONCURSO
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NCODIGO_TIPO_CLIENTE",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = tipoClienteConcurso.CODIGO_TIPO_CLIENTE
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PO_ORESULTADO",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Direction = System.Data.ParameterDirection.Output,
+                    Value = tipoClienteConcurso.CODIGO_CONCURSO
+                }
+            };
+            return storeProcedure;
+        }
+
+        public StoreProcedure insZonasConcursoVentas(string spName, ZonaConcursoVentasIns zonaConcursoVentas)
+        {
+            StoreProcedure storeProcedure = new StoreProcedure();
+            storeProcedure.Nombre = spName;
+            storeProcedure.Parametros = new List<SqlParameter>()
+            {
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NCODIGO_ZONA_CONCURSO",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = zonaConcursoVentas.CODIGO_ZONA_CONCURSO_VENTA
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_CCODIGO_ZONA",
+                    SqlDbType = System.Data.SqlDbType.VarChar,
+                    Value = zonaConcursoVentas.CODIGO_ZONA
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_OESACUMULADO",
+                    SqlDbType = System.Data.SqlDbType.Bit,
+                    Value = zonaConcursoVentas.ES_ACUMULADO
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NPORCENTAJE_COLCHON",
+                    SqlDbType = System.Data.SqlDbType.Decimal,
+                    Value = zonaConcursoVentas.PORCENTAJE_COLCHON
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NCODIGO_CONCURSO",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = zonaConcursoVentas.CODIGO_CONCURSO
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PO_NRESULTADO",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Direction = System.Data.ParameterDirection.Output,
+                    Value = zonaConcursoVentas.CODIGO_ZONA_CONCURSO_VENTA
+                }
+
+            };
+            return storeProcedure;
+        }
+
+        public StoreProcedure delTerritorioConcurso(string spName, int intCodigoTerritorio)
+        {
+            StoreProcedure storeProcedure = new StoreProcedure();
+            storeProcedure.Nombre = spName;
+            storeProcedure.Parametros = new List<SqlParameter>()
+            {
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NCODIGO_TERRITORIO",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = intCodigoTerritorio
+                }
+            };
+
+            return storeProcedure;
+        }
+
+        public StoreProcedure iuCampanasConcursoVentas(string spName, CampanasConcursoVentasIns campanasConcursoVentasIns)
+        {
+            StoreProcedure storeProcedure = new StoreProcedure();
+            storeProcedure.Nombre = spName;
+            storeProcedure.Parametros = new List<SqlParameter>()
+            {
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NCODIGO_CAMPANA_ZONA",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = campanasConcursoVentasIns.CODIGO_CAMPANA_ZONA
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NCODIGO_CAMPANA",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = campanasConcursoVentasIns.CODIGO_CAMPANA
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_CCODIGO_CONCURSO",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = campanasConcursoVentasIns.CODIGO_CONCURSO
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NVALOR",
+                    SqlDbType = System.Data.SqlDbType.Decimal,
+                    Value = campanasConcursoVentasIns.VALOR
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PO_NRESULTADO",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Direction = System.Data.ParameterDirection.Output,
+                    Value = campanasConcursoVentasIns.CODIGO_CAMPANA_ZONA
+                }
+
+            };
+            return storeProcedure;
+        }
+
+        public StoreProcedure delCampanaConcursoVenta(string spName, int intCodigoCampana, int intCodigoconcurso)
+        {
+            StoreProcedure storeProcedure = new StoreProcedure();
+            storeProcedure.Nombre = spName;
+            storeProcedure.Parametros = new List<SqlParameter>()
+            {
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NCODIGO_CAMPANA",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = intCodigoCampana
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NCODIGO_CONCURSO",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = intCodigoconcurso
+                }
+            };
+
+            return storeProcedure;
+        }
+
+        public StoreProcedure iuEstadoActividadConcursoVentas(string spName, EstadoActividadIns estadoActividadIns)
+        {
+            StoreProcedure storeProcedure = new StoreProcedure();
+            storeProcedure.Nombre = spName;
+            storeProcedure.Parametros = new List<SqlParameter>()
+            {
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NCODIGO_ASIGNADO",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = estadoActividadIns.CODIGO_ASIGNADO
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NCODIGO_CONCURSO",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = estadoActividadIns.CODIGO_CONCURSO
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NCODIGO_ESTADO",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = estadoActividadIns.CODIGO_ESTADO_ACTIVIDAD
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PO_ORESULTADO",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Direction = System.Data.ParameterDirection.Output,
+                    Value = estadoActividadIns.CODIGO_ASIGNADO
+                }
+
+            };
+            return storeProcedure;
+        }
+
+        public StoreProcedure delEstadoActividadConcursoVentas(string spName, int intCodigoActividadAsignado)
+        {
+            StoreProcedure storeProcedure = new StoreProcedure();
+            storeProcedure.Nombre = spName;
+            storeProcedure.Parametros = new List<SqlParameter>()
+            {
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NCODIGO_ASIGNADO",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = intCodigoActividadAsignado
+                }
+            };
+
+            return storeProcedure;
+        }
+
+        public StoreProcedure insProductoConcursoVentas(string spName, ObsequioConcursoVentaIns obsequioConcursoVentaIns)
+        {
+            StoreProcedure storeProcedure = new StoreProcedure();
+            storeProcedure.Nombre = spName;
+            storeProcedure.Parametros = new List<SqlParameter>()
+            {
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NCODIGO_OBSEQUIO",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = obsequioConcursoVentaIns.CODIGO_OBSEQUIO
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NCODIGO_LISTA_PRECIO_PROD",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = obsequioConcursoVentaIns.CODIGO_LISTA_PRECIOS
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NVALOR_MINIMO",
+                    SqlDbType = System.Data.SqlDbType.Decimal,
+                    Value = obsequioConcursoVentaIns.VALOR_MINIMO
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NVALOR_MAXIMO",
+                    SqlDbType = System.Data.SqlDbType.Decimal,
+                    Value = obsequioConcursoVentaIns.VALOR_MAXIMO
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NUNIDADES",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = obsequioConcursoVentaIns.UNIDADES
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NCODIGO_CONCURSO",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = obsequioConcursoVentaIns.CODIGO_CONCURSO
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PO_NRESULTADO",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Direction = System.Data.ParameterDirection.Output,
+                    Value = obsequioConcursoVentaIns.CODIGO_OBSEQUIO
+                }
+
+            };
+            return storeProcedure;
+        }
+
+        public StoreProcedure updCampanaZona(string spName, int intCodigoAsignado, decimal intValorValidaCampana)
+        {
+            StoreProcedure storeProcedure = new StoreProcedure();
+            storeProcedure.Nombre = spName;
+            storeProcedure.Parametros = new List<SqlParameter>()
+            {
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NCODIGO_ASIGNACION",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = intCodigoAsignado
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NVALOR_MONTO",
+                    SqlDbType = System.Data.SqlDbType.Decimal,
+                    Value = intValorValidaCampana
+                }
+            };
+
+            return storeProcedure;
+        }
+
     }
 }

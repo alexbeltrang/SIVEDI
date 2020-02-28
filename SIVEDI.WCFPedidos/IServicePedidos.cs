@@ -53,6 +53,9 @@ namespace SIVEDI.WCFPedidos
         List<ClienteListaPrecios> getClienteListaPrecios(int intOpcion, string strIdentificacion);
         [OperationContract]
         List<ProductosCombo> getProductoCombos(int intCodigoCombo);
-        
+        [OperationContract]
+        List<ListaPreciosCampana> getListaPreciosXcampana(int intCodigoCampana);
+
+
     }
 }

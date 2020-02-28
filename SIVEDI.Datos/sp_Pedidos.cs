@@ -261,6 +261,23 @@ namespace SIVEDI.Datos
             return storeProcedure;
         }
 
+        public StoreProcedure getListaPreciosXcampana(string spName, int intCodigoCampana)
+        {
+            StoreProcedure storeProcedure = new StoreProcedure();
+            storeProcedure.Nombre = spName;
+            storeProcedure.Parametros = new List<SqlParameter>()
+            {
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NCODIGO_CAMPANA",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = intCodigoCampana
+                }
+            };
+
+            return storeProcedure;
+        }
+
         public StoreProcedure getProductoNombre(string spName, string strReferencia, string strNombreProducto)
         {
             StoreProcedure storeProcedure = new StoreProcedure();

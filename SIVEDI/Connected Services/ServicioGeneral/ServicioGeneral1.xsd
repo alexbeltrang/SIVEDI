@@ -382,4 +382,152 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Productos" nillable="true" type="tns:Productos" />
+  <xs:complexType name="ArrayOfZonaConcursoVentas">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ZonaConcursoVentas" nillable="true" type="tns:ZonaConcursoVentas" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfZonaConcursoVentas" nillable="true" type="tns:ArrayOfZonaConcursoVentas" />
+  <xs:complexType name="ZonaConcursoVentas">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOMBRE" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ZonaConcursoVentas" nillable="true" type="tns:ZonaConcursoVentas" />
+  <xs:complexType name="ArrayOfEstadoActividadConcursoVentas">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EstadoActividadConcursoVentas" nillable="true" type="tns:EstadoActividadConcursoVentas" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEstadoActividadConcursoVentas" nillable="true" type="tns:ArrayOfEstadoActividadConcursoVentas" />
+  <xs:complexType name="EstadoActividadConcursoVentas">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGO" type="xs:int" />
+      <xs:element minOccurs="0" name="NOMBRE" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EstadoActividadConcursoVentas" nillable="true" type="tns:EstadoActividadConcursoVentas" />
+  <xs:complexType name="ArrayOfCampanasConcursoVentas">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CampanasConcursoVentas" nillable="true" type="tns:CampanasConcursoVentas" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCampanasConcursoVentas" nillable="true" type="tns:ArrayOfCampanasConcursoVentas" />
+  <xs:complexType name="CampanasConcursoVentas">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MONTO" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NOMBRE" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CampanasConcursoVentas" nillable="true" type="tns:CampanasConcursoVentas" />
+  <xs:complexType name="ArrayOfZonasConcursoVentas">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ZonasConcursoVentas" nillable="true" type="tns:ZonasConcursoVentas" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfZonasConcursoVentas" nillable="true" type="tns:ArrayOfZonasConcursoVentas" />
+  <xs:complexType name="ZonasConcursoVentas">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CAMPANA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODIGO" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MONTO" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NOMBRE" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ZonasConcursoVentas" nillable="true" type="tns:ZonasConcursoVentas" />
+  <xs:complexType name="ArrayOfPremiosConcursoVentas">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PremiosConcursoVentas" nillable="true" type="tns:PremiosConcursoVentas" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPremiosConcursoVentas" nillable="true" type="tns:ArrayOfPremiosConcursoVentas" />
+  <xs:complexType name="PremiosConcursoVentas">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGO" type="xs:int" />
+      <xs:element minOccurs="0" name="CODIGO_LISTA" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NOMBRE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PRODUCTO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UNIDADES" type="xs:int" />
+      <xs:element minOccurs="0" name="VLR_MAXIMO" type="xs:decimal" />
+      <xs:element minOccurs="0" name="VLR_MINIMO" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PremiosConcursoVentas" nillable="true" type="tns:PremiosConcursoVentas" />
+  <xs:complexType name="ArrayOfConcursoVentas">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ConcursoVentas" nillable="true" type="tns:ConcursoVentas" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfConcursoVentas" nillable="true" type="tns:ArrayOfConcursoVentas" />
+  <xs:complexType name="ConcursoVentas">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CAMPANA_ENTREGA" type="xs:int" />
+      <xs:element minOccurs="0" name="CODIGO" type="xs:int" />
+      <xs:element minOccurs="0" name="ENTREGA_PREMIO_ACUMULADO" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ESTADO" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ES_PARA_INGRESO" type="xs:boolean" />
+      <xs:element minOccurs="0" name="NOMBRE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VALIDA_CAMPANA_ACTUAL" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ConcursoVentas" nillable="true" type="tns:ConcursoVentas" />
+  <xs:complexType name="ArrayOfTipoClienteConcursoVenta">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TipoClienteConcursoVenta" nillable="true" type="tns:TipoClienteConcursoVenta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTipoClienteConcursoVenta" nillable="true" type="tns:ArrayOfTipoClienteConcursoVenta" />
+  <xs:complexType name="TipoClienteConcursoVenta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGO" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TipoClienteConcursoVenta" nillable="true" type="tns:TipoClienteConcursoVenta" />
+  <xs:complexType name="TipoClienteConcurso">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGO_CONCURSO" type="xs:int" />
+      <xs:element minOccurs="0" name="CODIGO_TIPO_CLIENTE" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TipoClienteConcurso" nillable="true" type="tns:TipoClienteConcurso" />
+  <xs:complexType name="ZonaConcursoVentasIns">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGO_CONCURSO" type="xs:int" />
+      <xs:element minOccurs="0" name="CODIGO_ZONA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODIGO_ZONA_CONCURSO_VENTA" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ES_ACUMULADO" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PORCENTAJE_COLCHON" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ZonaConcursoVentasIns" nillable="true" type="tns:ZonaConcursoVentasIns" />
+  <xs:complexType name="CampanasConcursoVentasIns">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGO_CAMPANA" type="xs:int" />
+      <xs:element minOccurs="0" name="CODIGO_CAMPANA_ZONA" type="xs:int" />
+      <xs:element minOccurs="0" name="CODIGO_CONCURSO" type="xs:int" />
+      <xs:element minOccurs="0" name="VALOR" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CampanasConcursoVentasIns" nillable="true" type="tns:CampanasConcursoVentasIns" />
+  <xs:complexType name="EstadoActividadIns">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGO_ASIGNADO" type="xs:int" />
+      <xs:element minOccurs="0" name="CODIGO_CONCURSO" type="xs:int" />
+      <xs:element minOccurs="0" name="CODIGO_ESTADO_ACTIVIDAD" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EstadoActividadIns" nillable="true" type="tns:EstadoActividadIns" />
+  <xs:complexType name="ObsequioConcursoVentaIns">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGO_CONCURSO" type="xs:int" />
+      <xs:element minOccurs="0" name="CODIGO_LISTA_PRECIOS" type="xs:int" />
+      <xs:element minOccurs="0" name="CODIGO_OBSEQUIO" type="xs:int" />
+      <xs:element minOccurs="0" name="UNIDADES" type="xs:int" />
+      <xs:element minOccurs="0" name="VALOR_MAXIMO" type="xs:decimal" />
+      <xs:element minOccurs="0" name="VALOR_MINIMO" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ObsequioConcursoVentaIns" nillable="true" type="tns:ObsequioConcursoVentaIns" />
 </xs:schema>

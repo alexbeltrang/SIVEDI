@@ -374,6 +374,134 @@ namespace SIVEDI.ServicioGeneral {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getConcursoFiltro", ReplyAction="http://tempuri.org/IServicioGeneral/getConcursoFiltroResponse")]
         System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.ConcursoVentaTabla[]> getConcursoFiltroAsync(int intCampanaEntrega, string strNombreConcruso);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getZonasConcursoVentas", ReplyAction="http://tempuri.org/IServicioGeneral/getZonasConcursoVentasResponse")]
+        SIVEDI.Clases.ZonaConcursoVentas[] getZonasConcursoVentas(int intCodigoConcurso);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getZonasConcursoVentas", ReplyAction="http://tempuri.org/IServicioGeneral/getZonasConcursoVentasResponse")]
+        System.Threading.Tasks.Task<SIVEDI.Clases.ZonaConcursoVentas[]> getZonasConcursoVentasAsync(int intCodigoConcurso);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getEstadoActividadConcursoVenta", ReplyAction="http://tempuri.org/IServicioGeneral/getEstadoActividadConcursoVentaResponse")]
+        SIVEDI.Clases.EstadoActividadConcursoVentas[] getEstadoActividadConcursoVenta(int intCodigoConcurso);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getEstadoActividadConcursoVenta", ReplyAction="http://tempuri.org/IServicioGeneral/getEstadoActividadConcursoVentaResponse")]
+        System.Threading.Tasks.Task<SIVEDI.Clases.EstadoActividadConcursoVentas[]> getEstadoActividadConcursoVentaAsync(int intCodigoConcurso);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getListaEstadosActiDisponiblesConcursoVentas", ReplyAction="http://tempuri.org/IServicioGeneral/getListaEstadosActiDisponiblesConcursoVentasR" +
+            "esponse")]
+        SIVEDI.Clases.EstadoActividadConcursoVentas[] getListaEstadosActiDisponiblesConcursoVentas(int intCodigoConcurso);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getListaEstadosActiDisponiblesConcursoVentas", ReplyAction="http://tempuri.org/IServicioGeneral/getListaEstadosActiDisponiblesConcursoVentasR" +
+            "esponse")]
+        System.Threading.Tasks.Task<SIVEDI.Clases.EstadoActividadConcursoVentas[]> getListaEstadosActiDisponiblesConcursoVentasAsync(int intCodigoConcurso);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getZonasAsignadasConcuusoVentas", ReplyAction="http://tempuri.org/IServicioGeneral/getZonasAsignadasConcuusoVentasResponse")]
+        SIVEDI.Clases.TABLAS.ZonasAsignadasConcursoVentasTabla[] getZonasAsignadasConcuusoVentas(int intOpcion, int intCodigoConcurso, int intCodigoDetalle);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getZonasAsignadasConcuusoVentas", ReplyAction="http://tempuri.org/IServicioGeneral/getZonasAsignadasConcuusoVentasResponse")]
+        System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.ZonasAsignadasConcursoVentasTabla[]> getZonasAsignadasConcuusoVentasAsync(int intOpcion, int intCodigoConcurso, int intCodigoDetalle);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getCampanasConcursoVentas", ReplyAction="http://tempuri.org/IServicioGeneral/getCampanasConcursoVentasResponse")]
+        SIVEDI.Clases.CampanasConcursoVentas[] getCampanasConcursoVentas(int intCodigoConcurso);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getCampanasConcursoVentas", ReplyAction="http://tempuri.org/IServicioGeneral/getCampanasConcursoVentasResponse")]
+        System.Threading.Tasks.Task<SIVEDI.Clases.CampanasConcursoVentas[]> getCampanasConcursoVentasAsync(int intCodigoConcurso);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getDatosZonaCampanaConcursoVentas", ReplyAction="http://tempuri.org/IServicioGeneral/getDatosZonaCampanaConcursoVentasResponse")]
+        SIVEDI.Clases.ZonasConcursoVentas[] getDatosZonaCampanaConcursoVentas(int intCodigoConcurso);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getDatosZonaCampanaConcursoVentas", ReplyAction="http://tempuri.org/IServicioGeneral/getDatosZonaCampanaConcursoVentasResponse")]
+        System.Threading.Tasks.Task<SIVEDI.Clases.ZonasConcursoVentas[]> getDatosZonaCampanaConcursoVentasAsync(int intCodigoConcurso);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getPremiosConcursoVentas", ReplyAction="http://tempuri.org/IServicioGeneral/getPremiosConcursoVentasResponse")]
+        SIVEDI.Clases.PremiosConcursoVentas[] getPremiosConcursoVentas(int intCodigoConcurso);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getPremiosConcursoVentas", ReplyAction="http://tempuri.org/IServicioGeneral/getPremiosConcursoVentasResponse")]
+        System.Threading.Tasks.Task<SIVEDI.Clases.PremiosConcursoVentas[]> getPremiosConcursoVentasAsync(int intCodigoConcurso);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getConcursosVentas", ReplyAction="http://tempuri.org/IServicioGeneral/getConcursosVentasResponse")]
+        SIVEDI.Clases.ConcursoVentas[] getConcursosVentas(int intOpcion, int intCodigoConcurso);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getConcursosVentas", ReplyAction="http://tempuri.org/IServicioGeneral/getConcursosVentasResponse")]
+        System.Threading.Tasks.Task<SIVEDI.Clases.ConcursoVentas[]> getConcursosVentasAsync(int intOpcion, int intCodigoConcurso);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getTipoClienteConcursosVentas", ReplyAction="http://tempuri.org/IServicioGeneral/getTipoClienteConcursosVentasResponse")]
+        SIVEDI.Clases.TipoClienteConcursoVenta[] getTipoClienteConcursosVentas(int intCodigoConcurso);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getTipoClienteConcursosVentas", ReplyAction="http://tempuri.org/IServicioGeneral/getTipoClienteConcursosVentasResponse")]
+        System.Threading.Tasks.Task<SIVEDI.Clases.TipoClienteConcursoVenta[]> getTipoClienteConcursosVentasAsync(int intCodigoConcurso);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getCampanasAsignadasConcursoVentas", ReplyAction="http://tempuri.org/IServicioGeneral/getCampanasAsignadasConcursoVentasResponse")]
+        SIVEDI.Clases.CampanasConcursoVentas[] getCampanasAsignadasConcursoVentas(int intCodigoConcurso);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getCampanasAsignadasConcursoVentas", ReplyAction="http://tempuri.org/IServicioGeneral/getCampanasAsignadasConcursoVentasResponse")]
+        System.Threading.Tasks.Task<SIVEDI.Clases.CampanasConcursoVentas[]> getCampanasAsignadasConcursoVentasAsync(int intCodigoConcurso);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/insConcursoVentas", ReplyAction="http://tempuri.org/IServicioGeneral/insConcursoVentasResponse")]
+        int insConcursoVentas(SIVEDI.Clases.ConcursoVentas concursoVentas);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/insConcursoVentas", ReplyAction="http://tempuri.org/IServicioGeneral/insConcursoVentasResponse")]
+        System.Threading.Tasks.Task<int> insConcursoVentasAsync(SIVEDI.Clases.ConcursoVentas concursoVentas);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/delTipoClienteConcurso", ReplyAction="http://tempuri.org/IServicioGeneral/delTipoClienteConcursoResponse")]
+        int delTipoClienteConcurso(int intCodigoConcurso);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/delTipoClienteConcurso", ReplyAction="http://tempuri.org/IServicioGeneral/delTipoClienteConcursoResponse")]
+        System.Threading.Tasks.Task<int> delTipoClienteConcursoAsync(int intCodigoConcurso);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/insTipoClienteConcursoVentas", ReplyAction="http://tempuri.org/IServicioGeneral/insTipoClienteConcursoVentasResponse")]
+        int insTipoClienteConcursoVentas(SIVEDI.Clases.TipoClienteConcurso tipoClienteConcurso);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/insTipoClienteConcursoVentas", ReplyAction="http://tempuri.org/IServicioGeneral/insTipoClienteConcursoVentasResponse")]
+        System.Threading.Tasks.Task<int> insTipoClienteConcursoVentasAsync(SIVEDI.Clases.TipoClienteConcurso tipoClienteConcurso);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/insZonasConcursoVentas", ReplyAction="http://tempuri.org/IServicioGeneral/insZonasConcursoVentasResponse")]
+        int insZonasConcursoVentas(SIVEDI.Clases.ZonaConcursoVentasIns zonaConcursoVentasIns);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/insZonasConcursoVentas", ReplyAction="http://tempuri.org/IServicioGeneral/insZonasConcursoVentasResponse")]
+        System.Threading.Tasks.Task<int> insZonasConcursoVentasAsync(SIVEDI.Clases.ZonaConcursoVentasIns zonaConcursoVentasIns);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/delTerritorioConcurso", ReplyAction="http://tempuri.org/IServicioGeneral/delTerritorioConcursoResponse")]
+        int delTerritorioConcurso(int intCodigoTerritorio);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/delTerritorioConcurso", ReplyAction="http://tempuri.org/IServicioGeneral/delTerritorioConcursoResponse")]
+        System.Threading.Tasks.Task<int> delTerritorioConcursoAsync(int intCodigoTerritorio);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/iuCampanasConcursoVentas", ReplyAction="http://tempuri.org/IServicioGeneral/iuCampanasConcursoVentasResponse")]
+        int iuCampanasConcursoVentas(SIVEDI.Clases.CampanasConcursoVentasIns campanasConcursoVentasIns);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/iuCampanasConcursoVentas", ReplyAction="http://tempuri.org/IServicioGeneral/iuCampanasConcursoVentasResponse")]
+        System.Threading.Tasks.Task<int> iuCampanasConcursoVentasAsync(SIVEDI.Clases.CampanasConcursoVentasIns campanasConcursoVentasIns);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/delCampanaConcursoVenta", ReplyAction="http://tempuri.org/IServicioGeneral/delCampanaConcursoVentaResponse")]
+        int delCampanaConcursoVenta(int intCodigoCampana, int intCodigoconcurso);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/delCampanaConcursoVenta", ReplyAction="http://tempuri.org/IServicioGeneral/delCampanaConcursoVentaResponse")]
+        System.Threading.Tasks.Task<int> delCampanaConcursoVentaAsync(int intCodigoCampana, int intCodigoconcurso);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/iuEstadoActividadConcursoVentas", ReplyAction="http://tempuri.org/IServicioGeneral/iuEstadoActividadConcursoVentasResponse")]
+        int iuEstadoActividadConcursoVentas(SIVEDI.Clases.EstadoActividadIns estadoActividadIns);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/iuEstadoActividadConcursoVentas", ReplyAction="http://tempuri.org/IServicioGeneral/iuEstadoActividadConcursoVentasResponse")]
+        System.Threading.Tasks.Task<int> iuEstadoActividadConcursoVentasAsync(SIVEDI.Clases.EstadoActividadIns estadoActividadIns);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/delEstadoActividadConcursoVentas", ReplyAction="http://tempuri.org/IServicioGeneral/delEstadoActividadConcursoVentasResponse")]
+        int delEstadoActividadConcursoVentas(int intCodigoActividadAsignado);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/delEstadoActividadConcursoVentas", ReplyAction="http://tempuri.org/IServicioGeneral/delEstadoActividadConcursoVentasResponse")]
+        System.Threading.Tasks.Task<int> delEstadoActividadConcursoVentasAsync(int intCodigoActividadAsignado);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/insProductoConcursoVentas", ReplyAction="http://tempuri.org/IServicioGeneral/insProductoConcursoVentasResponse")]
+        int insProductoConcursoVentas(SIVEDI.Clases.ObsequioConcursoVentaIns obsequioConcursoVentaIns);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/insProductoConcursoVentas", ReplyAction="http://tempuri.org/IServicioGeneral/insProductoConcursoVentasResponse")]
+        System.Threading.Tasks.Task<int> insProductoConcursoVentasAsync(SIVEDI.Clases.ObsequioConcursoVentaIns obsequioConcursoVentaIns);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/updCampanaZona", ReplyAction="http://tempuri.org/IServicioGeneral/updCampanaZonaResponse")]
+        int updCampanaZona(int intCodigoAsignado, decimal intValorValidaCampana);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/updCampanaZona", ReplyAction="http://tempuri.org/IServicioGeneral/updCampanaZonaResponse")]
+        System.Threading.Tasks.Task<int> updCampanaZonaAsync(int intCodigoAsignado, decimal intValorValidaCampana);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -881,6 +1009,174 @@ namespace SIVEDI.ServicioGeneral {
         
         public System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.ConcursoVentaTabla[]> getConcursoFiltroAsync(int intCampanaEntrega, string strNombreConcruso) {
             return base.Channel.getConcursoFiltroAsync(intCampanaEntrega, strNombreConcruso);
+        }
+        
+        public SIVEDI.Clases.ZonaConcursoVentas[] getZonasConcursoVentas(int intCodigoConcurso) {
+            return base.Channel.getZonasConcursoVentas(intCodigoConcurso);
+        }
+        
+        public System.Threading.Tasks.Task<SIVEDI.Clases.ZonaConcursoVentas[]> getZonasConcursoVentasAsync(int intCodigoConcurso) {
+            return base.Channel.getZonasConcursoVentasAsync(intCodigoConcurso);
+        }
+        
+        public SIVEDI.Clases.EstadoActividadConcursoVentas[] getEstadoActividadConcursoVenta(int intCodigoConcurso) {
+            return base.Channel.getEstadoActividadConcursoVenta(intCodigoConcurso);
+        }
+        
+        public System.Threading.Tasks.Task<SIVEDI.Clases.EstadoActividadConcursoVentas[]> getEstadoActividadConcursoVentaAsync(int intCodigoConcurso) {
+            return base.Channel.getEstadoActividadConcursoVentaAsync(intCodigoConcurso);
+        }
+        
+        public SIVEDI.Clases.EstadoActividadConcursoVentas[] getListaEstadosActiDisponiblesConcursoVentas(int intCodigoConcurso) {
+            return base.Channel.getListaEstadosActiDisponiblesConcursoVentas(intCodigoConcurso);
+        }
+        
+        public System.Threading.Tasks.Task<SIVEDI.Clases.EstadoActividadConcursoVentas[]> getListaEstadosActiDisponiblesConcursoVentasAsync(int intCodigoConcurso) {
+            return base.Channel.getListaEstadosActiDisponiblesConcursoVentasAsync(intCodigoConcurso);
+        }
+        
+        public SIVEDI.Clases.TABLAS.ZonasAsignadasConcursoVentasTabla[] getZonasAsignadasConcuusoVentas(int intOpcion, int intCodigoConcurso, int intCodigoDetalle) {
+            return base.Channel.getZonasAsignadasConcuusoVentas(intOpcion, intCodigoConcurso, intCodigoDetalle);
+        }
+        
+        public System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.ZonasAsignadasConcursoVentasTabla[]> getZonasAsignadasConcuusoVentasAsync(int intOpcion, int intCodigoConcurso, int intCodigoDetalle) {
+            return base.Channel.getZonasAsignadasConcuusoVentasAsync(intOpcion, intCodigoConcurso, intCodigoDetalle);
+        }
+        
+        public SIVEDI.Clases.CampanasConcursoVentas[] getCampanasConcursoVentas(int intCodigoConcurso) {
+            return base.Channel.getCampanasConcursoVentas(intCodigoConcurso);
+        }
+        
+        public System.Threading.Tasks.Task<SIVEDI.Clases.CampanasConcursoVentas[]> getCampanasConcursoVentasAsync(int intCodigoConcurso) {
+            return base.Channel.getCampanasConcursoVentasAsync(intCodigoConcurso);
+        }
+        
+        public SIVEDI.Clases.ZonasConcursoVentas[] getDatosZonaCampanaConcursoVentas(int intCodigoConcurso) {
+            return base.Channel.getDatosZonaCampanaConcursoVentas(intCodigoConcurso);
+        }
+        
+        public System.Threading.Tasks.Task<SIVEDI.Clases.ZonasConcursoVentas[]> getDatosZonaCampanaConcursoVentasAsync(int intCodigoConcurso) {
+            return base.Channel.getDatosZonaCampanaConcursoVentasAsync(intCodigoConcurso);
+        }
+        
+        public SIVEDI.Clases.PremiosConcursoVentas[] getPremiosConcursoVentas(int intCodigoConcurso) {
+            return base.Channel.getPremiosConcursoVentas(intCodigoConcurso);
+        }
+        
+        public System.Threading.Tasks.Task<SIVEDI.Clases.PremiosConcursoVentas[]> getPremiosConcursoVentasAsync(int intCodigoConcurso) {
+            return base.Channel.getPremiosConcursoVentasAsync(intCodigoConcurso);
+        }
+        
+        public SIVEDI.Clases.ConcursoVentas[] getConcursosVentas(int intOpcion, int intCodigoConcurso) {
+            return base.Channel.getConcursosVentas(intOpcion, intCodigoConcurso);
+        }
+        
+        public System.Threading.Tasks.Task<SIVEDI.Clases.ConcursoVentas[]> getConcursosVentasAsync(int intOpcion, int intCodigoConcurso) {
+            return base.Channel.getConcursosVentasAsync(intOpcion, intCodigoConcurso);
+        }
+        
+        public SIVEDI.Clases.TipoClienteConcursoVenta[] getTipoClienteConcursosVentas(int intCodigoConcurso) {
+            return base.Channel.getTipoClienteConcursosVentas(intCodigoConcurso);
+        }
+        
+        public System.Threading.Tasks.Task<SIVEDI.Clases.TipoClienteConcursoVenta[]> getTipoClienteConcursosVentasAsync(int intCodigoConcurso) {
+            return base.Channel.getTipoClienteConcursosVentasAsync(intCodigoConcurso);
+        }
+        
+        public SIVEDI.Clases.CampanasConcursoVentas[] getCampanasAsignadasConcursoVentas(int intCodigoConcurso) {
+            return base.Channel.getCampanasAsignadasConcursoVentas(intCodigoConcurso);
+        }
+        
+        public System.Threading.Tasks.Task<SIVEDI.Clases.CampanasConcursoVentas[]> getCampanasAsignadasConcursoVentasAsync(int intCodigoConcurso) {
+            return base.Channel.getCampanasAsignadasConcursoVentasAsync(intCodigoConcurso);
+        }
+        
+        public int insConcursoVentas(SIVEDI.Clases.ConcursoVentas concursoVentas) {
+            return base.Channel.insConcursoVentas(concursoVentas);
+        }
+        
+        public System.Threading.Tasks.Task<int> insConcursoVentasAsync(SIVEDI.Clases.ConcursoVentas concursoVentas) {
+            return base.Channel.insConcursoVentasAsync(concursoVentas);
+        }
+        
+        public int delTipoClienteConcurso(int intCodigoConcurso) {
+            return base.Channel.delTipoClienteConcurso(intCodigoConcurso);
+        }
+        
+        public System.Threading.Tasks.Task<int> delTipoClienteConcursoAsync(int intCodigoConcurso) {
+            return base.Channel.delTipoClienteConcursoAsync(intCodigoConcurso);
+        }
+        
+        public int insTipoClienteConcursoVentas(SIVEDI.Clases.TipoClienteConcurso tipoClienteConcurso) {
+            return base.Channel.insTipoClienteConcursoVentas(tipoClienteConcurso);
+        }
+        
+        public System.Threading.Tasks.Task<int> insTipoClienteConcursoVentasAsync(SIVEDI.Clases.TipoClienteConcurso tipoClienteConcurso) {
+            return base.Channel.insTipoClienteConcursoVentasAsync(tipoClienteConcurso);
+        }
+        
+        public int insZonasConcursoVentas(SIVEDI.Clases.ZonaConcursoVentasIns zonaConcursoVentasIns) {
+            return base.Channel.insZonasConcursoVentas(zonaConcursoVentasIns);
+        }
+        
+        public System.Threading.Tasks.Task<int> insZonasConcursoVentasAsync(SIVEDI.Clases.ZonaConcursoVentasIns zonaConcursoVentasIns) {
+            return base.Channel.insZonasConcursoVentasAsync(zonaConcursoVentasIns);
+        }
+        
+        public int delTerritorioConcurso(int intCodigoTerritorio) {
+            return base.Channel.delTerritorioConcurso(intCodigoTerritorio);
+        }
+        
+        public System.Threading.Tasks.Task<int> delTerritorioConcursoAsync(int intCodigoTerritorio) {
+            return base.Channel.delTerritorioConcursoAsync(intCodigoTerritorio);
+        }
+        
+        public int iuCampanasConcursoVentas(SIVEDI.Clases.CampanasConcursoVentasIns campanasConcursoVentasIns) {
+            return base.Channel.iuCampanasConcursoVentas(campanasConcursoVentasIns);
+        }
+        
+        public System.Threading.Tasks.Task<int> iuCampanasConcursoVentasAsync(SIVEDI.Clases.CampanasConcursoVentasIns campanasConcursoVentasIns) {
+            return base.Channel.iuCampanasConcursoVentasAsync(campanasConcursoVentasIns);
+        }
+        
+        public int delCampanaConcursoVenta(int intCodigoCampana, int intCodigoconcurso) {
+            return base.Channel.delCampanaConcursoVenta(intCodigoCampana, intCodigoconcurso);
+        }
+        
+        public System.Threading.Tasks.Task<int> delCampanaConcursoVentaAsync(int intCodigoCampana, int intCodigoconcurso) {
+            return base.Channel.delCampanaConcursoVentaAsync(intCodigoCampana, intCodigoconcurso);
+        }
+        
+        public int iuEstadoActividadConcursoVentas(SIVEDI.Clases.EstadoActividadIns estadoActividadIns) {
+            return base.Channel.iuEstadoActividadConcursoVentas(estadoActividadIns);
+        }
+        
+        public System.Threading.Tasks.Task<int> iuEstadoActividadConcursoVentasAsync(SIVEDI.Clases.EstadoActividadIns estadoActividadIns) {
+            return base.Channel.iuEstadoActividadConcursoVentasAsync(estadoActividadIns);
+        }
+        
+        public int delEstadoActividadConcursoVentas(int intCodigoActividadAsignado) {
+            return base.Channel.delEstadoActividadConcursoVentas(intCodigoActividadAsignado);
+        }
+        
+        public System.Threading.Tasks.Task<int> delEstadoActividadConcursoVentasAsync(int intCodigoActividadAsignado) {
+            return base.Channel.delEstadoActividadConcursoVentasAsync(intCodigoActividadAsignado);
+        }
+        
+        public int insProductoConcursoVentas(SIVEDI.Clases.ObsequioConcursoVentaIns obsequioConcursoVentaIns) {
+            return base.Channel.insProductoConcursoVentas(obsequioConcursoVentaIns);
+        }
+        
+        public System.Threading.Tasks.Task<int> insProductoConcursoVentasAsync(SIVEDI.Clases.ObsequioConcursoVentaIns obsequioConcursoVentaIns) {
+            return base.Channel.insProductoConcursoVentasAsync(obsequioConcursoVentaIns);
+        }
+        
+        public int updCampanaZona(int intCodigoAsignado, decimal intValorValidaCampana) {
+            return base.Channel.updCampanaZona(intCodigoAsignado, intValorValidaCampana);
+        }
+        
+        public System.Threading.Tasks.Task<int> updCampanaZonaAsync(int intCodigoAsignado, decimal intValorValidaCampana) {
+            return base.Channel.updCampanaZonaAsync(intCodigoAsignado, intValorValidaCampana);
         }
     }
 }

@@ -885,4 +885,303 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="getZonasConcursoVentas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="intCodigoConcurso" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getZonasConcursoVentasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" minOccurs="0" name="getZonasConcursoVentasResult" nillable="true" type="q61:ArrayOfZonaConcursoVentas" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getEstadoActividadConcursoVenta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="intCodigoConcurso" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getEstadoActividadConcursoVentaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" minOccurs="0" name="getEstadoActividadConcursoVentaResult" nillable="true" type="q62:ArrayOfEstadoActividadConcursoVentas" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getListaEstadosActiDisponiblesConcursoVentas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="intCodigoConcurso" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getListaEstadosActiDisponiblesConcursoVentasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" minOccurs="0" name="getListaEstadosActiDisponiblesConcursoVentasResult" nillable="true" type="q63:ArrayOfEstadoActividadConcursoVentas" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getZonasAsignadasConcuusoVentas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="intOpcion" type="xs:int" />
+        <xs:element minOccurs="0" name="intCodigoConcurso" type="xs:int" />
+        <xs:element minOccurs="0" name="intCodigoDetalle" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getZonasAsignadasConcuusoVentasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" minOccurs="0" name="getZonasAsignadasConcuusoVentasResult" nillable="true" type="q64:ArrayOfZonasAsignadasConcursoVentasTabla" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getCampanasConcursoVentas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="intCodigoConcurso" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getCampanasConcursoVentasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" minOccurs="0" name="getCampanasConcursoVentasResult" nillable="true" type="q65:ArrayOfCampanasConcursoVentas" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getDatosZonaCampanaConcursoVentas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="intCodigoConcurso" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getDatosZonaCampanaConcursoVentasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" minOccurs="0" name="getDatosZonaCampanaConcursoVentasResult" nillable="true" type="q66:ArrayOfZonasConcursoVentas" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getPremiosConcursoVentas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="intCodigoConcurso" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getPremiosConcursoVentasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q67="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" minOccurs="0" name="getPremiosConcursoVentasResult" nillable="true" type="q67:ArrayOfPremiosConcursoVentas" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getConcursosVentas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="intOpcion" type="xs:int" />
+        <xs:element minOccurs="0" name="intCodigoConcurso" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getConcursosVentasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q68="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" minOccurs="0" name="getConcursosVentasResult" nillable="true" type="q68:ArrayOfConcursoVentas" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getTipoClienteConcursosVentas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="intCodigoConcurso" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getTipoClienteConcursosVentasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q69="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" minOccurs="0" name="getTipoClienteConcursosVentasResult" nillable="true" type="q69:ArrayOfTipoClienteConcursoVenta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getCampanasAsignadasConcursoVentas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="intCodigoConcurso" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getCampanasAsignadasConcursoVentasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q70="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" minOccurs="0" name="getCampanasAsignadasConcursoVentasResult" nillable="true" type="q70:ArrayOfCampanasConcursoVentas" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="insConcursoVentas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q71="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" minOccurs="0" name="concursoVentas" nillable="true" type="q71:ConcursoVentas" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="insConcursoVentasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="insConcursoVentasResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="delTipoClienteConcurso">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="intCodigoConcurso" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="delTipoClienteConcursoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="delTipoClienteConcursoResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="insTipoClienteConcursoVentas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q72="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" minOccurs="0" name="tipoClienteConcurso" nillable="true" type="q72:TipoClienteConcurso" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="insTipoClienteConcursoVentasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="insTipoClienteConcursoVentasResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="insZonasConcursoVentas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q73="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" minOccurs="0" name="zonaConcursoVentasIns" nillable="true" type="q73:ZonaConcursoVentasIns" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="insZonasConcursoVentasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="insZonasConcursoVentasResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="delTerritorioConcurso">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="intCodigoTerritorio" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="delTerritorioConcursoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="delTerritorioConcursoResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="iuCampanasConcursoVentas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q74="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" minOccurs="0" name="campanasConcursoVentasIns" nillable="true" type="q74:CampanasConcursoVentasIns" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="iuCampanasConcursoVentasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="iuCampanasConcursoVentasResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="delCampanaConcursoVenta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="intCodigoCampana" type="xs:int" />
+        <xs:element minOccurs="0" name="intCodigoconcurso" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="delCampanaConcursoVentaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="delCampanaConcursoVentaResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="iuEstadoActividadConcursoVentas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q75="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" minOccurs="0" name="estadoActividadIns" nillable="true" type="q75:EstadoActividadIns" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="iuEstadoActividadConcursoVentasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="iuEstadoActividadConcursoVentasResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="delEstadoActividadConcursoVentas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="intCodigoActividadAsignado" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="delEstadoActividadConcursoVentasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="delEstadoActividadConcursoVentasResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="insProductoConcursoVentas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q76="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" minOccurs="0" name="obsequioConcursoVentaIns" nillable="true" type="q76:ObsequioConcursoVentaIns" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="insProductoConcursoVentasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="insProductoConcursoVentasResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updCampanaZona">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="intCodigoAsignado" type="xs:int" />
+        <xs:element minOccurs="0" name="intValorValidaCampana" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updCampanaZonaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="updCampanaZonaResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

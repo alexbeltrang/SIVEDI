@@ -114,4 +114,16 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ProductosCombo" nillable="true" type="tns:ProductosCombo" />
+  <xs:complexType name="ArrayOfListaPreciosCampana">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ListaPreciosCampana" nillable="true" type="tns:ListaPreciosCampana" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfListaPreciosCampana" nillable="true" type="tns:ArrayOfListaPreciosCampana" />
+  <xs:complexType name="ListaPreciosCampana">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGO" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ListaPreciosCampana" nillable="true" type="tns:ListaPreciosCampana" />
 </xs:schema>

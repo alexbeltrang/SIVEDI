@@ -134,5 +134,47 @@ namespace SIVEDI.WCFGeneral
         List<TipoProductoTabla> getTiposProducto(int intOpcion, string strTipoProducto);
         [OperationContract]
         List<ConcursoVentaTabla> getConcursoFiltro(int intCampanaEntrega, string strNombreConcruso);
+        [OperationContract]
+        List<ZonaConcursoVentas> getZonasConcursoVentas(int intCodigoConcurso);
+        [OperationContract]
+        List<EstadoActividadConcursoVentas> getEstadoActividadConcursoVenta(int intCodigoConcurso);
+        [OperationContract]
+        List<EstadoActividadConcursoVentas> getListaEstadosActiDisponiblesConcursoVentas(int intCodigoConcurso);
+        [OperationContract]
+        List<ZonasAsignadasConcursoVentasTabla> getZonasAsignadasConcuusoVentas(int intOpcion, int intCodigoConcurso, int intCodigoDetalle);
+        [OperationContract]
+        List<CampanasConcursoVentas> getCampanasConcursoVentas(int intCodigoConcurso);
+        [OperationContract]
+        List<ZonasConcursoVentas> getDatosZonaCampanaConcursoVentas(int intCodigoConcurso);
+        [OperationContract]
+        List<PremiosConcursoVentas> getPremiosConcursoVentas(int intCodigoConcurso);
+        [OperationContract]
+        List<ConcursoVentas> getConcursosVentas(int intOpcion, int intCodigoConcurso);
+        [OperationContract]
+        List<TipoClienteConcursoVenta> getTipoClienteConcursosVentas(int intCodigoConcurso);
+        [OperationContract]
+        List<CampanasConcursoVentas> getCampanasAsignadasConcursoVentas(int intCodigoConcurso);
+        [OperationContract]
+        int insConcursoVentas(ConcursoVentas concursoVentas);
+        [OperationContract]
+        int delTipoClienteConcurso(int intCodigoConcurso);
+        [OperationContract]
+        int insTipoClienteConcursoVentas(TipoClienteConcurso tipoClienteConcurso);
+        [OperationContract]
+        int insZonasConcursoVentas(ZonaConcursoVentasIns zonaConcursoVentasIns);
+        [OperationContract]
+        int delTerritorioConcurso(int intCodigoTerritorio);
+        [OperationContract]
+        int iuCampanasConcursoVentas(CampanasConcursoVentasIns campanasConcursoVentasIns);
+        [OperationContract]
+        int delCampanaConcursoVenta(int intCodigoCampana, int intCodigoconcurso);
+        [OperationContract]
+        int iuEstadoActividadConcursoVentas(EstadoActividadIns estadoActividadIns);
+        [OperationContract]
+        int delEstadoActividadConcursoVentas(int intCodigoActividadAsignado);
+        [OperationContract]
+        int insProductoConcursoVentas(ObsequioConcursoVentaIns obsequioConcursoVentaIns);
+        [OperationContract]
+        int updCampanaZona(int intCodigoAsignado, decimal intValorValidaCampana);
     }
 }

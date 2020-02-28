@@ -57,6 +57,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="campanas.cs" />
+    <Compile Include="CampanasConcursoVentas.cs" />
+    <Compile Include="CampanasConcursoVentasIns.cs" />
     <Compile Include="Ciudades.cs" />
     <Compile Include="ClaseResponsable.cs" />
     <Compile Include="Cliente.cs" />
@@ -65,19 +67,24 @@
     <Compile Include="clsConnection.cs" />
     <Compile Include="clsValidar.cs" />
     <Compile Include="CodigoVenta.cs" />
+    <Compile Include="ConcursoVentas.cs" />
     <Compile Include="CupoMinimo.cs" />
     <Compile Include="Departamentos.cs" />
     <Compile Include="DetalleCampanaPedido.cs" />
     <Compile Include="EstadoActividad.cs" />
+    <Compile Include="EstadoActividadConcursoVentas.cs" />
+    <Compile Include="EstadoActividadIns.cs" />
     <Compile Include="EstadoCivil.cs" />
     <Compile Include="formasIngreso.cs" />
     <Compile Include="FormasPago.cs" />
     <Compile Include="GeneraExcel.cs" />
     <Compile Include="Generos.cs" />
     <Compile Include="ListaPrecios.cs" />
+    <Compile Include="ListaPreciosCampana.cs" />
     <Compile Include="LoginUsuario.cs" />
     <Compile Include="moduloHijo.cs" />
     <Compile Include="moduloPadre.cs" />
+    <Compile Include="ObsequioConcursoVentaIns.cs" />
     <Compile Include="OfertaImpulsa.cs" />
     <Compile Include="OfertasSimples.cs" />
     <Compile Include="OperacionesExcel.cs" />
@@ -85,6 +92,7 @@
     <Compile Include="perfiles.cs" />
     <Compile Include="PreliquidaConcursos.cs" />
     <Compile Include="PremiosConcursoVenta.cs" />
+    <Compile Include="PremiosConcursoVentas.cs" />
     <Compile Include="ProductoCodigoVenta.cs" />
     <Compile Include="ProductoListaPrecio.cs" />
     <Compile Include="Productos.cs" />
@@ -102,6 +110,7 @@
     <Compile Include="TABLAS\ClienteConsultaTabla.cs" />
     <Compile Include="TABLAS\CodigoVentaTabla.cs" />
     <Compile Include="TABLAS\CombosTabla.cs" />
+    <Compile Include="TABLAS\ConcursosVentasTabla.cs" />
     <Compile Include="TABLAS\ConcursoVentaTabla.cs" />
     <Compile Include="TABLAS\DepartamentoTabla.cs" />
     <Compile Include="TABLAS\EquivalenciasTabla.cs" />
@@ -130,9 +139,13 @@
     <Compile Include="TABLAS\TipoProductoTabla.cs" />
     <Compile Include="TABLAS\TipoReferenciaTabla.cs" />
     <Compile Include="TABLAS\UnidadesMedidaTabla.cs" />
+    <Compile Include="TABLAS\ZonasAsignadasConcursoVentas.cs" />
+    <Compile Include="TABLAS\ZonasAsignadasConcursoVentasTabla.cs" />
     <Compile Include="TABLAS\ZonasTabla.cs" />
     <Compile Include="Territorios.cs" />
     <Compile Include="TipoCliente.cs" />
+    <Compile Include="TipoClienteConcurso.cs" />
+    <Compile Include="TipoClienteConcursoVenta.cs" />
     <Compile Include="TipoDocumento.cs" />
     <Compile Include="TipoProducto.cs" />
     <Compile Include="TipoReferencia.cs" />
@@ -140,7 +153,10 @@
     <Compile Include="usuarios.cs" />
     <Compile Include="TABLAS\usuariosTabla.cs" />
     <Compile Include="ValorPublicoPedido.cs" />
+    <Compile Include="ZonaConcursoVentas.cs" />
+    <Compile Include="ZonaConcursoVentasIns.cs" />
     <Compile Include="Zonas.cs" />
+    <Compile Include="ZonasConcursoVentas.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

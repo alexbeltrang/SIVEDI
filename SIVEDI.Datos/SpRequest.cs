@@ -600,6 +600,28 @@ namespace SIVEDI.Datos
 
             return storeProcedure;
         }
+        public StoreProcedure getEstadoActividadOfertas(string spName, int intOpcion, int intCodigoOferta)
+        {
+            StoreProcedure storeProcedure = new StoreProcedure();
+            storeProcedure.Nombre = spName;
+            storeProcedure.Parametros = new List<SqlParameter>()
+            {
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NCODIGO_PROMOCION",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = intCodigoOferta
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NOPCION",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = intOpcion
+                }
+            };
+
+            return storeProcedure;
+        }
 
         public StoreProcedure insEstadoActividad(string spName, EstadoActividad estadoActividad)
         {
@@ -1273,6 +1295,45 @@ namespace SIVEDI.Datos
                     ParameterName = "@PI_NOPCION",
                     SqlDbType = System.Data.SqlDbType.Int,
                     Value = intOpcion
+                }
+            };
+
+            return storeProcedure;
+        }
+        public StoreProcedure getZonasEscalaDescuento(string spName, int intOpcion, int intTipoCliente)
+        {
+            StoreProcedure storeProcedure = new StoreProcedure();
+            storeProcedure.Nombre = spName;
+            storeProcedure.Parametros = new List<SqlParameter>()
+            {
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NTIPO_CLIENTE",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = intTipoCliente
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NOPCION",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = intOpcion
+                }
+            };
+
+            return storeProcedure;
+        }
+
+        public StoreProcedure getZonasAsignadasOferta(string spName, int intCodigoOferta)
+        {
+            StoreProcedure storeProcedure = new StoreProcedure();
+            storeProcedure.Nombre = spName;
+            storeProcedure.Parametros = new List<SqlParameter>()
+            {
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NCODIGO_OFERTA",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = intCodigoOferta
                 }
             };
 
@@ -2227,5 +2288,138 @@ namespace SIVEDI.Datos
             return storeProcedure;
         }
 
+        public StoreProcedure getEscala(string spName, int intOpcion, int intCodigoEscala, int intTipoCliente, int intValorPedido, string strZonaAsesor)
+        {
+            StoreProcedure storeProcedure = new StoreProcedure();
+            storeProcedure.Nombre = spName;
+            storeProcedure.Parametros = new List<SqlParameter>()
+            {
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NCODIGO_ESCALA",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = intCodigoEscala
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NTIPO_CLIENTE",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = intTipoCliente
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NVALOR_PEDIDO",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = intValorPedido
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_CZONA_ASESOR",
+                    SqlDbType = System.Data.SqlDbType.VarChar,
+                    Value = strZonaAsesor
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NOPCION",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = intOpcion
+                }
+            };
+
+            return storeProcedure;
+        }
+
+        public StoreProcedure insEscalaDescuento(string spName, EscalaDescuento escalaDescuento)
+        {
+            StoreProcedure storeProcedure = new StoreProcedure();
+            storeProcedure.Nombre = spName;
+            storeProcedure.Parametros = new List<SqlParameter>()
+            {
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NCODIGO_ESCALA",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = escalaDescuento.CODIGO
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NPRECIO_INICIAL",
+                    SqlDbType = System.Data.SqlDbType.Decimal,
+                    Value = escalaDescuento.PRECIO
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_DPORCENTAJE",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = escalaDescuento.DESCUENTO_INICIAL
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_OCLIENTE_NUEVO",
+                    SqlDbType = System.Data.SqlDbType.Bit,
+                    Value = escalaDescuento.ES_PARA_CLIENTE_NUEVO
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NTIPO_CLIENTE",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = escalaDescuento.TIPO_CLIENTE
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_CCODIGO_ZONA",
+                    SqlDbType = System.Data.SqlDbType.VarChar,
+                    Value = escalaDescuento.ZONA
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NPRECIO_FINAL",
+                    SqlDbType = System.Data.SqlDbType.Decimal,
+                    Value = escalaDescuento.PRECIO_FINAL
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PO_NRESULT",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Direction = System.Data.ParameterDirection.Output,
+                    Value = escalaDescuento.CODIGO
+                }
+
+            };
+            return storeProcedure;
+        }
+
+        public StoreProcedure getZonasOferta(string spName, int intCodigoOferta)
+        {
+            StoreProcedure storeProcedure = new StoreProcedure();
+            storeProcedure.Nombre = spName;
+            storeProcedure.Parametros = new List<SqlParameter>()
+            {
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NCODIGO_OFERTA",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = intCodigoOferta
+                }
+            };
+            return storeProcedure;
+        }
+
+        public StoreProcedure delEstadoActividadPromocion(string spName, int intCodigoAsignado)
+        {
+            StoreProcedure storeProcedure = new StoreProcedure();
+            storeProcedure.Nombre = spName;
+            storeProcedure.Parametros = new List<SqlParameter>()
+            {
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NCODIGO_ASIGNADO",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = intCodigoAsignado
+                }
+            };
+
+            return storeProcedure;
+        }
     }
 }

@@ -1173,7 +1173,7 @@ namespace SIVEDI.WCFLiquidacion
              }
              // Dim intValorDescontarNeto As Integer = 0
              // For i = 0 To dttPedidoDefinitivo.Rows.Count - 1
-             // intValorDescontarNeto = dttPedidoDefinitivo.Rows(i).Item("VALOR_ESCALA_UNITARIO") + dttPedidoDefinitivo.Rows(i).Item("VALOR_DESCUENTO_ESPECIAL") + dttPedidoDefinitivo.Rows(i).Item("VALOR_IVA")
+             // intValorDescontarNeto = dttPedidoDefinitivo.    Rows(i).Item("VALOR_ESCALA_UNITARIO") + dttPedidoDefinitivo.Rows(i).Item("VALOR_DESCUENTO_ESPECIAL") + dttPedidoDefinitivo.Rows(i).Item("VALOR_IVA")
              // dttPedidoDefinitivo.Rows(i).Item("PRECIO_NET") = dttPedidoDefinitivo.Rows(i).Item("LPP_NPRECIO_LISTA") - intValorDescontarNeto
              // Next
                                            */

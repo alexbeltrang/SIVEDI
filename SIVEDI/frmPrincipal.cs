@@ -525,37 +525,37 @@ namespace SIVEDI
                         break;
                     }
 
-                //case "ESCALAS DESCUENTO":
-                //    {
-                //        if (clsConnection.blnVentanasEnbebidas)
-                //        {
-                //            frmEscalasDescuento objFormulario = new frmEscalasDescuento();
-                //            cargaFormulario(objFormulario);
-                //        }
-                //        else
-                //        {
-                //            frmEscalasDescuento objFormulario = new frmEscalasDescuento();
-                //            objFormulario.Show();
-                //        }
+                case "ESCALAS DESCUENTO":
+                    {
+                        if (clsConnection.blnVentanasEnbebidas)
+                        {
+                            frmEscalasDescuento objFormulario = new frmEscalasDescuento();
+                            cargaFormulario(objFormulario);
+                        }
+                        else
+                        {
+                            frmEscalasDescuento objFormulario = new frmEscalasDescuento();
+                            objFormulario.Show();
+                        }
 
-                //        break;
-                //    }
+                        break;
+                    }
 
-                //case "OFERTAS SIMPLES":
-                //    {
-                //        if (clsConnection.blnVentanasEnbebidas)
-                //        {
-                //            frmOfertaSimple objFormulario = new frmOfertaSimple();
-                //            cargaFormulario(objFormulario);
-                //        }
-                //        else
-                //        {
-                //            frmOfertaSimple objFormulario = new frmOfertaSimple();
-                //            objFormulario.Show();
-                //        }
+                case "OFERTAS SIMPLES":
+                    {
+                        if (clsConnection.blnVentanasEnbebidas)
+                        {
+                            frmOfertaSimple objFormulario = new frmOfertaSimple();
+                            cargaFormulario(objFormulario);
+                        }
+                        else
+                        {
+                            frmOfertaSimple objFormulario = new frmOfertaSimple();
+                            objFormulario.Show();
+                        }
 
-                //        break;
-                //    }
+                        break;
+                    }
 
                 //case "COMBOS":
                 //    {
@@ -1077,6 +1077,34 @@ namespace SIVEDI
             else
             {
                 frmConcursosVentas objFormulario = new frmConcursosVentas();
+                objFormulario.Show();
+            }
+        }
+
+        private void EscalaDescuentosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (clsConnection.blnVentanasEnbebidas)
+            {
+                frmEscalasDescuento objFormulario = new frmEscalasDescuento();
+                cargaFormulario(objFormulario);
+            }
+            else
+            {
+                frmEscalasDescuento objFormulario = new frmEscalasDescuento();
+                objFormulario.Show();
+            }
+        }
+
+        private void OfertasSimplesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (clsConnection.blnVentanasEnbebidas)
+            {
+                frmOfertaSimple objFormulario = new frmOfertaSimple();
+                cargaFormulario(objFormulario);
+            }
+            else
+            {
+                frmOfertaSimple objFormulario = new frmOfertaSimple();
                 objFormulario.Show();
             }
         }

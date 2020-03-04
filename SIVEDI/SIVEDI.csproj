@@ -248,6 +248,18 @@
     <Compile Include="Mantenimiento\frmConcursosVentas.Designer.cs">
       <DependentUpon>frmConcursosVentas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mantenimiento\frmEscalasDescuento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\frmEscalasDescuento.Designer.cs">
+      <DependentUpon>frmEscalasDescuento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\frmOfertaSimple.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\frmOfertaSimple.Designer.cs">
+      <DependentUpon>frmOfertaSimple.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mantenimiento\frmRegiones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -370,6 +382,12 @@
     <EmbeddedResource Include="Mantenimiento\frmConcursosVentas.resx">
       <DependentUpon>frmConcursosVentas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\frmEscalasDescuento.resx">
+      <DependentUpon>frmEscalasDescuento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\frmOfertaSimple.resx">
+      <DependentUpon>frmOfertaSimple.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mantenimiento\frmRegiones.resx">
       <DependentUpon>frmRegiones.cs</DependentUpon>
     </EmbeddedResource>
@@ -444,9 +462,12 @@
     <None Include="Properties\DataSources\SIVEDI.Clases.LoginUsuario.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.moduloHijo.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.moduloPadre.datasource" />
+    <None Include="Properties\DataSources\SIVEDI.Clases.OfertaImpulsa.datasource" />
+    <None Include="Properties\DataSources\SIVEDI.Clases.OfertasSimples.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.perfiles.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.PremiosConcursoVentas.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.ProductoCodigoVenta.datasource" />
+    <None Include="Properties\DataSources\SIVEDI.Clases.ProductosAplicaOferta.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.ProductosCombo.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.AsignaCodigoVenta.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.campanasTabla.datasource" />
@@ -458,6 +479,8 @@
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.ConcursoVentaTabla.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.DepartamentoTabla.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.EquivalenciasTabla.datasource" />
+    <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.EscalaDescuentoTabla.datasource" />
+    <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.EstadoActividadOfertas.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.EstadoActividadTabla.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.EstadoCivilTabla.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.FormasIngresoTabla.datasource" />
@@ -588,6 +611,9 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\layout_add.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -15,6 +15,42 @@ namespace SIVEDI.ServicioGeneral {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServicioGeneral.IServicioGeneral")]
     public interface IServicioGeneral {
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getZonasOferta", ReplyAction="http://tempuri.org/IServicioGeneral/getZonasOfertaResponse")]
+        SIVEDI.Clases.TABLAS.ZonasTabla[] getZonasOferta(int intCodigoOferta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getZonasOferta", ReplyAction="http://tempuri.org/IServicioGeneral/getZonasOfertaResponse")]
+        System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.ZonasTabla[]> getZonasOfertaAsync(int intCodigoOferta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getEstadoActividadOfertas", ReplyAction="http://tempuri.org/IServicioGeneral/getEstadoActividadOfertasResponse")]
+        SIVEDI.Clases.TABLAS.EstadoActividadOfertas[] getEstadoActividadOfertas(int intOpcion, int intCodigoOferta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getEstadoActividadOfertas", ReplyAction="http://tempuri.org/IServicioGeneral/getEstadoActividadOfertasResponse")]
+        System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.EstadoActividadOfertas[]> getEstadoActividadOfertasAsync(int intOpcion, int intCodigoOferta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getZonasAsignadasOferta", ReplyAction="http://tempuri.org/IServicioGeneral/getZonasAsignadasOfertaResponse")]
+        SIVEDI.Clases.TABLAS.ZonasTabla[] getZonasAsignadasOferta(int intCodigoOferta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getZonasAsignadasOferta", ReplyAction="http://tempuri.org/IServicioGeneral/getZonasAsignadasOfertaResponse")]
+        System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.ZonasTabla[]> getZonasAsignadasOfertaAsync(int intCodigoOferta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getDatosProdImpulsa", ReplyAction="http://tempuri.org/IServicioGeneral/getDatosProdImpulsaResponse")]
+        SIVEDI.Clases.OfertaImpulsa[] getDatosProdImpulsa(int intCodigoOferta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getDatosProdImpulsa", ReplyAction="http://tempuri.org/IServicioGeneral/getDatosProdImpulsaResponse")]
+        System.Threading.Tasks.Task<SIVEDI.Clases.OfertaImpulsa[]> getDatosProdImpulsaAsync(int intCodigoOferta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getlistaOfertas", ReplyAction="http://tempuri.org/IServicioGeneral/getlistaOfertasResponse")]
+        SIVEDI.Clases.OfertasSimples[] getlistaOfertas(int intCodigoOferta, int intOpcion, int intCodigoListaPrecios, int intCodigoEstadoActicliente, string strCodigoZona);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getlistaOfertas", ReplyAction="http://tempuri.org/IServicioGeneral/getlistaOfertasResponse")]
+        System.Threading.Tasks.Task<SIVEDI.Clases.OfertasSimples[]> getlistaOfertasAsync(int intCodigoOferta, int intOpcion, int intCodigoListaPrecios, int intCodigoEstadoActicliente, string strCodigoZona);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/delEstadoActividadPromocion", ReplyAction="http://tempuri.org/IServicioGeneral/delEstadoActividadPromocionResponse")]
+        int delEstadoActividadPromocion(int intCodigoAsignado);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/delEstadoActividadPromocion", ReplyAction="http://tempuri.org/IServicioGeneral/delEstadoActividadPromocionResponse")]
+        System.Threading.Tasks.Task<int> delEstadoActividadPromocionAsync(int intCodigoAsignado);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/ingresaAplicativo", ReplyAction="http://tempuri.org/IServicioGeneral/ingresaAplicativoResponse")]
         SIVEDI.Clases.LoginUsuario ingresaAplicativo(string strUser, string strPassword);
         
@@ -502,6 +538,30 @@ namespace SIVEDI.ServicioGeneral {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/updCampanaZona", ReplyAction="http://tempuri.org/IServicioGeneral/updCampanaZonaResponse")]
         System.Threading.Tasks.Task<int> updCampanaZonaAsync(int intCodigoAsignado, decimal intValorValidaCampana);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getZonasEscalaDescuento", ReplyAction="http://tempuri.org/IServicioGeneral/getZonasEscalaDescuentoResponse")]
+        SIVEDI.Clases.TABLAS.ZonasTabla[] getZonasEscalaDescuento(int intOpcion, int intTipoCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getZonasEscalaDescuento", ReplyAction="http://tempuri.org/IServicioGeneral/getZonasEscalaDescuentoResponse")]
+        System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.ZonasTabla[]> getZonasEscalaDescuentoAsync(int intOpcion, int intTipoCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getEscala", ReplyAction="http://tempuri.org/IServicioGeneral/getEscalaResponse")]
+        SIVEDI.Clases.TABLAS.EscalaDescuentoTabla[] getEscala(int intOpcion, int intCodigoEscala, int intTipoCliente, int intValorPedido, string strZonaAsesor);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getEscala", ReplyAction="http://tempuri.org/IServicioGeneral/getEscalaResponse")]
+        System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.EscalaDescuentoTabla[]> getEscalaAsync(int intOpcion, int intCodigoEscala, int intTipoCliente, int intValorPedido, string strZonaAsesor);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/insEscalaDescuento", ReplyAction="http://tempuri.org/IServicioGeneral/insEscalaDescuentoResponse")]
+        int insEscalaDescuento(SIVEDI.Clases.EscalaDescuento escalaDescuento);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/insEscalaDescuento", ReplyAction="http://tempuri.org/IServicioGeneral/insEscalaDescuentoResponse")]
+        System.Threading.Tasks.Task<int> insEscalaDescuentoAsync(SIVEDI.Clases.EscalaDescuento escalaDescuento);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getlistaProductosAplicaOferta", ReplyAction="http://tempuri.org/IServicioGeneral/getlistaProductosAplicaOfertaResponse")]
+        SIVEDI.Clases.ProductosAplicaOferta[] getlistaProductosAplicaOferta(int intCodigoOferta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getlistaProductosAplicaOferta", ReplyAction="http://tempuri.org/IServicioGeneral/getlistaProductosAplicaOfertaResponse")]
+        System.Threading.Tasks.Task<SIVEDI.Clases.ProductosAplicaOferta[]> getlistaProductosAplicaOfertaAsync(int intCodigoOferta);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -529,6 +589,54 @@ namespace SIVEDI.ServicioGeneral {
         
         public ServicioGeneralClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        public SIVEDI.Clases.TABLAS.ZonasTabla[] getZonasOferta(int intCodigoOferta) {
+            return base.Channel.getZonasOferta(intCodigoOferta);
+        }
+        
+        public System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.ZonasTabla[]> getZonasOfertaAsync(int intCodigoOferta) {
+            return base.Channel.getZonasOfertaAsync(intCodigoOferta);
+        }
+        
+        public SIVEDI.Clases.TABLAS.EstadoActividadOfertas[] getEstadoActividadOfertas(int intOpcion, int intCodigoOferta) {
+            return base.Channel.getEstadoActividadOfertas(intOpcion, intCodigoOferta);
+        }
+        
+        public System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.EstadoActividadOfertas[]> getEstadoActividadOfertasAsync(int intOpcion, int intCodigoOferta) {
+            return base.Channel.getEstadoActividadOfertasAsync(intOpcion, intCodigoOferta);
+        }
+        
+        public SIVEDI.Clases.TABLAS.ZonasTabla[] getZonasAsignadasOferta(int intCodigoOferta) {
+            return base.Channel.getZonasAsignadasOferta(intCodigoOferta);
+        }
+        
+        public System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.ZonasTabla[]> getZonasAsignadasOfertaAsync(int intCodigoOferta) {
+            return base.Channel.getZonasAsignadasOfertaAsync(intCodigoOferta);
+        }
+        
+        public SIVEDI.Clases.OfertaImpulsa[] getDatosProdImpulsa(int intCodigoOferta) {
+            return base.Channel.getDatosProdImpulsa(intCodigoOferta);
+        }
+        
+        public System.Threading.Tasks.Task<SIVEDI.Clases.OfertaImpulsa[]> getDatosProdImpulsaAsync(int intCodigoOferta) {
+            return base.Channel.getDatosProdImpulsaAsync(intCodigoOferta);
+        }
+        
+        public SIVEDI.Clases.OfertasSimples[] getlistaOfertas(int intCodigoOferta, int intOpcion, int intCodigoListaPrecios, int intCodigoEstadoActicliente, string strCodigoZona) {
+            return base.Channel.getlistaOfertas(intCodigoOferta, intOpcion, intCodigoListaPrecios, intCodigoEstadoActicliente, strCodigoZona);
+        }
+        
+        public System.Threading.Tasks.Task<SIVEDI.Clases.OfertasSimples[]> getlistaOfertasAsync(int intCodigoOferta, int intOpcion, int intCodigoListaPrecios, int intCodigoEstadoActicliente, string strCodigoZona) {
+            return base.Channel.getlistaOfertasAsync(intCodigoOferta, intOpcion, intCodigoListaPrecios, intCodigoEstadoActicliente, strCodigoZona);
+        }
+        
+        public int delEstadoActividadPromocion(int intCodigoAsignado) {
+            return base.Channel.delEstadoActividadPromocion(intCodigoAsignado);
+        }
+        
+        public System.Threading.Tasks.Task<int> delEstadoActividadPromocionAsync(int intCodigoAsignado) {
+            return base.Channel.delEstadoActividadPromocionAsync(intCodigoAsignado);
         }
         
         public SIVEDI.Clases.LoginUsuario ingresaAplicativo(string strUser, string strPassword) {
@@ -1177,6 +1285,38 @@ namespace SIVEDI.ServicioGeneral {
         
         public System.Threading.Tasks.Task<int> updCampanaZonaAsync(int intCodigoAsignado, decimal intValorValidaCampana) {
             return base.Channel.updCampanaZonaAsync(intCodigoAsignado, intValorValidaCampana);
+        }
+        
+        public SIVEDI.Clases.TABLAS.ZonasTabla[] getZonasEscalaDescuento(int intOpcion, int intTipoCliente) {
+            return base.Channel.getZonasEscalaDescuento(intOpcion, intTipoCliente);
+        }
+        
+        public System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.ZonasTabla[]> getZonasEscalaDescuentoAsync(int intOpcion, int intTipoCliente) {
+            return base.Channel.getZonasEscalaDescuentoAsync(intOpcion, intTipoCliente);
+        }
+        
+        public SIVEDI.Clases.TABLAS.EscalaDescuentoTabla[] getEscala(int intOpcion, int intCodigoEscala, int intTipoCliente, int intValorPedido, string strZonaAsesor) {
+            return base.Channel.getEscala(intOpcion, intCodigoEscala, intTipoCliente, intValorPedido, strZonaAsesor);
+        }
+        
+        public System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.EscalaDescuentoTabla[]> getEscalaAsync(int intOpcion, int intCodigoEscala, int intTipoCliente, int intValorPedido, string strZonaAsesor) {
+            return base.Channel.getEscalaAsync(intOpcion, intCodigoEscala, intTipoCliente, intValorPedido, strZonaAsesor);
+        }
+        
+        public int insEscalaDescuento(SIVEDI.Clases.EscalaDescuento escalaDescuento) {
+            return base.Channel.insEscalaDescuento(escalaDescuento);
+        }
+        
+        public System.Threading.Tasks.Task<int> insEscalaDescuentoAsync(SIVEDI.Clases.EscalaDescuento escalaDescuento) {
+            return base.Channel.insEscalaDescuentoAsync(escalaDescuento);
+        }
+        
+        public SIVEDI.Clases.ProductosAplicaOferta[] getlistaProductosAplicaOferta(int intCodigoOferta) {
+            return base.Channel.getlistaProductosAplicaOferta(intCodigoOferta);
+        }
+        
+        public System.Threading.Tasks.Task<SIVEDI.Clases.ProductosAplicaOferta[]> getlistaProductosAplicaOfertaAsync(int intCodigoOferta) {
+            return base.Channel.getlistaProductosAplicaOfertaAsync(intCodigoOferta);
         }
     }
 }

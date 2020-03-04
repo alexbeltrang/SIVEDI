@@ -71,6 +71,7 @@
     <Compile Include="CupoMinimo.cs" />
     <Compile Include="Departamentos.cs" />
     <Compile Include="DetalleCampanaPedido.cs" />
+    <Compile Include="EscalaDescuento.cs" />
     <Compile Include="EstadoActividad.cs" />
     <Compile Include="EstadoActividadConcursoVentas.cs" />
     <Compile Include="EstadoActividadIns.cs" />
@@ -114,6 +115,8 @@
     <Compile Include="TABLAS\ConcursoVentaTabla.cs" />
     <Compile Include="TABLAS\DepartamentoTabla.cs" />
     <Compile Include="TABLAS\EquivalenciasTabla.cs" />
+    <Compile Include="TABLAS\EscalaDescuentoTabla.cs" />
+    <Compile Include="TABLAS\EstadoActividadOfertas.cs" />
     <Compile Include="TABLAS\EstadoActividadTabla.cs" />
     <Compile Include="TABLAS\EstadoCivilTabla.cs" />
     <Compile Include="TABLAS\FormasIngresoTabla.cs" />

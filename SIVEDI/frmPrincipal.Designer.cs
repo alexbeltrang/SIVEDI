@@ -415,12 +415,14 @@
             this.EscalaDescuentosToolStripMenuItem.Name = "EscalaDescuentosToolStripMenuItem";
             this.EscalaDescuentosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.EscalaDescuentosToolStripMenuItem.Text = "&Escala Descuentos";
+            this.EscalaDescuentosToolStripMenuItem.Click += new System.EventHandler(this.EscalaDescuentosToolStripMenuItem_Click);
             // 
             // OfertasSimplesToolStripMenuItem
             // 
             this.OfertasSimplesToolStripMenuItem.Name = "OfertasSimplesToolStripMenuItem";
             this.OfertasSimplesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.OfertasSimplesToolStripMenuItem.Text = "O&fertas Simples";
+            this.OfertasSimplesToolStripMenuItem.Click += new System.EventHandler(this.OfertasSimplesToolStripMenuItem_Click);
             // 
             // CombosToolStripMenuItem
             // 
@@ -446,14 +448,14 @@
             // DeVentasToolStripMenuItem
             // 
             this.DeVentasToolStripMenuItem.Name = "DeVentasToolStripMenuItem";
-            this.DeVentasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.DeVentasToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.DeVentasToolStripMenuItem.Text = "&Ventas";
             this.DeVentasToolStripMenuItem.Click += new System.EventHandler(this.DeVentasToolStripMenuItem_Click);
             // 
             // ReferidosToolStripMenuItem
             // 
             this.ReferidosToolStripMenuItem.Name = "ReferidosToolStripMenuItem";
-            this.ReferidosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ReferidosToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.ReferidosToolStripMenuItem.Text = "&Referidos";
             // 
             // FleteXCiudadToolStripMenuItem

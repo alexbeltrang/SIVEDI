@@ -536,12 +536,12 @@ namespace SIVEDI.Mantenimiento
                 else
                     zonaConcursoVentasIns.ES_ACUMULADO = false;
 
-                zonaConcursoVentasIns.CODIGO_ZONA = strNombrezona.Trim().ToUpper();
                 zonaConcursoVentasIns.PORCENTAJE_COLCHON = Convert.ToDecimal(txtProcentajeColchon.Text);
                 zonaConcursoVentasIns.CODIGO_CONCURSO = clsConnection.intCodigoConcursoVentas;
 
                 if (intCodigoDetallezona != 0)
                 {
+                    zonaConcursoVentasIns.CODIGO_ZONA = strNombrezona.Trim().ToUpper();
                     zonaConcursoVentasIns.CODIGO_ZONA_CONCURSO_VENTA = intCodigoDetallezona;
                     strResultado = ServicioGeneral.insZonasConcursoVentas(zonaConcursoVentasIns);
 
@@ -561,7 +561,10 @@ namespace SIVEDI.Mantenimiento
                     foreach (ZonaConcursoVentas zonaConcurso in chlZonas.CheckedItems)
                     {
                         if (zonaConcurso.CODIGO != "ZZZZ")
+                        {
+                            zonaConcursoVentasIns.CODIGO_ZONA = zonaConcurso.CODIGO;
                             ServicioGeneral.insZonasConcursoVentas(zonaConcursoVentasIns);
+                        }
                     }
 
                     limpiaCamposZona();
@@ -581,7 +584,7 @@ namespace SIVEDI.Mantenimiento
             if (e.RowIndex > -1)
             {
                 intCodigoDetallezona = Convert.ToInt32(dtgZonasAsignadas.Rows[e.RowIndex].Cells["CODIGO"].Value);
-                strNombrezona = Convert.ToString(dtgZonasAsignadas.Rows[e.RowIndex].Cells["NOMBRE"].Value);
+                strNombrezona = Convert.ToString(dtgZonasAsignadas.Rows[e.RowIndex].Cells["CODIGO_ZONA"].Value);
                 if (Convert.ToString(dtgZonasAsignadas.Rows[e.RowIndex].Cells["ES_ACUM"].Value) == "SI")
                 {
                     rdbSiAcumulado.Checked = true;

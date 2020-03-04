@@ -176,5 +176,25 @@ namespace SIVEDI.WCFGeneral
         int insProductoConcursoVentas(ObsequioConcursoVentaIns obsequioConcursoVentaIns);
         [OperationContract]
         int updCampanaZona(int intCodigoAsignado, decimal intValorValidaCampana);
+        [OperationContract]
+        List<ZonasTabla> getZonasEscalaDescuento(int intOpcion, int intTipoCliente);
+        [OperationContract]
+        List<EscalaDescuentoTabla> getEscala(int intOpcion, int intCodigoEscala, int intTipoCliente, int intValorPedido, string strZonaAsesor);
+        [OperationContract]
+        int insEscalaDescuento(EscalaDescuento escalaDescuento);
+        [OperationContract]
+        List<ProductosAplicaOferta> getlistaProductosAplicaOferta(int intCodigoOferta);
+        [OperationContract]
+        List<ZonasTabla> getZonasOferta(int intCodigoOferta);
+        [OperationContract]
+        List<EstadoActividadOfertas> getEstadoActividadOfertas(int intOpcion, int intCodigoOferta);
+        [OperationContract]
+        List<ZonasTabla> getZonasAsignadasOferta(int intCodigoOferta);
+        [OperationContract]
+        List<OfertaImpulsa> getDatosProdImpulsa(int intCodigoOferta);
+        [OperationContract]
+        List<OfertasSimples> getlistaOfertas(int intCodigoOferta, int intOpcion, int intCodigoListaPrecios, int intCodigoEstadoActicliente, string strCodigoZona);
+        [OperationContract]
+        int delEstadoActividadPromocion(int intCodigoAsignado);
     }
 }

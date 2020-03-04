@@ -4,10 +4,46 @@
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost:65358/ServicioGeneral.svc?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost:65358/ServicioGeneral.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://localhost:65358/ServicioGeneral.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" />
-      <xsd:import schemaLocation="http://localhost:65358/ServicioGeneral.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" />
+      <xsd:import schemaLocation="http://localhost:65358/ServicioGeneral.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SIVEDI.Clases.TABLAS" />
+      <xsd:import schemaLocation="http://localhost:65358/ServicioGeneral.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SIVEDI.Clases" />
     </xsd:schema>
   </wsdl:types>
+  <wsdl:message name="IServicioGeneral_getZonasOferta_InputMessage">
+    <wsdl:part name="parameters" element="tns:getZonasOferta" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_getZonasOferta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getZonasOfertaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_getEstadoActividadOfertas_InputMessage">
+    <wsdl:part name="parameters" element="tns:getEstadoActividadOfertas" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_getEstadoActividadOfertas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getEstadoActividadOfertasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_getZonasAsignadasOferta_InputMessage">
+    <wsdl:part name="parameters" element="tns:getZonasAsignadasOferta" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_getZonasAsignadasOferta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getZonasAsignadasOfertaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_getDatosProdImpulsa_InputMessage">
+    <wsdl:part name="parameters" element="tns:getDatosProdImpulsa" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_getDatosProdImpulsa_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getDatosProdImpulsaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_getlistaOfertas_InputMessage">
+    <wsdl:part name="parameters" element="tns:getlistaOfertas" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_getlistaOfertas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getlistaOfertasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_delEstadoActividadPromocion_InputMessage">
+    <wsdl:part name="parameters" element="tns:delEstadoActividadPromocion" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_delEstadoActividadPromocion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:delEstadoActividadPromocionResponse" />
+  </wsdl:message>
   <wsdl:message name="IServicioGeneral_ingresaAplicativo_InputMessage">
     <wsdl:part name="parameters" element="tns:ingresaAplicativo" />
   </wsdl:message>
@@ -494,7 +530,55 @@
   <wsdl:message name="IServicioGeneral_updCampanaZona_OutputMessage">
     <wsdl:part name="parameters" element="tns:updCampanaZonaResponse" />
   </wsdl:message>
+  <wsdl:message name="IServicioGeneral_getZonasEscalaDescuento_InputMessage">
+    <wsdl:part name="parameters" element="tns:getZonasEscalaDescuento" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_getZonasEscalaDescuento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getZonasEscalaDescuentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_getEscala_InputMessage">
+    <wsdl:part name="parameters" element="tns:getEscala" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_getEscala_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getEscalaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_insEscalaDescuento_InputMessage">
+    <wsdl:part name="parameters" element="tns:insEscalaDescuento" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_insEscalaDescuento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insEscalaDescuentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_getlistaProductosAplicaOferta_InputMessage">
+    <wsdl:part name="parameters" element="tns:getlistaProductosAplicaOferta" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_getlistaProductosAplicaOferta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getlistaProductosAplicaOfertaResponse" />
+  </wsdl:message>
   <wsdl:portType name="IServicioGeneral">
+    <wsdl:operation name="getZonasOferta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioGeneral/getZonasOferta" message="tns:IServicioGeneral_getZonasOferta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioGeneral/getZonasOfertaResponse" message="tns:IServicioGeneral_getZonasOferta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getEstadoActividadOfertas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioGeneral/getEstadoActividadOfertas" message="tns:IServicioGeneral_getEstadoActividadOfertas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioGeneral/getEstadoActividadOfertasResponse" message="tns:IServicioGeneral_getEstadoActividadOfertas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getZonasAsignadasOferta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioGeneral/getZonasAsignadasOferta" message="tns:IServicioGeneral_getZonasAsignadasOferta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioGeneral/getZonasAsignadasOfertaResponse" message="tns:IServicioGeneral_getZonasAsignadasOferta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getDatosProdImpulsa">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioGeneral/getDatosProdImpulsa" message="tns:IServicioGeneral_getDatosProdImpulsa_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioGeneral/getDatosProdImpulsaResponse" message="tns:IServicioGeneral_getDatosProdImpulsa_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getlistaOfertas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioGeneral/getlistaOfertas" message="tns:IServicioGeneral_getlistaOfertas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioGeneral/getlistaOfertasResponse" message="tns:IServicioGeneral_getlistaOfertas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="delEstadoActividadPromocion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioGeneral/delEstadoActividadPromocion" message="tns:IServicioGeneral_delEstadoActividadPromocion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioGeneral/delEstadoActividadPromocionResponse" message="tns:IServicioGeneral_delEstadoActividadPromocion_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="ingresaAplicativo">
       <wsdl:input wsaw:Action="http://tempuri.org/IServicioGeneral/ingresaAplicativo" message="tns:IServicioGeneral_ingresaAplicativo_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServicioGeneral/ingresaAplicativoResponse" message="tns:IServicioGeneral_ingresaAplicativo_OutputMessage" />
@@ -819,9 +903,79 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IServicioGeneral/updCampanaZona" message="tns:IServicioGeneral_updCampanaZona_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServicioGeneral/updCampanaZonaResponse" message="tns:IServicioGeneral_updCampanaZona_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="getZonasEscalaDescuento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioGeneral/getZonasEscalaDescuento" message="tns:IServicioGeneral_getZonasEscalaDescuento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioGeneral/getZonasEscalaDescuentoResponse" message="tns:IServicioGeneral_getZonasEscalaDescuento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getEscala">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioGeneral/getEscala" message="tns:IServicioGeneral_getEscala_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioGeneral/getEscalaResponse" message="tns:IServicioGeneral_getEscala_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insEscalaDescuento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioGeneral/insEscalaDescuento" message="tns:IServicioGeneral_insEscalaDescuento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioGeneral/insEscalaDescuentoResponse" message="tns:IServicioGeneral_insEscalaDescuento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getlistaProductosAplicaOferta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioGeneral/getlistaProductosAplicaOferta" message="tns:IServicioGeneral_getlistaProductosAplicaOferta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioGeneral/getlistaProductosAplicaOfertaResponse" message="tns:IServicioGeneral_getlistaProductosAplicaOferta_OutputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IServicioGeneral" type="tns:IServicioGeneral">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getZonasOferta">
+      <soap:operation soapAction="http://tempuri.org/IServicioGeneral/getZonasOferta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEstadoActividadOfertas">
+      <soap:operation soapAction="http://tempuri.org/IServicioGeneral/getEstadoActividadOfertas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getZonasAsignadasOferta">
+      <soap:operation soapAction="http://tempuri.org/IServicioGeneral/getZonasAsignadasOferta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDatosProdImpulsa">
+      <soap:operation soapAction="http://tempuri.org/IServicioGeneral/getDatosProdImpulsa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getlistaOfertas">
+      <soap:operation soapAction="http://tempuri.org/IServicioGeneral/getlistaOfertas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delEstadoActividadPromocion">
+      <soap:operation soapAction="http://tempuri.org/IServicioGeneral/delEstadoActividadPromocion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="ingresaAplicativo">
       <soap:operation soapAction="http://tempuri.org/IServicioGeneral/ingresaAplicativo" style="document" />
       <wsdl:input>
@@ -1544,6 +1698,42 @@
     </wsdl:operation>
     <wsdl:operation name="updCampanaZona">
       <soap:operation soapAction="http://tempuri.org/IServicioGeneral/updCampanaZona" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getZonasEscalaDescuento">
+      <soap:operation soapAction="http://tempuri.org/IServicioGeneral/getZonasEscalaDescuento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEscala">
+      <soap:operation soapAction="http://tempuri.org/IServicioGeneral/getEscala" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insEscalaDescuento">
+      <soap:operation soapAction="http://tempuri.org/IServicioGeneral/insEscalaDescuento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getlistaProductosAplicaOferta">
+      <soap:operation soapAction="http://tempuri.org/IServicioGeneral/getlistaProductosAplicaOferta" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

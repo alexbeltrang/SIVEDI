@@ -270,6 +270,15 @@ namespace SIVEDI.WCFGeneral
             return ListEstadoActividadTabla;
         }
 
+        public List<EstadoActividadOfertas> getEstadoActividadOfertas(int intOpcion, int intCodigoOferta)
+        {
+            List<EstadoActividadOfertas> ListEstadoActividadOfertas = new List<EstadoActividadOfertas>();
+            SpRequest spRequestUsuario = new SpRequest();
+            DataDB data = new DataDB("SIVEDIBDEntities");
+            StoreProcedure SP = spRequestUsuario.getEstadoActividadOfertas("SPR_GET_ESTADO_ACTI_OFERTA", intOpcion, intCodigoOferta);
+            ListEstadoActividadOfertas = data.ExecuteQueryList<EstadoActividadOfertas>(SP);
+            return ListEstadoActividadOfertas;
+        }
         public EstadoActividad getEstadoActividadCamposTabla(int intOpcion, int intCodigoEstadoActividad)
         {
             EstadoActividad ListEstadoActividadCamposTabla = new EstadoActividad();
@@ -488,6 +497,36 @@ namespace SIVEDI.WCFGeneral
             ListZonasTabla = data.ExecuteQueryList<ZonasTabla>(SP);
             return ListZonasTabla;
         }
+
+        public List<ZonasTabla> getZonasEscalaDescuento(int intOpcion, int intTipoCliente)
+        {
+            List<ZonasTabla> ListZonasTabla = new List<ZonasTabla>();
+            SpRequest spRequestUsuario = new SpRequest();
+            DataDB data = new DataDB("SIVEDIBDEntities");
+            StoreProcedure SP = spRequestUsuario.getZonasEscalaDescuento("SPR_GET_ZONA_ESCALA_DESCUENTO", intOpcion, intTipoCliente);
+            ListZonasTabla = data.ExecuteQueryList<ZonasTabla>(SP);
+            return ListZonasTabla;
+        }
+
+        public List<ZonasTabla> getZonasOferta(int intCodigoOferta)
+        {
+            List<ZonasTabla> PedidosZonasTabla = new List<ZonasTabla>();
+            SpRequest spRequest = new SpRequest();
+            DataDB data = new DataDB("SIVEDIBDEntities");
+            StoreProcedure SP = spRequest.getZonasOferta("SPR_GET_ZONAS_OFERTA", intCodigoOferta);
+            PedidosZonasTabla = data.ExecuteQueryList<ZonasTabla>(SP);
+            return PedidosZonasTabla;
+        }
+
+        public List<ZonasTabla> getZonasAsignadasOferta(int intCodigoOferta)
+        {
+            List<ZonasTabla> PedidosZonasTabla = new List<ZonasTabla>();
+            SpRequest spRequest = new SpRequest();
+            DataDB data = new DataDB("SIVEDIBDEntities");
+            StoreProcedure SP = spRequest.getZonasAsignadasOferta("SPR_GET_ZONAS_ASIGNADAS_OFERTA", intCodigoOferta);
+            PedidosZonasTabla = data.ExecuteQueryList<ZonasTabla>(SP);
+            return PedidosZonasTabla;
+        }
         public int insZonas(Zonas zonas)
         {
             SpRequest spRequestUsuario = new SpRequest();
@@ -667,6 +706,15 @@ namespace SIVEDI.WCFGeneral
             return ListProductoCodigoVenta;
         }
 
+        public List<OfertaImpulsa> getDatosProdImpulsa(int intCodigoOferta)
+        {
+            List<OfertaImpulsa> PedidosOfertaImpulsa = new List<OfertaImpulsa>();
+            sp_Liquidacion spRequestPedidos = new sp_Liquidacion();
+            DataDB data = new DataDB("SIVEDIBDEntities");
+            StoreProcedure SP = spRequestPedidos.getDatosProdImpulsa("SPR_GET_PROD_OFERTA_IMPULSA", intCodigoOferta);
+            PedidosOfertaImpulsa = data.ExecuteQueryList<OfertaImpulsa>(SP);
+            return PedidosOfertaImpulsa;
+        }
 
         public int insProducto(Productos productos)
         {
@@ -934,9 +982,57 @@ namespace SIVEDI.WCFGeneral
             return codigoProductoLista;
         }
 
+        public List<EscalaDescuentoTabla> getEscala(int intOpcion, int intCodigoEscala, int intTipoCliente, int intValorPedido, string strZonaAsesor)
+        {
+            List<EscalaDescuentoTabla> ListEscalaDescuento= new List<EscalaDescuentoTabla>();
+            SpRequest spRequestUsuario = new SpRequest();
+            DataDB data = new DataDB("SIVEDIBDEntities");
+
+            StoreProcedure SP = spRequestUsuario.getEscala("SPR_GET_ESCALA_DESCUENTO", intOpcion, intCodigoEscala, intTipoCliente, intValorPedido, strZonaAsesor);
+            ListEscalaDescuento = data.ExecuteQueryList<EscalaDescuentoTabla>(SP);
+
+            return ListEscalaDescuento;
+        }
+
+        public int insEscalaDescuento(EscalaDescuento escalaDescuento)
+        {
+            SpRequest spRequest = new SpRequest();
+            DataDB data = new DataDB("SIVEDIBDEntities");
+
+            StoreProcedure SP = spRequest.insEscalaDescuento("SPR_IU_ESCALA_DESCUENTO", escalaDescuento);
+            int codigo = data.ExecuteInsert(SP, "PO_NRESULT");
+            return codigo;
+        }
         #endregion
+        public List<ProductosAplicaOferta> getlistaProductosAplicaOferta(int intCodigoOferta)
+        {
+            List<ProductosAplicaOferta> PedidosProductosAplicaOferta = new List<ProductosAplicaOferta>();
+            sp_Liquidacion spRequestPedidos = new sp_Liquidacion();
+            DataDB data = new DataDB("SIVEDIBDEntities");
+            StoreProcedure SP = spRequestPedidos.getDatosProdImpulsa("SPR_GET_PRODUCTO_APLICA_OFERTA", intCodigoOferta);
+            PedidosProductosAplicaOferta = data.ExecuteQueryList<ProductosAplicaOferta>(SP);
+            return PedidosProductosAplicaOferta;
+        }
 
+        public List<OfertasSimples> getlistaOfertas(int intCodigoOferta, int intOpcion, int intCodigoListaPrecios, int intCodigoEstadoActicliente, string strCodigoZona)
+        {
+            List<OfertasSimples> PedidosOfertasSimples = new List<OfertasSimples>();
+            sp_Liquidacion spRequestPedidos = new sp_Liquidacion();
+            DataDB data = new DataDB("SIVEDIBDEntities");
+            StoreProcedure SP = spRequestPedidos.getlistaOfertas("SPR_GET_OFERTA_SIMPLE", intCodigoOferta, intOpcion, intCodigoListaPrecios, intCodigoEstadoActicliente, strCodigoZona);
+            PedidosOfertasSimples = data.ExecuteQueryList<OfertasSimples>(SP);
+            return PedidosOfertasSimples;
+        }
 
+        public int delEstadoActividadPromocion(int intCodigoAsignado)
+        {
+            SpRequest spRequest = new SpRequest();
+            DataDB data = new DataDB("SIVEDIBDEntities");
+
+            StoreProcedure SP = spRequest.delEstadoActividadPromocion("SPR_DEL_ESTADO_ACTI_OFERTA", intCodigoAsignado);
+            int codigoProductoLista = data.ExecuteUD(SP);
+            return codigoProductoLista;
+        }
     }
 
 }

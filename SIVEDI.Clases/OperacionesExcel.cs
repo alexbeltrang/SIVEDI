@@ -68,7 +68,7 @@ namespace SIVEDI.Clases
 
                                     if (rowIndex == 0) //Asumo que la primera fila contiene los titlos:
                                     {
-                                        for (int i = 0; i < 2; i++)
+                                        for (int i = 0; i < 1; i++)
                                         {
                                             ICell cell2 = null;
                                             if (i == 0) { cell2 = row2.GetCell(cell.ColumnIndex); }

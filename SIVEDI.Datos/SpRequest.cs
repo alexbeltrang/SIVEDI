@@ -2421,5 +2421,193 @@ namespace SIVEDI.Datos
 
             return storeProcedure;
         }
+
+        public StoreProcedure iuOfertaSimple(string spName, OfertasSimples ofertasSimples)
+        {
+            StoreProcedure storeProcedure = new StoreProcedure();
+            storeProcedure.Nombre = spName;
+            storeProcedure.Parametros = new List<SqlParameter>()
+            {
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NCODIGO_ID",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = ofertasSimples.CODIGO
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_CNOMBRE_OFERTA",
+                    SqlDbType = System.Data.SqlDbType.VarChar,
+                    Value = ofertasSimples.NOMBRE
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NFACTOR_CONVERSION",
+                    SqlDbType = System.Data.SqlDbType.Decimal,
+                    Value = ofertasSimples.FACTOR_CONVERSION
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_OES_CANTIDAD",
+                    SqlDbType = System.Data.SqlDbType.Bit,
+                    Value = ofertasSimples.ES_POR_CANTIDAD
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_OES_MONTO",
+                    SqlDbType = System.Data.SqlDbType.Bit,
+                    Value = ofertasSimples.ES_POR_MONTO
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_OES_OBSEQUIO",
+                    SqlDbType = System.Data.SqlDbType.Bit,
+                    Value = ofertasSimples.ES_OBSEQUIO
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_OES_DESCUENTO",
+                    SqlDbType = System.Data.SqlDbType.Bit,
+                    Value = ofertasSimples.ES_DESCUENTO
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NCODIGO_LISTA_PRECIOS",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = ofertasSimples.CODIGO_LISTA_PRECIOS
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_OESTADO",
+                    SqlDbType = System.Data.SqlDbType.Bit,
+                    Value = ofertasSimples.ESTADO
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_OES_PROMOCION",
+                    SqlDbType = System.Data.SqlDbType.Bit,
+                    Value = ofertasSimples.ES_PROMOCION
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NMONTO",
+                    SqlDbType = System.Data.SqlDbType.Decimal,
+                    Value = ofertasSimples.VALOR_MONTO
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PO_NEFECTIVO",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Direction = System.Data.ParameterDirection.Output,
+                    Value = ofertasSimples.CODIGO
+                }
+
+            };
+            return storeProcedure;
+        }
+
+        public StoreProcedure getlistaOfertaFiltro(string spName, int intCodigoLista, string strNombre)
+        {
+            StoreProcedure storeProcedure = new StoreProcedure();
+            storeProcedure.Nombre = spName;
+            storeProcedure.Parametros = new List<SqlParameter>()
+            {
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NCODIGO_LISTA_PRECIOS",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = intCodigoLista
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_CNOMBRE_OFERTA",
+                    SqlDbType = System.Data.SqlDbType.VarChar,
+                    Value = strNombre
+                }
+            };
+            return storeProcedure;
+        }
+
+        public StoreProcedure iuProdImpOfertaSimple(string spName, ProductoOfertaSimple productoOfertaSimple)
+        {
+            StoreProcedure storeProcedure = new StoreProcedure();
+            storeProcedure.Nombre = spName;
+            storeProcedure.Parametros = new List<SqlParameter>()
+            {
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NCODIGO_LISTA_PROD",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = productoOfertaSimple.CodigoProducto
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NCODIGO_OFERTA",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = productoOfertaSimple.CodigoOfetra
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PO_NRESULT",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Direction = System.Data.ParameterDirection.Output,
+                    Value = productoOfertaSimple.CodigoOfetra
+                }
+            };
+            return storeProcedure;
+        }
+
+        public StoreProcedure iuProdAplicaOfertaSimple(string spName, ProductoAplicaOfertaSimple productoAplicaOfertaSimple)
+        {
+            StoreProcedure storeProcedure = new StoreProcedure();
+            storeProcedure.Nombre = spName;
+            storeProcedure.Parametros = new List<SqlParameter>()
+            {
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NCODIGO_ENTREGA",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = productoAplicaOfertaSimple.CodigoEntrega
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NCODIGO_PRODUCTO",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = productoAplicaOfertaSimple.CodigoProducto
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NCODIGO_PROMOCION",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = productoAplicaOfertaSimple.CodigoOferta
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NPORCENTAJE",
+                    SqlDbType = System.Data.SqlDbType.Decimal,
+                    Value = productoAplicaOfertaSimple.Porcentaje
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NUNIDADES_APLICA",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = productoAplicaOfertaSimple.UnidadesAplica
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PI_NVALOR_ENTREGA",
+                    SqlDbType = System.Data.SqlDbType.Decimal,
+                    Value = productoAplicaOfertaSimple.ValorEntrega
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@PO_NRESULT",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Direction = System.Data.ParameterDirection.Output,
+                    Value = productoAplicaOfertaSimple.CodigoEntrega
+                }
+            };
+            return storeProcedure;
+        }
     }
 }

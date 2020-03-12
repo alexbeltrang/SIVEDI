@@ -44,6 +44,30 @@
   <wsdl:message name="IServicioGeneral_delEstadoActividadPromocion_OutputMessage">
     <wsdl:part name="parameters" element="tns:delEstadoActividadPromocionResponse" />
   </wsdl:message>
+  <wsdl:message name="IServicioGeneral_iuOfertaSimple_InputMessage">
+    <wsdl:part name="parameters" element="tns:iuOfertaSimple" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_iuOfertaSimple_OutputMessage">
+    <wsdl:part name="parameters" element="tns:iuOfertaSimpleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_getlistaOfertaFiltro_InputMessage">
+    <wsdl:part name="parameters" element="tns:getlistaOfertaFiltro" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_getlistaOfertaFiltro_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getlistaOfertaFiltroResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_iuProdImpOfertaSimple_InputMessage">
+    <wsdl:part name="parameters" element="tns:iuProdImpOfertaSimple" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_iuProdImpOfertaSimple_OutputMessage">
+    <wsdl:part name="parameters" element="tns:iuProdImpOfertaSimpleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_iuProdAplicaOfertaSimple_InputMessage">
+    <wsdl:part name="parameters" element="tns:iuProdAplicaOfertaSimple" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGeneral_iuProdAplicaOfertaSimple_OutputMessage">
+    <wsdl:part name="parameters" element="tns:iuProdAplicaOfertaSimpleResponse" />
+  </wsdl:message>
   <wsdl:message name="IServicioGeneral_ingresaAplicativo_InputMessage">
     <wsdl:part name="parameters" element="tns:ingresaAplicativo" />
   </wsdl:message>
@@ -579,6 +603,22 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IServicioGeneral/delEstadoActividadPromocion" message="tns:IServicioGeneral_delEstadoActividadPromocion_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServicioGeneral/delEstadoActividadPromocionResponse" message="tns:IServicioGeneral_delEstadoActividadPromocion_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="iuOfertaSimple">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioGeneral/iuOfertaSimple" message="tns:IServicioGeneral_iuOfertaSimple_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioGeneral/iuOfertaSimpleResponse" message="tns:IServicioGeneral_iuOfertaSimple_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getlistaOfertaFiltro">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioGeneral/getlistaOfertaFiltro" message="tns:IServicioGeneral_getlistaOfertaFiltro_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioGeneral/getlistaOfertaFiltroResponse" message="tns:IServicioGeneral_getlistaOfertaFiltro_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="iuProdImpOfertaSimple">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioGeneral/iuProdImpOfertaSimple" message="tns:IServicioGeneral_iuProdImpOfertaSimple_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioGeneral/iuProdImpOfertaSimpleResponse" message="tns:IServicioGeneral_iuProdImpOfertaSimple_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="iuProdAplicaOfertaSimple">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioGeneral/iuProdAplicaOfertaSimple" message="tns:IServicioGeneral_iuProdAplicaOfertaSimple_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioGeneral/iuProdAplicaOfertaSimpleResponse" message="tns:IServicioGeneral_iuProdAplicaOfertaSimple_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="ingresaAplicativo">
       <wsdl:input wsaw:Action="http://tempuri.org/IServicioGeneral/ingresaAplicativo" message="tns:IServicioGeneral_ingresaAplicativo_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServicioGeneral/ingresaAplicativoResponse" message="tns:IServicioGeneral_ingresaAplicativo_OutputMessage" />
@@ -969,6 +1009,42 @@
     </wsdl:operation>
     <wsdl:operation name="delEstadoActividadPromocion">
       <soap:operation soapAction="http://tempuri.org/IServicioGeneral/delEstadoActividadPromocion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="iuOfertaSimple">
+      <soap:operation soapAction="http://tempuri.org/IServicioGeneral/iuOfertaSimple" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getlistaOfertaFiltro">
+      <soap:operation soapAction="http://tempuri.org/IServicioGeneral/getlistaOfertaFiltro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="iuProdImpOfertaSimple">
+      <soap:operation soapAction="http://tempuri.org/IServicioGeneral/iuProdImpOfertaSimple" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="iuProdAplicaOfertaSimple">
+      <soap:operation soapAction="http://tempuri.org/IServicioGeneral/iuProdAplicaOfertaSimple" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

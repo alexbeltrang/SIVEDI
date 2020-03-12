@@ -254,6 +254,12 @@
     <Compile Include="Mantenimiento\frmEscalasDescuento.Designer.cs">
       <DependentUpon>frmEscalasDescuento.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mantenimiento\frmAdminOfertaSimple.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\frmAdminOfertaSimple.Designer.cs">
+      <DependentUpon>frmAdminOfertaSimple.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mantenimiento\frmOfertaSimple.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -385,6 +391,9 @@
     <EmbeddedResource Include="Mantenimiento\frmEscalasDescuento.resx">
       <DependentUpon>frmEscalasDescuento.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\frmAdminOfertaSimple.resx">
+      <DependentUpon>frmAdminOfertaSimple.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mantenimiento\frmOfertaSimple.resx">
       <DependentUpon>frmOfertaSimple.cs</DependentUpon>
     </EmbeddedResource>
@@ -489,6 +498,7 @@
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.ListaPreciosProducto.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.ListaPreciosProductoComboBox.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.ListaPreciosTabla.datasource" />
+    <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.OfertaSimpleNombre.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.PaisTabla.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.PedidosClienteTabla.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.ProductoPredidoTablas.datasource" />
@@ -508,6 +518,7 @@
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.UnidasMedidaTabla.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.usuariosTabla.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.ZonasAsignadasConcursoVentasTabla.datasource" />
+    <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.ZonasOfertaSimpleTabla.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TABLAS.ZonasTabla.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TipoCliente.datasource" />
     <None Include="Properties\DataSources\SIVEDI.Clases.TipoClienteConcursoVenta.datasource" />

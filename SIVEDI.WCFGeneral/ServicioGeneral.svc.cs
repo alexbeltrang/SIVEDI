@@ -518,14 +518,14 @@ namespace SIVEDI.WCFGeneral
             return PedidosZonasTabla;
         }
 
-        public List<ZonasTabla> getZonasAsignadasOferta(int intCodigoOferta)
+        public List<ZonasOfertaSimpleTabla> getZonasAsignadasOferta(int intCodigoOferta)
         {
-            List<ZonasTabla> PedidosZonasTabla = new List<ZonasTabla>();
+            List<ZonasOfertaSimpleTabla> PedidosZonasOfertaSimpleTabla = new List<ZonasOfertaSimpleTabla>();
             SpRequest spRequest = new SpRequest();
             DataDB data = new DataDB("SIVEDIBDEntities");
             StoreProcedure SP = spRequest.getZonasAsignadasOferta("SPR_GET_ZONAS_ASIGNADAS_OFERTA", intCodigoOferta);
-            PedidosZonasTabla = data.ExecuteQueryList<ZonasTabla>(SP);
-            return PedidosZonasTabla;
+            PedidosZonasOfertaSimpleTabla = data.ExecuteQueryList<ZonasOfertaSimpleTabla>(SP);
+            return PedidosZonasOfertaSimpleTabla;
         }
         public int insZonas(Zonas zonas)
         {
@@ -1032,6 +1032,46 @@ namespace SIVEDI.WCFGeneral
             StoreProcedure SP = spRequest.delEstadoActividadPromocion("SPR_DEL_ESTADO_ACTI_OFERTA", intCodigoAsignado);
             int codigoProductoLista = data.ExecuteUD(SP);
             return codigoProductoLista;
+        }
+
+        public int iuOfertaSimple(OfertasSimples ofertasSimples)
+        {
+            SpRequest spRequest = new SpRequest();
+            DataDB data = new DataDB("SIVEDIBDEntities");
+
+            StoreProcedure SP = spRequest.iuOfertaSimple("SPR_IU_PROMOCION_SIMPLE", ofertasSimples);
+            int codigo = data.ExecuteInsert(SP, "PO_NEFECTIVO");
+            return codigo;
+        }
+
+        public List<OfertaSimpleNombre> getlistaOfertaFiltro(int intCodigoLista, string strNombre)
+        {
+            List<OfertaSimpleNombre> PedidosOfertaSimpleNombre = new List<OfertaSimpleNombre>();
+            SpRequest spRequest= new SpRequest();
+            DataDB data = new DataDB("SIVEDIBDEntities");
+            StoreProcedure SP = spRequest.getlistaOfertaFiltro("SPR_GET_OFERTA_SIMPLE_NOMBRE", intCodigoLista, strNombre);
+            PedidosOfertaSimpleNombre = data.ExecuteQueryList<OfertaSimpleNombre>(SP);
+            return PedidosOfertaSimpleNombre;
+        }
+
+        public int iuProdImpOfertaSimple(ProductoOfertaSimple productoOfertaSimple)
+        {
+            SpRequest spRequestUsuario = new SpRequest();
+            DataDB data = new DataDB("SIVEDIBDEntities");
+
+            StoreProcedure SP = spRequestUsuario.iuProdImpOfertaSimple("SPR_INS_PROD_IMP_OFERTA", productoOfertaSimple);
+            int CodigoProductoOfertaSimple = data.ExecuteInsert(SP, "PO_NRESULT");
+            return CodigoProductoOfertaSimple;
+        }
+
+        public int iuProdAplicaOfertaSimple(ProductoAplicaOfertaSimple productoAplicaOfertaSimple)
+        {
+            SpRequest spRequestUsuario = new SpRequest();
+            DataDB data = new DataDB("SIVEDIBDEntities");
+
+            StoreProcedure SP = spRequestUsuario.iuProdAplicaOfertaSimple("SPR_IU_PROD_ENTREGA_OFERTA", productoAplicaOfertaSimple);
+            int CodigoProductoOfertaSimple = data.ExecuteInsert(SP, "PO_NRESULT");
+            return CodigoProductoOfertaSimple;
         }
     }
 

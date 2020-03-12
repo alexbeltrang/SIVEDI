@@ -28,10 +28,10 @@ namespace SIVEDI.ServicioGeneral {
         System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.EstadoActividadOfertas[]> getEstadoActividadOfertasAsync(int intOpcion, int intCodigoOferta);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getZonasAsignadasOferta", ReplyAction="http://tempuri.org/IServicioGeneral/getZonasAsignadasOfertaResponse")]
-        SIVEDI.Clases.TABLAS.ZonasTabla[] getZonasAsignadasOferta(int intCodigoOferta);
+        SIVEDI.Clases.TABLAS.ZonasOfertaSimpleTabla[] getZonasAsignadasOferta(int intCodigoOferta);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getZonasAsignadasOferta", ReplyAction="http://tempuri.org/IServicioGeneral/getZonasAsignadasOfertaResponse")]
-        System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.ZonasTabla[]> getZonasAsignadasOfertaAsync(int intCodigoOferta);
+        System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.ZonasOfertaSimpleTabla[]> getZonasAsignadasOfertaAsync(int intCodigoOferta);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getDatosProdImpulsa", ReplyAction="http://tempuri.org/IServicioGeneral/getDatosProdImpulsaResponse")]
         SIVEDI.Clases.OfertaImpulsa[] getDatosProdImpulsa(int intCodigoOferta);
@@ -50,6 +50,30 @@ namespace SIVEDI.ServicioGeneral {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/delEstadoActividadPromocion", ReplyAction="http://tempuri.org/IServicioGeneral/delEstadoActividadPromocionResponse")]
         System.Threading.Tasks.Task<int> delEstadoActividadPromocionAsync(int intCodigoAsignado);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/iuOfertaSimple", ReplyAction="http://tempuri.org/IServicioGeneral/iuOfertaSimpleResponse")]
+        int iuOfertaSimple(SIVEDI.Clases.OfertasSimples ofertasSimples);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/iuOfertaSimple", ReplyAction="http://tempuri.org/IServicioGeneral/iuOfertaSimpleResponse")]
+        System.Threading.Tasks.Task<int> iuOfertaSimpleAsync(SIVEDI.Clases.OfertasSimples ofertasSimples);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getlistaOfertaFiltro", ReplyAction="http://tempuri.org/IServicioGeneral/getlistaOfertaFiltroResponse")]
+        SIVEDI.Clases.TABLAS.OfertaSimpleNombre[] getlistaOfertaFiltro(int intCodigoLista, string strNombre);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/getlistaOfertaFiltro", ReplyAction="http://tempuri.org/IServicioGeneral/getlistaOfertaFiltroResponse")]
+        System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.OfertaSimpleNombre[]> getlistaOfertaFiltroAsync(int intCodigoLista, string strNombre);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/iuProdImpOfertaSimple", ReplyAction="http://tempuri.org/IServicioGeneral/iuProdImpOfertaSimpleResponse")]
+        int iuProdImpOfertaSimple(SIVEDI.Clases.ProductoOfertaSimple productoOfertaSimple);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/iuProdImpOfertaSimple", ReplyAction="http://tempuri.org/IServicioGeneral/iuProdImpOfertaSimpleResponse")]
+        System.Threading.Tasks.Task<int> iuProdImpOfertaSimpleAsync(SIVEDI.Clases.ProductoOfertaSimple productoOfertaSimple);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/iuProdAplicaOfertaSimple", ReplyAction="http://tempuri.org/IServicioGeneral/iuProdAplicaOfertaSimpleResponse")]
+        int iuProdAplicaOfertaSimple(SIVEDI.Clases.ProductoAplicaOfertaSimple productoAplicaOfertaSimple);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/iuProdAplicaOfertaSimple", ReplyAction="http://tempuri.org/IServicioGeneral/iuProdAplicaOfertaSimpleResponse")]
+        System.Threading.Tasks.Task<int> iuProdAplicaOfertaSimpleAsync(SIVEDI.Clases.ProductoAplicaOfertaSimple productoAplicaOfertaSimple);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioGeneral/ingresaAplicativo", ReplyAction="http://tempuri.org/IServicioGeneral/ingresaAplicativoResponse")]
         SIVEDI.Clases.LoginUsuario ingresaAplicativo(string strUser, string strPassword);
@@ -607,11 +631,11 @@ namespace SIVEDI.ServicioGeneral {
             return base.Channel.getEstadoActividadOfertasAsync(intOpcion, intCodigoOferta);
         }
         
-        public SIVEDI.Clases.TABLAS.ZonasTabla[] getZonasAsignadasOferta(int intCodigoOferta) {
+        public SIVEDI.Clases.TABLAS.ZonasOfertaSimpleTabla[] getZonasAsignadasOferta(int intCodigoOferta) {
             return base.Channel.getZonasAsignadasOferta(intCodigoOferta);
         }
         
-        public System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.ZonasTabla[]> getZonasAsignadasOfertaAsync(int intCodigoOferta) {
+        public System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.ZonasOfertaSimpleTabla[]> getZonasAsignadasOfertaAsync(int intCodigoOferta) {
             return base.Channel.getZonasAsignadasOfertaAsync(intCodigoOferta);
         }
         
@@ -637,6 +661,38 @@ namespace SIVEDI.ServicioGeneral {
         
         public System.Threading.Tasks.Task<int> delEstadoActividadPromocionAsync(int intCodigoAsignado) {
             return base.Channel.delEstadoActividadPromocionAsync(intCodigoAsignado);
+        }
+        
+        public int iuOfertaSimple(SIVEDI.Clases.OfertasSimples ofertasSimples) {
+            return base.Channel.iuOfertaSimple(ofertasSimples);
+        }
+        
+        public System.Threading.Tasks.Task<int> iuOfertaSimpleAsync(SIVEDI.Clases.OfertasSimples ofertasSimples) {
+            return base.Channel.iuOfertaSimpleAsync(ofertasSimples);
+        }
+        
+        public SIVEDI.Clases.TABLAS.OfertaSimpleNombre[] getlistaOfertaFiltro(int intCodigoLista, string strNombre) {
+            return base.Channel.getlistaOfertaFiltro(intCodigoLista, strNombre);
+        }
+        
+        public System.Threading.Tasks.Task<SIVEDI.Clases.TABLAS.OfertaSimpleNombre[]> getlistaOfertaFiltroAsync(int intCodigoLista, string strNombre) {
+            return base.Channel.getlistaOfertaFiltroAsync(intCodigoLista, strNombre);
+        }
+        
+        public int iuProdImpOfertaSimple(SIVEDI.Clases.ProductoOfertaSimple productoOfertaSimple) {
+            return base.Channel.iuProdImpOfertaSimple(productoOfertaSimple);
+        }
+        
+        public System.Threading.Tasks.Task<int> iuProdImpOfertaSimpleAsync(SIVEDI.Clases.ProductoOfertaSimple productoOfertaSimple) {
+            return base.Channel.iuProdImpOfertaSimpleAsync(productoOfertaSimple);
+        }
+        
+        public int iuProdAplicaOfertaSimple(SIVEDI.Clases.ProductoAplicaOfertaSimple productoAplicaOfertaSimple) {
+            return base.Channel.iuProdAplicaOfertaSimple(productoAplicaOfertaSimple);
+        }
+        
+        public System.Threading.Tasks.Task<int> iuProdAplicaOfertaSimpleAsync(SIVEDI.Clases.ProductoAplicaOfertaSimple productoAplicaOfertaSimple) {
+            return base.Channel.iuProdAplicaOfertaSimpleAsync(productoAplicaOfertaSimple);
         }
         
         public SIVEDI.Clases.LoginUsuario ingresaAplicativo(string strUser, string strPassword) {

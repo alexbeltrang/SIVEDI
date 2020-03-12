@@ -27,12 +27,46 @@
   <xs:element name="ArrayOfEstadoActividadOfertas" nillable="true" type="tns:ArrayOfEstadoActividadOfertas" />
   <xs:complexType name="EstadoActividadOfertas">
     <xs:sequence>
-      <xs:element minOccurs="0" name="CODIGO" type="xs:int" />
+      <xs:element minOccurs="0" name="CODIGO" type="xs:decimal" />
       <xs:element minOccurs="0" name="CODIGO_ESTADO" type="xs:int" />
       <xs:element minOccurs="0" name="NOMBRE" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="EstadoActividadOfertas" nillable="true" type="tns:EstadoActividadOfertas" />
+  <xs:complexType name="ArrayOfZonasOfertaSimpleTabla">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ZonasOfertaSimpleTabla" nillable="true" type="tns:ZonasOfertaSimpleTabla" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfZonasOfertaSimpleTabla" nillable="true" type="tns:ArrayOfZonasOfertaSimpleTabla" />
+  <xs:complexType name="ZonasOfertaSimpleTabla">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGO" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NOMBRE_ZONA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ZONA" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ZonasOfertaSimpleTabla" nillable="true" type="tns:ZonasOfertaSimpleTabla" />
+  <xs:complexType name="ArrayOfOfertaSimpleNombre">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OfertaSimpleNombre" nillable="true" type="tns:OfertaSimpleNombre" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOfertaSimpleNombre" nillable="true" type="tns:ArrayOfOfertaSimpleNombre" />
+  <xs:complexType name="OfertaSimpleNombre">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGO" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ES_CANTIDAD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ES_DESCUENTO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ES_MONTO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ES_OBSEQUIO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ES_PROMOCION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FACTOR" type="xs:decimal" />
+      <xs:element minOccurs="0" name="LISTA_PRECIOS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOMBRE" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OfertaSimpleNombre" nillable="true" type="tns:OfertaSimpleNombre" />
   <xs:complexType name="ArrayOfusuariosTabla">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="usuariosTabla" nillable="true" type="tns:usuariosTabla" />

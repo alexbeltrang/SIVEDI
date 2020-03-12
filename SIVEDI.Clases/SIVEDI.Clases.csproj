@@ -94,8 +94,10 @@
     <Compile Include="PreliquidaConcursos.cs" />
     <Compile Include="PremiosConcursoVenta.cs" />
     <Compile Include="PremiosConcursoVentas.cs" />
+    <Compile Include="ProductoAplicaOfertaSimple.cs" />
     <Compile Include="ProductoCodigoVenta.cs" />
     <Compile Include="ProductoListaPrecio.cs" />
+    <Compile Include="ProductoOfertaSimple.cs" />
     <Compile Include="Productos.cs" />
     <Compile Include="ProductosAplicaOferta.cs" />
     <Compile Include="ProductosCombo.cs" />
@@ -125,6 +127,7 @@
     <Compile Include="TABLAS\ListaPreciosProducto.cs" />
     <Compile Include="TABLAS\ListaPreciosProductoComboBox.cs" />
     <Compile Include="TABLAS\ListaPreciosTabla.cs" />
+    <Compile Include="TABLAS\OfertaSimpleNombre.cs" />
     <Compile Include="TABLAS\PaisTabla.cs" />
     <Compile Include="TABLAS\PedidosClienteTabla.cs" />
     <Compile Include="TABLAS\ProductoPredidoTablas.cs" />
@@ -144,6 +147,7 @@
     <Compile Include="TABLAS\UnidadesMedidaTabla.cs" />
     <Compile Include="TABLAS\ZonasAsignadasConcursoVentas.cs" />
     <Compile Include="TABLAS\ZonasAsignadasConcursoVentasTabla.cs" />
+    <Compile Include="TABLAS\ZonasOfertaSimpleTabla.cs" />
     <Compile Include="TABLAS\ZonasTabla.cs" />
     <Compile Include="Territorios.cs" />
     <Compile Include="TipoCliente.cs" />

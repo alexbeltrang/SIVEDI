@@ -189,12 +189,20 @@ namespace SIVEDI.WCFGeneral
         [OperationContract]
         List<EstadoActividadOfertas> getEstadoActividadOfertas(int intOpcion, int intCodigoOferta);
         [OperationContract]
-        List<ZonasTabla> getZonasAsignadasOferta(int intCodigoOferta);
+        List<ZonasOfertaSimpleTabla> getZonasAsignadasOferta(int intCodigoOferta);
         [OperationContract]
         List<OfertaImpulsa> getDatosProdImpulsa(int intCodigoOferta);
         [OperationContract]
         List<OfertasSimples> getlistaOfertas(int intCodigoOferta, int intOpcion, int intCodigoListaPrecios, int intCodigoEstadoActicliente, string strCodigoZona);
         [OperationContract]
         int delEstadoActividadPromocion(int intCodigoAsignado);
+        [OperationContract]
+        int iuOfertaSimple(OfertasSimples ofertasSimples);
+        [OperationContract]
+        List<OfertaSimpleNombre> getlistaOfertaFiltro(int intCodigoLista, string strNombre);
+        [OperationContract]
+        int iuProdImpOfertaSimple(ProductoOfertaSimple productoOfertaSimple);
+        [OperationContract]
+        int iuProdAplicaOfertaSimple(ProductoAplicaOfertaSimple productoAplicaOfertaSimple);
     }
 }

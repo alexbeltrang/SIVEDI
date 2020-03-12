@@ -36,6 +36,24 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="OfertasSimples" nillable="true" type="tns:OfertasSimples" />
+  <xs:complexType name="ProductoOfertaSimple">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodigoOfetra" type="xs:int" />
+      <xs:element minOccurs="0" name="CodigoProducto" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProductoOfertaSimple" nillable="true" type="tns:ProductoOfertaSimple" />
+  <xs:complexType name="ProductoAplicaOfertaSimple">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodigoEntrega" type="xs:int" />
+      <xs:element minOccurs="0" name="CodigoOferta" type="xs:int" />
+      <xs:element minOccurs="0" name="CodigoProducto" type="xs:int" />
+      <xs:element minOccurs="0" name="Porcentaje" type="xs:decimal" />
+      <xs:element minOccurs="0" name="UnidadesAplica" type="xs:int" />
+      <xs:element minOccurs="0" name="ValorEntrega" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProductoAplicaOfertaSimple" nillable="true" type="tns:ProductoAplicaOfertaSimple" />
   <xs:complexType name="LoginUsuario">
     <xs:sequence>
       <xs:element minOccurs="0" name="blnCambiaPassword" type="xs:boolean" />

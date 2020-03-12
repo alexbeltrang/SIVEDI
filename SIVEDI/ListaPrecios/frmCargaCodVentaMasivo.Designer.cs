@@ -50,11 +50,11 @@
             // 
             // btnCargarArchivo
             // 
+            this.btnCargarArchivo.Image = global::SIVEDI.Properties.Resources.layout_add;
             this.btnCargarArchivo.Location = new System.Drawing.Point(755, 29);
             this.btnCargarArchivo.Name = "btnCargarArchivo";
             this.btnCargarArchivo.Size = new System.Drawing.Size(35, 23);
             this.btnCargarArchivo.TabIndex = 0;
-            this.btnCargarArchivo.Text = "...";
             this.btnCargarArchivo.UseVisualStyleBackColor = true;
             this.btnCargarArchivo.Click += new System.EventHandler(this.btnCargarArchivo_Click);
             // 
